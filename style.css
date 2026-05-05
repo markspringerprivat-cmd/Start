@@ -5,65 +5,129 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   min-height: 100vh;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.18),
-      rgba(255, 255, 255, 0.18)
-    ),
-    url("hintergrund.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 48px;
 }
 
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1280px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #222;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.85);
+  margin-bottom: 42px;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -1px;
+  color: #1f1f1f;
 }
 
 .kachel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 .kachel {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 1 / 1;
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 160px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.78);
-  color: #111;
+  overflow: hidden;
+  border-radius: 24px;
+  background-image: url("hintergrund.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(4px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
   text-align: center;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.22),
+    0 8px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(0) scale(1);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.kachel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.16)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.35), transparent 34%);
+}
+
+.kachel::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.kachel span {
+  padding: 16px 20px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
 }
 
 .kachel:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
-  background: rgba(233, 245, 242, 0.88);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.28),
+    0 14px 28px rgba(0, 0, 0, 0.16);
+  filter: saturate(1.08);
 }
 
 .kachel:active {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(0.97);
+}
+
+.kachel.clicked::after {
+  animation: klick-welle 420ms ease-out;
+}
+
+@keyframes klick-welle {
+  0% {
+    opacity: 0.8;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(8);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 24px;
+  }
+
+  .kachel-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .kachel {
+    min-height: 220px;
+  }
 }

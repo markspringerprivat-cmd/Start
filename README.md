@@ -1,22 +1,23 @@
-# ChatGPT Kachelseite
+# Moodle Kachelseite
 
-Eine einfache HTML-Seite mit fünf großflächigen klickbaren Kacheln. Jede Kachel verlinkt auf die Startseite von ChatGPT.
+Eine einfache HTML-Seite mit fünf großen, quadratischen Kacheln.
 
 ## Dateien
 
-- `index.html` – Hauptseite
-- `style.css` – Gestaltung der Kacheln und des Layouts
+- `index.html` – Seitenstruktur
+- `style.css` – Layout, Kachel-Design, Hintergrundbild und Animation
+- `script.js` – kleine Klickanimation
+- `hintergrund.png` – Bildhintergrund der Kacheln
 
-## Verwendung auf GitHub
+## Linkziel
 
-1. Neues Repository auf GitHub erstellen.
-2. Die Dateien `index.html`, `style.css` und `README.md` hochladen.
-3. Optional GitHub Pages aktivieren:
-   - Repository öffnen
-   - `Settings` auswählen
-   - `Pages` öffnen
-   - Branch `main` auswählen
-   - Ordner `/root` auswählen
-   - Speichern
+Alle Kacheln führen zu:
 
-Danach ist die Seite über GitHub Pages erreichbar.
+`https://moodle.uni-siegen.de/mod/hvp/view.php?id=1492494&forceview=1`
+
+## Nutzung mit GitHub Pages
+
+1. Alle Dateien in ein GitHub-Repository hochladen.
+2. In den Repository-Einstellungen GitHub Pages aktivieren.
+3. Als Quelle den Branch `main` und den Ordner `/root` auswählen.
+4. Die veröffentlichte Seite über den angezeigten GitHub-Pages-Link öffnen.
