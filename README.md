@@ -21,3 +21,6 @@ Alle Kacheln führen zu:
 2. In den Repository-Einstellungen GitHub Pages aktivieren.
 3. Als Quelle den Branch `main` und den Ordner `/root` auswählen.
 4. Die veröffentlichte Seite über den angezeigten GitHub-Pages-Link öffnen.
+
+
+Die Kacheln erscheinen am oberen Bildschirmrand. Der Seitenhintergrund bleibt weiß; das Bild liegt nur in den Kacheln.

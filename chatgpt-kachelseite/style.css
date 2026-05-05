@@ -9,52 +9,46 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #111111;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 24px 48px 48px;
+  padding: 0 40px 40px;
 }
 
 .container {
   width: 100%;
-  max-width: 1280px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 24px;
-  font-size: clamp(32px, 5vw, 56px);
-  letter-spacing: -1px;
-  color: #1f1f1f;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .kachel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 28px;
+  align-items: start;
+  padding-top: 0;
 }
 
 .kachel {
   position: relative;
   isolation: isolate;
   aspect-ratio: 1 / 1;
-  min-height: 260px;
+  min-height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 28px;
   background-image: url("hintergrund.png");
   background-size: cover;
   background-position: center;
   color: #ffffff;
   text-decoration: none;
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: clamp(24px, 2.6vw, 36px);
   font-weight: 800;
+  line-height: 1.1;
   text-align: center;
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.22),
-    0 8px 18px rgba(0, 0, 0, 0.12);
+    0 28px 70px rgba(0, 0, 0, 0.26),
+    0 12px 24px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transform: translateY(0) scale(1);
   transition:
     transform 180ms ease,
@@ -68,59 +62,66 @@ h1 {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.16)),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.35), transparent 34%);
+    linear-gradient(135deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.18)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.38), transparent 36%);
 }
 
 .kachel::after {
   content: "";
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.5);
   opacity: 0;
   transform: scale(0);
   pointer-events: none;
 }
 
 .kachel span {
-  padding: 16px 20px;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+  max-width: 90%;
+  padding: 18px 22px;
+  text-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
 .kachel:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(8px) scale(1.025);
   box-shadow:
-    0 34px 80px rgba(0, 0, 0, 0.28),
-    0 14px 28px rgba(0, 0, 0, 0.16);
-  filter: saturate(1.08);
+    0 36px 90px rgba(0, 0, 0, 0.32),
+    0 18px 34px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  filter: saturate(1.08) contrast(1.03);
 }
 
 .kachel:active {
-  transform: translateY(-2px) scale(0.97);
+  transform: translateY(12px) scale(0.96);
 }
 
 .kachel.clicked::after {
-  animation: klick-welle 420ms ease-out;
+  animation: klick-welle 360ms ease-out;
 }
 
 @keyframes klick-welle {
   0% {
-    opacity: 0.8;
+    opacity: 0.85;
     transform: scale(0);
   }
 
   100% {
     opacity: 0;
-    transform: scale(8);
+    transform: scale(9);
+  }
+}
+
+@media (max-width: 1200px) {
+  .kachel-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
 @media (max-width: 640px) {
   body {
-    padding: 16px;
-    align-items: flex-start;
+    padding: 0 16px 24px;
   }
 
   .kachel-grid {
