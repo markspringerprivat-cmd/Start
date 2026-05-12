@@ -6,11 +6,11 @@ const pageData = {
   dekomposition: {
     switcherLabel: "Bausteine der Dekomposition",
     breadcrumbBlock: "Dekomposition",
-    startStepLabel: "Dekomposition",
+    startStepLabel: "Hauptseite",
     topics: [
       {
         cardTitle: "Hauptseite",
-        bannerTitle: "Hauptseite",
+        bannerTitle: "Dekomposition",
         subtitle: "Orientierung im Kursblock Dekomposition",
         leftLabel: "Einordnung",
         leftTitle: "Was ist eine Dekomposition?",
@@ -292,7 +292,15 @@ function updateContent(direction = "right") {
 
   bannerTitle.textContent = topic.bannerTitle;
   moduleSubtitle.textContent = topic.subtitle;
-  moduleStep.textContent = activeIndex === 0 ? currentConfig.startStepLabel : `Baustein ${activeIndex + 1} von ${topics.length}`;
+  if (pageType === "dekomposition") {
+    moduleStep.textContent = activeIndex === 0
+      ? currentConfig.startStepLabel
+      : `Baustein ${activeIndex} von ${topics.length - 1}`;
+  } else {
+    moduleStep.textContent = activeIndex === 0
+      ? currentConfig.startStepLabel
+      : `Baustein ${activeIndex + 1} von ${topics.length}`;
+  }
   breadcrumbCurrent.textContent = topic.cardTitle;
   leftLabel.textContent = topic.leftLabel;
   rightLabel.textContent = topic.rightLabel;

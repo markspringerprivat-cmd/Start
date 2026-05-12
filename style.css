@@ -282,10 +282,11 @@ p, h1, h2 { margin-top: 0; }
 
 .course-topic-link:hover,
 .course-topic-link:focus-visible {
-  background: #ffffff;
-  border-color: rgba(47, 95, 143, 0.70);
+  background: #4699c8;
+  color: #ffffff;
+  border-color: #4699c8;
   transform: translateX(4px);
-  box-shadow: 8px 14px 24px rgba(47, 95, 143, 0.12), 0 4px 10px rgba(17, 24, 39, 0.05);
+  box-shadow: 8px 14px 24px rgba(70, 153, 200, 0.22), 0 4px 10px rgba(17, 24, 39, 0.05);
   outline: none;
 }
 
