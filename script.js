@@ -459,8 +459,22 @@ function setupCourseFlyouts() {
   if (!wraps.length) return;
 
   wraps.forEach((wrap) => {
-    const open = () => wrap.classList.add("is-flyout-open");
-    const close = () => wrap.classList.remove("is-flyout-open");
+    let closeTimer = null;
+
+    const open = () => {
+      window.clearTimeout(closeTimer);
+      wraps.forEach((other) => {
+        if (other !== wrap) other.classList.remove("is-flyout-open");
+      });
+      wrap.classList.add("is-flyout-open");
+    };
+
+    const close = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => {
+        wrap.classList.remove("is-flyout-open");
+      }, 260);
+    };
 
     wrap.addEventListener("mouseenter", open);
     wrap.addEventListener("mouseleave", close);
@@ -469,16 +483,23 @@ function setupCourseFlyouts() {
       if (!wrap.contains(event.relatedTarget)) close();
     });
 
+    const flyout = wrap.querySelector(".course-block-flyout");
+    flyout?.addEventListener("mouseenter", open);
+    flyout?.addEventListener("mouseleave", close);
+
     const card = wrap.querySelector(".course-block-card");
     card?.addEventListener("touchstart", (event) => {
       if (!wrap.classList.contains("is-flyout-open")) {
         event.preventDefault();
-        wraps.forEach((other) => {
-          if (other !== wrap) other.classList.remove("is-flyout-open");
-        });
         open();
       }
     }, { passive: false });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!event.target.closest(".course-block-wrap")) {
+      wraps.forEach((wrap) => wrap.classList.remove("is-flyout-open"));
+    }
   });
 }
 
