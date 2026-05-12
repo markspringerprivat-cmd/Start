@@ -200,6 +200,45 @@ const switcherLabel = document.querySelector(".switcher-label");
 const topicSwitcher = document.querySelector(".topic-switcher");
 const breadcrumbBlock = document.getElementById("breadcrumbBlock");
 
+function hasVorlesemodusParam() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("vorlesemodus") === "1" || params.get("readmode") === "1" || params.get("blindmode") === "1";
+}
+
+function syncVorlesemodusParam(enabled) {
+  const url = new URL(window.location.href);
+  if (enabled) {
+    url.searchParams.set("vorlesemodus", "1");
+    url.searchParams.delete("readmode");
+    url.searchParams.delete("blindmode");
+  } else {
+    url.searchParams.delete("vorlesemodus");
+    url.searchParams.delete("readmode");
+    url.searchParams.delete("blindmode");
+  }
+  const nextUrl = `${url.pathname}${url.search}${url.hash || ""}`;
+  window.history.replaceState({}, "", nextUrl);
+}
+
+function linkWithVorlesemodus(href) {
+  if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return href;
+  const isAbsoluteWebUrl = /^https?:\/\//i.test(href);
+  const url = new URL(href, window.location.href);
+  if (isAbsoluteWebUrl && url.origin !== window.location.origin) return href;
+  if (blindModeActive) url.searchParams.set("vorlesemodus", "1");
+  return `${url.pathname}${url.search}${url.hash || ""}`;
+}
+
+function updateInternalLinksForVorlesemodus() {
+  const links = [...document.querySelectorAll("a[href]")];
+  links.forEach((link) => {
+    if (!link.dataset.originalHref) link.dataset.originalHref = link.getAttribute("href");
+    const originalHref = link.dataset.originalHref;
+    if (!originalHref || originalHref.startsWith("http") || originalHref.startsWith("mailto:") || originalHref.startsWith("tel:")) return;
+    link.setAttribute("href", blindModeActive ? linkWithVorlesemodus(originalHref) : originalHref);
+  });
+}
+
 function getInitialTopicIndex() {
   const params = new URLSearchParams(window.location.search);
   const raw = Number(params.get("topic"));
@@ -426,23 +465,29 @@ function speakRawText(text, key, visualElement = null) {
   window.speechSynthesis.speak(utterance);
 }
 
-function setBlindMode(enabled) {
+function setBlindMode(enabled, options = {}) {
+  const { announce = true, updateUrl = true } = options;
   blindModeActive = enabled;
   document.body.classList.toggle("blind-mode-active", enabled);
   blindModeToggle?.classList.toggle("is-active", enabled);
   blindModeToggle?.setAttribute("aria-pressed", String(enabled));
-  if (blindModeToggle) blindModeToggle.textContent = `Blindenmodus: ${enabled ? "an" : "aus"}`;
+  if (blindModeToggle) blindModeToggle.textContent = `Vorlesemodus: ${enabled ? "an" : "aus"}`;
 
   if (blindModeHint) {
     blindModeHint.hidden = true;
     blindModeHint.textContent = "";
   }
 
+  if (updateUrl) syncVorlesemodusParam(enabled);
+  updateInternalLinksForVorlesemodus();
+
   if (enabled) {
-    speakRawText(
-      "Blindenmodus aktiviert. Drücke einmal auf ein Feld, um es vorlesen zu lassen. Drücke dasselbe Feld erneut, um das Vorlesen zu stoppen. Mit einem Doppelklick öffnest du das ausgewählte Feld.",
-      "blindmode-hint"
-    );
+    if (announce) {
+      speakRawText(
+        "Vorlesemodus aktiviert. Drücke einmal auf ein Feld, um es vorlesen zu lassen. Drücke dasselbe Feld erneut, um das Vorlesen zu stoppen. Mit einem Doppelklick öffnest du das ausgewählte Feld.",
+        "readmode-hint"
+      );
+    }
   } else {
     stopSpeech();
   }
@@ -465,7 +510,7 @@ function activateBlindReadable(element) {
     if (targetWindow === "_blank") {
       window.open(href, "_blank", "noopener");
     } else {
-      window.location.href = href;
+      window.location.href = linkWithVorlesemodus(href);
     }
   }
 }
@@ -500,6 +545,8 @@ createCards();
 renderCards();
 updateContent("right");
 addBlindModeInteractions();
+if (hasVorlesemodusParam()) setBlindMode(true, { announce: false, updateUrl: true });
+else updateInternalLinksForVorlesemodus();
 
 
 function setupCourseFlyouts() {

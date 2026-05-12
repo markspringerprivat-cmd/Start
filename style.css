@@ -104,11 +104,11 @@ p, h1, h2 { margin-top: 0; }
   margin-bottom: 0;
 }
 
-.top-divider.overview-divider { margin: 0 0 56px; }
+.top-divider.overview-divider { margin: 0 0 28px; }
 
 .overview-blind-mode-row {
-  margin-top: 22px;
-  margin-bottom: 2mm;
+  margin-top: 26px;
+  margin-bottom: 10px;
 }
 
 .course-block-grid {
@@ -117,7 +117,7 @@ p, h1, h2 { margin-top: 0; }
   align-items: start;
   column-gap: 20px;
   row-gap: 26px;
-  padding: 18px 8px 330px;
+  padding: 0 8px 330px;
   overflow: visible;
 }
 
@@ -766,7 +766,7 @@ h1 {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Blindenmodus */
+/* Vorlesemodus */
 .blind-readable { outline: 0 solid transparent; outline-offset: 0; }
 body.blind-mode-active .blind-readable { cursor: pointer; }
 

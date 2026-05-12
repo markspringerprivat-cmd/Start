@@ -8,7 +8,7 @@ Statische HTML/CSS/JavaScript-Seite für GitHub Pages oder Einbettung in Moodle.
 - `dekomposition.html`: ausgearbeitete Modulübersicht mit sieben Bausteinen
 - `wahrnehmung.html`: Platzhalterseite
 - `approximation.html`: Platzhalterseite
-- `style.css`: Gestaltung, Responsivität, Hover-/Fokuszustände, Blindenmodus
+- `style.css`: Gestaltung, Responsivität, Hover-/Fokuszustände, Vorlesemodus
 - `script.js`: lineare Kachelnavigation, dynamischer Inhalt, Vorlesefunktion, Moodle-Linkweiterleitung
 
 ## Änderungen in v26
