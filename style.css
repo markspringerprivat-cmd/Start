@@ -6,200 +6,182 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6fb;
-  color: #162033;
+  background: #f8f6ef;
+  color: #111827;
+  overflow-x: hidden;
 }
 
-.page {
+.page-shell {
+  width: 100%;
   min-height: 100vh;
+  padding: 18px 0 0 36px;
+}
+
+.wheel-section {
+  position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  padding: 24px 0 0 8vw;
+  gap: 14px;
+  width: min(850px, calc(100vw - 48px));
+  height: 360px;
+  perspective: 1200px;
 }
 
-.carousel {
-  display: flex;
-  align-items: center;
-  gap: 22px;
+.wheel-window {
+  position: relative;
+  width: min(690px, calc(100vw - 150px));
+  height: 340px;
+  overflow: visible;
+  border-radius: 34px;
+  transform-style: preserve-3d;
 }
 
-.tiles-window {
-  width: min(720px, 70vw);
-  overflow: hidden;
-  padding: 28px 8px;
-}
-
-.tiles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  will-change: transform;
-}
-
-.tiles.slide-left {
-  animation: slideLeft 420ms ease-in-out;
-}
-
-.tiles.slide-right {
-  animation: slideRight 420ms ease-in-out;
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-
-  45% {
-    transform: translateX(-120px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(0);
-  }
-
-  45% {
-    transform: translateX(120px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+.wheel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
 }
 
 .tile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border-radius: 22px;
-  background: white;
-  box-shadow: 0 18px 45px rgba(35, 48, 84, 0.16);
-  border: 1px solid rgba(42, 55, 95, 0.08);
-  font-weight: 700;
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  width: 220px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #ffffff, #f7f7f3);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 28px 62px rgba(17, 24, 39, 0.18);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  user-select: none;
   transition:
-    width 250ms ease,
-    height 250ms ease,
-    transform 250ms ease,
-    opacity 250ms ease,
-    box-shadow 250ms ease;
+    transform 560ms cubic-bezier(.22,.7,.24,1),
+    opacity 560ms cubic-bezier(.22,.7,.24,1),
+    filter 560ms cubic-bezier(.22,.7,.24,1),
+    z-index 0ms linear 280ms;
+  will-change: transform, opacity, filter;
 }
 
-.tile-active {
-  width: 260px;
-  height: 320px;
-  font-size: 2.2rem;
-  transform: scale(1);
+.tile.is-center {
+  z-index: 5;
   opacity: 1;
-  z-index: 2;
+  filter: blur(0);
 }
 
-.tile-side {
-  width: 170px;
-  height: 230px;
-  font-size: 1.35rem;
-  transform: scale(0.92);
+.tile.is-left,
+.tile.is-right {
+  z-index: 3;
   opacity: 0.72;
+  filter: blur(1.2px);
+}
+
+.tile.is-left-edge,
+.tile.is-right-edge {
   z-index: 1;
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
 }
 
-.arrow {
-  width: 54px;
-  height: 54px;
-  border: none;
+.tile.is-hidden {
+  z-index: 0;
+  opacity: 0;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.wheel-window::before {
+  content: "";
+  position: absolute;
+  inset: auto 42px -128px 42px;
+  height: 360px;
   border-radius: 50%;
-  background: #162033;
-  color: white;
-  font-size: 1.8rem;
-  line-height: 1;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 70px rgba(255,255,255,0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wheel-fade {
+  position: absolute;
+  top: 0;
+  width: 105px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.wheel-fade-left {
+  left: 0;
+  background: linear-gradient(90deg, rgba(248,246,239,1), rgba(248,246,239,0));
+}
+
+.wheel-fade-right {
+  right: 0;
+  background: linear-gradient(270deg, rgba(248,246,239,1), rgba(248,246,239,0));
+}
+
+.nav-button {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0 12px 28px rgba(31, 41, 55, 0.14);
   cursor: pointer;
-  box-shadow: 0 12px 28px rgba(22, 32, 51, 0.22);
-  transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+  font-size: 28px;
+  font-weight: 800;
+  color: #273349;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
 }
 
-.arrow:hover {
-  transform: translateY(-2px);
-  background: #263756;
+.nav-button:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 18px 38px rgba(31, 41, 55, 0.22);
 }
 
-.arrow:active {
-  transform: translateY(0);
+.nav-button:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
 }
 
-.arrow:disabled {
-  cursor: default;
-  opacity: 0.55;
+.nav-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
 }
 
 @media (max-width: 760px) {
-  .page {
-    justify-content: center;
-    padding: 16px 12px 0;
+  .page-shell {
+    padding-left: 12px;
+    padding-top: 10px;
   }
 
-  .carousel {
-    gap: 10px;
+  .wheel-section {
+    width: calc(100vw - 20px);
+    gap: 8px;
   }
 
-  .tiles-window {
-    width: auto;
-    padding: 18px 0;
+  .wheel-window {
+    width: calc(100vw - 120px);
   }
 
-  .tiles {
-    gap: 10px;
+  .tile {
+    width: 170px;
+    height: 126px;
+    font-size: 22px;
   }
 
-  @keyframes slideLeft {
-    0% {
-      transform: translateX(0);
-    }
-
-    45% {
-      transform: translateX(-70px);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideRight {
-    0% {
-      transform: translateX(0);
-    }
-
-    45% {
-      transform: translateX(70px);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  .tile-active {
-    width: 180px;
-    height: 240px;
-    font-size: 1.6rem;
-  }
-
-  .tile-side {
-    width: 92px;
-    height: 150px;
-    font-size: 1rem;
-  }
-
-  .arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 1.35rem;
+  .nav-button {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
   }
 }

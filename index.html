@@ -4,29 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kachelrad</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
-  <main class="page">
-    <section class="carousel" aria-label="Themen-Karussell">
-      <button class="arrow arrow-left" id="prevBtn" aria-label="Vorheriges Thema">
+  <main class="page-shell">
+    <section class="wheel-section" aria-label="Themen-Kachelrad">
+      <button class="nav-button nav-button-left" id="prevBtn" aria-label="Vorheriges Thema anzeigen">
         &#10094;
       </button>
 
-      <div class="tiles-window">
-        <div class="tiles" id="tiles">
-          <article class="tile tile-side" id="leftTile"></article>
-          <article class="tile tile-active" id="centerTile"></article>
-          <article class="tile tile-side" id="rightTile"></article>
+      <div class="wheel-window">
+        <div class="wheel-fade wheel-fade-left"></div>
+        <div class="wheel-fade wheel-fade-right"></div>
+
+        <div class="wheel-track" id="wheelTrack">
+          <article class="tile" data-index="0">Thema 1</article>
+          <article class="tile" data-index="1">Thema 2</article>
+          <article class="tile" data-index="2">Thema 3</article>
+          <article class="tile" data-index="3">Thema 4</article>
+          <article class="tile" data-index="4">Thema 5</article>
+          <article class="tile" data-index="5">Thema 6</article>
         </div>
       </div>
 
-      <button class="arrow arrow-right" id="nextBtn" aria-label="Nächstes Thema">
+      <button class="nav-button nav-button-right" id="nextBtn" aria-label="Nächstes Thema anzeigen">
         &#10095;
       </button>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

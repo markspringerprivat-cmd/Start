@@ -1,19 +1,26 @@
 # Kachelrad-Projekt
 
-Ein kleines HTML/CSS/JavaScript-Projekt mit einem links zentrierten Kachel-Karussell.
+Ein statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
 ## Dateien
 
-- `index.html` – Grundstruktur der Benutzeroberfläche
-- `style.css` – Layout, Größen, Abstände und Kachel-Design
+- `index.html` – Grundstruktur der Seite
+- `style.css` – Layout, Rad-Optik, Blur, Perspektive und Animation
 - `script.js` – Logik für das Durchschalten der sechs Themen
 
-## Nutzung
+## Nutzung mit GitHub Pages
 
-1. Projektordner öffnen.
-2. `index.html` im Browser öffnen.
-3. Mit den linken und rechten Pfeilen oder den Pfeiltasten der Tastatur durch die Themen wechseln.
+1. Dateien in ein GitHub-Repository hochladen.
+2. Unter `Settings > Pages` den Branch auswählen, zum Beispiel `main`.
+3. Als Ordner `/root` auswählen, wenn die Dateien direkt im Repository liegen.
+4. Nach Änderungen die Seite hart neu laden: `Strg + Shift + R` oder `Cmd + Shift + R`.
 
-## GitHub-Einbindung
+Die Links zu CSS und JavaScript enthalten `?v=3`, damit Browser-Cache seltener die alte Version anzeigt.
 
-Der Ordner kann direkt in ein GitHub-Repository hochgeladen werden.
+
+## Anpassung v4
+
+- Perlweißer Hintergrund (`#f8f6ef`)
+- Größerer sichtbarer Rad-Ausschnitt, damit Schatten nicht abgeschnitten werden
+- Feine schwarze Karten-Umrandung
+- Cache-Busting auf `?v=4` erhöht
