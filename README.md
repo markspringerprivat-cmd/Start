@@ -1,16 +1,19 @@
-# Kursrahmen Gesprächsführung – v23
+# Kursrahmen Gesprächsführung
 
-Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages oder die Einbettung in Moodle.
+Statischer Web-Projektordner für GitHub Pages oder eine Moodle-Einbettung.
 
-## Start
+## Dateien
 
-Öffne `index.html`.
+- `index.html` – vorgelagerte Kursübersicht mit den drei Blöcken Wahrnehmung, Dekomposition und Approximation
+- `dekomposition.html` – ausgearbeitete Dekompositionsseite mit linearer Modulkachel-Navigation
+- `wahrnehmung.html` – Platzhalterseite
+- `approximation.html` – Platzhalterseite
+- `style.css` – gemeinsames Styling
+- `script.js` – Interaktion der Dekompositionsseite
 
-## Änderungen in v23
+## Nutzung
 
-- Flip-Karten auf der Kursübersicht sind jetzt technisch stabiler umgesetzt.
-- Vorder- und Rückseite existieren dauerhaft gleichzeitig; der Inhalt wird nicht mehr mitten in der Animation neu geladen.
-- Karten behalten beim Umdrehen eine feste Größe und expandieren nicht mehr.
-- Rückseiten haben gekürzte Überschriften und eigene Beschreibungstexte.
-- Button „Zur Modulübersicht“ erscheint nur auf der Rückseite.
-- Cache-Version: `?v=23`.
+Alle Dateien in ein GitHub-Repository hochladen. GitHub Pages auf den Branch und Ordner einstellen, in dem `index.html` liegt.
+
+
+Version 20: Blindenmodus-Button direkt oberhalb der Trennlinie platziert; Abstand zwischen Themenkacheln und Trennlinie reduziert.
