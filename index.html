@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gesprächsführung – Modulübersicht</title>
-  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="stylesheet" href="style.css?v=17" />
 </head>
 <body>
   <main class="page-shell">
@@ -48,9 +48,6 @@
         <p id="leftText">
           Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben kannst du linear durch die einzelnen Bereiche navigieren.
         </p>
-        <button class="speak-button" type="button" data-speak-target="left" aria-label="Linken Text vorlesen">
-          <span aria-hidden="true">🔊</span>
-        </button>
       </article>
 
       <div class="vertical-divider" aria-hidden="true"></div>
@@ -62,17 +59,14 @@
           Du erhältst einen strukturierten Überblick über die einzelnen Module und kannst gezielt zu Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträgen, Schülerbeiträgen, Ergebnissicherung und Gesprächsabschluss wechseln.
         </p>
 
-        <a class="module-link-card" target="_top" aria-label="Zum Modul in Moodle wechseln" hidden>
+        <a class="module-link-card blind-readable" target="_top" aria-label="Modul-Link vorlesen oder zum Modul wechseln" data-blind-target="module-link" tabindex="0" hidden>
           <span>Hier geht es zum Modul</span>
           <span class="link-arrow" aria-hidden="true">↗</span>
         </a>
-        <button class="speak-button" type="button" data-speak-target="right" aria-label="Rechten Text vorlesen">
-          <span aria-hidden="true">🔊</span>
-        </button>
       </article>
     </section>
   </main>
 
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=17"></script>
 </body>
 </html>

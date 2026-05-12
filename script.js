@@ -79,10 +79,8 @@ const rightText = document.getElementById("rightText");
 const banner = document.getElementById("banner");
 const contentGrid = document.querySelector(".content-grid");
 const moduleLink = document.querySelector(".module-link-card");
-const speakButtons = [...document.querySelectorAll(".speak-button")];
 const blindModeToggle = document.getElementById("blindModeToggle");
 const blindModeHint = document.getElementById("blindModeHint");
-const blindReadables = [...document.querySelectorAll(".blind-readable")];
 let blindModeActive = false;
 let activeSpeechKey = null;
 
@@ -90,11 +88,19 @@ function createCards() {
   topics.forEach((topic, index) => {
     const card = document.createElement("button");
     card.type = "button";
-    card.className = "topic-card";
+    card.className = "topic-card blind-readable";
     card.textContent = topic.cardTitle;
     card.dataset.index = index;
+    card.dataset.blindTarget = "topic-card";
     card.setAttribute("aria-label", `Zu ${topic.cardTitle} wechseln`);
-    card.addEventListener("click", () => {
+    card.addEventListener("click", (event) => {
+      if (blindModeActive) {
+        event.preventDefault();
+        event.stopPropagation();
+        speakRawText(topic.cardTitle, `blind-card-${index}`, card);
+        return;
+      }
+
       if (index !== activeIndex) {
         setActiveIndex(index);
       }
@@ -115,7 +121,7 @@ function renderCards() {
   const cards = [...document.querySelectorAll(".topic-card")];
   cards.forEach((card, index) => {
     const offset = index - activeIndex;
-    card.className = `topic-card ${getPositionClass(offset)}`;
+    card.className = `topic-card blind-readable ${getPositionClass(offset)}`;
     card.tabIndex = Math.abs(offset) <= 1 ? 0 : -1;
     card.setAttribute("aria-current", offset === 0 ? "true" : "false");
   });
@@ -199,9 +205,18 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-function getSpeakText(target) {
+function getSpeakText(target, element = null) {
   if (target === "banner") {
     return bannerTitle.textContent.trim();
+  }
+
+  if (target === "topic-card") {
+    const index = Number(element?.dataset.index ?? activeIndex);
+    return topics[index]?.cardTitle || "Thema";
+  }
+
+  if (target === "module-link") {
+    return "Hier geht es zum Modul";
   }
 
   if (target === "left") {
@@ -215,9 +230,12 @@ function supportsSpeech() {
   return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
 }
 
+function getBlindReadables() {
+  return [...document.querySelectorAll(".blind-readable")];
+}
+
 function clearSpeakingState() {
-  speakButtons.forEach((button) => button.classList.remove("is-speaking"));
-  blindReadables.forEach((element) => element.classList.remove("is-speaking"));
+  getBlindReadables().forEach((element) => element.classList.remove("is-speaking"));
   activeSpeechKey = null;
 }
 
@@ -230,10 +248,6 @@ function stopSpeech() {
 
 function speakRawText(text, key, visualElement = null) {
   if (!supportsSpeech()) {
-    speakButtons.forEach((button) => {
-      button.disabled = true;
-      button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
-    });
     if (blindModeHint) {
       blindModeHint.textContent = "Vorlesen wird von diesem Browser nicht unterstützt.";
       blindModeHint.hidden = false;
@@ -267,11 +281,6 @@ function speakRawText(text, key, visualElement = null) {
   window.speechSynthesis.speak(utterance);
 }
 
-function speakText(target, button = null) {
-  const text = getSpeakText(target);
-  const key = `manual-${target}`;
-  speakRawText(text, key, button);
-}
 
 function setBlindMode(enabled) {
   blindModeActive = enabled;
@@ -298,36 +307,31 @@ function setBlindMode(enabled) {
 function speakBlindElement(element) {
   if (!blindModeActive) return;
   const target = element.dataset.blindTarget;
-  const text = getSpeakText(target);
-  speakRawText(text, `blind-${target}-${activeIndex}`, element);
+  const text = getSpeakText(target, element);
+  const indexPart = target === "topic-card" ? element.dataset.index : activeIndex;
+  speakRawText(text, `blind-${target}-${indexPart}`, element);
 }
 
-speakButtons.forEach((button) => {
-  if (!supportsSpeech()) {
-    button.disabled = true;
-    button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
-  }
 
-  button.addEventListener("click", (event) => {
-    event.stopPropagation();
-    speakText(button.dataset.speakTarget, button);
-  });
+document.addEventListener("click", (event) => {
+  if (!blindModeActive) return;
+  const element = event.target.closest(".blind-readable");
+  if (!element) return;
+  event.preventDefault();
+  event.stopPropagation();
+  speakBlindElement(element);
 });
 
-blindReadables.forEach((element) => {
-  element.addEventListener("click", (event) => {
-    if (!blindModeActive) return;
-    if (event.target.closest(".speak-button, .module-link-card")) return;
-    speakBlindElement(element);
-  });
-
-  element.addEventListener("keydown", (event) => {
-    if (!blindModeActive) return;
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    speakBlindElement(element);
-  });
+document.addEventListener("keydown", (event) => {
+  if (!blindModeActive) return;
+  if (event.key !== "Enter" && event.key !== " ") return;
+  const element = event.target.closest(".blind-readable");
+  if (!element) return;
+  event.preventDefault();
+  speakBlindElement(element);
 });
+
+/* old handlers removed */
 
 if (blindModeToggle) {
   blindModeToggle.addEventListener("click", () => setBlindMode(!blindModeActive));
@@ -344,6 +348,14 @@ updateContent();
 if (moduleLink) {
   moduleLink.addEventListener("click", (event) => {
     if (moduleLink.hidden || !moduleLink.href) return;
+
+    if (blindModeActive) {
+      event.preventDefault();
+      event.stopPropagation();
+      speakBlindElement(moduleLink);
+      return;
+    }
+
     event.preventDefault();
     window.top.location.href = moduleLink.href;
   });
