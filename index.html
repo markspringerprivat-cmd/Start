@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kursübersicht – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=21" />
+  <link rel="stylesheet" href="style.css?v=22" />
 </head>
 <body>
   <main class="page-shell overview-shell">
@@ -18,85 +18,103 @@
 
     <div class="top-divider overview-divider" aria-hidden="true"></div>
 
-    <section class="course-block-grid flip-grid" aria-label="Kursblöcke">
-      <article class="flip-card" tabindex="0" role="button" aria-label="Karte Wahrnehmung umdrehen">
-        <div class="flip-card-inner">
-          <div class="course-block-card flip-card-face flip-card-front">
-            <span class="block-number">01</span>
-            <h2>Wahrnehmung</h2>
-            <p>
-              Beobachten, was in Unterrichtsgesprächen geschieht: Gesprächsverläufe, Beteiligung, Wartezeiten, Rückmeldungen und Steuerung bewusst erkennen.
-            </p>
-            <span class="block-link-text">Karte umdrehen <span aria-hidden="true">↻</span></span>
-          </div>
-          <div class="course-block-card flip-card-face flip-card-back">
-            <span class="block-number">01 · Modul</span>
-            <h2>Wahrnehmung</h2>
-            <p>
-              In diesem Modul geht es darum, Unterrichtsgespräche aufmerksam zu beobachten und zentrale Merkmale wie Redeanteile, Wartezeiten, Rückmeldungen und Gesprächsverläufe bewusst wahrzunehmen.
-            </p>
-            <a class="overview-module-link" href="wahrnehmung.html">Zur Modulübersicht <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
+    <section class="course-block-grid memory-grid" aria-label="Kursblöcke">
+      <article class="memory-card" tabindex="0" role="button" aria-pressed="false" aria-label="Karte Wahrnehmung umdrehen" data-card="wahrnehmung">
+        <div class="course-block-card memory-face" aria-live="polite"></div>
       </article>
 
-      <article class="flip-card is-featured" tabindex="0" role="button" aria-label="Karte Dekomposition umdrehen">
-        <div class="flip-card-inner">
-          <div class="course-block-card flip-card-face flip-card-front is-featured">
-            <span class="block-number">02</span>
-            <h2>Dekomposition</h2>
-            <p>
-              Unterrichtsgespräche in zentrale Bestandteile zerlegen: Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträge, Schüler*innenbeiträge, Ergebnissicherung und Gesprächsabschluss.
-            </p>
-            <span class="block-link-text">Karte umdrehen <span aria-hidden="true">↻</span></span>
-          </div>
-          <div class="course-block-card flip-card-face flip-card-back is-featured">
-            <span class="block-number">02 · Modul</span>
-            <h2>Dekomposition</h2>
-            <p>
-              In diesem Modul wird professionelle Gesprächsführung in einzelne Bausteine zerlegt. Dadurch wird sichtbar, welche Entscheidungen vor, während und nach einem Unterrichtsgespräch wichtig sind.
-            </p>
-            <a class="overview-module-link" href="dekomposition.html">Zur Modulübersicht <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
+      <article class="memory-card is-featured" tabindex="0" role="button" aria-pressed="false" aria-label="Karte Dekomposition umdrehen" data-card="dekomposition">
+        <div class="course-block-card memory-face is-featured" aria-live="polite"></div>
       </article>
 
-      <article class="flip-card" tabindex="0" role="button" aria-label="Karte Approximation umdrehen">
-        <div class="flip-card-inner">
-          <div class="course-block-card flip-card-face flip-card-front">
-            <span class="block-number">03</span>
-            <h2>Approximation</h2>
-            <p>
-              Gesprächsführung erproben: Handlungsoptionen entwickeln, Formulierungen ausprobieren und professionelle Gesprächssituationen vorbereiten.
-            </p>
-            <span class="block-link-text">Karte umdrehen <span aria-hidden="true">↻</span></span>
-          </div>
-          <div class="course-block-card flip-card-face flip-card-back">
-            <span class="block-number">03 · Modul</span>
-            <h2>Approximation</h2>
-            <p>
-              In diesem Modul werden Gesprächssituationen handelnd angenähert. Formulierungen, Reaktionen und Gesprächsstrategien können vorbereitet, ausprobiert und reflektiert werden.
-            </p>
-            <a class="overview-module-link" href="approximation.html">Zur Modulübersicht <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
+      <article class="memory-card" tabindex="0" role="button" aria-pressed="false" aria-label="Karte Approximation umdrehen" data-card="approximation">
+        <div class="course-block-card memory-face" aria-live="polite"></div>
       </article>
     </section>
   </main>
 
   <script>
-    document.querySelectorAll('.flip-card').forEach((card) => {
+    const overviewCards = {
+      wahrnehmung: {
+        front: {
+          number: "01 · Modul",
+          title: "Wahrnehmung",
+          text: "Unterrichtsgespräche aufmerksam beobachten und zentrale Merkmale wie Redeanteile, Wartezeiten, Rückmeldungen und Gesprächsverläufe bewusst wahrnehmen."
+        },
+        back: {
+          number: "01 · Übersicht",
+          title: "Worum geht es im Modul Wahrnehmung?",
+          text: "In diesem Modul steht das genaue Hinsehen im Mittelpunkt. Du lernst, Gesprächssituationen systematisch zu beobachten, relevante Merkmale zu erkennen und erste Deutungen bewusst von reiner Wahrnehmung zu trennen.",
+          href: "wahrnehmung.html"
+        }
+      },
+      dekomposition: {
+        front: {
+          number: "02 · Modul",
+          title: "Dekomposition",
+          text: "Unterrichtsgespräche in zentrale Bestandteile zerlegen: Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträge, Schüler*innenbeiträge, Ergebnissicherung und Gesprächsabschluss."
+        },
+        back: {
+          number: "02 · Übersicht",
+          title: "Worum geht es im Modul Dekomposition?",
+          text: "In diesem Modul wird Gesprächsführung in einzelne Bausteine zerlegt. Dadurch wird sichtbar, welche Entscheidungen vor, während und nach einem Unterrichtsgespräch wichtig sind und wie sie gezielt gestaltet werden können.",
+          href: "dekomposition.html"
+        }
+      },
+      approximation: {
+        front: {
+          number: "03 · Modul",
+          title: "Approximation",
+          text: "Gesprächsführung erproben: Handlungsoptionen entwickeln, Formulierungen ausprobieren und professionelle Gesprächssituationen vorbereiten."
+        },
+        back: {
+          number: "03 · Übersicht",
+          title: "Worum geht es im Modul Approximation?",
+          text: "In diesem Modul werden Gesprächssituationen handelnd angenähert. Du entwickelst Formulierungen, erprobst mögliche Reaktionen und reflektierst, wie Gesprächsstrategien in konkreten Unterrichtssituationen wirken können.",
+          href: "approximation.html"
+        }
+      }
+    };
+
+    function renderOverviewCard(card, side) {
+      const data = overviewCards[card.dataset.card][side];
+      const face = card.querySelector('.memory-face');
+      const link = side === 'back'
+        ? `<a class="overview-module-link" href="${data.href}">Zur Modulübersicht <span aria-hidden="true">→</span></a>`
+        : `<span class="block-link-text">Karte umdrehen <span aria-hidden="true">↻</span></span>`;
+
+      face.innerHTML = `
+        <span class="block-number">${data.number}</span>
+        <h2>${data.title}</h2>
+        <p>${data.text}</p>
+        ${link}
+      `;
+      card.dataset.side = side;
+      card.setAttribute('aria-pressed', side === 'back' ? 'true' : 'false');
+    }
+
+    function flipOverviewCard(card) {
+      if (card.classList.contains('is-turning')) return;
+      const nextSide = card.dataset.side === 'back' ? 'front' : 'back';
+      card.classList.add('is-turning');
+      card.classList.toggle('is-back-visible', nextSide === 'back');
+
+      window.setTimeout(() => renderOverviewCard(card, nextSide), 340);
+      window.setTimeout(() => card.classList.remove('is-turning'), 760);
+    }
+
+    document.querySelectorAll('.memory-card').forEach((card) => {
+      renderOverviewCard(card, 'front');
+
       card.addEventListener('click', (event) => {
         if (event.target.closest('a')) return;
-        card.classList.toggle('is-flipped');
-        card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
+        flipOverviewCard(card);
       });
 
       card.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          card.classList.toggle('is-flipped');
-          card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
+          flipOverviewCard(card);
         }
       });
     });
