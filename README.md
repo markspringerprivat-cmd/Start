@@ -24,3 +24,13 @@ Die Links zu CSS und JavaScript enthalten `?v=3`, damit Browser-Cache seltener d
 - Größerer sichtbarer Rad-Ausschnitt, damit Schatten nicht abgeschnitten werden
 - Feine schwarze Karten-Umrandung
 - Cache-Busting auf `?v=4` erhöht
+
+
+## Version 5
+
+- Der sichtbare Kreis / die Rad-Hilfslinie wurde vollständig entfernt.
+- Der gesamte Seitenhintergrund ist weiß.
+- Die Karten bleiben scharf; die Unschärfe wurde nicht mehr auf die kompletten kleinen Karten gelegt.
+- Die äußeren Kanten der kleinen Karten bekommen nur eine dezente weiße Ausblendung.
+- Der Rad-Ausschnitt hat mehr Höhe, damit Schatten nicht abgeschnitten werden.
+- CSS und JavaScript sind mit `?v=5` eingebunden, damit GitHub Pages weniger alte Cache-Dateien zeigt.
