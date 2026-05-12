@@ -82,7 +82,7 @@ p, h1, h2 { margin-top: 0; }
     linear-gradient(135deg, #ffffff 0%, #fffefb 54%, #ffffff 100%);
   background-size: 36px 36px, auto;
   box-shadow: var(--lift-shadow);
-  padding: 46px 48px;
+  padding: 52px 58px;
   overflow: visible;
 }
 
@@ -107,20 +107,28 @@ p, h1, h2 { margin-top: 0; }
 .course-steps {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
 }
 
-.course-steps span {
+.course-step {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
-  padding: 8px 14px;
-  border: 1px solid rgba(47, 95, 143, 0.22);
-  background: rgba(232, 242, 251, 0.72);
   color: var(--accent-dark);
-  font-weight: 760;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.08rem, 1.24vw, 1.28rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.course-step-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(47, 95, 143, 0.88);
+  font-size: 1.55rem;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 .overview-divider { margin-top: 42px; }
@@ -128,8 +136,8 @@ p, h1, h2 { margin-top: 0; }
 .course-block-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  padding: 14px 8px 80px;
+  gap: 48px;
+  padding: 18px 8px 80px;
 }
 
 .course-block-card {
@@ -290,16 +298,6 @@ p, h1, h2 { margin-top: 0; }
   will-change: transform, opacity, width, height;
 }
 
-.topic-card::after {
-  content: "";
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 10px;
-  height: 3px;
-  background: transparent;
-  transition: background var(--quick);
-}
 
 .topic-card.is-active {
   width: min(520px, 45vw);
@@ -311,8 +309,6 @@ p, h1, h2 { margin-top: 0; }
   border-color: var(--accent);
   box-shadow: var(--blue-shadow);
 }
-
-.topic-card.is-active::after { background: rgba(47, 95, 143, 0.72); }
 
 .topic-card.is-active:hover,
 .topic-card.is-active:focus-visible { transform: translate(-50%, -50%) scale(1.016); }
@@ -712,4 +708,11 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   .content-grid { grid-template-columns: 1fr; gap: 30px; }
   .vertical-divider { width: 100%; height: 2px; min-height: 2px; }
   .blind-mode-row { justify-content: flex-start; align-items: flex-start; flex-direction: column; gap: 8px; }
+}
+
+
+@media (max-width: 900px) {
+  .course-steps { gap: 12px; }
+  .course-step { font-size: 1rem; }
+  .course-step-arrow { font-size: 1.2rem; }
 }
