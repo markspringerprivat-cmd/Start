@@ -1388,3 +1388,96 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
 #progressPercent {
   display: none !important;
 }
+
+
+/* v39: Suche entfernt, Blindenmodus links, zuletzt besucht optional rechts, Top-Kacheln wieder mit deutlichem Hover */
+.module-search,
+.module-search input,
+.module-search button,
+.search-results {
+  display: none !important;
+}
+
+.blind-mode-row {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 12px;
+  margin: 0 0 2mm !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.blind-mode-toggle {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.blind-search-group {
+  grid-column: 3;
+  justify-self: end;
+  width: auto;
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.last-visited-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  height: 42px;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.last-visited-button[hidden] { display: none !important; }
+
+.blind-mode-hint {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+.topic-card.is-active:hover,
+.topic-card.is-active:focus-visible {
+  transform: translate(-50%, -50%) scale(1.03);
+  box-shadow: 0 22px 42px rgba(17, 24, 39, 0.14), 0 7px 18px rgba(17, 24, 39, 0.08);
+  border-color: rgba(47, 95, 143, 0.9);
+}
+
+.topic-card.is-left:hover,
+.topic-card.is-left:focus-visible {
+  transform: translate(calc(-50% - 455px), -50%) scale(1.03);
+  box-shadow: 0 16px 30px rgba(17, 24, 39, 0.11), 0 5px 12px rgba(17, 24, 39, 0.06);
+  border-color: rgba(47, 95, 143, 0.78);
+  filter: blur(0.6px);
+}
+
+.topic-card.is-right:hover,
+.topic-card.is-right:focus-visible {
+  transform: translate(calc(-50% + 455px), -50%) scale(1.03);
+  box-shadow: 0 16px 30px rgba(17, 24, 39, 0.11), 0 5px 12px rgba(17, 24, 39, 0.06);
+  border-color: rgba(47, 95, 143, 0.78);
+  filter: blur(0.6px);
+}
+
+@media (max-width: 900px) {
+  .blind-mode-row {
+    grid-template-columns: 1fr;
+  }
+  .blind-mode-toggle,
+  .blind-search-group,
+  .blind-mode-hint {
+    grid-column: 1;
+    justify-self: stretch;
+  }
+  .blind-search-group { justify-self: stretch; }
+  .last-visited-button { width: 100%; }
+}
