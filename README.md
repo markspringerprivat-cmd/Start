@@ -1,24 +1,18 @@
-# Gesprächsführung Layout v9
+# Gesprächsführung Layout v10
 
 Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
 ## Dateien
 
-- `index.html` – Seitenstruktur
-- `style.css` – Layout, Kacheln, Banner und Animationen
-- `script.js` – lineare Navigation und dynamischer Inhaltswechsel
+- `index.html`
+- `style.css`
+- `script.js`
 
-## Änderungen in v9
+## Änderungen in v10
 
-- breiteres Gesamtlayout
-- eckigere Kacheln
-- größere aktive Mittel-Kachel
-- mehr Abstand zwischen den Kacheln
-- flüssigere Gleitbewegung beim Wechsel
-- dezenterer Rand-Fade an den kleinen Kacheln
-- längere Beispieltexte
-- mittlere Trennlinie orientiert sich an der Textlänge
-- Banner bleibt immer gleich groß
-- Bannerschrift passt sich dynamisch an längere Überschriften an
-- dezentes weißes Muster im Banner-Hintergrund
-- Cache-Version in `index.html`: `?v=9`
+- Dezentes Muster im Banner-Hintergrund ergänzt
+- Mehr Abstand zwischen Themenkacheln und erster Trennlinie
+- Schatten der oberen Karten, des Banners und der Textkacheln modernisiert
+- Textbereiche als leichte, fliegende Kacheln mit feinem Rahmen gestaltet
+- Schatten werden nicht abgeschnitten
+- Cache-Busting auf `?v=10` gesetzt
