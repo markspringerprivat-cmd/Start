@@ -1,84 +1,71 @@
 const topics = [
-  {
-    title: "Thema 1",
-    kicker: "Modul",
-  },
-  {
-    title: "Thema 2",
-    kicker: "Modul",
-  },
-  {
-    title: "Thema 3",
-    kicker: "Modul",
-  },
-  {
-    title: "Thema 4",
-    kicker: "Modul",
-  },
-  {
-    title: "Thema 5",
-    kicker: "Modul",
-  },
-  {
-    title: "Thema 6",
-    kicker: "Modul",
-  },
+  "Thema 1",
+  "Thema 2",
+  "Thema 3",
+  "Thema 4",
+  "Thema 5",
+  "Thema 6"
 ];
 
-const mainCard = document.querySelector("#mainCard");
-const previewCard = document.querySelector("#previewCard");
+const cardsTrack = document.querySelector("#cardsTrack");
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
-const stage = document.querySelector(".topic-stage");
 
-let currentIndex = 0;
+let activeIndex = 0;
 let isAnimating = false;
 
-function setCardContent(card, topic, isPreview = false) {
-  const kicker = card.querySelector(".topic-kicker");
-  const heading = card.querySelector(isPreview ? "h2" : "h1");
+const cards = topics.map((topic, index) => {
+  const card = document.createElement("div");
+  card.className = "topic-card";
+  card.dataset.index = String(index);
+  card.innerHTML = `<strong>${topic}</strong>`;
+  cardsTrack.appendChild(card);
+  return card;
+});
 
-  kicker.textContent = isPreview ? "Nächstes" : topic.kicker;
-  heading.textContent = topic.title;
+function getCardClass(index) {
+  const diff = index - activeIndex;
+
+  if (diff === 0) return "is-center";
+  if (diff === -1) return "is-left";
+  if (diff === 1) return "is-right";
+  if (diff < -1) return "is-hidden-left";
+  if (diff > 1) return "is-hidden-right";
+
+  return "is-gone";
 }
 
 function render() {
-  const current = topics[currentIndex];
-  const next = topics[currentIndex + 1];
+  cards.forEach((card, index) => {
+    card.className = `topic-card ${getCardClass(index)}`;
+  });
 
-  setCardContent(mainCard, current, false);
-
-  if (next) {
-    setCardContent(previewCard, next, true);
-    previewCard.style.visibility = "visible";
-  } else {
-    previewCard.style.visibility = "hidden";
-  }
-
-  prevBtn.disabled = currentIndex === 0 || isAnimating;
-  nextBtn.disabled = currentIndex === topics.length - 1 || isAnimating;
+  prevBtn.disabled = activeIndex === 0 || isAnimating;
+  nextBtn.disabled = activeIndex === topics.length - 1 || isAnimating;
 }
 
 function move(direction) {
   if (isAnimating) return;
 
-  const nextIndex = currentIndex + direction;
+  const nextIndex = activeIndex + direction;
   if (nextIndex < 0 || nextIndex >= topics.length) return;
 
   isAnimating = true;
+  activeIndex = nextIndex;
   render();
 
-  stage.classList.add(direction > 0 ? "slide-next" : "slide-prev");
-
   window.setTimeout(() => {
-    currentIndex = nextIndex;
-    stage.classList.remove("slide-next", "slide-prev");
     isAnimating = false;
     render();
-  }, 470);
+  }, 540);
 }
 
 prevBtn.addEventListener("click", () => move(-1));
 nextBtn.addEventListener("click", () => move(1));
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") move(-1);
+  if (event.key === "ArrowRight") move(1);
+});
 
 render();

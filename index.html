@@ -8,69 +8,61 @@
 </head>
 <body>
   <main class="page-shell">
-    <section class="topic-switcher" aria-label="Themenauswahl">
-      <button class="nav-arrow nav-arrow--left" id="prevBtn" type="button" aria-label="Vorheriges Thema">
-        <span aria-hidden="true">‹</span>
+    <section class="topic-navigation" aria-label="Themen-Navigation">
+      <button class="arrow-button arrow-left" id="prevBtn" type="button" aria-label="Vorheriges Thema">
+        <span aria-hidden="true">&#10094;</span>
       </button>
 
-      <div class="topic-stage" aria-live="polite">
-        <article class="topic-card topic-card--main" id="mainCard">
-          <span class="topic-kicker">Modul</span>
-          <h1>Thema 1</h1>
-        </article>
-
-        <article class="topic-card topic-card--preview" id="previewCard" aria-hidden="true">
-          <span class="topic-kicker">Nächstes</span>
-          <h2>Thema 2</h2>
-        </article>
+      <div class="slider-window">
+        <div class="cards-track" id="cardsTrack"></div>
       </div>
 
-      <button class="nav-arrow nav-arrow--right" id="nextBtn" type="button" aria-label="Nächstes Thema">
-        <span aria-hidden="true">›</span>
+      <button class="arrow-button arrow-right" id="nextBtn" type="button" aria-label="Nächstes Thema">
+        <span aria-hidden="true">&#10095;</span>
       </button>
     </section>
 
-    <div class="section-line" aria-hidden="true"></div>
+    <div class="horizontal-divider" aria-hidden="true"></div>
 
-    <section class="banner" aria-label="Banner Dekomposition">
-      <div class="banner-pattern" aria-hidden="true"></div>
+    <section class="hero-banner" aria-label="Banner">
+      <div class="banner-pattern"></div>
       <div class="banner-content">
-        <p class="banner-eyebrow">Informatik-Modul</p>
-        <h2>Dekomposition</h2>
-        <p>Komplexe Probleme in kleinere, verständliche Teilprobleme zerlegen.</p>
+        <p class="banner-kicker">Modul</p>
+        <h1>Dekomposition</h1>
+        <p>Komplexe Aufgaben in kleinere, überschaubare Teilprobleme zerlegen.</p>
       </div>
     </section>
 
-    <section class="content-grid" aria-label="Inhalt zur Dekomposition">
-      <article class="text-panel">
-        <p class="small-label">Überblick</p>
+    <section class="content-area" aria-label="Inhalt zu Dekomposition">
+      <article class="text-column">
         <h2>Was bedeutet Dekomposition?</h2>
         <p>
-          Dekomposition bedeutet, eine große oder unübersichtliche Aufgabe in kleinere Schritte zu zerlegen.
-          Dadurch wird ein Problem leichter verständlich, planbar und lösbar. Statt alles auf einmal zu betrachten,
-          analysiert man einzelne Bestandteile und bearbeitet sie nacheinander.
+          Dekomposition beschreibt das Zerlegen eines größeren Problems in kleinere Teilaufgaben.
+          Dadurch wird ein komplexer Ablauf verständlicher, planbarer und leichter umsetzbar.
         </p>
         <p>
-          Ein Beispiel: Wenn eine App entwickelt wird, kann man das Projekt in Bereiche wie Benutzeroberfläche,
-          Datenspeicherung, Navigation und Auswertung aufteilen. Jedes Teilproblem kann anschließend gezielt
-          gestaltet, getestet und verbessert werden.
+          Statt ein Problem als Ganzes lösen zu wollen, betrachtet man einzelne Schritte: Was muss zuerst
+          passieren? Welche Teilbereiche gehören zusammen? Welche Aufgabe kann unabhängig bearbeitet werden?
+        </p>
+        <p>
+          In der Informatik hilft Dekomposition zum Beispiel dabei, Programme übersichtlich zu strukturieren,
+          Funktionen sinnvoll aufzuteilen und Fehler leichter zu finden.
         </p>
       </article>
 
       <div class="vertical-divider" aria-hidden="true"></div>
 
-      <article class="text-panel">
-        <p class="small-label">Lernziele</p>
+      <article class="text-column learning-column">
         <h2>Was lernst du in diesem Modul?</h2>
         <p>
-          In diesem Modul lernst du, komplexe Aufgaben systematisch zu strukturieren. Du erkennst, welche
-          Teilprobleme in einer Aufgabe stecken, formulierst passende Arbeitsschritte und ordnest diese logisch an.
+          Du lernst, Aufgaben systematisch zu analysieren und in einzelne Bestandteile zu zerlegen.
+          Dabei erkennst du, welche Teilprobleme wichtig sind und wie sie miteinander zusammenhängen.
         </p>
         <ul>
-          <li>Probleme in kleinere Einheiten zerlegen</li>
-          <li>Teilaufgaben sinnvoll beschreiben</li>
-          <li>Abhängigkeiten zwischen Schritten erkennen</li>
-          <li>eine klare Lösungsstruktur entwickeln</li>
+          <li>komplexe Aufgaben strukturieren</li>
+          <li>Teilprobleme erkennen und beschreiben</li>
+          <li>Arbeitsschritte logisch ordnen</li>
+          <li>Lösungen übersichtlicher planen</li>
         </ul>
       </article>
     </section>
