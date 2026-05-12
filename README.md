@@ -14,3 +14,6 @@ Statischer Web-Projektordner für GitHub Pages oder eine Moodle-Einbettung.
 ## Nutzung
 
 Alle Dateien in ein GitHub-Repository hochladen. GitHub Pages auf den Branch und Ordner einstellen, in dem `index.html` liegt.
+
+
+Version 20: Blindenmodus-Button direkt oberhalb der Trennlinie platziert; Abstand zwischen Themenkacheln und Trennlinie reduziert.
