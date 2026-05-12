@@ -171,3 +171,12 @@ document.addEventListener("keydown", (event) => {
 createCards();
 renderCards();
 updateContent();
+const moduleLink = document.querySelector(".module-link-card");
+
+if (moduleLink) {
+  moduleLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.top.location.href = moduleLink.href;
+  });
+}
+
