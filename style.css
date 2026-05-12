@@ -585,3 +585,16 @@ body.blind-mode-active .module-link-card.blind-readable.is-speaking {
     8px 16px 30px rgba(33, 82, 118, 0.13),
     0 4px 10px rgba(33, 82, 118, 0.07);
 }
+
+/* v18: alte Lautsprecher-Buttons endgültig ausblenden, falls ältere HTML-Fragmente oder Browser-Cache noch Klassen lädt */
+.speak-button,
+.speaker-button,
+.audio-button,
+.listen-button,
+.read-aloud-button,
+button[data-speak-target],
+button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

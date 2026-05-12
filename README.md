@@ -1,6 +1,6 @@
-# Gesprächsführung – Layout v17
+# Gesprächsführung – Modulübersicht
 
-Statische HTML/CSS/JavaScript-Version für GitHub Pages oder Einbettung per iFrame in Moodle.
+Statische HTML/CSS/JavaScript-Seite für GitHub Pages oder Einbettung in Moodle.
 
 ## Dateien
 
@@ -8,22 +8,16 @@ Statische HTML/CSS/JavaScript-Version für GitHub Pages oder Einbettung per iFra
 - `style.css`
 - `script.js`
 
-## Änderungen in v17
+## Aktuelle Version
 
-- Blindenmodus oberhalb der oberen Trennlinie ergänzt.
-- Beim Einschalten wird angesagt: „Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.“
-- Im Blindenmodus erhalten Banner und Textkacheln beim Hover/Fokus einen dicken neonblauen Rahmen.
-- Klick auf den Banner liest nur den aktuellen Modultitel vor.
-- Klick auf eine Textkachel liest den jeweiligen Textblock vor.
-- Ein erneuter Klick auf dieselbe Fläche bricht die laufende Sprachausgabe ab.
-- Die vorhandenen Lautsprecher-Buttons bleiben zusätzlich nutzbar.
+Version: v18
 
-## Moodle-Link-Verhalten
+## Änderungen in v18
 
-Die Modul-Links verwenden `target="_top"` plus JavaScript-Fallback, damit die Zielseite den gesamten aktiven Tab ersetzt und nicht im iFrame geöffnet wird.
+- Alte Lautsprecher-Buttons wurden vollständig entfernt bzw. zusätzlich per CSS sicher ausgeblendet.
+- Die Vorlesefunktion läuft nur noch über den Blindenmodus.
+- Cache-Version wurde auf `?v=18` gesetzt.
 
+## Nutzung
 
-## Version 17
-- Blindenmodus auf obere Themenkacheln und Modulbutton erweitert.
-- Lautsprecher-Buttons in den Textboxen entfernt.
-- Klick im Blindenmodus liest die jeweilige Kachel / den Banner / Textblock / Modulbutton vor; erneuter Klick stoppt die Ausgabe.
+Alle Dateien in ein GitHub-Repository hochladen und GitHub Pages aktivieren.
