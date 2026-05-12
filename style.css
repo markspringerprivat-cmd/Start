@@ -1261,3 +1261,130 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
     width: 100%;
   }
 }
+
+
+/* v37: Blindenmodus links, Suche rechts, ohne weißen Balken darunter. */
+.blind-mode-row {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 14px;
+  min-height: 42px;
+  margin: 0 0 2mm !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.blind-mode-toggle {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.blind-search-group {
+  grid-column: 3;
+  justify-self: end;
+  width: min(420px, 38vw);
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.blind-search-group .module-search,
+.module-search {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto;
+  gap: 8px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.module-search::before,
+.module-search::after,
+.blind-search-group::before,
+.blind-search-group::after {
+  content: none !important;
+  display: none !important;
+}
+
+.module-search input {
+  width: 100%;
+  max-width: 300px;
+  min-width: 180px;
+  height: 42px;
+  min-height: 42px;
+  background: #ffffff;
+  margin: 0 !important;
+}
+
+.module-search button {
+  height: 42px;
+  min-height: 42px;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+
+.search-results {
+  top: calc(100% + 7px);
+  background: #ffffff;
+}
+
+.last-visited-button {
+  display: none !important;
+}
+
+.blind-mode-hint {
+  grid-column: 1 / -1;
+  justify-self: end;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .blind-mode-row {
+    grid-template-columns: 1fr;
+  }
+
+  .blind-mode-toggle,
+  .blind-search-group,
+  .blind-mode-hint {
+    grid-column: 1;
+    justify-self: stretch;
+  }
+
+  .blind-search-group {
+    width: 100%;
+  }
+
+  .blind-search-group .module-search,
+  .module-search {
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .module-search input {
+    max-width: none;
+  }
+}
+
+
+/* v38: Fortschrittsbalken vollständig entfernt. */
+.module-tools,
+.progress-area,
+.progress-meta,
+.progress-track,
+.progress-fill,
+#progressText,
+#progressPercent {
+  display: none !important;
+}
