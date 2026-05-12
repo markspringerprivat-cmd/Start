@@ -3,57 +3,57 @@ const topics = [
     cardTitle: "Hauptseite",
     bannerTitle: "Hauptseite",
     leftTitle: "Willkommen auf der Hauptseite",
-    leftText: "Diese Hauptseite gibt dir einen Überblick über die Module zur Gesprächsführung. Du kannst oben linear durch die einzelnen Themen wechseln und die passenden Inhalte darunter lesen.",
+    leftText: "Diese Hauptseite dient als Einstieg in die Module zur Gesprächsführung. Sie zeigt die einzelnen Bausteine als lineare Abfolge: von der Vorbereitung der Gesprächsumgebung über die Eröffnung und Steuerung des Gesprächs bis hin zur Sicherung der Ergebnisse und dem Abschluss. Über die Kacheln im oberen Bereich kannst du die Module nacheinander durchgehen. Der jeweils ausgewählte Bereich wird unten mit einer kurzen fachlichen Einordnung und konkreten Lernzielen angezeigt.",
     rightTitle: "Was findest du hier?",
-    rightText: "Du findest eine strukturierte Übersicht über Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträge, Schülerbeiträge, Ergebnissicherung und Gesprächsabschluss."
+    rightText: "Du erhältst eine strukturierte Übersicht über zentrale Schritte professioneller Gesprächsführung. Die Seite kann als Startpunkt genutzt werden, um Inhalte zu ordnen, Lernstände zu vergleichen oder gezielt einzelne Gesprächsphasen zu wiederholen. Besonders wichtig ist dabei der Zusammenhang zwischen Planung, Durchführung und Reflexion: Ein gutes Gespräch entsteht nicht nur im Moment selbst, sondern durch bewusst vorbereitete Bedingungen und klare Gesprächsführung."
   },
   {
     cardTitle: "Gesprächsumgebung",
     bannerTitle: "Vorbereitung der Gesprächsumgebung",
     leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
-    leftText: "Eine gute Gesprächsumgebung schafft Orientierung, Ruhe und Sicherheit. Dazu gehören eine klare Sitzordnung, passende Materialien, ein störungsarmer Raum und transparente Gesprächsregeln.",
+    leftText: "Die Vorbereitung der Gesprächsumgebung beschreibt alle Bedingungen, die vor einem Gespräch geschaffen werden, damit Beteiligte konzentriert, sicher und respektvoll miteinander sprechen können. Dazu gehören ein passender Raum, eine klare Sitzordnung, gut sichtbare Materialien, eine störungsarme Atmosphäre und transparente Erwartungen an das Gespräch. Auch scheinbar kleine Details wie Blickkontakt, Abstand, Beleuchtung oder die Verfügbarkeit von Notizmaterial beeinflussen, ob ein Gespräch ruhig und zielgerichtet verlaufen kann.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du räumliche, soziale und organisatorische Bedingungen so vorbereitest, dass Gespräche konzentriert, respektvoll und zielgerichtet stattfinden können."
+    rightText: "Du lernst, Gesprächssituationen nicht dem Zufall zu überlassen, sondern bewusst vorzubereiten. Dazu gehört, räumliche und organisatorische Rahmenbedingungen zu prüfen, Regeln sichtbar zu machen und Gesprächsanlässe so zu strukturieren, dass alle Beteiligten Orientierung erhalten. Außerdem lernst du einzuschätzen, welche Umgebung eher öffnend, unterstützend oder hemmend wirkt und wie du durch kleine Anpassungen mehr Beteiligung und Konzentration ermöglichen kannst."
   },
   {
     cardTitle: "Gesprächseröffnung",
     bannerTitle: "Gesprächseröffnung",
     leftTitle: "Was bedeutet Gesprächseröffnung?",
-    leftText: "Die Gesprächseröffnung legt den Rahmen für das folgende Gespräch. Sie klärt Anlass, Ziel, Ablauf und Rollen, damit alle Beteiligten wissen, worum es geht.",
+    leftText: "Die Gesprächseröffnung ist der bewusste Einstieg in ein Gespräch. Sie klärt, warum das Gespräch stattfindet, welches Ziel verfolgt wird und wie die nächsten Schritte aussehen. Eine gute Eröffnung schafft Sicherheit, weil sie den Beteiligten Orientierung gibt und deutlich macht, welche Rolle sie im Gespräch einnehmen. Gleichzeitig entscheidet sich hier oft, ob eine offene Gesprächsatmosphäre entsteht oder ob Unsicherheit, Zurückhaltung und Missverständnisse dominieren.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du Gespräche klar, wertschätzend und strukturiert beginnst, Vorwissen aktivierst und einen gemeinsamen Fokus herstellst."
+    rightText: "Du lernst, Gespräche klar, wertschätzend und strukturiert zu beginnen. Dazu gehört, den Anlass knapp zu benennen, ein gemeinsames Ziel zu formulieren, Vorwissen oder Erwartungen zu aktivieren und einen nachvollziehbaren Gesprächsrahmen herzustellen. Außerdem übst du, Einstiegsfragen so zu stellen, dass sie Beteiligung ermöglichen und nicht direkt einengen. Ziel ist ein Gesprächsbeginn, der Orientierung schafft und dennoch Raum für eigene Beiträge lässt."
   },
   {
     cardTitle: "Gesprächsbeiträge",
     bannerTitle: "Anregung von Gesprächsbeiträgen",
     leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
-    leftText: "Gesprächsbeiträge entstehen nicht zufällig. Sie können durch offene Fragen, Denkanstöße, Wartezeit, Impulse und eine wertschätzende Gesprächsatmosphäre gefördert werden.",
+    leftText: "Die Anregung von Gesprächsbeiträgen umfasst alle Impulse, durch die Beteiligte zum Denken, Formulieren und Weiterführen eigener Ideen angeregt werden. Beiträge entstehen nicht automatisch, sondern hängen stark davon ab, welche Fragen gestellt werden, wie viel Wartezeit gegeben wird und wie wertschätzend auf erste Antworten reagiert wird. Offene Fragen, kurze Denkpausen, konkrete Beispiele oder gezielte Anschlussfragen können helfen, unterschiedliche Perspektiven sichtbar zu machen.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du Beteiligung aktivierst, unterschiedliche Perspektiven einbindest und Beiträge so anregst, dass ein lebendiges und fachlich tragfähiges Gespräch entsteht."
+    rightText: "Du lernst, Beteiligung aktiv zu fördern, ohne das Gespräch zu stark zu lenken. Dabei geht es um geeignete Frageformen, produktive Impulse, den Umgang mit Stille und die bewusste Verteilung von Redeanteilen. Außerdem lernst du, Beiträge nicht nur abzufragen, sondern weiterzuentwickeln: durch Nachfragen, Zusammenfassen, Gegenüberstellen und Verbinden. So kann aus einzelnen Antworten ein gemeinsamer Gesprächsprozess entstehen."
   },
   {
     cardTitle: "Schülerbeiträge",
     bannerTitle: "Umgang mit Schülerbeiträgen",
     leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
-    leftText: "Schülerbeiträge enthalten oft fachliche Ansätze, Fragen, Unsicherheiten oder Missverständnisse. Ein professioneller Umgang nimmt Beiträge ernst und nutzt sie für den weiteren Lernprozess.",
+    leftText: "Der Umgang mit Schülerbeiträgen beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Schülerbeiträge können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du Beiträge aufgreifst, präzisierst, weiterführst und auch fehlerhafte Aussagen konstruktiv in das Gespräch integrierst."
+    rightText: "Du lernst, Beiträge aufmerksam aufzunehmen, sprachlich zu klären und fachlich weiterzuführen. Dazu gehören Techniken wie Paraphrasieren, Nachfragen, Spiegeln, Strukturieren und behutsames Korrigieren. Du lernst außerdem, auch fehlerhafte oder unfertige Beiträge konstruktiv einzubinden, damit Lernende nicht bloß korrigiert werden, sondern ihre Gedanken weiterentwickeln können. Ziel ist ein Gespräch, in dem Beiträge ernst genommen und produktiv genutzt werden."
   },
   {
     cardTitle: "Ergebnissicherung",
     bannerTitle: "Sicherung der (Zwischen)Ergebnisse",
     leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
-    leftText: "Ergebnissicherung macht sichtbar, was im Gespräch erarbeitet wurde. Zwischenstände helfen, Orientierung zu behalten und Ergebnisse schrittweise aufzubauen.",
+    leftText: "Die Sicherung von Zwischen- und Endergebnissen macht sichtbar, was im Verlauf eines Gesprächs erarbeitet wurde. Ohne Sicherung können wichtige Gedanken verloren gehen oder unverbunden nebeneinanderstehen. Zwischenergebnisse helfen, Orientierung zu behalten, den aktuellen Stand zu prüfen und neue Gesprächsschritte darauf aufzubauen. Dabei kann Sicherung mündlich, schriftlich, visuell oder digital erfolgen, etwa durch Stichpunkte, Tafelbilder, Cluster, kurze Zusammenfassungen oder gemeinsame Formulierungen.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du zentrale Aussagen bündelst, Zwischenergebnisse festhältst und Gesprächsergebnisse so sicherst, dass sie für die weitere Arbeit nutzbar bleiben."
+    rightText: "Du lernst, Gesprächsergebnisse gezielt zu bündeln und verständlich festzuhalten. Dabei übst du, Wesentliches von Nebensächlichem zu unterscheiden, Zwischenstände sprachlich präzise zu formulieren und Ergebnisse so zu sichern, dass sie für die weitere Arbeit nutzbar bleiben. Außerdem lernst du, Sicherung nicht nur am Ende einzusetzen, sondern auch während des Gesprächs als Orientierungshilfe zu verwenden."
   },
   {
     cardTitle: "Gesprächsabschluss",
     bannerTitle: "Beenden eines Gesprächs",
     leftTitle: "Was bedeutet Beenden eines Gesprächs?",
-    leftText: "Ein Gesprächsabschluss fasst Wesentliches zusammen, klärt offene Punkte und schafft einen bewussten Übergang zum nächsten Schritt oder zur weiteren Arbeit.",
+    leftText: "Das Beenden eines Gesprächs ist mehr als ein formaler Schlusspunkt. Ein guter Abschluss fasst zentrale Ergebnisse zusammen, klärt offene Fragen und schafft einen Übergang zur weiteren Arbeit. Dadurch erhalten die Beteiligten das Gefühl, dass das Gespräch zu einem nachvollziehbaren Ergebnis geführt hat. Ein fehlender oder zu abrupter Abschluss kann dagegen dazu führen, dass Ergebnisse unklar bleiben oder die Bedeutung des Gesprächs nicht deutlich wird.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, wie du Gespräche klar abschließt, Ergebnisse würdigst, nächste Schritte formulierst und einen runden Abschluss für alle Beteiligten herstellst."
+    rightText: "Du lernst, Gespräche bewusst abzuschließen, Ergebnisse zu würdigen und nächste Schritte klar zu benennen. Dazu gehört, wichtige Punkte zusammenzufassen, Verantwortlichkeiten oder Anschlussaufgaben zu klären und Raum für letzte Rückfragen zu geben. Außerdem lernst du, den Abschluss passend zur Gesprächssituation zu gestalten: kurz und bündig, reflektierend, motivierend oder mit einem klaren Arbeitsauftrag für die nächste Phase."
   }
 ];
 
@@ -110,6 +110,21 @@ function renderCards() {
   nextButton.disabled = activeIndex === topics.length - 1 || isAnimating;
 }
 
+function setBannerTitleSize(title) {
+  const length = title.length;
+  let size = "clamp(2.1rem, 4.8vw, 4.75rem)";
+
+  if (length > 38) {
+    size = "clamp(1.45rem, 3.15vw, 3.35rem)";
+  } else if (length > 30) {
+    size = "clamp(1.65rem, 3.6vw, 3.8rem)";
+  } else if (length > 23) {
+    size = "clamp(1.85rem, 4.05vw, 4.25rem)";
+  }
+
+  document.documentElement.style.setProperty("--banner-title-size", size);
+}
+
 function updateContent() {
   const topic = topics[activeIndex];
 
@@ -118,6 +133,7 @@ function updateContent() {
   leftText.textContent = topic.leftText;
   rightTitle.textContent = topic.rightTitle;
   rightText.textContent = topic.rightText;
+  setBannerTitleSize(topic.bannerTitle);
 
   banner.classList.remove("fade-change");
   contentGrid.classList.remove("fade-change");
@@ -141,7 +157,7 @@ function setActiveIndex(newIndex) {
   window.setTimeout(() => {
     isAnimating = false;
     renderCards();
-  }, 430);
+  }, 700);
 }
 
 prevButton.addEventListener("click", () => setActiveIndex(activeIndex - 1));

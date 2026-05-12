@@ -1,17 +1,24 @@
-# Gesprächsführung Layout
+# Gesprächsführung Layout v9
 
 Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
 ## Dateien
 
 - `index.html` – Seitenstruktur
-- `style.css` – Layout, Kacheln, Banner und Inhaltsbereich
-- `script.js` – lineare Themennavigation und wechselnde Inhalte
+- `style.css` – Layout, Kacheln, Banner und Animationen
+- `script.js` – lineare Navigation und dynamischer Inhaltswechsel
 
-## Nutzung mit GitHub Pages
+## Änderungen in v9
 
-1. Dateien in ein GitHub-Repository hochladen.
-2. Unter `Settings > Pages` den passenden Branch auswählen, z. B. `main` und `/root`.
-3. Seite öffnen.
-
-Die CSS- und JS-Dateien sind in `index.html` mit `?v=8` eingebunden, damit Browser-Cache weniger Probleme macht.
+- breiteres Gesamtlayout
+- eckigere Kacheln
+- größere aktive Mittel-Kachel
+- mehr Abstand zwischen den Kacheln
+- flüssigere Gleitbewegung beim Wechsel
+- dezenterer Rand-Fade an den kleinen Kacheln
+- längere Beispieltexte
+- mittlere Trennlinie orientiert sich an der Textlänge
+- Banner bleibt immer gleich groß
+- Bannerschrift passt sich dynamisch an längere Überschriften an
+- dezentes weißes Muster im Banner-Hintergrund
+- Cache-Version in `index.html`: `?v=9`
