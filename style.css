@@ -104,7 +104,12 @@ p, h1, h2 { margin-top: 0; }
   margin-bottom: 0;
 }
 
-.top-divider.overview-divider { margin: 56px 0 56px; }
+.top-divider.overview-divider { margin: 40px 0 56px; }
+
+.overview-blind-mode-row {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
 
 .course-block-grid {
   display: grid;
@@ -438,7 +443,10 @@ p, h1, h2 { margin-top: 0; }
 .arrow-button:focus-visible,
 .module-link-card:focus-visible,
 .content-column:focus-visible,
-.banner:focus-visible {
+.banner:focus-visible,
+.overview-hero:focus-visible,
+.course-block-card:focus-visible,
+.course-topic-link:focus-visible {
   outline: 2px solid rgba(47, 95, 143, 0.72);
   outline-offset: 4px;
 }

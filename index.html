@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kursübersicht – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=34" />
+  <link rel="stylesheet" href="style.css?v=35" />
 </head>
 <body id="top">
   <main class="page-shell overview-shell">
-    <section class="overview-hero uniform-hover" aria-labelledby="courseTitle">
+    <section class="overview-hero blind-readable uniform-hover" aria-labelledby="courseTitle" data-blind-target="overview-hero" tabindex="0" role="button" aria-label="Kurseinführung vorlesen">
       <p class="eyebrow">Kursübersicht</p>
       <h1 id="courseTitle">Professionelle Gesprächsführung im Unterricht</h1>
       <p class="overview-intro">
@@ -16,11 +16,20 @@
       </p>
 </section>
 
+    <div class="blind-mode-row overview-blind-mode-row">
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
+        Blindenmodus: aus
+      </button>
+      <p class="blind-mode-hint" id="blindModeHint" hidden>
+        Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.
+      </p>
+    </div>
+
     <div class="top-divider overview-divider" aria-hidden="true"></div>
 
         <section class="course-block-grid" aria-label="Kursblöcke">
       <div class="course-block-wrap">
-        <a class="course-block-card" href="wahrnehmung.html#top" aria-label="Zur Modulübersicht Wahrnehmung">
+        <a class="course-block-card blind-readable" href="wahrnehmung.html#top" data-blind-target="course-block" aria-label="Zur Modulübersicht Wahrnehmung">
           <span class="block-number">01 · Block</span>
           <h2>Wahrnehmung</h2>
           <p>
@@ -29,19 +38,19 @@
           <span class="block-link-text">Zur Modulübersicht <span aria-hidden="true">→</span></span>
         </a>
         <div class="course-block-flyout" aria-label="Direktlinks Wahrnehmung">
-          <a class="course-topic-link" href="wahrnehmung.html?topic=1#top">Thema 1</a>
-          <a class="course-topic-link" href="wahrnehmung.html?topic=2#top">Thema 2</a>
-          <a class="course-topic-link" href="wahrnehmung.html?topic=3#top">Thema 3</a>
-          <a class="course-topic-link" href="wahrnehmung.html?topic=4#top">Thema 4</a>
-          <a class="course-topic-link" href="wahrnehmung.html?topic=5#top">Thema 5</a>
-          <a class="course-topic-link" href="wahrnehmung.html?topic=6#top">Thema 6</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=1#top">Thema 1</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=2#top">Thema 2</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=3#top">Thema 3</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=4#top">Thema 4</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=5#top">Thema 5</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="wahrnehmung.html?topic=6#top">Thema 6</a>
         </div>
       </div>
 
       <div class="course-flow-arrow" aria-hidden="true">→</div>
 
       <div class="course-block-wrap">
-        <a class="course-block-card is-featured" href="dekomposition.html#top" aria-label="Zur Modulübersicht Dekomposition">
+        <a class="course-block-card is-featured blind-readable" href="dekomposition.html#top" data-blind-target="course-block" aria-label="Zur Modulübersicht Dekomposition">
           <span class="block-number">02 · Block</span>
           <h2>Dekomposition</h2>
           <p>
@@ -50,19 +59,19 @@
           <span class="block-link-text">Zur Modulübersicht <span aria-hidden="true">→</span></span>
         </a>
         <div class="course-block-flyout" aria-label="Direktlinks Dekomposition">
-          <a class="course-topic-link" href="dekomposition.html?topic=2#top">Gesprächsumgebung</a>
-          <a class="course-topic-link" href="dekomposition.html?topic=3#top">Gesprächseröffnung</a>
-          <a class="course-topic-link" href="dekomposition.html?topic=4#top">Gesprächsbeiträge</a>
-          <a class="course-topic-link" href="dekomposition.html?topic=5#top">Schülerbeiträge</a>
-          <a class="course-topic-link" href="dekomposition.html?topic=6#top">Ergebnissicherung</a>
-          <a class="course-topic-link" href="dekomposition.html?topic=7#top">Gesprächsabschluss</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=2#top">Gesprächsumgebung</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=3#top">Gesprächseröffnung</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=4#top">Gesprächsbeiträge</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=5#top">Schülerbeiträge</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=6#top">Ergebnissicherung</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="dekomposition.html?topic=7#top">Gesprächsabschluss</a>
         </div>
       </div>
 
       <div class="course-flow-arrow" aria-hidden="true">→</div>
 
       <div class="course-block-wrap">
-        <a class="course-block-card" href="approximation.html#top" aria-label="Zur Modulübersicht Approximation">
+        <a class="course-block-card blind-readable" href="approximation.html#top" data-blind-target="course-block" aria-label="Zur Modulübersicht Approximation">
           <span class="block-number">03 · Block</span>
           <h2>Approximation</h2>
           <p>
@@ -71,16 +80,16 @@
           <span class="block-link-text">Zur Modulübersicht <span aria-hidden="true">→</span></span>
         </a>
         <div class="course-block-flyout" aria-label="Direktlinks Approximation">
-          <a class="course-topic-link" href="approximation.html?topic=1#top">Thema 1</a>
-          <a class="course-topic-link" href="approximation.html?topic=2#top">Thema 2</a>
-          <a class="course-topic-link" href="approximation.html?topic=3#top">Thema 3</a>
-          <a class="course-topic-link" href="approximation.html?topic=4#top">Thema 4</a>
-          <a class="course-topic-link" href="approximation.html?topic=5#top">Thema 5</a>
-          <a class="course-topic-link" href="approximation.html?topic=6#top">Thema 6</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=1#top">Thema 1</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=2#top">Thema 2</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=3#top">Thema 3</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=4#top">Thema 4</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=5#top">Thema 5</a>
+          <a class="course-topic-link blind-readable" data-blind-target="course-topic-link" href="approximation.html?topic=6#top">Thema 6</a>
         </div>
       </div>
     </section>
   </main>
-  <script src="script.js?v=34"></script>
+  <script src="script.js?v=35"></script>
 </body>
 </html>

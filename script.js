@@ -175,6 +175,7 @@ let activeIndex = getInitialTopicIndex();
 let isAnimating = false;
 let blindModeActive = false;
 let activeSpeechKey = null;
+let activeSpeechElement = null;
 
 const track = document.getElementById("cardsTrack");
 const prevButton = document.getElementById("prevButton");
@@ -233,13 +234,8 @@ function createCards() {
     card.dataset.index = index;
     card.dataset.blindTarget = "topic-card";
     card.setAttribute("aria-label", `Zu ${topic.cardTitle} wechseln`);
-    card.addEventListener("click", (event) => {
-      if (blindModeActive) {
-        event.preventDefault();
-        event.stopPropagation();
-        speakRawText(topic.cardTitle, `blind-card-${index}`, card);
-        return;
-      }
+    card.addEventListener("click", () => {
+      if (blindModeActive) return;
       if (index !== activeIndex) setActiveIndex(index);
     });
     track.appendChild(card);
@@ -360,6 +356,9 @@ document.addEventListener("keydown", (event) => {
 });
 
 function getSpeakText(target, element = null) {
+  if (target === "overview-hero") return element?.textContent?.trim() || "Kursübersicht";
+  if (target === "course-block") return element?.textContent?.trim() || element?.getAttribute("aria-label") || "Kursblock";
+  if (target === "course-topic-link") return element?.textContent?.trim() || "Direktlink";
   if (target === "banner") return bannerTitle.textContent.trim();
   if (target === "topic-card") {
     const index = Number(element?.dataset.index ?? activeIndex);
@@ -382,6 +381,7 @@ function getBlindReadables() {
 function clearSpeakingState() {
   getBlindReadables().forEach((element) => element.classList.remove("is-speaking"));
   activeSpeechKey = null;
+  activeSpeechElement = null;
 }
 
 function stopSpeech() {
@@ -401,13 +401,14 @@ function speakRawText(text, key, visualElement = null) {
   const cleanedText = (text || "").trim();
   if (!cleanedText) return;
 
-  if (activeSpeechKey === key && window.speechSynthesis.speaking) {
+  if (activeSpeechKey === key) {
     stopSpeech();
     return;
   }
 
   stopSpeech();
   activeSpeechKey = key;
+  activeSpeechElement = visualElement;
 
   const utterance = new SpeechSynthesisUtterance(cleanedText);
   utterance.lang = "de-DE";
@@ -445,13 +446,16 @@ blindModeToggle?.addEventListener("click", () => setBlindMode(!blindModeActive))
 
 function addBlindModeInteractions() {
   getBlindReadables().forEach((element) => {
+    if (element.dataset.blindListenerAttached === "true") return;
+    element.dataset.blindListenerAttached = "true";
     element.addEventListener("click", (event) => {
       if (!blindModeActive) return;
       event.preventDefault();
       event.stopPropagation();
-      const target = element.dataset.blindTarget;
-      const speakText = getSpeakText(target, element);
-      speakRawText(speakText, `${target}-${element.dataset.index || "main"}`, element);
+      event.stopImmediatePropagation();
+      const target = element.dataset.blindTarget || "text";
+      const speakText = getSpeakText(target, element) || element.textContent;
+      speakRawText(speakText, `${target}-${element.dataset.index || element.getAttribute("href") || "main"}`, element);
     });
   });
 }
