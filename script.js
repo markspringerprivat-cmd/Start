@@ -8,15 +8,17 @@ const topics = [
     bannerTitle: "Hauptseite",
     subtitle: "Orientierung im Kursblock Dekomposition",
     leftLabel: "Einordnung",
-    leftTitle: "Willkommen auf der Hauptseite",
-    leftText: "Diese Hauptseite dient als Einstieg in den Kursblock Dekomposition. Hier werden Unterrichtsgespräche nicht als ein unübersichtlicher Gesamtprozess betrachtet, sondern in einzelne Bausteine gegliedert. So wird sichtbar, welche Entscheidungen vor, während und nach einem Gespräch bedeutsam sind. Über die Kacheln im oberen Bereich kannst du die Bausteine nacheinander durchgehen und gezielt zu dem Abschnitt wechseln, den du wiederholen oder vertiefen möchtest.",
+    leftTitle: "Was ist eine Dekomposition?",
+    leftText: "Dekomposition bedeutet, einen komplexen Prozess in überschaubare einzelne Bestandteile zu zerlegen. Bezogen auf Unterrichtsgespräche heißt das: Gesprächsführung wird nicht nur als Ganzes betrachtet, sondern in klar benennbare Bausteine aufgeteilt. Dadurch wird sichtbar, welche Schritte vor, während und nach einem Gespräch wichtig sind und an welchen Stellen professionelles Handeln bewusst gestaltet werden kann.",
     rightLabel: "Lernziele",
     rightTitle: "Was findest du hier?",
     rightPoints: [
-      "Du erkennst, aus welchen Bausteinen professionelle Gesprächsführung im Unterricht bestehen kann.",
-      "Du kannst die einzelnen Module als lineare Abfolge nutzen und gezielt zwischen ihnen wechseln.",
-      "Du ordnest Gesprächsumgebung, Gesprächseröffnung, Beiträge, Ergebnissicherung und Abschluss in den Gesamtprozess ein.",
-      "Du erhältst eine Übersicht, bevor du in die interaktiven Moodle-Module wechselst."
+      "Gesprächsumgebung",
+      "Gesprächseröffnung",
+      "Gesprächsbeiträge",
+      "Schülerbeiträge",
+      "Ergebnissicherung",
+      "Gesprächsabschluss"
     ],
     moduleUrl: null
   },
@@ -218,7 +220,7 @@ function updateContent(direction = "right") {
 
   bannerTitle.textContent = topic.bannerTitle;
   moduleSubtitle.textContent = topic.subtitle;
-  moduleStep.textContent = activeIndex === 0 ? "Übersicht" : `Baustein ${activeIndex} von ${topics.length - 1}`;
+  moduleStep.textContent = activeIndex === 0 ? "Dekomposition" : `Baustein ${activeIndex} von ${topics.length - 1}`;
   breadcrumbCurrent.textContent = topic.cardTitle;
   leftLabel.textContent = topic.leftLabel;
   rightLabel.textContent = topic.rightLabel;
