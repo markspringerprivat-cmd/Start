@@ -1,168 +1,157 @@
 const topics = [
   {
-    label: "Thema 1",
-    module: "Dekomposition",
-    subtitle: "Komplexe Aufgaben in kleinere, überschaubare Teilprobleme zerlegen.",
-    leftTitle: "Was bedeutet Dekomposition?",
-    leftHtml: `
-      <p>Dekomposition bedeutet, ein größeres Problem in kleinere und besser verständliche Teilaufgaben aufzuteilen.</p>
-      <p>Statt sofort die gesamte Aufgabe lösen zu wollen, betrachtet man einzelne Bestandteile nacheinander: Welche Schritte gibt es? Was gehört zusammen? Was kann getrennt bearbeitet werden?</p>
-      <p>So werden komplexe Abläufe übersichtlicher, leichter planbar und einfacher zu überprüfen.</p>
-    `,
-    rightTitle: "Was lernst du in diesem Modul zur Dekomposition?",
-    rightHtml: `
-      <p>Du lernst, Aufgaben systematisch zu untersuchen und sinnvoll in Teilbereiche zu gliedern.</p>
-      <ul>
-        <li>komplexe Aufgaben strukturieren</li>
-        <li>Teilprobleme erkennen und benennen</li>
-        <li>Arbeitsschritte logisch ordnen</li>
-        <li>Lösungswege übersichtlicher planen</li>
-      </ul>
-    `
+    cardTitle: "Hauptseite",
+    bannerTitle: "Hauptseite",
+    leftTitle: "Willkommen auf der Hauptseite",
+    leftText: "Diese Hauptseite gibt dir einen Überblick über die Module zur Gesprächsführung. Du kannst oben linear durch die einzelnen Themen wechseln und die passenden Inhalte darunter lesen.",
+    rightTitle: "Was findest du hier?",
+    rightText: "Du findest eine strukturierte Übersicht über Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträge, Schülerbeiträge, Ergebnissicherung und Gesprächsabschluss."
   },
   {
-    label: "Thema 2",
-    module: "Gesprächsführung",
-    subtitle: "Gespräche bewusst strukturieren, aktiv zuhören und klar reagieren.",
-    leftTitle: "Was bedeutet Gesprächsführung?",
-    leftHtml: `
-      <p>Gesprächsführung beschreibt, wie ein Gespräch bewusst vorbereitet, gelenkt und ausgewertet wird.</p>
-      <p>Dabei geht es nicht nur darum, selbst zu sprechen, sondern auch aufmerksam zuzuhören, Rückfragen zu stellen und die Aussagen des Gegenübers richtig einzuordnen.</p>
-      <p>Eine gute Gesprächsführung hilft, Missverständnisse zu vermeiden und ein gemeinsames Ziel im Gespräch zu erreichen.</p>
-    `,
-    rightTitle: "Was lernst du in diesem Modul zur Gesprächsführung?",
-    rightHtml: `
-      <p>Du lernst, Gespräche klarer, ruhiger und zielgerichteter zu führen.</p>
-      <ul>
-        <li>aktive Zuhörtechniken anwenden</li>
-        <li>offene und geschlossene Fragen unterscheiden</li>
-        <li>Gesprächsziele formulieren</li>
-        <li>angemessen auf Aussagen reagieren</li>
-      </ul>
-    `
-  },
-  {
-    label: "Thema 3",
-    module: "Beispiel",
-    subtitle: "Beispielinhalt für ein weiteres Modul.",
-    leftTitle: "Was bedeutet Beispiel?",
-    leftHtml: `<p>Beispiel</p><p>Beispiel</p><p>Beispiel</p>`,
+    cardTitle: "Gesprächsumgebung",
+    bannerTitle: "Vorbereitung der Gesprächsumgebung",
+    leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
+    leftText: "Eine gute Gesprächsumgebung schafft Orientierung, Ruhe und Sicherheit. Dazu gehören eine klare Sitzordnung, passende Materialien, ein störungsarmer Raum und transparente Gesprächsregeln.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightHtml: `<p>Beispiel</p><ul><li>Beispiel</li><li>Beispiel</li><li>Beispiel</li></ul>`
+    rightText: "Du lernst, wie du räumliche, soziale und organisatorische Bedingungen so vorbereitest, dass Gespräche konzentriert, respektvoll und zielgerichtet stattfinden können."
   },
   {
-    label: "Thema 4",
-    module: "Beispiel",
-    subtitle: "Beispielinhalt für ein weiteres Modul.",
-    leftTitle: "Was bedeutet Beispiel?",
-    leftHtml: `<p>Beispiel</p><p>Beispiel</p><p>Beispiel</p>`,
+    cardTitle: "Gesprächseröffnung",
+    bannerTitle: "Gesprächseröffnung",
+    leftTitle: "Was bedeutet Gesprächseröffnung?",
+    leftText: "Die Gesprächseröffnung legt den Rahmen für das folgende Gespräch. Sie klärt Anlass, Ziel, Ablauf und Rollen, damit alle Beteiligten wissen, worum es geht.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightHtml: `<p>Beispiel</p><ul><li>Beispiel</li><li>Beispiel</li><li>Beispiel</li></ul>`
+    rightText: "Du lernst, wie du Gespräche klar, wertschätzend und strukturiert beginnst, Vorwissen aktivierst und einen gemeinsamen Fokus herstellst."
   },
   {
-    label: "Thema 5",
-    module: "Beispiel",
-    subtitle: "Beispielinhalt für ein weiteres Modul.",
-    leftTitle: "Was bedeutet Beispiel?",
-    leftHtml: `<p>Beispiel</p><p>Beispiel</p><p>Beispiel</p>`,
+    cardTitle: "Gesprächsbeiträge",
+    bannerTitle: "Anregung von Gesprächsbeiträgen",
+    leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
+    leftText: "Gesprächsbeiträge entstehen nicht zufällig. Sie können durch offene Fragen, Denkanstöße, Wartezeit, Impulse und eine wertschätzende Gesprächsatmosphäre gefördert werden.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightHtml: `<p>Beispiel</p><ul><li>Beispiel</li><li>Beispiel</li><li>Beispiel</li></ul>`
+    rightText: "Du lernst, wie du Beteiligung aktivierst, unterschiedliche Perspektiven einbindest und Beiträge so anregst, dass ein lebendiges und fachlich tragfähiges Gespräch entsteht."
   },
   {
-    label: "Thema 6",
-    module: "Beispiel",
-    subtitle: "Beispielinhalt für ein weiteres Modul.",
-    leftTitle: "Was bedeutet Beispiel?",
-    leftHtml: `<p>Beispiel</p><p>Beispiel</p><p>Beispiel</p>`,
+    cardTitle: "Schülerbeiträge",
+    bannerTitle: "Umgang mit Schülerbeiträgen",
+    leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
+    leftText: "Schülerbeiträge enthalten oft fachliche Ansätze, Fragen, Unsicherheiten oder Missverständnisse. Ein professioneller Umgang nimmt Beiträge ernst und nutzt sie für den weiteren Lernprozess.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightHtml: `<p>Beispiel</p><ul><li>Beispiel</li><li>Beispiel</li><li>Beispiel</li></ul>`
+    rightText: "Du lernst, wie du Beiträge aufgreifst, präzisierst, weiterführst und auch fehlerhafte Aussagen konstruktiv in das Gespräch integrierst."
+  },
+  {
+    cardTitle: "Ergebnissicherung",
+    bannerTitle: "Sicherung der (Zwischen)Ergebnisse",
+    leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
+    leftText: "Ergebnissicherung macht sichtbar, was im Gespräch erarbeitet wurde. Zwischenstände helfen, Orientierung zu behalten und Ergebnisse schrittweise aufzubauen.",
+    rightTitle: "Was lernst du in diesem Modul?",
+    rightText: "Du lernst, wie du zentrale Aussagen bündelst, Zwischenergebnisse festhältst und Gesprächsergebnisse so sicherst, dass sie für die weitere Arbeit nutzbar bleiben."
+  },
+  {
+    cardTitle: "Gesprächsabschluss",
+    bannerTitle: "Beenden eines Gesprächs",
+    leftTitle: "Was bedeutet Beenden eines Gesprächs?",
+    leftText: "Ein Gesprächsabschluss fasst Wesentliches zusammen, klärt offene Punkte und schafft einen bewussten Übergang zum nächsten Schritt oder zur weiteren Arbeit.",
+    rightTitle: "Was lernst du in diesem Modul?",
+    rightText: "Du lernst, wie du Gespräche klar abschließt, Ergebnisse würdigst, nächste Schritte formulierst und einen runden Abschluss für alle Beteiligten herstellst."
   }
 ];
-
-const cardsTrack = document.querySelector("#cardsTrack");
-const prevBtn = document.querySelector("#prevBtn");
-const nextBtn = document.querySelector("#nextBtn");
-const dynamicContent = document.querySelector("#dynamicContent");
-const bannerTitle = document.querySelector("#bannerTitle");
-const bannerSubtitle = document.querySelector("#bannerSubtitle");
-const leftTitle = document.querySelector("#leftTitle");
-const leftText = document.querySelector("#leftText");
-const rightTitle = document.querySelector("#rightTitle");
-const rightText = document.querySelector("#rightText");
 
 let activeIndex = 0;
 let isAnimating = false;
 
-const cards = topics.map((topic, index) => {
-  const card = document.createElement("div");
-  card.className = "topic-card";
-  card.dataset.index = String(index);
-  card.innerHTML = `<strong>${topic.label}</strong>`;
-  cardsTrack.appendChild(card);
-  return card;
-});
+const track = document.getElementById("cardsTrack");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 
-function getCardClass(index) {
-  const diff = index - activeIndex;
+const bannerTitle = document.getElementById("moduleTitle");
+const leftTitle = document.getElementById("leftTitle");
+const leftText = document.getElementById("leftText");
+const rightTitle = document.getElementById("rightTitle");
+const rightText = document.getElementById("rightText");
+const banner = document.getElementById("banner");
+const contentGrid = document.querySelector(".content-grid");
 
-  if (diff === 0) return "is-center";
-  if (diff === -1) return "is-left";
-  if (diff === 1) return "is-right";
-  if (diff < -1) return "is-hidden-left";
-  if (diff > 1) return "is-hidden-right";
+function createCards() {
+  topics.forEach((topic, index) => {
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "topic-card";
+    card.textContent = topic.cardTitle;
+    card.dataset.index = index;
+    card.setAttribute("aria-label", `Zu ${topic.cardTitle} wechseln`);
+    card.addEventListener("click", () => {
+      if (index !== activeIndex) {
+        setActiveIndex(index);
+      }
+    });
+    track.appendChild(card);
+  });
+}
 
-  return "is-gone";
+function getPositionClass(offset) {
+  if (offset === 0) return "is-active";
+  if (offset === -1) return "is-side is-left";
+  if (offset === 1) return "is-side is-right";
+  if (offset < -1) return "is-hidden-left is-far";
+  return "is-hidden-right is-far";
+}
+
+function renderCards() {
+  const cards = [...document.querySelectorAll(".topic-card")];
+  cards.forEach((card, index) => {
+    const offset = index - activeIndex;
+    card.className = `topic-card ${getPositionClass(offset)}`;
+    card.tabIndex = Math.abs(offset) <= 1 ? 0 : -1;
+    card.setAttribute("aria-current", offset === 0 ? "true" : "false");
+  });
+
+  prevButton.disabled = activeIndex === 0 || isAnimating;
+  nextButton.disabled = activeIndex === topics.length - 1 || isAnimating;
 }
 
 function updateContent() {
   const topic = topics[activeIndex];
 
-  dynamicContent.classList.add("is-changing");
+  bannerTitle.textContent = topic.bannerTitle;
+  leftTitle.textContent = topic.leftTitle;
+  leftText.textContent = topic.leftText;
+  rightTitle.textContent = topic.rightTitle;
+  rightText.textContent = topic.rightText;
 
-  window.setTimeout(() => {
-    bannerTitle.textContent = topic.module;
-    bannerSubtitle.textContent = topic.subtitle;
-    leftTitle.textContent = topic.leftTitle;
-    leftText.innerHTML = topic.leftHtml;
-    rightTitle.textContent = topic.rightTitle;
-    rightText.innerHTML = topic.rightHtml;
-    dynamicContent.classList.remove("is-changing");
-  }, 160);
-}
+  banner.classList.remove("fade-change");
+  contentGrid.classList.remove("fade-change");
 
-function render() {
-  cards.forEach((card, index) => {
-    card.className = `topic-card ${getCardClass(index)}`;
+  requestAnimationFrame(() => {
+    banner.classList.add("fade-change");
+    contentGrid.classList.add("fade-change");
   });
-
-  prevBtn.disabled = activeIndex === 0 || isAnimating;
-  nextBtn.disabled = activeIndex === topics.length - 1 || isAnimating;
 }
 
-function move(direction) {
-  if (isAnimating) return;
-
-  const nextIndex = activeIndex + direction;
-  if (nextIndex < 0 || nextIndex >= topics.length) return;
+function setActiveIndex(newIndex) {
+  if (isAnimating || newIndex < 0 || newIndex >= topics.length || newIndex === activeIndex) {
+    return;
+  }
 
   isAnimating = true;
-  activeIndex = nextIndex;
-  render();
+  activeIndex = newIndex;
+  renderCards();
   updateContent();
 
   window.setTimeout(() => {
     isAnimating = false;
-    render();
-  }, 540);
+    renderCards();
+  }, 430);
 }
 
-prevBtn.addEventListener("click", () => move(-1));
-nextBtn.addEventListener("click", () => move(1));
+prevButton.addEventListener("click", () => setActiveIndex(activeIndex - 1));
+nextButton.addEventListener("click", () => setActiveIndex(activeIndex + 1));
 
-window.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") move(-1);
-  if (event.key === "ArrowRight") move(1);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") setActiveIndex(activeIndex - 1);
+  if (event.key === "ArrowRight") setActiveIndex(activeIndex + 1);
 });
 
-render();
+createCards();
+renderCards();
 updateContent();

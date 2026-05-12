@@ -1,24 +1,17 @@
-# Lineares Themenlayout
+# Gesprächsführung Layout
 
 Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
 ## Dateien
 
 - `index.html` – Seitenstruktur
-- `style.css` – Layout, Karten, Banner und Inhaltsbereich
-- `script.js` – lineares Durchschalten der Themen und dynamische Inhalte
+- `style.css` – Layout, Kacheln, Banner und Inhaltsbereich
+- `script.js` – lineare Themennavigation und wechselnde Inhalte
 
-## Funktionen
+## Nutzung mit GitHub Pages
 
-- lineare Themen-Navigation mit 6 Themen
-- mittlere aktive Karte größer
-- linke/rechte Vorschaukarten kleiner mit sehr dezentem Rand-Fade
-- keine Drehbewegung und kein Radmodell
-- Pfeile ohne Kreis und Schatten
-- linker Pfeil am Anfang deaktiviert
-- rechter Pfeil am Ende deaktiviert
-- Banner und Textbereich ändern sich passend zum aktiven Thema
+1. Dateien in ein GitHub-Repository hochladen.
+2. Unter `Settings > Pages` den passenden Branch auswählen, z. B. `main` und `/root`.
+3. Seite öffnen.
 
-## Nutzung
-
-Alle Dateien in ein GitHub-Repository hochladen und GitHub Pages aktivieren.
+Die CSS- und JS-Dateien sind in `index.html` mit `?v=8` eingebunden, damit Browser-Cache weniger Probleme macht.

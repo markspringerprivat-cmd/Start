@@ -3,53 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lineares Themenlayout</title>
-  <link rel="stylesheet" href="style.css?v=7" />
+  <title>Gesprächsführung – Modulübersicht</title>
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 <body>
   <main class="page-shell">
-    <section class="topic-navigation" aria-label="Themen-Navigation">
-      <button class="arrow-button arrow-left" id="prevBtn" type="button" aria-label="Vorheriges Thema">
-        <span aria-hidden="true">&#10094;</span>
+    <section class="topic-switcher" aria-label="Themennavigation">
+      <button class="arrow-button" id="prevButton" type="button" aria-label="Vorheriges Thema">
+        <span aria-hidden="true">‹</span>
       </button>
 
-      <div class="slider-window">
+      <div class="cards-window">
         <div class="cards-track" id="cardsTrack"></div>
       </div>
 
-      <button class="arrow-button arrow-right" id="nextBtn" type="button" aria-label="Nächstes Thema">
-        <span aria-hidden="true">&#10095;</span>
+      <button class="arrow-button" id="nextButton" type="button" aria-label="Nächstes Thema">
+        <span aria-hidden="true">›</span>
       </button>
     </section>
 
-    <div class="horizontal-divider" aria-hidden="true"></div>
+    <div class="top-divider" aria-hidden="true"></div>
 
-    <section class="dynamic-content" id="dynamicContent" aria-live="polite">
-      <section class="hero-banner" aria-label="Banner">
-        <div class="banner-pattern"></div>
-        <div class="banner-content">
-          <p class="banner-kicker" id="bannerKicker">Modul</p>
-          <h1 id="bannerTitle">Dekomposition</h1>
-          <p id="bannerSubtitle">Komplexe Aufgaben in kleinere, überschaubare Teilprobleme zerlegen.</p>
-        </div>
-      </section>
+    <section class="banner" id="banner" aria-labelledby="moduleTitle">
+      <div class="banner-pattern" aria-hidden="true"></div>
+      <div class="banner-content">
+        <p class="eyebrow">Modul</p>
+        <h1 id="moduleTitle">Hauptseite</h1>
+      </div>
+    </section>
 
-      <section class="content-area" aria-label="Inhalt zum aktiven Thema">
-        <article class="text-column">
-          <h2 id="leftTitle">Was bedeutet Dekomposition?</h2>
-          <div id="leftText"></div>
-        </article>
+    <section class="content-grid" aria-label="Modulinhalte">
+      <article class="content-column">
+        <p class="section-label" id="leftLabel">Überblick</p>
+        <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
+        <p id="leftText">
+          Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben kannst du linear durch die einzelnen Bereiche navigieren.
+        </p>
+      </article>
 
-        <div class="vertical-divider" aria-hidden="true"></div>
+      <div class="vertical-divider" aria-hidden="true"></div>
 
-        <article class="text-column learning-column">
-          <h2 id="rightTitle">Was lernst du in diesem Modul?</h2>
-          <div id="rightText"></div>
-        </article>
-      </section>
+      <article class="content-column">
+        <p class="section-label" id="rightLabel">Lernziele</p>
+        <h2 id="rightTitle">Was lernst du in dieser Übersicht?</h2>
+        <p id="rightText">
+          Du erhältst einen strukturierten Überblick über die einzelnen Module und kannst gezielt zu Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträgen, Schülerbeiträgen, Ergebnissicherung und Gesprächsabschluss wechseln.
+        </p>
+      </article>
     </section>
   </main>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
