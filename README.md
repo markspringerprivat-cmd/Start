@@ -27,3 +27,6 @@ Statische HTML/CSS/JavaScript-Seite für GitHub Pages oder Einbettung in Moodle.
 ## Nutzung
 
 Alle Dateien zusammen in ein GitHub-Repository hochladen. Für GitHub Pages muss `index.html` im veröffentlichten Ordner liegen.
+
+
+Version 39: Kleiner Abstand oberhalb des Vorlesemodus-Buttons ergänzt.

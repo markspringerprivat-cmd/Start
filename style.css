@@ -107,7 +107,7 @@ p, h1, h2 { margin-top: 0; }
 .top-divider.overview-divider { margin: 0 0 28px; }
 
 .overview-blind-mode-row {
-  margin-top: 26px;
+  margin-top: 12px;
   margin-bottom: 10px;
 }
 
@@ -521,7 +521,7 @@ p, h1, h2 { margin-top: 0; }
   justify-content: flex-end;
   gap: 18px;
   min-height: 40px;
-  margin: 0 0 2mm;
+  margin: 8px 0 2mm;
 }
 
 .blind-mode-toggle {
