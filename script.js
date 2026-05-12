@@ -176,6 +176,7 @@ let isAnimating = false;
 let blindModeActive = false;
 let activeSpeechKey = null;
 let activeSpeechElement = null;
+let speechRunId = 0;
 
 const track = document.getElementById("cardsTrack");
 const prevButton = document.getElementById("prevButton");
@@ -378,13 +379,15 @@ function getBlindReadables() {
   return [...document.querySelectorAll(".blind-readable")];
 }
 
-function clearSpeakingState() {
+function clearSpeakingState(runId = null) {
+  if (runId !== null && runId !== speechRunId) return;
   getBlindReadables().forEach((element) => element.classList.remove("is-speaking"));
   activeSpeechKey = null;
   activeSpeechElement = null;
 }
 
 function stopSpeech() {
+  speechRunId += 1;
   if (supportsSpeech()) window.speechSynthesis.cancel();
   clearSpeakingState();
 }
@@ -407,6 +410,8 @@ function speakRawText(text, key, visualElement = null) {
   }
 
   stopSpeech();
+  const currentRunId = speechRunId + 1;
+  speechRunId = currentRunId;
   activeSpeechKey = key;
   activeSpeechElement = visualElement;
 
@@ -416,8 +421,8 @@ function speakRawText(text, key, visualElement = null) {
   utterance.pitch = 1;
 
   if (visualElement) visualElement.classList.add("is-speaking");
-  utterance.onend = clearSpeakingState;
-  utterance.onerror = clearSpeakingState;
+  utterance.onend = () => clearSpeakingState(currentRunId);
+  utterance.onerror = () => clearSpeakingState(currentRunId);
   window.speechSynthesis.speak(utterance);
 }
 
@@ -429,14 +434,15 @@ function setBlindMode(enabled) {
   if (blindModeToggle) blindModeToggle.textContent = `Blindenmodus: ${enabled ? "an" : "aus"}`;
 
   if (blindModeHint) {
-    blindModeHint.hidden = !enabled;
-    blindModeHint.textContent = enabled
-      ? "Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen."
-      : "";
+    blindModeHint.hidden = true;
+    blindModeHint.textContent = "";
   }
 
   if (enabled) {
-    speakRawText("Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.", "blindmode-hint");
+    speakRawText(
+      "Blindenmodus aktiviert. Drücke einmal auf ein Feld, um es vorlesen zu lassen. Drücke dasselbe Feld erneut, um das Vorlesen zu stoppen. Mit einem Doppelklick öffnest du das ausgewählte Feld.",
+      "blindmode-hint"
+    );
   } else {
     stopSpeech();
   }
@@ -444,10 +450,31 @@ function setBlindMode(enabled) {
 
 blindModeToggle?.addEventListener("click", () => setBlindMode(!blindModeActive));
 
+function activateBlindReadable(element) {
+  const target = element.dataset.blindTarget || "text";
+
+  if (target === "topic-card") {
+    const index = Number(element.dataset.index);
+    if (Number.isFinite(index)) setActiveIndex(index);
+    return;
+  }
+
+  const href = element.getAttribute("href");
+  if (href) {
+    const targetWindow = element.getAttribute("target");
+    if (targetWindow === "_blank") {
+      window.open(href, "_blank", "noopener");
+    } else {
+      window.location.href = href;
+    }
+  }
+}
+
 function addBlindModeInteractions() {
   getBlindReadables().forEach((element) => {
     if (element.dataset.blindListenerAttached === "true") return;
     element.dataset.blindListenerAttached = "true";
+
     element.addEventListener("click", (event) => {
       if (!blindModeActive) return;
       event.preventDefault();
@@ -456,6 +483,15 @@ function addBlindModeInteractions() {
       const target = element.dataset.blindTarget || "text";
       const speakText = getSpeakText(target, element) || element.textContent;
       speakRawText(speakText, `${target}-${element.dataset.index || element.getAttribute("href") || "main"}`, element);
+    });
+
+    element.addEventListener("dblclick", (event) => {
+      if (!blindModeActive) return;
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      stopSpeech();
+      activateBlindReadable(element);
     });
   });
 }

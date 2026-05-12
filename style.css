@@ -104,11 +104,11 @@ p, h1, h2 { margin-top: 0; }
   margin-bottom: 0;
 }
 
-.top-divider.overview-divider { margin: 40px 0 56px; }
+.top-divider.overview-divider { margin: 0 0 56px; }
 
 .overview-blind-mode-row {
   margin-top: 22px;
-  margin-bottom: 0;
+  margin-bottom: 2mm;
 }
 
 .course-block-grid {
