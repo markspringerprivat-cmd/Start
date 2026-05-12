@@ -125,7 +125,7 @@ function setBannerTitleSize(title) {
   document.documentElement.style.setProperty("--banner-title-size", size);
 }
 
-function updateContent() {
+function updateContent(direction = "right") {
   const topic = topics[activeIndex];
 
   bannerTitle.textContent = topic.bannerTitle;
@@ -135,12 +135,13 @@ function updateContent() {
   rightText.textContent = topic.rightText;
   setBannerTitleSize(topic.bannerTitle);
 
-  banner.classList.remove("fade-change");
-  contentGrid.classList.remove("fade-change");
+  const animationClass = direction === "left" ? "content-slide-left" : "content-slide-right";
+  banner.classList.remove("content-slide-left", "content-slide-right");
+  contentGrid.classList.remove("content-slide-left", "content-slide-right");
 
   requestAnimationFrame(() => {
-    banner.classList.add("fade-change");
-    contentGrid.classList.add("fade-change");
+    banner.classList.add(animationClass);
+    contentGrid.classList.add(animationClass);
   });
 }
 
@@ -149,10 +150,12 @@ function setActiveIndex(newIndex) {
     return;
   }
 
+  const direction = newIndex > activeIndex ? "right" : "left";
+
   isAnimating = true;
   activeIndex = newIndex;
   renderCards();
-  updateContent();
+  updateContent(direction);
 
   window.setTimeout(() => {
     isAnimating = false;

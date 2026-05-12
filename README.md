@@ -1,4 +1,4 @@
-# Gesprächsführung Layout v11
+# Gesprächsführung Layout v13
 
 Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
@@ -8,13 +8,10 @@ Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 - `style.css`
 - `script.js`
 
-## Änderungen in v11
+## Änderungen in v13
 
-- Dezentes Muster im Banner-Hintergrund ergänzt
-- Mehr Abstand zwischen Themenkacheln und erster Trennlinie
-- Schatten der oberen Karten, des Banners und der Textkacheln modernisiert
-- Textbereiche als leichte, fliegende Kacheln mit feinem Rahmen gestaltet
-- Schatten werden nicht abgeschnitten
-- Cache-Busting auf `?v=11` gesetzt
-
-- Hellblaue Link-Kachel unter dem rechten Textblock ergänzt; öffnet Moodle im aktuellen Tab.
+- Inhalte unterhalb der ersten Trennlinie gleiten beim Themenwechsel leicht von links oder rechts ein.
+- Animation ist weich und dezent, damit der Wechsel nicht hart wirkt.
+- Links und rechts wurde ein unsichtbarer weißer Sicherheitsabstand von ca. 2 cm ergänzt, damit Schatten bei Moodle-/iFrame-Einbindung nicht abgeschnitten werden.
+- Mehr Abstand zwischen oberer Themenleiste und erster Trennlinie.
+- Cache-Busting auf `?v=13` gesetzt.
