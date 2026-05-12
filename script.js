@@ -80,6 +80,11 @@ const banner = document.getElementById("banner");
 const contentGrid = document.querySelector(".content-grid");
 const moduleLink = document.querySelector(".module-link-card");
 const speakButtons = [...document.querySelectorAll(".speak-button")];
+const blindModeToggle = document.getElementById("blindModeToggle");
+const blindModeHint = document.getElementById("blindModeHint");
+const blindReadables = [...document.querySelectorAll(".blind-readable")];
+let blindModeActive = false;
+let activeSpeechKey = null;
 
 function createCards() {
   topics.forEach((topic, index) => {
@@ -195,6 +200,10 @@ document.addEventListener("keydown", (event) => {
 
 
 function getSpeakText(target) {
+  if (target === "banner") {
+    return bannerTitle.textContent.trim();
+  }
+
   if (target === "left") {
     return `${leftTitle.textContent}. ${leftText.textContent}`;
   }
@@ -202,47 +211,132 @@ function getSpeakText(target) {
   return `${rightTitle.textContent}. ${rightText.textContent}`;
 }
 
-function stopSpeech() {
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
-  speakButtons.forEach((button) => button.classList.remove("is-speaking"));
+function supportsSpeech() {
+  return "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
 }
 
-function speakText(target, button) {
-  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-    button.disabled = true;
-    button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
+function clearSpeakingState() {
+  speakButtons.forEach((button) => button.classList.remove("is-speaking"));
+  blindReadables.forEach((element) => element.classList.remove("is-speaking"));
+  activeSpeechKey = null;
+}
+
+function stopSpeech() {
+  if (supportsSpeech()) {
+    window.speechSynthesis.cancel();
+  }
+  clearSpeakingState();
+}
+
+function speakRawText(text, key, visualElement = null) {
+  if (!supportsSpeech()) {
+    speakButtons.forEach((button) => {
+      button.disabled = true;
+      button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
+    });
+    if (blindModeHint) {
+      blindModeHint.textContent = "Vorlesen wird von diesem Browser nicht unterstützt.";
+      blindModeHint.hidden = false;
+    }
     return;
   }
 
-  const text = getSpeakText(target).trim();
-  if (!text) return;
+  const cleanedText = (text || "").trim();
+  if (!cleanedText) return;
+
+  if (activeSpeechKey === key && window.speechSynthesis.speaking) {
+    stopSpeech();
+    return;
+  }
 
   stopSpeech();
+  activeSpeechKey = key;
 
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new SpeechSynthesisUtterance(cleanedText);
   utterance.lang = "de-DE";
   utterance.rate = 0.95;
   utterance.pitch = 1;
 
-  button.classList.add("is-speaking");
-  utterance.onend = () => button.classList.remove("is-speaking");
-  utterance.onerror = () => button.classList.remove("is-speaking");
+  if (visualElement) {
+    visualElement.classList.add("is-speaking");
+  }
+
+  utterance.onend = clearSpeakingState;
+  utterance.onerror = clearSpeakingState;
 
   window.speechSynthesis.speak(utterance);
 }
 
+function speakText(target, button = null) {
+  const text = getSpeakText(target);
+  const key = `manual-${target}`;
+  speakRawText(text, key, button);
+}
+
+function setBlindMode(enabled) {
+  blindModeActive = enabled;
+  document.body.classList.toggle("blind-mode-active", blindModeActive);
+
+  if (blindModeToggle) {
+    blindModeToggle.classList.toggle("is-active", blindModeActive);
+    blindModeToggle.setAttribute("aria-pressed", String(blindModeActive));
+    blindModeToggle.textContent = blindModeActive ? "Blindenmodus: an" : "Blindenmodus: aus";
+  }
+
+  if (blindModeHint) {
+    blindModeHint.hidden = !blindModeActive;
+    blindModeHint.textContent = "Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.";
+  }
+
+  stopSpeech();
+
+  if (blindModeActive) {
+    speakRawText("Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.", "blind-instruction", blindModeToggle);
+  }
+}
+
+function speakBlindElement(element) {
+  if (!blindModeActive) return;
+  const target = element.dataset.blindTarget;
+  const text = getSpeakText(target);
+  speakRawText(text, `blind-${target}-${activeIndex}`, element);
+}
+
 speakButtons.forEach((button) => {
-  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+  if (!supportsSpeech()) {
     button.disabled = true;
     button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
   }
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
     speakText(button.dataset.speakTarget, button);
   });
 });
+
+blindReadables.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    if (!blindModeActive) return;
+    if (event.target.closest(".speak-button, .module-link-card")) return;
+    speakBlindElement(element);
+  });
+
+  element.addEventListener("keydown", (event) => {
+    if (!blindModeActive) return;
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    speakBlindElement(element);
+  });
+});
+
+if (blindModeToggle) {
+  blindModeToggle.addEventListener("click", () => setBlindMode(!blindModeActive));
+}
+
+if (!supportsSpeech() && blindModeToggle) {
+  blindModeToggle.disabled = true;
+  blindModeToggle.title = "Blindenmodus mit Vorlesen wird von diesem Browser nicht unterstützt.";
+}
 
 createCards();
 renderCards();

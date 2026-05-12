@@ -1,6 +1,6 @@
-# Gesprächsführung Layout v15
+# Gesprächsführung – Layout v16
 
-Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
+Statische HTML/CSS/JavaScript-Version für GitHub Pages oder Einbettung per iFrame in Moodle.
 
 ## Dateien
 
@@ -8,18 +8,16 @@ Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 - `style.css`
 - `script.js`
 
-## Änderungen in v15
+## Änderungen in v16
 
-- Auf der Hauptseite wird kein blauer Modul-Link angezeigt.
-- Für alle sechs Inhaltsmodule wird der blaue Button dynamisch eingeblendet.
-- Jeder Modul-Button verweist auf die passende Moodle-HVP-Seite.
-- Die Weiterleitung erfolgt weiterhin aus dem iFrame heraus in den gesamten aktiven Tab (`target="_top"` plus JavaScript-Fallback).
-- Cache-Busting auf `?v=15` gesetzt.
+- Blindenmodus oberhalb der oberen Trennlinie ergänzt.
+- Beim Einschalten wird angesagt: „Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.“
+- Im Blindenmodus erhalten Banner und Textkacheln beim Hover/Fokus einen dicken neonblauen Rahmen.
+- Klick auf den Banner liest nur den aktuellen Modultitel vor.
+- Klick auf eine Textkachel liest den jeweiligen Textblock vor.
+- Ein erneuter Klick auf dieselbe Fläche bricht die laufende Sprachausgabe ab.
+- Die vorhandenen Lautsprecher-Buttons bleiben zusätzlich nutzbar.
 
+## Moodle-Link-Verhalten
 
-## Änderungen in v15
-
-- Der Modul-Button ist auf der Hauptseite per CSS und JavaScript sicher ausgeblendet.
-- Kacheln erhalten beim Hover eine sehr dezente Vergrößerung.
-- Textboxen und Banner reagieren ebenfalls minimal mit einem modernen Hover-Effekt.
-- Unten rechts in den Textboxen befindet sich ein Lautsprecher-Button für browserbasiertes Vorlesen per Web Speech API.
+Die Modul-Links verwenden `target="_top"` plus JavaScript-Fallback, damit die Zielseite den gesamten aktiven Tab ersetzt und nicht im iFrame geöffnet wird.

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gesprächsführung – Modulübersicht</title>
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
   <main class="page-shell">
@@ -22,9 +22,18 @@
       </button>
     </section>
 
+    <div class="blind-mode-row">
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
+        Blindenmodus: aus
+      </button>
+      <p class="blind-mode-hint" id="blindModeHint" hidden>
+        Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.
+      </p>
+    </div>
+
     <div class="top-divider" aria-hidden="true"></div>
 
-    <section class="banner" id="banner" aria-labelledby="moduleTitle">
+    <section class="banner blind-readable" id="banner" aria-labelledby="moduleTitle" data-blind-target="banner" tabindex="0" role="button" aria-label="Banner vorlesen">
       <div class="banner-pattern" aria-hidden="true"></div>
       <div class="banner-content">
         <p class="eyebrow">Modul</p>
@@ -33,7 +42,7 @@
     </section>
 
     <section class="content-grid" aria-label="Modulinhalte">
-      <article class="content-column">
+      <article class="content-column blind-readable" data-blind-target="left" tabindex="0" role="button" aria-label="Linken Textblock vorlesen">
         <p class="section-label" id="leftLabel">Überblick</p>
         <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
         <p id="leftText">
@@ -46,7 +55,7 @@
 
       <div class="vertical-divider" aria-hidden="true"></div>
 
-      <article class="content-column">
+      <article class="content-column blind-readable" data-blind-target="right" tabindex="0" role="button" aria-label="Rechten Textblock vorlesen">
         <p class="section-label" id="rightLabel">Lernziele</p>
         <h2 id="rightTitle">Was lernst du in dieser Übersicht?</h2>
         <p id="rightText">
@@ -64,6 +73,6 @@
     </section>
   </main>
 
-  <script src="script.js?v=15"></script>
+  <script src="script.js?v=16"></script>
 </body>
 </html>
