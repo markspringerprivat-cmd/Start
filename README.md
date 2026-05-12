@@ -1,23 +1,16 @@
-# Gesprächsführung – Modulübersicht
+# Kursrahmen Gesprächsführung
 
-Statische HTML/CSS/JavaScript-Seite für GitHub Pages oder Einbettung in Moodle.
+Statischer Web-Projektordner für GitHub Pages oder eine Moodle-Einbettung.
 
 ## Dateien
 
-- `index.html`
-- `style.css`
-- `script.js`
-
-## Aktuelle Version
-
-Version: v18
-
-## Änderungen in v18
-
-- Alte Lautsprecher-Buttons wurden vollständig entfernt bzw. zusätzlich per CSS sicher ausgeblendet.
-- Die Vorlesefunktion läuft nur noch über den Blindenmodus.
-- Cache-Version wurde auf `?v=18` gesetzt.
+- `index.html` – vorgelagerte Kursübersicht mit den drei Blöcken Wahrnehmung, Dekomposition und Approximation
+- `dekomposition.html` – ausgearbeitete Dekompositionsseite mit linearer Modulkachel-Navigation
+- `wahrnehmung.html` – Platzhalterseite
+- `approximation.html` – Platzhalterseite
+- `style.css` – gemeinsames Styling
+- `script.js` – Interaktion der Dekompositionsseite
 
 ## Nutzung
 
-Alle Dateien in ein GitHub-Repository hochladen und GitHub Pages aktivieren.
+Alle Dateien in ein GitHub-Repository hochladen. GitHub Pages auf den Branch und Ordner einstellen, in dem `index.html` liegt.

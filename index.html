@@ -3,70 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gesprächsführung – Modulübersicht</title>
-  <link rel="stylesheet" href="style.css?v=18" />
+  <title>Kursübersicht – Gesprächsführung</title>
+  <link rel="stylesheet" href="style.css?v=19" />
 </head>
 <body>
-  <main class="page-shell">
-    <section class="topic-switcher" aria-label="Themennavigation">
-      <button class="arrow-button" id="prevButton" type="button" aria-label="Vorheriges Thema">
-        <span aria-hidden="true">‹</span>
-      </button>
-
-      <div class="cards-window">
-        <div class="cards-track" id="cardsTrack"></div>
-      </div>
-
-      <button class="arrow-button" id="nextButton" type="button" aria-label="Nächstes Thema">
-        <span aria-hidden="true">›</span>
-      </button>
-    </section>
-
-    <div class="blind-mode-row">
-      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
-        Blindenmodus: aus
-      </button>
-      <p class="blind-mode-hint" id="blindModeHint" hidden>
-        Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.
+  <main class="page-shell overview-shell">
+    <section class="overview-hero" aria-labelledby="courseTitle">
+      <p class="eyebrow">Kursrahmen</p>
+      <h1 id="courseTitle">Professionelle Gesprächsführung im Unterricht</h1>
+      <p class="overview-intro">
+        Der Kurs ist in drei aufeinander bezogene Blöcke gegliedert: Wahrnehmung, Dekomposition und Approximation. Die Blöcke helfen dabei, Unterrichtsgespräche zunächst gezielt wahrzunehmen, anschließend in zentrale Bestandteile zu zerlegen und schließlich Handlungsalternativen zu erproben.
       </p>
-    </div>
-
-    <div class="top-divider" aria-hidden="true"></div>
-
-    <section class="banner blind-readable" id="banner" aria-labelledby="moduleTitle" data-blind-target="banner" tabindex="0" role="button" aria-label="Banner vorlesen">
-      <div class="banner-pattern" aria-hidden="true"></div>
-      <div class="banner-content">
-        <p class="eyebrow">Modul</p>
-        <h1 id="moduleTitle">Hauptseite</h1>
-      </div>
     </section>
 
-    <section class="content-grid" aria-label="Modulinhalte">
-      <article class="content-column blind-readable" data-blind-target="left" tabindex="0" role="button" aria-label="Linken Textblock vorlesen">
-        <p class="section-label" id="leftLabel">Überblick</p>
-        <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
-        <p id="leftText">
-          Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben kannst du linear durch die einzelnen Bereiche navigieren.
+    <div class="top-divider overview-divider" aria-hidden="true"></div>
+
+    <section class="course-block-grid" aria-label="Kursblöcke">
+      <a class="course-block-card" href="wahrnehmung.html" aria-label="Zum Block Wahrnehmung">
+        <span class="block-number">01</span>
+        <h2>Wahrnehmung</h2>
+        <p>
+          Beobachten, was in Unterrichtsgesprächen geschieht: Gesprächsverläufe, Beteiligung, Wartezeiten, Rückmeldungen und Steuerung bewusst erkennen.
         </p>
-      </article>
+        <span class="block-link-text">Block öffnen <span aria-hidden="true">→</span></span>
+      </a>
 
-      <div class="vertical-divider" aria-hidden="true"></div>
-
-      <article class="content-column blind-readable" data-blind-target="right" tabindex="0" role="button" aria-label="Rechten Textblock vorlesen">
-        <p class="section-label" id="rightLabel">Lernziele</p>
-        <h2 id="rightTitle">Was lernst du in dieser Übersicht?</h2>
-        <p id="rightText">
-          Du erhältst einen strukturierten Überblick über die einzelnen Module und kannst gezielt zu Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträgen, Schülerbeiträgen, Ergebnissicherung und Gesprächsabschluss wechseln.
+      <a class="course-block-card is-featured" href="dekomposition.html" aria-label="Zum Block Dekomposition">
+        <span class="block-number">02</span>
+        <h2>Dekomposition</h2>
+        <p>
+          Unterrichtsgespräche in zentrale Bestandteile zerlegen: Gesprächsumgebung, Gesprächseröffnung, Gesprächsbeiträge, Schüler*innenbeiträge, Ergebnissicherung und Gesprächsabschluss.
         </p>
+        <span class="block-link-text">Zur ausgearbeiteten Modulübersicht <span aria-hidden="true">→</span></span>
+      </a>
 
-        <a class="module-link-card blind-readable" target="_top" aria-label="Modul-Link vorlesen oder zum Modul wechseln" data-blind-target="module-link" tabindex="0" hidden>
-          <span>Hier geht es zum Modul</span>
-          <span class="link-arrow" aria-hidden="true">↗</span>
-        </a>
-      </article>
+      <a class="course-block-card" href="approximation.html" aria-label="Zum Block Approximation">
+        <span class="block-number">03</span>
+        <h2>Approximation</h2>
+        <p>
+          Gesprächsführung erproben: Handlungsoptionen entwickeln, Formulierungen ausprobieren und professionelle Gesprächssituationen vorbereiten.
+        </p>
+        <span class="block-link-text">Block öffnen <span aria-hidden="true">→</span></span>
+      </a>
     </section>
   </main>
-
-  <script src="script.js?v=18"></script>
 </body>
 </html>
