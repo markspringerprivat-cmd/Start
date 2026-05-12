@@ -5,7 +5,8 @@ const topics = [
     leftTitle: "Willkommen auf der Hauptseite",
     leftText: "Diese Hauptseite dient als Einstieg in die Module zur Gesprächsführung. Sie zeigt die einzelnen Bausteine als lineare Abfolge: von der Vorbereitung der Gesprächsumgebung über die Eröffnung und Steuerung des Gesprächs bis hin zur Sicherung der Ergebnisse und dem Abschluss. Über die Kacheln im oberen Bereich kannst du die Module nacheinander durchgehen. Der jeweils ausgewählte Bereich wird unten mit einer kurzen fachlichen Einordnung und konkreten Lernzielen angezeigt.",
     rightTitle: "Was findest du hier?",
-    rightText: "Du erhältst eine strukturierte Übersicht über zentrale Schritte professioneller Gesprächsführung. Die Seite kann als Startpunkt genutzt werden, um Inhalte zu ordnen, Lernstände zu vergleichen oder gezielt einzelne Gesprächsphasen zu wiederholen. Besonders wichtig ist dabei der Zusammenhang zwischen Planung, Durchführung und Reflexion: Ein gutes Gespräch entsteht nicht nur im Moment selbst, sondern durch bewusst vorbereitete Bedingungen und klare Gesprächsführung."
+    rightText: "Du erhältst eine strukturierte Übersicht über zentrale Schritte professioneller Gesprächsführung. Die Seite kann als Startpunkt genutzt werden, um Inhalte zu ordnen, Lernstände zu vergleichen oder gezielt einzelne Gesprächsphasen zu wiederholen. Besonders wichtig ist dabei der Zusammenhang zwischen Planung, Durchführung und Reflexion: Ein gutes Gespräch entsteht nicht nur im Moment selbst, sondern durch bewusst vorbereitete Bedingungen und klare Gesprächsführung.",
+    moduleUrl: null
   },
   {
     cardTitle: "Gesprächsumgebung",
@@ -13,7 +14,8 @@ const topics = [
     leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
     leftText: "Die Vorbereitung der Gesprächsumgebung beschreibt alle Bedingungen, die vor einem Gespräch geschaffen werden, damit Beteiligte konzentriert, sicher und respektvoll miteinander sprechen können. Dazu gehören ein passender Raum, eine klare Sitzordnung, gut sichtbare Materialien, eine störungsarme Atmosphäre und transparente Erwartungen an das Gespräch. Auch scheinbar kleine Details wie Blickkontakt, Abstand, Beleuchtung oder die Verfügbarkeit von Notizmaterial beeinflussen, ob ein Gespräch ruhig und zielgerichtet verlaufen kann.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Gesprächssituationen nicht dem Zufall zu überlassen, sondern bewusst vorzubereiten. Dazu gehört, räumliche und organisatorische Rahmenbedingungen zu prüfen, Regeln sichtbar zu machen und Gesprächsanlässe so zu strukturieren, dass alle Beteiligten Orientierung erhalten. Außerdem lernst du einzuschätzen, welche Umgebung eher öffnend, unterstützend oder hemmend wirkt und wie du durch kleine Anpassungen mehr Beteiligung und Konzentration ermöglichen kannst."
+    rightText: "Du lernst, Gesprächssituationen nicht dem Zufall zu überlassen, sondern bewusst vorzubereiten. Dazu gehört, räumliche und organisatorische Rahmenbedingungen zu prüfen, Regeln sichtbar zu machen und Gesprächsanlässe so zu strukturieren, dass alle Beteiligten Orientierung erhalten. Außerdem lernst du einzuschätzen, welche Umgebung eher öffnend, unterstützend oder hemmend wirkt und wie du durch kleine Anpassungen mehr Beteiligung und Konzentration ermöglichen kannst.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1492494"
   },
   {
     cardTitle: "Gesprächseröffnung",
@@ -21,7 +23,8 @@ const topics = [
     leftTitle: "Was bedeutet Gesprächseröffnung?",
     leftText: "Die Gesprächseröffnung ist der bewusste Einstieg in ein Gespräch. Sie klärt, warum das Gespräch stattfindet, welches Ziel verfolgt wird und wie die nächsten Schritte aussehen. Eine gute Eröffnung schafft Sicherheit, weil sie den Beteiligten Orientierung gibt und deutlich macht, welche Rolle sie im Gespräch einnehmen. Gleichzeitig entscheidet sich hier oft, ob eine offene Gesprächsatmosphäre entsteht oder ob Unsicherheit, Zurückhaltung und Missverständnisse dominieren.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Gespräche klar, wertschätzend und strukturiert zu beginnen. Dazu gehört, den Anlass knapp zu benennen, ein gemeinsames Ziel zu formulieren, Vorwissen oder Erwartungen zu aktivieren und einen nachvollziehbaren Gesprächsrahmen herzustellen. Außerdem übst du, Einstiegsfragen so zu stellen, dass sie Beteiligung ermöglichen und nicht direkt einengen. Ziel ist ein Gesprächsbeginn, der Orientierung schafft und dennoch Raum für eigene Beiträge lässt."
+    rightText: "Du lernst, Gespräche klar, wertschätzend und strukturiert zu beginnen. Dazu gehört, den Anlass knapp zu benennen, ein gemeinsames Ziel zu formulieren, Vorwissen oder Erwartungen zu aktivieren und einen nachvollziehbaren Gesprächsrahmen herzustellen. Außerdem übst du, Einstiegsfragen so zu stellen, dass sie Beteiligung ermöglichen und nicht direkt einengen. Ziel ist ein Gesprächsbeginn, der Orientierung schafft und dennoch Raum für eigene Beiträge lässt.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695"
   },
   {
     cardTitle: "Gesprächsbeiträge",
@@ -29,7 +32,8 @@ const topics = [
     leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
     leftText: "Die Anregung von Gesprächsbeiträgen umfasst alle Impulse, durch die Beteiligte zum Denken, Formulieren und Weiterführen eigener Ideen angeregt werden. Beiträge entstehen nicht automatisch, sondern hängen stark davon ab, welche Fragen gestellt werden, wie viel Wartezeit gegeben wird und wie wertschätzend auf erste Antworten reagiert wird. Offene Fragen, kurze Denkpausen, konkrete Beispiele oder gezielte Anschlussfragen können helfen, unterschiedliche Perspektiven sichtbar zu machen.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Beteiligung aktiv zu fördern, ohne das Gespräch zu stark zu lenken. Dabei geht es um geeignete Frageformen, produktive Impulse, den Umgang mit Stille und die bewusste Verteilung von Redeanteilen. Außerdem lernst du, Beiträge nicht nur abzufragen, sondern weiterzuentwickeln: durch Nachfragen, Zusammenfassen, Gegenüberstellen und Verbinden. So kann aus einzelnen Antworten ein gemeinsamer Gesprächsprozess entstehen."
+    rightText: "Du lernst, Beteiligung aktiv zu fördern, ohne das Gespräch zu stark zu lenken. Dabei geht es um geeignete Frageformen, produktive Impulse, den Umgang mit Stille und die bewusste Verteilung von Redeanteilen. Außerdem lernst du, Beiträge nicht nur abzufragen, sondern weiterzuentwickeln: durch Nachfragen, Zusammenfassen, Gegenüberstellen und Verbinden. So kann aus einzelnen Antworten ein gemeinsamer Gesprächsprozess entstehen.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696"
   },
   {
     cardTitle: "Schülerbeiträge",
@@ -37,7 +41,8 @@ const topics = [
     leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
     leftText: "Der Umgang mit Schülerbeiträgen beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Schülerbeiträge können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Beiträge aufmerksam aufzunehmen, sprachlich zu klären und fachlich weiterzuführen. Dazu gehören Techniken wie Paraphrasieren, Nachfragen, Spiegeln, Strukturieren und behutsames Korrigieren. Du lernst außerdem, auch fehlerhafte oder unfertige Beiträge konstruktiv einzubinden, damit Lernende nicht bloß korrigiert werden, sondern ihre Gedanken weiterentwickeln können. Ziel ist ein Gespräch, in dem Beiträge ernst genommen und produktiv genutzt werden."
+    rightText: "Du lernst, Beiträge aufmerksam aufzunehmen, sprachlich zu klären und fachlich weiterzuführen. Dazu gehören Techniken wie Paraphrasieren, Nachfragen, Spiegeln, Strukturieren und behutsames Korrigieren. Du lernst außerdem, auch fehlerhafte oder unfertige Beiträge konstruktiv einzubinden, damit Lernende nicht bloß korrigiert werden, sondern ihre Gedanken weiterentwickeln können. Ziel ist ein Gespräch, in dem Beiträge ernst genommen und produktiv genutzt werden.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699"
   },
   {
     cardTitle: "Ergebnissicherung",
@@ -45,7 +50,8 @@ const topics = [
     leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
     leftText: "Die Sicherung von Zwischen- und Endergebnissen macht sichtbar, was im Verlauf eines Gesprächs erarbeitet wurde. Ohne Sicherung können wichtige Gedanken verloren gehen oder unverbunden nebeneinanderstehen. Zwischenergebnisse helfen, Orientierung zu behalten, den aktuellen Stand zu prüfen und neue Gesprächsschritte darauf aufzubauen. Dabei kann Sicherung mündlich, schriftlich, visuell oder digital erfolgen, etwa durch Stichpunkte, Tafelbilder, Cluster, kurze Zusammenfassungen oder gemeinsame Formulierungen.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Gesprächsergebnisse gezielt zu bündeln und verständlich festzuhalten. Dabei übst du, Wesentliches von Nebensächlichem zu unterscheiden, Zwischenstände sprachlich präzise zu formulieren und Ergebnisse so zu sichern, dass sie für die weitere Arbeit nutzbar bleiben. Außerdem lernst du, Sicherung nicht nur am Ende einzusetzen, sondern auch während des Gesprächs als Orientierungshilfe zu verwenden."
+    rightText: "Du lernst, Gesprächsergebnisse gezielt zu bündeln und verständlich festzuhalten. Dabei übst du, Wesentliches von Nebensächlichem zu unterscheiden, Zwischenstände sprachlich präzise zu formulieren und Ergebnisse so zu sichern, dass sie für die weitere Arbeit nutzbar bleiben. Außerdem lernst du, Sicherung nicht nur am Ende einzusetzen, sondern auch während des Gesprächs als Orientierungshilfe zu verwenden.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697"
   },
   {
     cardTitle: "Gesprächsabschluss",
@@ -53,7 +59,8 @@ const topics = [
     leftTitle: "Was bedeutet Beenden eines Gesprächs?",
     leftText: "Das Beenden eines Gesprächs ist mehr als ein formaler Schlusspunkt. Ein guter Abschluss fasst zentrale Ergebnisse zusammen, klärt offene Fragen und schafft einen Übergang zur weiteren Arbeit. Dadurch erhalten die Beteiligten das Gefühl, dass das Gespräch zu einem nachvollziehbaren Ergebnis geführt hat. Ein fehlender oder zu abrupter Abschluss kann dagegen dazu führen, dass Ergebnisse unklar bleiben oder die Bedeutung des Gesprächs nicht deutlich wird.",
     rightTitle: "Was lernst du in diesem Modul?",
-    rightText: "Du lernst, Gespräche bewusst abzuschließen, Ergebnisse zu würdigen und nächste Schritte klar zu benennen. Dazu gehört, wichtige Punkte zusammenzufassen, Verantwortlichkeiten oder Anschlussaufgaben zu klären und Raum für letzte Rückfragen zu geben. Außerdem lernst du, den Abschluss passend zur Gesprächssituation zu gestalten: kurz und bündig, reflektierend, motivierend oder mit einem klaren Arbeitsauftrag für die nächste Phase."
+    rightText: "Du lernst, Gespräche bewusst abzuschließen, Ergebnisse zu würdigen und nächste Schritte klar zu benennen. Dazu gehört, wichtige Punkte zusammenzufassen, Verantwortlichkeiten oder Anschlussaufgaben zu klären und Raum für letzte Rückfragen zu geben. Außerdem lernst du, den Abschluss passend zur Gesprächssituation zu gestalten: kurz und bündig, reflektierend, motivierend oder mit einem klaren Arbeitsauftrag für die nächste Phase.",
+    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494698"
   }
 ];
 
@@ -71,6 +78,7 @@ const rightTitle = document.getElementById("rightTitle");
 const rightText = document.getElementById("rightText");
 const banner = document.getElementById("banner");
 const contentGrid = document.querySelector(".content-grid");
+const moduleLink = document.querySelector(".module-link-card");
 
 function createCards() {
   topics.forEach((topic, index) => {
@@ -135,6 +143,16 @@ function updateContent(direction = "right") {
   rightText.textContent = topic.rightText;
   setBannerTitleSize(topic.bannerTitle);
 
+  if (topic.moduleUrl) {
+    moduleLink.href = topic.moduleUrl;
+    moduleLink.hidden = false;
+    moduleLink.setAttribute("aria-hidden", "false");
+  } else {
+    moduleLink.hidden = true;
+    moduleLink.setAttribute("aria-hidden", "true");
+    moduleLink.removeAttribute("href");
+  }
+
   const animationClass = direction === "left" ? "content-slide-left" : "content-slide-right";
   banner.classList.remove("content-slide-left", "content-slide-right");
   contentGrid.classList.remove("content-slide-left", "content-slide-right");
@@ -174,10 +192,9 @@ document.addEventListener("keydown", (event) => {
 createCards();
 renderCards();
 updateContent();
-const moduleLink = document.querySelector(".module-link-card");
-
 if (moduleLink) {
   moduleLink.addEventListener("click", (event) => {
+    if (moduleLink.hidden || !moduleLink.href) return;
     event.preventDefault();
     window.top.location.href = moduleLink.href;
   });

@@ -1,4 +1,4 @@
-# Gesprächsführung Layout v13
+# Gesprächsführung Layout v14
 
 Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
@@ -8,10 +8,10 @@ Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 - `style.css`
 - `script.js`
 
-## Änderungen in v13
+## Änderungen in v14
 
-- Inhalte unterhalb der ersten Trennlinie gleiten beim Themenwechsel leicht von links oder rechts ein.
-- Animation ist weich und dezent, damit der Wechsel nicht hart wirkt.
-- Links und rechts wurde ein unsichtbarer weißer Sicherheitsabstand von ca. 2 cm ergänzt, damit Schatten bei Moodle-/iFrame-Einbindung nicht abgeschnitten werden.
-- Mehr Abstand zwischen oberer Themenleiste und erster Trennlinie.
-- Cache-Busting auf `?v=13` gesetzt.
+- Auf der Hauptseite wird kein blauer Modul-Link angezeigt.
+- Für alle sechs Inhaltsmodule wird der blaue Button dynamisch eingeblendet.
+- Jeder Modul-Button verweist auf die passende Moodle-HVP-Seite.
+- Die Weiterleitung erfolgt weiterhin aus dem iFrame heraus in den gesamten aktiven Tab (`target="_top"` plus JavaScript-Fallback).
+- Cache-Busting auf `?v=14` gesetzt.
