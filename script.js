@@ -79,6 +79,7 @@ const rightText = document.getElementById("rightText");
 const banner = document.getElementById("banner");
 const contentGrid = document.querySelector(".content-grid");
 const moduleLink = document.querySelector(".module-link-card");
+const speakButtons = [...document.querySelectorAll(".speak-button")];
 
 function createCards() {
   topics.forEach((topic, index) => {
@@ -146,9 +147,11 @@ function updateContent(direction = "right") {
   if (topic.moduleUrl) {
     moduleLink.href = topic.moduleUrl;
     moduleLink.hidden = false;
+    moduleLink.style.display = "flex";
     moduleLink.setAttribute("aria-hidden", "false");
   } else {
     moduleLink.hidden = true;
+    moduleLink.style.display = "none";
     moduleLink.setAttribute("aria-hidden", "true");
     moduleLink.removeAttribute("href");
   }
@@ -169,6 +172,7 @@ function setActiveIndex(newIndex) {
   }
 
   const direction = newIndex > activeIndex ? "right" : "left";
+  stopSpeech();
 
   isAnimating = true;
   activeIndex = newIndex;
@@ -187,6 +191,57 @@ nextButton.addEventListener("click", () => setActiveIndex(activeIndex + 1));
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") setActiveIndex(activeIndex - 1);
   if (event.key === "ArrowRight") setActiveIndex(activeIndex + 1);
+});
+
+
+function getSpeakText(target) {
+  if (target === "left") {
+    return `${leftTitle.textContent}. ${leftText.textContent}`;
+  }
+
+  return `${rightTitle.textContent}. ${rightText.textContent}`;
+}
+
+function stopSpeech() {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+  speakButtons.forEach((button) => button.classList.remove("is-speaking"));
+}
+
+function speakText(target, button) {
+  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+    button.disabled = true;
+    button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
+    return;
+  }
+
+  const text = getSpeakText(target).trim();
+  if (!text) return;
+
+  stopSpeech();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "de-DE";
+  utterance.rate = 0.95;
+  utterance.pitch = 1;
+
+  button.classList.add("is-speaking");
+  utterance.onend = () => button.classList.remove("is-speaking");
+  utterance.onerror = () => button.classList.remove("is-speaking");
+
+  window.speechSynthesis.speak(utterance);
+}
+
+speakButtons.forEach((button) => {
+  if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+    button.disabled = true;
+    button.title = "Vorlesen wird von diesem Browser nicht unterstützt.";
+  }
+
+  button.addEventListener("click", () => {
+    speakText(button.dataset.speakTarget, button);
+  });
 });
 
 createCards();
