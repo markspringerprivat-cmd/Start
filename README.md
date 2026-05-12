@@ -17,3 +17,6 @@ Alle Dateien in ein GitHub-Repository hochladen. GitHub Pages auf den Branch und
 
 
 Version 20: Blindenmodus-Button direkt oberhalb der Trennlinie platziert; Abstand zwischen Themenkacheln und Trennlinie reduziert.
+
+
+Version 25: Blindenmodus-Button mit 2 mm Abstand zur Trennlinie, einheitliche Links „Zur Modulübersicht“, dunkler blauer Linkstil und Hover-Effekt für die große Einstiegskachel.
