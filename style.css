@@ -1482,11 +1482,13 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   .last-visited-button { width: 100%; }
 }
 
-/* v41: Einheitlicher Kachel-Hover wie auf der Kursübersicht */
+/* v42: Einheitlicher, langsamer und weicher Hover für alle Kacheln */
 :root {
   --card-hover-transform: translateY(-4px) scale(1.012);
   --card-hover-border: rgba(47, 95, 143, 0.82);
   --card-hover-shadow: 0 18px 34px rgba(47, 95, 143, 0.12), 0 6px 14px rgba(17, 24, 39, 0.06);
+  --hover-ease: cubic-bezier(.16, 1, .3, 1);
+  --hover-time: 420ms;
 }
 
 .course-block-card,
@@ -1496,13 +1498,23 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
 .module-link-card,
 .bottom-nav-button,
 .last-visited-button,
-.course-topic-link {
+.course-topic-link,
+.topic-card {
   transition:
-    transform var(--quick),
-    box-shadow var(--quick),
-    border-color var(--quick),
-    background var(--quick),
-    color var(--quick);
+    transform var(--hover-time) var(--hover-ease),
+    box-shadow var(--hover-time) var(--hover-ease),
+    border-color var(--hover-time) var(--hover-ease),
+    background var(--hover-time) var(--hover-ease),
+    color var(--hover-time) var(--hover-ease),
+    filter var(--hover-time) var(--hover-ease),
+    opacity var(--hover-time) var(--hover-ease) !important;
+}
+
+/* Banner und Textkacheln dürfen beim Modulwechsel gleiten; Hover soll danach trotzdem weich bleiben. */
+.banner.uniform-hover,
+.content-column.uniform-hover,
+.overview-hero {
+  will-change: transform, box-shadow, border-color;
 }
 
 .course-block-card:hover,
@@ -1537,20 +1549,6 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
 }
 
 /* Die absolut positionierten Themenkarten brauchen ihre eigene Transform-Basis. */
-.topic-card {
-  transition:
-    transform var(--quick),
-    box-shadow var(--quick),
-    border-color var(--quick),
-    background var(--quick),
-    color var(--quick),
-    opacity var(--transition),
-    filter var(--transition),
-    width var(--transition),
-    height var(--transition),
-    font-size var(--transition);
-}
-
 .topic-card:hover,
 .topic-card:focus-visible {
   z-index: 12;
@@ -1578,6 +1576,16 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   border-color: var(--card-hover-border) !important;
   box-shadow: var(--card-hover-shadow) !important;
   outline: none;
+}
+
+/* Nach der Einblendanimation keine harte Transform-Kollision beim Hover. */
+.banner.content-slide-left,
+.banner.content-slide-right,
+.content-column.content-slide-left,
+.content-column.content-slide-right,
+.content-grid.content-slide-left,
+.content-grid.content-slide-right {
+  animation-timing-function: var(--hover-ease);
 }
 
 @media (max-width: 900px) {
