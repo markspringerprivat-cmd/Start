@@ -2,129 +2,174 @@ window.addEventListener("load", () => {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 });
 
-const topics = [
-  {
-    cardTitle: "Hauptseite",
-    bannerTitle: "Hauptseite",
-    subtitle: "Orientierung im Kursblock Dekomposition",
-    leftLabel: "Einordnung",
-    leftTitle: "Was ist eine Dekomposition?",
-    leftText: "Dekomposition bedeutet, einen komplexen Prozess in überschaubare einzelne Bestandteile zu zerlegen. Bezogen auf Unterrichtsgespräche heißt das: Gesprächsführung wird nicht nur als Ganzes betrachtet, sondern in klar benennbare Bausteine aufgeteilt. Dadurch wird sichtbar, welche Schritte vor, während und nach einem Gespräch wichtig sind und an welchen Stellen professionelles Handeln bewusst gestaltet werden kann.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was findest du hier?",
-    rightPoints: [
-      "Gesprächsumgebung",
-      "Gesprächseröffnung",
-      "Gesprächsbeiträge",
-      "Schülerbeiträge",
-      "Ergebnissicherung",
-      "Gesprächsabschluss"
-    ],
-    moduleUrl: null
+const pageData = {
+  dekomposition: {
+    switcherLabel: "Bausteine der Dekomposition",
+    breadcrumbBlock: "Dekomposition",
+    startStepLabel: "Dekomposition",
+    topics: [
+      {
+        cardTitle: "Hauptseite",
+        bannerTitle: "Hauptseite",
+        subtitle: "Orientierung im Kursblock Dekomposition",
+        leftLabel: "Einordnung",
+        leftTitle: "Was ist eine Dekomposition?",
+        leftText: "Dekomposition bedeutet, einen komplexen Prozess in überschaubare einzelne Bestandteile zu zerlegen. Bezogen auf Unterrichtsgespräche heißt das: Gesprächsführung wird nicht nur als Ganzes betrachtet, sondern in klar benennbare Bausteine aufgeteilt. Dadurch wird sichtbar, welche Schritte vor, während und nach einem Gespräch wichtig sind und an welchen Stellen professionelles Handeln bewusst gestaltet werden kann.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was findest du hier?",
+        rightPoints: [
+          "Gesprächsumgebung",
+          "Gesprächseröffnung",
+          "Gesprächsbeiträge",
+          "Schülerbeiträge",
+          "Ergebnissicherung",
+          "Gesprächsabschluss"
+        ],
+        moduleUrl: null
+      },
+      {
+        cardTitle: "Gesprächsumgebung",
+        bannerTitle: "Vorbereitung der Gesprächsumgebung",
+        subtitle: "Bedingungen schaffen, damit Gespräche konzentriert und lernförderlich stattfinden können.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
+        leftText: "Die Vorbereitung der Gesprächsumgebung beschreibt alle Bedingungen, die vor einem Gespräch geschaffen werden, damit Beteiligte konzentriert, sicher und respektvoll miteinander sprechen können. Dazu gehören ein passender Raum, eine klare Sitzordnung, gut sichtbare Materialien, eine störungsarme Atmosphäre und transparente Erwartungen an das Gespräch. Auch scheinbar kleine Details wie Blickkontakt, Abstand, Beleuchtung oder die Verfügbarkeit von Arbeitsmaterialien beeinflussen, ob ein Gespräch ruhig, offen und zielgerichtet verlaufen kann.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du beschreibst, welche äußeren Bedingungen Unterrichtsgespräche unterstützen oder erschweren.",
+          "Du planst Raum, Material, Sitzordnung und Gesprächsrahmen bewusster.",
+          "Du erkennst, wie Erwartungen, Rollen und Atmosphäre die Beteiligung beeinflussen.",
+          "Du entwickelst Kriterien für eine lernförderliche Gesprächsumgebung."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1492494"
+      },
+      {
+        cardTitle: "Gesprächseröffnung",
+        bannerTitle: "Gesprächseröffnung",
+        subtitle: "Einen Gesprächsanlass klären und die Beteiligten in einen gemeinsamen Denkprozess führen.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Gesprächseröffnung?",
+        leftText: "Die Gesprächseröffnung legt fest, wie ein Unterrichtsgespräch beginnt und welche Orientierung die Beteiligten zu Beginn erhalten. Eine klare Eröffnung macht deutlich, worum es geht, warum das Gespräch relevant ist und welche Form der Beteiligung erwartet wird. Sie kann Interesse wecken, Vorwissen aktivieren, eine Fragestellung aufwerfen oder einen gemeinsamen Fokus herstellen. Eine unklare Eröffnung führt dagegen häufig dazu, dass Lernende nicht wissen, worauf sie achten sollen oder welche Art von Beitrag erwartet wird.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du formulierst Gesprächsanlässe klar und verständlich.",
+          "Du aktivierst Vorwissen, ohne die Gesprächsrichtung zu stark vorzugeben.",
+          "Du erkennst, wie Eröffnungsfragen den weiteren Gesprächsverlauf beeinflussen.",
+          "Du entwickelst passende Einstiege für unterschiedliche Gesprächssituationen."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695"
+      },
+      {
+        cardTitle: "Gesprächsbeiträge",
+        bannerTitle: "Anregung von Gesprächsbeiträgen",
+        subtitle: "Beiträge ermöglichen, vertiefen und zu einem gemeinsamen Gesprächsprozess verbinden.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
+        leftText: "Die Anregung von Gesprächsbeiträgen umfasst alle Impulse, durch die Lernende zum Denken, Sprechen und Weiterführen eines Gesprächs eingeladen werden. Dazu zählen offene Fragen, Denkaufträge, kurze Schreibphasen, Partneraustausch, gezieltes Nachfragen oder das Aufgreifen vorhandener Ideen. Entscheidend ist, dass Beiträge nicht nur abgefragt werden. Gute Impulse ermöglichen unterschiedliche Zugänge, schaffen Denkzeit und eröffnen Raum für Begründungen, Perspektiven und fachliche Weiterentwicklung.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du unterscheidest geschlossene Abfragen von gesprächsanregenden Impulsen.",
+          "Du nutzt Fragen, Denkzeit und Nachfragen zur Aktivierung von Lernenden.",
+          "Du förderst unterschiedliche Redeanteile und Beteiligungsformen.",
+          "Du verbindest einzelne Beiträge zu einem nachvollziehbaren Gesprächsverlauf."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696"
+      },
+      {
+        cardTitle: "Schülerbeiträge",
+        bannerTitle: "Umgang mit Schülerbeiträgen",
+        subtitle: "Äußerungen aufnehmen, würdigen, klären und für den weiteren Lernprozess nutzen.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
+        leftText: "Der Umgang mit Schülerbeiträgen beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Schüler*innenbeiträge können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du nimmst Beiträge aufmerksam auf und reagierst fachlich sowie wertschätzend.",
+          "Du nutzt Paraphrasieren, Nachfragen und Strukturieren zur Klärung von Beiträgen.",
+          "Du bindest auch unfertige oder fehlerhafte Beiträge konstruktiv ein.",
+          "Du entwickelst Gesprächsreaktionen, die Denken sichtbar machen und weiterführen."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699"
+      },
+      {
+        cardTitle: "Ergebnissicherung",
+        bannerTitle: "Sicherung der (Zwischen)Ergebnisse",
+        subtitle: "Zwischenstände und Ergebnisse sichtbar machen, bündeln und für die Weiterarbeit sichern.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
+        leftText: "Die Sicherung von Zwischen- und Endergebnissen macht sichtbar, was im Verlauf eines Gesprächs erarbeitet wurde. Ohne Sicherung können wichtige Gedanken verloren gehen oder unverbunden nebeneinanderstehen. Zwischenergebnisse helfen, Orientierung zu behalten, den aktuellen Stand zu prüfen und neue Gesprächsschritte darauf aufzubauen. Dabei kann Sicherung mündlich, schriftlich, visuell oder digital erfolgen, etwa durch Stichpunkte, Tafelbilder, Cluster, kurze Zusammenfassungen oder gemeinsame Formulierungen.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du bündelst Gesprächsergebnisse verständlich und zielgerichtet.",
+          "Du unterscheidest Wesentliches von Nebensächlichem.",
+          "Du nutzt Zwischensicherungen als Orientierung während des Gesprächs.",
+          "Du hältst Ergebnisse so fest, dass sie für Anschlussaufgaben nutzbar bleiben."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697"
+      },
+      {
+        cardTitle: "Gesprächsabschluss",
+        bannerTitle: "Beenden eines Gesprächs",
+        subtitle: "Gespräche abrunden, Ergebnisse klären und nächste Schritte transparent machen.",
+        leftLabel: "Einordnung",
+        leftTitle: "Was bedeutet Beenden eines Gesprächs?",
+        leftText: "Das Beenden eines Gesprächs ist mehr als ein formaler Schlusspunkt. Ein guter Abschluss fasst zentrale Ergebnisse zusammen, klärt offene Fragen und schafft einen Übergang zur weiteren Arbeit. Dadurch erhalten die Beteiligten das Gefühl, dass das Gespräch zu einem nachvollziehbaren Ergebnis geführt hat. Ein fehlender oder zu abrupter Abschluss kann dagegen dazu führen, dass Ergebnisse unklar bleiben oder die Bedeutung des Gesprächs nicht deutlich wird.",
+        rightLabel: "Lernziele",
+        rightTitle: "Was lernst du in diesem Modul?",
+        rightPoints: [
+          "Du schließt Gespräche bewusst und nachvollziehbar ab.",
+          "Du fasst zentrale Ergebnisse knapp und verständlich zusammen.",
+          "Du klärst offene Fragen, Anschlussaufgaben und nächste Schritte.",
+          "Du gestaltest Abschlüsse passend zur jeweiligen Gesprächssituation."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494698"
+      }
+    ]
   },
-  {
-    cardTitle: "Gesprächsumgebung",
-    bannerTitle: "Vorbereitung der Gesprächsumgebung",
-    subtitle: "Bedingungen schaffen, damit Gespräche konzentriert und lernförderlich stattfinden können.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
-    leftText: "Die Vorbereitung der Gesprächsumgebung beschreibt alle Bedingungen, die vor einem Gespräch geschaffen werden, damit Beteiligte konzentriert, sicher und respektvoll miteinander sprechen können. Dazu gehören ein passender Raum, eine klare Sitzordnung, gut sichtbare Materialien, eine störungsarme Atmosphäre und transparente Erwartungen an das Gespräch. Auch scheinbar kleine Details wie Blickkontakt, Abstand, Beleuchtung oder die Verfügbarkeit von Arbeitsmaterialien beeinflussen, ob ein Gespräch ruhig, offen und zielgerichtet verlaufen kann.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du beschreibst, welche äußeren Bedingungen Unterrichtsgespräche unterstützen oder erschweren.",
-      "Du planst Raum, Material, Sitzordnung und Gesprächsrahmen bewusster.",
-      "Du erkennst, wie Erwartungen, Rollen und Atmosphäre die Beteiligung beeinflussen.",
-      "Du entwickelst Kriterien für eine lernförderliche Gesprächsumgebung."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1492494"
+  wahrnehmung: {
+    switcherLabel: "Bausteine der Wahrnehmung",
+    breadcrumbBlock: "Wahrnehmung",
+    startStepLabel: "Wahrnehmung",
+    topics: Array.from({ length: 6 }, (_, i) => ({
+      cardTitle: `Thema ${i + 1}`,
+      bannerTitle: `Titel ${i + 1}`,
+      subtitle: `Untertitel ${i + 1}`,
+      leftLabel: "Einordnung",
+      leftTitle: `Titel ${i + 1}`,
+      leftText: `Text ${i + 1}`,
+      rightLabel: "Lernziele",
+      rightTitle: `Titel ${i + 1}`,
+      rightPoints: [`Text ${i + 1}`, `Text ${i + 1}`, `Text ${i + 1}`],
+      moduleUrl: null
+    }))
   },
-  {
-    cardTitle: "Gesprächseröffnung",
-    bannerTitle: "Gesprächseröffnung",
-    subtitle: "Einen Gesprächsanlass klären und die Beteiligten in einen gemeinsamen Denkprozess führen.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Gesprächseröffnung?",
-    leftText: "Die Gesprächseröffnung legt fest, wie ein Unterrichtsgespräch beginnt und welche Orientierung die Beteiligten zu Beginn erhalten. Eine klare Eröffnung macht deutlich, worum es geht, warum das Gespräch relevant ist und welche Form der Beteiligung erwartet wird. Sie kann Interesse wecken, Vorwissen aktivieren, eine Fragestellung aufwerfen oder einen gemeinsamen Fokus herstellen. Eine unklare Eröffnung führt dagegen häufig dazu, dass Lernende nicht wissen, worauf sie achten sollen oder welche Art von Beitrag erwartet wird.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du formulierst Gesprächsanlässe klar und verständlich.",
-      "Du aktivierst Vorwissen, ohne die Gesprächsrichtung zu stark vorzugeben.",
-      "Du erkennst, wie Eröffnungsfragen den weiteren Gesprächsverlauf beeinflussen.",
-      "Du entwickelst passende Einstiege für unterschiedliche Gesprächssituationen."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695"
-  },
-  {
-    cardTitle: "Gesprächsbeiträge",
-    bannerTitle: "Anregung von Gesprächsbeiträgen",
-    subtitle: "Beiträge ermöglichen, vertiefen und zu einem gemeinsamen Gesprächsprozess verbinden.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
-    leftText: "Die Anregung von Gesprächsbeiträgen umfasst alle Impulse, durch die Lernende zum Denken, Sprechen und Weiterführen eines Gesprächs eingeladen werden. Dazu zählen offene Fragen, Denkaufträge, kurze Schreibphasen, Partneraustausch, gezieltes Nachfragen oder das Aufgreifen vorhandener Ideen. Entscheidend ist, dass Beiträge nicht nur abgefragt werden. Gute Impulse ermöglichen unterschiedliche Zugänge, schaffen Denkzeit und eröffnen Raum für Begründungen, Perspektiven und fachliche Weiterentwicklung.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du unterscheidest geschlossene Abfragen von gesprächsanregenden Impulsen.",
-      "Du nutzt Fragen, Denkzeit und Nachfragen zur Aktivierung von Lernenden.",
-      "Du förderst unterschiedliche Redeanteile und Beteiligungsformen.",
-      "Du verbindest einzelne Beiträge zu einem nachvollziehbaren Gesprächsverlauf."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696"
-  },
-  {
-    cardTitle: "Schülerbeiträge",
-    bannerTitle: "Umgang mit Schülerbeiträgen",
-    subtitle: "Äußerungen aufnehmen, würdigen, klären und für den weiteren Lernprozess nutzen.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
-    leftText: "Der Umgang mit Schülerbeiträgen beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Schüler*innenbeiträge können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du nimmst Beiträge aufmerksam auf und reagierst fachlich sowie wertschätzend.",
-      "Du nutzt Paraphrasieren, Nachfragen und Strukturieren zur Klärung von Beiträgen.",
-      "Du bindest auch unfertige oder fehlerhafte Beiträge konstruktiv ein.",
-      "Du entwickelst Gesprächsreaktionen, die Denken sichtbar machen und weiterführen."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699"
-  },
-  {
-    cardTitle: "Ergebnissicherung",
-    bannerTitle: "Sicherung der (Zwischen)Ergebnisse",
-    subtitle: "Zwischenstände und Ergebnisse sichtbar machen, bündeln und für die Weiterarbeit sichern.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
-    leftText: "Die Sicherung von Zwischen- und Endergebnissen macht sichtbar, was im Verlauf eines Gesprächs erarbeitet wurde. Ohne Sicherung können wichtige Gedanken verloren gehen oder unverbunden nebeneinanderstehen. Zwischenergebnisse helfen, Orientierung zu behalten, den aktuellen Stand zu prüfen und neue Gesprächsschritte darauf aufzubauen. Dabei kann Sicherung mündlich, schriftlich, visuell oder digital erfolgen, etwa durch Stichpunkte, Tafelbilder, Cluster, kurze Zusammenfassungen oder gemeinsame Formulierungen.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du bündelst Gesprächsergebnisse verständlich und zielgerichtet.",
-      "Du unterscheidest Wesentliches von Nebensächlichem.",
-      "Du nutzt Zwischensicherungen als Orientierung während des Gesprächs.",
-      "Du hältst Ergebnisse so fest, dass sie für Anschlussaufgaben nutzbar bleiben."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697"
-  },
-  {
-    cardTitle: "Gesprächsabschluss",
-    bannerTitle: "Beenden eines Gesprächs",
-    subtitle: "Gespräche abrunden, Ergebnisse klären und nächste Schritte transparent machen.",
-    leftLabel: "Einordnung",
-    leftTitle: "Was bedeutet Beenden eines Gesprächs?",
-    leftText: "Das Beenden eines Gesprächs ist mehr als ein formaler Schlusspunkt. Ein guter Abschluss fasst zentrale Ergebnisse zusammen, klärt offene Fragen und schafft einen Übergang zur weiteren Arbeit. Dadurch erhalten die Beteiligten das Gefühl, dass das Gespräch zu einem nachvollziehbaren Ergebnis geführt hat. Ein fehlender oder zu abrupter Abschluss kann dagegen dazu führen, dass Ergebnisse unklar bleiben oder die Bedeutung des Gesprächs nicht deutlich wird.",
-    rightLabel: "Lernziele",
-    rightTitle: "Was lernst du in diesem Modul?",
-    rightPoints: [
-      "Du schließt Gespräche bewusst und nachvollziehbar ab.",
-      "Du fasst zentrale Ergebnisse knapp und verständlich zusammen.",
-      "Du klärst offene Fragen, Anschlussaufgaben und nächste Schritte.",
-      "Du gestaltest Abschlüsse passend zur jeweiligen Gesprächssituation."
-    ],
-    moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494698"
+  approximation: {
+    switcherLabel: "Bausteine der Approximation",
+    breadcrumbBlock: "Approximation",
+    startStepLabel: "Approximation",
+    topics: Array.from({ length: 6 }, (_, i) => ({
+      cardTitle: `Thema ${i + 1}`,
+      bannerTitle: `Titel ${i + 1}`,
+      subtitle: `Untertitel ${i + 1}`,
+      leftLabel: "Einordnung",
+      leftTitle: `Titel ${i + 1}`,
+      leftText: `Text ${i + 1}`,
+      rightLabel: "Lernziele",
+      rightTitle: `Titel ${i + 1}`,
+      rightPoints: [`Text ${i + 1}`, `Text ${i + 1}`, `Text ${i + 1}`],
+      moduleUrl: null
+    }))
   }
-];
+};
+
+const pageType = document.body?.dataset.page || "dekomposition";
+const currentConfig = pageData[pageType] || pageData.dekomposition;
+const topics = currentConfig.topics;
 
 let activeIndex = 0;
 let isAnimating = false;
@@ -149,6 +194,13 @@ const contentGrid = document.querySelector(".content-grid");
 const moduleLink = document.querySelector(".module-link-card");
 const blindModeToggle = document.getElementById("blindModeToggle");
 const blindModeHint = document.getElementById("blindModeHint");
+const switcherLabel = document.querySelector(".switcher-label");
+const topicSwitcher = document.querySelector(".topic-switcher");
+const breadcrumbBlock = document.getElementById("breadcrumbBlock");
+
+if (switcherLabel) switcherLabel.textContent = currentConfig.switcherLabel;
+if (topicSwitcher) topicSwitcher.setAttribute("aria-label", `Themennavigation der ${currentConfig.breadcrumbBlock}`);
+if (breadcrumbBlock) breadcrumbBlock.textContent = currentConfig.breadcrumbBlock;
 
 function createCards() {
   if (!track) return;
@@ -220,7 +272,7 @@ function updateContent(direction = "right") {
 
   bannerTitle.textContent = topic.bannerTitle;
   moduleSubtitle.textContent = topic.subtitle;
-  moduleStep.textContent = activeIndex === 0 ? "Dekomposition" : `Baustein ${activeIndex} von ${topics.length - 1}`;
+  moduleStep.textContent = activeIndex === 0 ? currentConfig.startStepLabel : `Baustein ${activeIndex + 1} von ${topics.length}`;
   breadcrumbCurrent.textContent = topic.cardTitle;
   leftLabel.textContent = topic.leftLabel;
   rightLabel.textContent = topic.rightLabel;
@@ -340,72 +392,41 @@ function speakRawText(text, key, visualElement = null) {
 
 function setBlindMode(enabled) {
   blindModeActive = enabled;
-  document.body.classList.toggle("blind-mode-active", blindModeActive);
-
-  if (blindModeToggle) {
-    blindModeToggle.classList.toggle("is-active", blindModeActive);
-    blindModeToggle.setAttribute("aria-pressed", String(blindModeActive));
-    blindModeToggle.textContent = blindModeActive ? "Blindenmodus: an" : "Blindenmodus: aus";
-  }
+  document.body.classList.toggle("blind-mode-active", enabled);
+  blindModeToggle?.classList.toggle("is-active", enabled);
+  blindModeToggle?.setAttribute("aria-pressed", String(enabled));
+  if (blindModeToggle) blindModeToggle.textContent = `Blindenmodus: ${enabled ? "an" : "aus"}`;
 
   if (blindModeHint) {
-    blindModeHint.hidden = !blindModeActive;
-    blindModeHint.textContent = "Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.";
+    blindModeHint.hidden = !enabled;
+    blindModeHint.textContent = enabled
+      ? "Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen."
+      : "";
   }
 
-  stopSpeech();
-  if (blindModeActive) {
-    speakRawText("Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.", "blind-instruction", blindModeToggle);
+  if (enabled) {
+    speakRawText("Bitte auf Schaltfläche drücken, um diese vorlesen zu lassen.", "blindmode-hint");
+  } else {
+    stopSpeech();
   }
 }
-
-function speakBlindElement(element) {
-  if (!blindModeActive) return;
-  const target = element.dataset.blindTarget;
-  const text = getSpeakText(target, element);
-  const indexPart = target === "topic-card" ? element.dataset.index : activeIndex;
-  speakRawText(text, `blind-${target}-${indexPart}`, element);
-}
-
-document.addEventListener("click", (event) => {
-  if (!blindModeActive) return;
-  const element = event.target.closest(".blind-readable");
-  if (!element) return;
-  event.preventDefault();
-  event.stopPropagation();
-  speakBlindElement(element);
-});
-
-document.addEventListener("keydown", (event) => {
-  if (!blindModeActive) return;
-  if (event.key !== "Enter" && event.key !== " ") return;
-  const element = event.target.closest(".blind-readable");
-  if (!element) return;
-  event.preventDefault();
-  speakBlindElement(element);
-});
 
 blindModeToggle?.addEventListener("click", () => setBlindMode(!blindModeActive));
 
-if (!supportsSpeech() && blindModeToggle) {
-  blindModeToggle.disabled = true;
-  blindModeToggle.title = "Blindenmodus mit Vorlesen wird von diesem Browser nicht unterstützt.";
-}
-
-if (moduleLink) {
-  moduleLink.addEventListener("click", (event) => {
-    if (moduleLink.hidden || !moduleLink.href) return;
-    if (blindModeActive) {
+function addBlindModeInteractions() {
+  getBlindReadables().forEach((element) => {
+    element.addEventListener("click", (event) => {
+      if (!blindModeActive) return;
       event.preventDefault();
       event.stopPropagation();
-      speakBlindElement(moduleLink);
-      return;
-    }
-    event.preventDefault();
-    window.top.location.href = moduleLink.href;
+      const target = element.dataset.blindTarget;
+      const speakText = getSpeakText(target, element);
+      speakRawText(speakText, `${target}-${element.dataset.index || "main"}`, element);
+    });
   });
 }
 
 createCards();
 renderCards();
-updateContent();
+updateContent("right");
+addBlindModeInteractions();
