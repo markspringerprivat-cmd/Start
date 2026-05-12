@@ -915,3 +915,121 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
     animation: none;
   }
 }
+
+
+/* v23: Flüssige, stabile Flip-Karten ohne Inhaltswechsel während der Animation */
+.flip-grid {
+  align-items: stretch;
+  perspective: 1800px;
+  gap: 32px;
+  padding-bottom: 96px;
+}
+
+.flip-card {
+  height: 430px;
+  min-height: 430px;
+  position: relative;
+  perspective: 1800px;
+  cursor: pointer;
+  outline: none;
+  contain: layout paint;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  transform-style: preserve-3d;
+  transition: transform 900ms cubic-bezier(.2, .75, .18, 1);
+  will-change: transform;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(circle at 20px 20px, rgba(0,0,0,0.023) 1px, transparent 1.8px),
+    linear-gradient(135deg, #ffffff 0%, #f8fbfd 100%);
+  background-size: 34px 34px, auto;
+}
+
+.flip-card .course-block-card {
+  min-height: 0;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 34px 32px;
+  transition: border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.flip-card .course-block-card:hover,
+.flip-card .course-block-card:focus-visible {
+  transform: none;
+}
+
+.flip-card:hover .course-block-card,
+.flip-card:focus-visible .course-block-card {
+  border-color: rgba(0, 0, 0, 0.92);
+  box-shadow: 14px 28px 54px rgba(20, 24, 30, 0.14), 0 7px 18px rgba(20, 24, 30, 0.08);
+}
+
+.flip-card .course-block-card h2 {
+  font-size: clamp(1.75rem, 2.15vw, 2.35rem);
+  max-width: 100%;
+}
+
+.flip-card .course-block-card p {
+  font-size: clamp(0.98rem, 1.04vw, 1.08rem);
+  line-height: 1.64;
+  max-width: 100%;
+}
+
+.flip-card .overview-module-link,
+.flip-card .block-link-text {
+  margin-top: auto;
+}
+
+.flip-card .overview-module-link {
+  align-self: flex-start;
+}
+
+.memory-grid,
+.memory-card,
+.memory-face {
+  animation: none !important;
+}
+
+@media (max-width: 1050px) {
+  .flip-card,
+  .flip-card-inner,
+  .flip-card-face {
+    height: 380px;
+    min-height: 380px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+}
