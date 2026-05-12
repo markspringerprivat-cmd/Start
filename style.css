@@ -1128,3 +1128,136 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
     width: 100%;
   }
 }
+
+
+/* v36: Search is attached to the blind-mode controls; progress sits below the active center card. */
+.module-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -8px 0 18px;
+  padding: 0;
+  background: transparent;
+}
+
+.progress-area {
+  width: min(520px, 45vw);
+  min-width: 260px;
+  background: transparent;
+}
+
+.progress-meta {
+  justify-content: center;
+  margin-bottom: 7px;
+}
+
+#progressPercent {
+  display: none !important;
+}
+
+.progress-track {
+  width: 100%;
+  height: 7px;
+  background: transparent;
+  border: 1px solid rgba(47, 95, 143, 0.28);
+  box-shadow: none;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, rgba(70, 153, 200, 0.88), rgba(47, 95, 143, 0.96));
+}
+
+.blind-mode-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 10px;
+  min-height: 42px;
+  margin: 0 0 2mm;
+  background: transparent;
+}
+
+.blind-mode-toggle {
+  min-height: 42px;
+  height: 42px;
+  padding: 8px 16px;
+  flex: 0 0 auto;
+}
+
+.blind-search-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 0 1 560px;
+  min-width: 0;
+}
+
+.blind-search-group .module-search {
+  flex: 1 1 360px;
+  min-width: 260px;
+}
+
+.module-search {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  background: transparent;
+}
+
+.module-search input,
+.module-search button {
+  min-height: 42px;
+  height: 42px;
+  margin: 0;
+  box-shadow: none;
+}
+
+.module-search input {
+  border: 1.15px solid rgba(47, 95, 143, 0.38);
+}
+
+.module-search button {
+  border: 1.15px solid rgba(47, 95, 143, 0.38);
+}
+
+.last-visited-button {
+  min-height: 42px;
+  height: 42px;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.blind-mode-hint {
+  flex-basis: 100%;
+  text-align: right;
+  margin-top: 6px;
+}
+
+.tool-row {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .progress-area {
+    width: min(520px, 88vw);
+  }
+
+  .blind-mode-row {
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
+
+  .blind-search-group {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+  }
+
+  .blind-search-group .module-search {
+    flex-basis: 100%;
+  }
+
+  .last-visited-button {
+    width: 100%;
+  }
+}
