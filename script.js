@@ -197,16 +197,6 @@ const blindModeHint = document.getElementById("blindModeHint");
 const switcherLabel = document.querySelector(".switcher-label");
 const topicSwitcher = document.querySelector(".topic-switcher");
 const breadcrumbBlock = document.getElementById("breadcrumbBlock");
-const progressText = document.getElementById("progressText");
-const progressPercent = document.getElementById("progressPercent");
-const progressFill = document.getElementById("progressFill");
-const lastVisitedButton = document.getElementById("lastVisitedButton");
-const lastVisitedText = document.getElementById("lastVisitedText");
-const moduleSearch = document.getElementById("moduleSearch");
-const moduleSearchInput = document.getElementById("moduleSearchInput");
-const searchResults = document.getElementById("searchResults");
-const bottomPrevButton = document.getElementById("bottomPrevButton");
-const bottomNextButton = document.getElementById("bottomNextButton");
 
 function getInitialTopicIndex() {
   const params = new URLSearchParams(window.location.search);
@@ -226,142 +216,6 @@ function syncTopicParam() {
   }
   const nextUrl = `${url.pathname}${url.search}${url.hash || ""}`;
   window.history.replaceState({}, "", nextUrl);
-}
-
-function getStorageKey(suffix) {
-  return `kursrahmen-${pageType}-${suffix}`;
-}
-
-function saveLastVisited() {
-  if (!topics[activeIndex]) return;
-  localStorage.setItem(getStorageKey("last-index"), String(activeIndex));
-  localStorage.setItem(getStorageKey("last-title"), topics[activeIndex].cardTitle);
-}
-
-function getLastVisitedIndex() {
-  const raw = Number(localStorage.getItem(getStorageKey("last-index")));
-  if (Number.isFinite(raw) && raw >= 0 && raw < topics.length) return raw;
-  return null;
-}
-
-function updateLastVisitedButton() {
-  if (!lastVisitedButton || !lastVisitedText) return;
-  const lastIndex = getLastVisitedIndex();
-  if (lastIndex === null || lastIndex === activeIndex) {
-    lastVisitedButton.hidden = true;
-    return;
-  }
-
-  lastVisitedText.textContent = topics[lastIndex].cardTitle;
-  lastVisitedButton.hidden = false;
-}
-
-function updateProgress() {
-  if (!progressText || !progressPercent || !progressFill) return;
-
-  let current;
-  let total;
-  if (pageType === "dekomposition") {
-    current = activeIndex === 0 ? 0 : activeIndex;
-    total = Math.max(1, topics.length - 1);
-  } else {
-    current = activeIndex + 1;
-    total = topics.length;
-  }
-
-  const percent = pageType === "dekomposition" && activeIndex === 0
-    ? 0
-    : Math.round((current / total) * 100);
-
-  progressText.textContent = pageType === "dekomposition" && activeIndex === 0
-    ? `Fortschritt: Übersicht`
-    : `Fortschritt: ${current} von ${total}`;
-
-  progressPercent.textContent = `${percent}%`;
-  progressFill.style.width = `${percent}%`;
-}
-
-function getTopicSearchText(topic) {
-  return [
-    topic.cardTitle,
-    topic.bannerTitle,
-    topic.subtitle,
-    topic.leftTitle,
-    topic.leftText,
-    topic.rightTitle,
-    ...(topic.rightPoints || [])
-  ].join(" ").toLowerCase();
-}
-
-function showSearchResults(query) {
-  if (!searchResults) return;
-  const normalized = query.trim().toLowerCase();
-  searchResults.innerHTML = "";
-
-  if (!normalized) {
-    searchResults.hidden = true;
-    return;
-  }
-
-  const matches = topics
-    .map((topic, index) => ({ topic, index }))
-    .filter(({ topic }) => getTopicSearchText(topic).includes(normalized))
-    .slice(0, 6);
-
-  if (!matches.length) {
-    const empty = document.createElement("div");
-    empty.className = "search-empty";
-    empty.textContent = "Keine Treffer gefunden.";
-    searchResults.appendChild(empty);
-    searchResults.hidden = false;
-    return;
-  }
-
-  matches.forEach(({ topic, index }) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "search-result-button";
-    button.setAttribute("role", "option");
-    button.innerHTML = `
-      <span class="search-result-title">${topic.cardTitle}</span>
-      <span class="search-result-snippet">${topic.bannerTitle}</span>
-    `;
-    button.addEventListener("click", () => {
-      searchResults.hidden = true;
-      moduleSearchInput.value = "";
-      setActiveIndex(index);
-    });
-    searchResults.appendChild(button);
-  });
-
-  searchResults.hidden = false;
-}
-
-function setupSearch() {
-  if (!moduleSearch || !moduleSearchInput) return;
-
-  moduleSearch.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const normalized = moduleSearchInput.value.trim().toLowerCase();
-    if (!normalized) return;
-
-    const matchIndex = topics.findIndex((topic) => getTopicSearchText(topic).includes(normalized));
-    if (matchIndex >= 0) {
-      searchResults.hidden = true;
-      setActiveIndex(matchIndex);
-    } else {
-      showSearchResults(moduleSearchInput.value);
-    }
-  });
-
-  moduleSearchInput.addEventListener("input", () => showSearchResults(moduleSearchInput.value));
-  moduleSearchInput.addEventListener("focus", () => showSearchResults(moduleSearchInput.value));
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".module-search")) {
-      if (searchResults) searchResults.hidden = true;
-    }
-  });
 }
 
 if (switcherLabel) switcherLabel.textContent = currentConfig.switcherLabel;
@@ -409,13 +263,8 @@ function renderCards() {
     card.setAttribute("aria-current", offset === 0 ? "true" : "false");
   });
 
-  const prevDisabled = activeIndex === 0 || isAnimating;
-  const nextDisabled = activeIndex === topics.length - 1 || isAnimating;
-
-  if (prevButton) prevButton.disabled = prevDisabled;
-  if (nextButton) nextButton.disabled = nextDisabled;
-  if (bottomPrevButton) bottomPrevButton.disabled = prevDisabled;
-  if (bottomNextButton) bottomNextButton.disabled = nextDisabled;
+  if (prevButton) prevButton.disabled = activeIndex === 0 || isAnimating;
+  if (nextButton) nextButton.disabled = activeIndex === topics.length - 1 || isAnimating;
 }
 
 function setBannerTitleSize(title) {
@@ -474,25 +323,15 @@ function updateContent(direction = "right") {
   }
 
   const animationClass = direction === "left" ? "content-slide-left" : "content-slide-right";
-  const columns = [...document.querySelectorAll(".content-column")];
-
   banner.classList.remove("content-slide-left", "content-slide-right");
   contentGrid.classList.remove("content-slide-left", "content-slide-right");
-  columns.forEach((column, index) => {
-    column.classList.remove("content-slide-left", "content-slide-right", "content-stagger-1", "content-stagger-2");
-    column.classList.add(index === 0 ? "content-stagger-1" : "content-stagger-2");
-  });
 
   requestAnimationFrame(() => {
     banner.classList.add(animationClass);
     contentGrid.classList.add(animationClass);
-    columns.forEach((column) => column.classList.add(animationClass));
   });
 
   syncTopicParam();
-  saveLastVisited();
-  updateLastVisitedButton();
-  updateProgress();
 }
 
 function setActiveIndex(newIndex) {
@@ -513,12 +352,6 @@ function setActiveIndex(newIndex) {
 
 prevButton?.addEventListener("click", () => setActiveIndex(activeIndex - 1));
 nextButton?.addEventListener("click", () => setActiveIndex(activeIndex + 1));
-bottomPrevButton?.addEventListener("click", () => setActiveIndex(activeIndex - 1));
-bottomNextButton?.addEventListener("click", () => setActiveIndex(activeIndex + 1));
-lastVisitedButton?.addEventListener("click", () => {
-  const lastIndex = getLastVisitedIndex();
-  if (lastIndex !== null) setActiveIndex(lastIndex);
-});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") setActiveIndex(activeIndex - 1);
@@ -624,7 +457,6 @@ function addBlindModeInteractions() {
 }
 
 createCards();
-setupSearch();
 renderCards();
 updateContent("right");
 addBlindModeInteractions();
