@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dekomposition Layout</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <title>Lineares Themenlayout</title>
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <main class="page-shell">
@@ -24,50 +24,32 @@
 
     <div class="horizontal-divider" aria-hidden="true"></div>
 
-    <section class="hero-banner" aria-label="Banner">
-      <div class="banner-pattern"></div>
-      <div class="banner-content">
-        <p class="banner-kicker">Modul</p>
-        <h1>Dekomposition</h1>
-        <p>Komplexe Aufgaben in kleinere, überschaubare Teilprobleme zerlegen.</p>
-      </div>
-    </section>
+    <section class="dynamic-content" id="dynamicContent" aria-live="polite">
+      <section class="hero-banner" aria-label="Banner">
+        <div class="banner-pattern"></div>
+        <div class="banner-content">
+          <p class="banner-kicker" id="bannerKicker">Modul</p>
+          <h1 id="bannerTitle">Dekomposition</h1>
+          <p id="bannerSubtitle">Komplexe Aufgaben in kleinere, überschaubare Teilprobleme zerlegen.</p>
+        </div>
+      </section>
 
-    <section class="content-area" aria-label="Inhalt zu Dekomposition">
-      <article class="text-column">
-        <h2>Was bedeutet Dekomposition?</h2>
-        <p>
-          Dekomposition beschreibt das Zerlegen eines größeren Problems in kleinere Teilaufgaben.
-          Dadurch wird ein komplexer Ablauf verständlicher, planbarer und leichter umsetzbar.
-        </p>
-        <p>
-          Statt ein Problem als Ganzes lösen zu wollen, betrachtet man einzelne Schritte: Was muss zuerst
-          passieren? Welche Teilbereiche gehören zusammen? Welche Aufgabe kann unabhängig bearbeitet werden?
-        </p>
-        <p>
-          In der Informatik hilft Dekomposition zum Beispiel dabei, Programme übersichtlich zu strukturieren,
-          Funktionen sinnvoll aufzuteilen und Fehler leichter zu finden.
-        </p>
-      </article>
+      <section class="content-area" aria-label="Inhalt zum aktiven Thema">
+        <article class="text-column">
+          <h2 id="leftTitle">Was bedeutet Dekomposition?</h2>
+          <div id="leftText"></div>
+        </article>
 
-      <div class="vertical-divider" aria-hidden="true"></div>
+        <div class="vertical-divider" aria-hidden="true"></div>
 
-      <article class="text-column learning-column">
-        <h2>Was lernst du in diesem Modul?</h2>
-        <p>
-          Du lernst, Aufgaben systematisch zu analysieren und in einzelne Bestandteile zu zerlegen.
-          Dabei erkennst du, welche Teilprobleme wichtig sind und wie sie miteinander zusammenhängen.
-        </p>
-        <ul>
-          <li>komplexe Aufgaben strukturieren</li>
-          <li>Teilprobleme erkennen und beschreiben</li>
-          <li>Arbeitsschritte logisch ordnen</li>
-          <li>Lösungen übersichtlicher planen</li>
-        </ul>
-      </article>
+        <article class="text-column learning-column">
+          <h2 id="rightTitle">Was lernst du in diesem Modul?</h2>
+          <div id="rightText"></div>
+        </article>
+      </section>
     </section>
   </main>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

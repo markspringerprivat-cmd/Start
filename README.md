@@ -1,15 +1,24 @@
-# Dekomposition Layout
+# Lineares Themenlayout
 
-Statisches Webprojekt mit linearer Themen-Navigation, Banner und zweispaltigem Inhaltsbereich.
+Statisches HTML/CSS/JavaScript-Projekt für GitHub Pages.
 
 ## Dateien
 
 - `index.html` – Seitenstruktur
-- `style.css` – Gestaltung und Animation
-- `script.js` – lineares Durchschalten der Themen
+- `style.css` – Layout, Karten, Banner und Inhaltsbereich
+- `script.js` – lineares Durchschalten der Themen und dynamische Inhalte
+
+## Funktionen
+
+- lineare Themen-Navigation mit 6 Themen
+- mittlere aktive Karte größer
+- linke/rechte Vorschaukarten kleiner mit sehr dezentem Rand-Fade
+- keine Drehbewegung und kein Radmodell
+- Pfeile ohne Kreis und Schatten
+- linker Pfeil am Anfang deaktiviert
+- rechter Pfeil am Ende deaktiviert
+- Banner und Textbereich ändern sich passend zum aktiven Thema
 
 ## Nutzung
 
-Die Dateien können direkt in ein GitHub-Repository hochgeladen werden. Für GitHub Pages müssen `index.html`, `style.css` und `script.js` im veröffentlichten Ordner liegen.
-
-Die CSS- und JS-Dateien sind in `index.html` mit `?v=6` eingebunden, damit Browser-Cache bei GitHub Pages eher umgangen wird.
+Alle Dateien in ein GitHub-Repository hochladen und GitHub Pages aktivieren.
