@@ -1481,3 +1481,75 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   .blind-search-group { justify-self: stretch; }
   .last-visited-button { width: 100%; }
 }
+
+
+/* v40: Deutliche Hover-Hervorhebung für alle Kacheln */
+.topic-card,
+.banner.uniform-hover,
+.content-column.uniform-hover,
+.module-link-card,
+.bottom-nav-button,
+.last-visited-button,
+.course-block-card,
+.course-topic-link {
+  transition: transform var(--quick), box-shadow var(--quick), border-color var(--quick), background var(--quick), color var(--quick), filter var(--quick);
+}
+
+.topic-card:hover,
+.topic-card:focus-visible {
+  z-index: 12;
+}
+
+.topic-card.is-active:hover,
+.topic-card.is-active:focus-visible {
+  transform: translate(-50%, -50%) scale(1.035) !important;
+  box-shadow: 0 22px 42px rgba(17, 24, 39, 0.16), 0 7px 18px rgba(17, 24, 39, 0.09) !important;
+  border-color: rgba(47, 95, 143, 0.95) !important;
+}
+
+.topic-card.is-left:hover,
+.topic-card.is-left:focus-visible {
+  transform: translate(calc(-50% - 455px), -50%) scale(1.03) !important;
+  box-shadow: 0 16px 30px rgba(17, 24, 39, 0.12), 0 5px 12px rgba(17, 24, 39, 0.06) !important;
+  border-color: rgba(47, 95, 143, 0.82) !important;
+  filter: blur(0.35px) !important;
+}
+
+.topic-card.is-right:hover,
+.topic-card.is-right:focus-visible {
+  transform: translate(calc(-50% + 455px), -50%) scale(1.03) !important;
+  box-shadow: 0 16px 30px rgba(17, 24, 39, 0.12), 0 5px 12px rgba(17, 24, 39, 0.06) !important;
+  border-color: rgba(47, 95, 143, 0.82) !important;
+  filter: blur(0.35px) !important;
+}
+
+.banner.uniform-hover:hover,
+.banner.uniform-hover:focus-visible,
+.banner.uniform-hover:focus-within,
+.content-column.uniform-hover:hover,
+.content-column.uniform-hover:focus-visible,
+.content-column.uniform-hover:focus-within,
+.module-link-card:hover,
+.module-link-card:focus-visible,
+.bottom-nav-button:hover:not(:disabled),
+.bottom-nav-button:focus-visible:not(:disabled),
+.last-visited-button:hover,
+.last-visited-button:focus-visible {
+  transform: translateY(-3px) scale(1.008) !important;
+  border-color: rgba(47, 95, 143, 0.82) !important;
+  box-shadow: 0 18px 34px rgba(47, 95, 143, 0.12), 0 6px 14px rgba(17, 24, 39, 0.06) !important;
+}
+
+.content-column.uniform-hover:hover,
+.content-column.uniform-hover:focus-visible,
+.content-column.uniform-hover:focus-within {
+  background: #ffffff;
+}
+
+.course-block-card:hover,
+.course-block-card:focus-visible,
+.course-topic-link:hover,
+.course-topic-link:focus-visible {
+  transform: translateY(-4px) scale(1.012) !important;
+  box-shadow: 0 18px 34px rgba(47, 95, 143, 0.12), 0 6px 14px rgba(17, 24, 39, 0.06) !important;
+}
