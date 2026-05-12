@@ -134,7 +134,7 @@ const pageData = {
   wahrnehmung: {
     switcherLabel: "Bausteine der Wahrnehmung",
     breadcrumbBlock: "Wahrnehmung",
-    startStepLabel: "Wahrnehmung",
+    startStepLabel: "Baustein 1 von 6",
     topics: Array.from({ length: 6 }, (_, i) => ({
       cardTitle: `Thema ${i + 1}`,
       bannerTitle: `Titel ${i + 1}`,
@@ -151,7 +151,7 @@ const pageData = {
   approximation: {
     switcherLabel: "Bausteine der Approximation",
     breadcrumbBlock: "Approximation",
-    startStepLabel: "Approximation",
+    startStepLabel: "Baustein 1 von 6",
     topics: Array.from({ length: 6 }, (_, i) => ({
       cardTitle: `Thema ${i + 1}`,
       bannerTitle: `Titel ${i + 1}`,
@@ -171,7 +171,7 @@ const pageType = document.body?.dataset.page || "dekomposition";
 const currentConfig = pageData[pageType] || pageData.dekomposition;
 const topics = currentConfig.topics;
 
-let activeIndex = 0;
+let activeIndex = getInitialTopicIndex();
 let isAnimating = false;
 let blindModeActive = false;
 let activeSpeechKey = null;
@@ -197,6 +197,26 @@ const blindModeHint = document.getElementById("blindModeHint");
 const switcherLabel = document.querySelector(".switcher-label");
 const topicSwitcher = document.querySelector(".topic-switcher");
 const breadcrumbBlock = document.getElementById("breadcrumbBlock");
+
+function getInitialTopicIndex() {
+  const params = new URLSearchParams(window.location.search);
+  const raw = Number(params.get("topic"));
+  if (Number.isFinite(raw) && raw >= 1) {
+    return Math.max(0, Math.min(topics.length - 1, raw - 1));
+  }
+  return 0;
+}
+
+function syncTopicParam() {
+  const url = new URL(window.location.href);
+  if (activeIndex <= 0) {
+    url.searchParams.delete("topic");
+  } else {
+    url.searchParams.set("topic", String(activeIndex + 1));
+  }
+  const nextUrl = `${url.pathname}${url.search}${url.hash || ""}`;
+  window.history.replaceState({}, "", nextUrl);
+}
 
 if (switcherLabel) switcherLabel.textContent = currentConfig.switcherLabel;
 if (topicSwitcher) topicSwitcher.setAttribute("aria-label", `Themennavigation der ${currentConfig.breadcrumbBlock}`);
@@ -302,6 +322,8 @@ function updateContent(direction = "right") {
     banner.classList.add(animationClass);
     contentGrid.classList.add(animationClass);
   });
+
+  syncTopicParam();
 }
 
 function setActiveIndex(newIndex) {
@@ -430,3 +452,34 @@ createCards();
 renderCards();
 updateContent("right");
 addBlindModeInteractions();
+
+
+function setupCourseFlyouts() {
+  const wraps = [...document.querySelectorAll(".course-block-wrap")];
+  if (!wraps.length) return;
+
+  wraps.forEach((wrap) => {
+    const open = () => wrap.classList.add("is-flyout-open");
+    const close = () => wrap.classList.remove("is-flyout-open");
+
+    wrap.addEventListener("mouseenter", open);
+    wrap.addEventListener("mouseleave", close);
+    wrap.addEventListener("focusin", open);
+    wrap.addEventListener("focusout", (event) => {
+      if (!wrap.contains(event.relatedTarget)) close();
+    });
+
+    const card = wrap.querySelector(".course-block-card");
+    card?.addEventListener("touchstart", (event) => {
+      if (!wrap.classList.contains("is-flyout-open")) {
+        event.preventDefault();
+        wraps.forEach((other) => {
+          if (other !== wrap) other.classList.remove("is-flyout-open");
+        });
+        open();
+      }
+    }, { passive: false });
+  });
+}
+
+setupCourseFlyouts();
