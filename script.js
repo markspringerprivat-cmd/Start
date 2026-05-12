@@ -8,7 +8,9 @@ const topics = [
 ];
 
 let activeIndex = 0;
+let isAnimating = false;
 
+const tiles = document.getElementById('tiles');
 const leftTile = document.getElementById('leftTile');
 const centerTile = document.getElementById('centerTile');
 const rightTile = document.getElementById('rightTile');
@@ -28,26 +30,51 @@ function renderTiles() {
   rightTile.textContent = topics[rightIndex];
 }
 
-function showPreviousTopic() {
-  activeIndex = getCircularIndex(activeIndex - 1);
-  renderTiles();
+function setButtonsDisabled(isDisabled) {
+  prevBtn.disabled = isDisabled;
+  nextBtn.disabled = isDisabled;
 }
 
-function showNextTopic() {
-  activeIndex = getCircularIndex(activeIndex + 1);
-  renderTiles();
+function changeTopic(direction) {
+  if (isAnimating) {
+    return;
+  }
+
+  isAnimating = true;
+  setButtonsDisabled(true);
+
+  const animationClass = direction === 'left' ? 'slide-left' : 'slide-right';
+  tiles.classList.add(animationClass);
+
+  tiles.addEventListener(
+    'animationend',
+    () => {
+      tiles.classList.remove(animationClass);
+
+      if (direction === 'left') {
+        activeIndex = getCircularIndex(activeIndex - 1);
+      } else {
+        activeIndex = getCircularIndex(activeIndex + 1);
+      }
+
+      renderTiles();
+      isAnimating = false;
+      setButtonsDisabled(false);
+    },
+    { once: true }
+  );
 }
 
-prevBtn.addEventListener('click', showPreviousTopic);
-nextBtn.addEventListener('click', showNextTopic);
+prevBtn.addEventListener('click', () => changeTopic('left'));
+nextBtn.addEventListener('click', () => changeTopic('right'));
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') {
-    showPreviousTopic();
+    changeTopic('left');
   }
 
   if (event.key === 'ArrowRight') {
-    showNextTopic();
+    changeTopic('right');
   }
 });
 
