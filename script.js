@@ -406,6 +406,7 @@ function getSpeakText(target, element = null) {
   }
   if (target === "module-link") return "Modul starten";
   if (target === "h5p-test-intro") return element?.textContent?.trim() || "H5P-Testbereich";
+  if (target === "h5p-package") return element?.textContent?.trim() || "H5P-Datei herunterladen oder in Moodle oder Lumi importieren";
   if (target === "left") return `${leftTitle.textContent}. ${leftText.textContent}`;
   const points = [...rightList.querySelectorAll("li")].map((li) => li.textContent).join(". ");
   return `${rightTitle.textContent}. ${points}`;
