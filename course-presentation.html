@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Course Presentation – Editor</title>
-  <link rel="stylesheet" href="style.css?v=45" />
+  <link rel="stylesheet" href="style.css?v=46" />
 </head>
 <body id="top" data-page="h5p-lite" data-activity="course-presentation">
   <main class="page-shell h5p-lite-shell">
@@ -13,7 +13,7 @@
     <section class="iv-hero blind-readable uniform-hover" data-blind-target="h5p-lite-intro" tabindex="0" role="button" aria-label="Einführung vorlesen">
       <p class="eyebrow">Eigene H5P-ähnliche Testfunktion</p>
       <h1>Course Presentation</h1>
-      <p>Erstelle einfache Folien mit Titel, Text und optionalem Bild. Die Vorschau funktioniert wie eine kleine Präsentation mit Vor- und Zurück-Navigation.</p>
+      <p>Erstelle eine Folienpräsentation als Container: Jede Folie kann Text, Bild, Video, interaktives Video, Multiple Choice, Drag the Words oder Drag and Drop enthalten.</p>
     </section>
 
     <div class="blind-mode-row">
@@ -36,11 +36,27 @@
       </div>
       <div class="iv-editor-stack">
         <section class="iv-editor-panel blind-readable" data-blind-target="h5p-lite-panel" tabindex="0" role="button" aria-label="Editor vorlesen">
-          <h2>Folien bearbeiten</h2>
-          <div class="iv-field"><label for="titleInput">Präsentationstitel</label><input id="titleInput" type="text" /></div>
-          <div class="iv-field"><label for="slideTitle">Folientitel</label><input id="slideTitle" type="text" /></div>
-          <div class="iv-field"><label for="slideText">Folientext</label><textarea id="slideText"></textarea></div>
-          <div class="iv-field"><label for="slideMedia">Optionale Bild-URL</label><input id="slideMedia" type="url" placeholder="https://..." /></div>
+          <h2>Folie bearbeiten</h2>
+          <div class="iv-field"><label for="titleInput">Titel der Sammlung</label><input id="titleInput" type="text" /></div>
+          <div class="iv-field"><label for="itemTitle">Titel dieser Seite/Folie</label><input id="itemTitle" type="text" /></div>
+          <div class="iv-field"><label for="itemType">Inhaltstyp</label><select id="itemType">
+            <option value="text">Text</option>
+            <option value="imageText">Bild mit Text</option>
+            <option value="video">Video</option>
+            <option value="interactiveVideo">Interaktives Video</option>
+            <option value="multipleChoice">Multiple Choice</option>
+            <option value="dragWords">Drag the Words</option>
+            <option value="dragDrop">Drag and Drop</option>
+          </select></div>
+          <div class="iv-field" data-type-fields="text imageText video interactiveVideo"><label for="itemText">Text / Beschreibung</label><textarea id="itemText"></textarea></div>
+          <div class="iv-field" data-type-fields="imageText video interactiveVideo"><label for="itemMedia">Bild- oder Video-URL</label><input id="itemMedia" type="url" placeholder="https://..." /></div>
+          <div class="iv-field" data-type-fields="multipleChoice"><label for="itemQuestion">Frage</label><textarea id="itemQuestion"></textarea></div>
+          <div class="iv-field" data-type-fields="multipleChoice"><label for="itemDescription">Zusatztext</label><textarea id="itemDescription"></textarea></div>
+          <div class="iv-field" data-type-fields="multipleChoice"><label for="itemAnswers">Antwortmöglichkeiten, eine pro Zeile</label><textarea id="itemAnswers"></textarea></div>
+          <div class="iv-field" data-type-fields="multipleChoice"><label for="itemCorrect">Richtige Antwort</label><select id="itemCorrect"></select></div>
+          <div class="iv-field" data-type-fields="dragWords"><label for="itemDragText">Text mit Ziehwörtern</label><textarea id="itemDragText" rows="7"></textarea><p class="iv-marker-meta">Ziehwörter mit eckigen Klammern markieren, zum Beispiel: [Wartezeit].</p></div>
+          <div class="iv-field" data-type-fields="dragDrop"><label for="itemPairs">Begriff | Zielbereich</label><textarea id="itemPairs" rows="7"></textarea><p class="iv-marker-meta">Eine Zuordnung pro Zeile, zum Beispiel: Wartezeit | Gesprächsführung</p></div>
+          <div class="iv-field" data-type-fields="interactiveVideo"><label for="itemInteractions">Interaktionen im Video</label><textarea id="itemInteractions" rows="7"></textarea><p class="iv-marker-meta">Format: Zeit in Sekunden | Frage | Antwort 1;Antwort 2;Antwort 3 | Nummer der richtigen Antwort ab 0</p></div>
           <div class="iv-button-row"><button class="iv-primary-button" id="addSlide" type="button">Folie hinzufügen</button><button class="iv-danger-button" id="deleteSlide" type="button">Folie löschen</button></div>
         </section>
         <section class="iv-list-panel"><h2>Folien</h2><div class="h5p-lite-list" id="slideList"></div></section>
@@ -51,7 +67,8 @@
             <textarea id="configArea" spellcheck="false"></textarea>
           </div>
           <div class="iv-button-row">
-            <button class="iv-secondary-button" id="exportButton" type="button">Exportieren</button>
+            <button class="iv-secondary-button" id="exportButton" type="button">JSON exportieren</button>
+            <button class="iv-primary-button" id="downloadHtmlButton" type="button">HTML-Datei herunterladen</button>
             <button class="iv-secondary-button" id="importButton" type="button">Importieren</button>
             <button class="iv-danger-button" id="resetButton" type="button">Zurücksetzen</button>
           </div>
@@ -59,7 +76,7 @@
       </div>
     </section>
   </main>
-  <script src="script.js?v=45"></script>
-  <script src="activity-editor.js?v=45"></script>
+  <script src="script.js?v=46"></script>
+  <script src="activity-editor.js?v=46"></script>
 </body>
 </html>

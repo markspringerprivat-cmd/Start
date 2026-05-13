@@ -25,6 +25,7 @@
   const restartButton = document.getElementById("ivRestartButton");
   const jumpMarkerButton = document.getElementById("ivJumpMarkerButton");
   const exportButton = document.getElementById("ivExportButton");
+  const downloadHtmlButton = document.getElementById("ivDownloadHtmlButton");
   const importButton = document.getElementById("ivImportButton");
   const clearButton = document.getElementById("ivClearButton");
 
@@ -246,6 +247,34 @@
     return String(value).replace(/[&<>"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char]));
   }
 
+
+  function downloadText(filename, text) {
+    const blob = new Blob([text], { type: "text/html;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 700);
+  }
+
+  function buildStandaloneHtml() {
+    const data = getExportData();
+    const safeJson = JSON.stringify(data).replace(/<\/script/gi, "<\\/script");
+    return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Interaktives Video</title><style>
+      body{margin:0;font-family:Inter,system-ui,sans-serif;color:#111827;background:#fff;padding:32px}.shell{max-width:1100px;margin:0 auto}.top{border:1.3px solid rgba(17,24,39,.7);padding:28px 32px;margin-bottom:24px;box-shadow:8px 16px 28px rgba(17,24,39,.08)}h1{font-size:clamp(2rem,4vw,4rem);line-height:1;margin:0 0 12px;letter-spacing:-.04em}.stage{position:relative;border:1.3px solid rgba(17,24,39,.7);box-shadow:8px 16px 28px rgba(17,24,39,.08);background:#111}video{width:100%;display:block;max-height:620px}.overlay{position:absolute;left:6%;right:6%;bottom:8%;padding:24px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.55);box-shadow:0 18px 40px rgba(17,24,39,.22)}.answers{display:grid;gap:10px;margin-top:16px}.answers button{border:1px solid rgba(47,95,143,.35);background:#fff;color:#173d63;font-weight:800;padding:12px 14px;text-align:left;cursor:pointer}.answers button.ok{background:#dcfce7;border-color:#166534}.answers button.no{background:#fee2e2;border-color:#991b1b}.feedback{margin-top:12px;font-weight:800}
+    </style></head><body><main class="shell"><section class="top"><h1>Interaktives Video</h1><p>Exportierte HTML-Datei aus dem Kursrahmen-Editor.</p></section><section class="stage"><video id="video" src="${escapeHtml(data.videoUrl || '')}" controls></video><div class="overlay" id="overlay" hidden></div></section></main><script>
+      const DATA=${safeJson};
+      const video=document.getElementById('video'); const overlay=document.getElementById('overlay');
+      const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+      const interactions=(DATA.interactions||[]).map(x=>({...x,done:false}));
+      video.addEventListener('seeked',()=>{interactions.forEach(i=>{if(video.currentTime < Number(i.time)-0.2)i.done=false;});});
+      video.addEventListener('timeupdate',()=>{const item=interactions.find(i=>!i.done && video.currentTime>=Number(i.time) && video.currentTime<=Number(i.time)+0.5); if(!item)return; item.done=true; if(item.pause!==false)video.pause(); overlay.hidden=false; overlay.innerHTML='<h2>'+esc(item.question)+'</h2><p>'+esc(item.description||'')+'</p><div class="answers">'+(item.answers||[]).map((a,i)=>'<button data-i="'+i+'">'+esc(a)+'</button>').join('')+'</div><div class="feedback" hidden></div>'; overlay.querySelectorAll('button').forEach(btn=>btn.onclick=()=>{const idx=Number(btn.dataset.i); overlay.querySelectorAll('button').forEach((b,i)=>{b.disabled=true;if(i===Number(item.correctIndex))b.classList.add('ok');}); if(idx!==Number(item.correctIndex))btn.classList.add('no'); const f=overlay.querySelector('.feedback'); f.hidden=false; f.textContent=idx===Number(item.correctIndex)?'Richtig. Das Video läuft weiter.':'Nicht ganz. Die richtige Antwort ist markiert.'; setTimeout(()=>{overlay.hidden=true;video.play().catch(()=>{});}, idx===Number(item.correctIndex)?900:1600);};});
+    <\/script></body></html>`;
+  }
+
   function fillForm(interaction) {
     timeInput.value = interaction.time;
     questionInput.value = interaction.question;
@@ -325,6 +354,10 @@
     configArea.value = JSON.stringify(getExportData(), null, 2);
     configArea.focus();
     configArea.select();
+  });
+
+  downloadHtmlButton?.addEventListener("click", () => {
+    downloadText("interaktives-video.html", buildStandaloneHtml());
   });
 
   importButton?.addEventListener("click", () => {
