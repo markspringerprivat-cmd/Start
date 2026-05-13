@@ -30,3 +30,6 @@ Alle Dateien zusammen in ein GitHub-Repository hochladen. Für GitHub Pages muss
 
 
 Version 39: Kleiner Abstand oberhalb des Vorlesemodus-Buttons ergänzt.
+
+
+Version 42: H5P-Testintegration nutzt die hochgeladene lokale HTML-Datei h5p-test.html. Testweise rote Rahmen am äußeren iframe-Bereich und innerhalb der H5P-Datei ergänzt.

@@ -884,6 +884,8 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   width: 100%;
   min-height: 720px;
   border: 0;
+  outline: 2px solid #d00000;
+  outline-offset: -2px;
   background: #ffffff;
 }
 
