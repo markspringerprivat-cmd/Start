@@ -405,8 +405,10 @@ function getSpeakText(target, element = null) {
     return topics[index]?.cardTitle || "Thema";
   }
   if (target === "module-link") return "Modul starten";
-  if (target === "h5p-test-intro") return element?.textContent?.trim() || "H5P-Testbereich";
-  if (target === "h5p-package") return element?.textContent?.trim() || "H5P-Datei herunterladen oder in Moodle oder Lumi importieren";
+  if (target === "interactive-video-start") return element?.textContent?.trim() || "Interaktives Video selbst erstellen";
+  if (target === "interactive-video-link") return element?.textContent?.trim() || "Zur Testseite Interaktives Video";
+  if (target === "interactive-video-intro") return element?.textContent?.trim() || "Interaktives Video";
+  if (target === "interactive-video-panel") return element?.textContent?.trim() || "Editor für Interaktionen";
   if (target === "left") return `${leftTitle.textContent}. ${leftText.textContent}`;
   const points = [...rightList.querySelectorAll("li")].map((li) => li.textContent).join(". ");
   return `${rightTitle.textContent}. ${points}`;

@@ -918,3 +918,367 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
     margin-top: -276px;
   }
 }
+
+
+/* Interaktives Video: Startkarte */
+.interactive-video-start-section {
+  margin: -276px 8px 0;
+  padding-bottom: 28px;
+}
+
+.interactive-video-start-card {
+  border: 1.3px solid rgba(17, 24, 39, 0.70);
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: var(--lift-shadow);
+  padding: 30px 32px;
+}
+
+.interactive-video-start-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 2.6vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.interactive-video-start-card p:not(.eyebrow) {
+  margin: 0 0 20px;
+  color: #242b36;
+  font-size: clamp(1rem, 1.08vw, 1.12rem);
+  line-height: 1.65;
+}
+
+.interactive-video-start-link,
+.iv-primary-button,
+.iv-secondary-button,
+.iv-danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1.3px solid rgba(47, 95, 143, 0.38);
+  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(232, 242, 251, 0.98), rgba(215, 232, 246, 0.94));
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 820;
+  cursor: pointer;
+  box-shadow: 6px 12px 22px rgba(47, 95, 143, 0.08);
+  transition: transform var(--quick), box-shadow var(--quick), background var(--quick), border-color var(--quick);
+}
+
+.interactive-video-start-link:hover,
+.interactive-video-start-link:focus-visible,
+.iv-primary-button:hover,
+.iv-primary-button:focus-visible,
+.iv-secondary-button:hover,
+.iv-secondary-button:focus-visible,
+.iv-danger-button:hover,
+.iv-danger-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: var(--blue-shadow);
+  outline: none;
+}
+
+/* Interaktives Video: Editorseite */
+.interactive-video-shell {
+  padding-top: 34px;
+}
+
+.iv-back-link {
+  margin: 0 0 18px;
+}
+
+.iv-hero {
+  border: 1.3px solid rgba(17, 24, 39, 0.72);
+  border-radius: 2px;
+  background:
+    radial-gradient(circle at 18px 18px, rgba(17,24,39,0.032) 1px, transparent 1.8px),
+    linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  background-size: 36px 36px, auto;
+  box-shadow: var(--lift-shadow);
+  padding: 38px 42px;
+  margin-bottom: 20px;
+}
+
+.iv-hero h1 {
+  white-space: normal;
+  font-size: clamp(2.2rem, 4.4vw, 4.4rem);
+  margin: 0 0 16px;
+}
+
+.iv-hero p:not(.eyebrow) {
+  max-width: 960px;
+  color: #242b36;
+  font-size: clamp(1rem, 1.12vw, 1.18rem);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.iv-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+  gap: 26px;
+  align-items: start;
+  padding: 22px 8px 80px;
+}
+
+.iv-stage,
+.iv-editor-panel,
+.iv-list-panel {
+  border: 1.3px solid rgba(17, 24, 39, 0.70);
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: var(--lift-shadow);
+}
+
+.iv-stage {
+  padding: 22px;
+}
+
+.iv-video-wrap {
+  position: relative;
+  width: 100%;
+  background: #0f172a;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1.3px solid rgba(17, 24, 39, 0.75);
+}
+
+.iv-video-wrap video {
+  display: block;
+  width: 100%;
+  min-height: 420px;
+  max-height: 68vh;
+  object-fit: contain;
+  background: #0f172a;
+}
+
+.iv-overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: min(88%, 720px);
+  transform: translateX(-50%) translateY(18px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 24px;
+  border: 1.3px solid rgba(255, 255, 255, 0.44);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.iv-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.iv-overlay h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.3rem, 1.7vw, 1.8rem);
+  line-height: 1.18;
+}
+
+.iv-overlay p {
+  margin: 0 0 18px;
+  color: #1f2937;
+  line-height: 1.55;
+}
+
+.iv-answer-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.iv-answer-button {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1.2px solid rgba(17, 24, 39, 0.30);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.78);
+  color: #111827;
+  font-weight: 720;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iv-answer-button:hover,
+.iv-answer-button:focus-visible {
+  outline: 2px solid rgba(47, 95, 143, 0.52);
+  outline-offset: 2px;
+}
+
+.iv-answer-button.is-correct {
+  border-color: rgba(22, 101, 52, 0.65);
+  background: rgba(220, 252, 231, 0.86);
+}
+
+.iv-answer-button.is-wrong {
+  border-color: rgba(153, 27, 27, 0.65);
+  background: rgba(254, 226, 226, 0.86);
+}
+
+.iv-feedback {
+  margin-top: 14px;
+  font-weight: 760;
+  color: #111827;
+}
+
+.iv-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.iv-time-display {
+  color: var(--muted);
+  font-weight: 760;
+}
+
+.iv-editor-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.iv-editor-panel,
+.iv-list-panel {
+  padding: 22px;
+}
+
+.iv-editor-panel h2,
+.iv-list-panel h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.3rem, 1.6vw, 1.7rem);
+  letter-spacing: -0.025em;
+}
+
+.iv-field {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.iv-field label,
+.iv-checkbox-row {
+  color: #242b36;
+  font-weight: 760;
+}
+
+.iv-field input,
+.iv-field textarea,
+.iv-field select {
+  width: 100%;
+  border: 1.2px solid rgba(17, 24, 39, 0.35);
+  border-radius: 2px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.iv-field textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.iv-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 16px;
+}
+
+.iv-checkbox-row input { width: 18px; height: 18px; }
+
+.iv-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.iv-secondary-button {
+  background: #ffffff;
+  color: var(--text);
+  border-color: rgba(17, 24, 39, 0.30);
+}
+
+.iv-danger-button {
+  background: #ffffff;
+  color: #7f1d1d;
+  border-color: rgba(127, 29, 29, 0.32);
+}
+
+.iv-marker-list {
+  display: grid;
+  gap: 10px;
+}
+
+.iv-marker-item {
+  border: 1.2px solid rgba(17, 24, 39, 0.18);
+  border-radius: 2px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.iv-marker-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.iv-marker-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.iv-marker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.iv-small-button {
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid rgba(17, 24, 39, 0.25);
+  background: #ffffff;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.iv-export-area {
+  margin-top: 16px;
+}
+
+.iv-export-area textarea {
+  min-height: 110px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1080px) {
+  .iv-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px) {
+  .interactive-video-start-section {
+    margin-top: -276px;
+  }
+  .iv-video-wrap,
+  .iv-video-wrap video {
+    min-height: 300px;
+  }
+}
