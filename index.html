@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kursübersicht – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=40" />
+  <link rel="stylesheet" href="style.css?v=41" />
 </head>
 <body id="top">
   <main class="page-shell overview-shell">
@@ -87,7 +87,24 @@
         </div>
       </div>
     </section>
+
+    <section class="h5p-test-section" aria-labelledby="h5pTestTitle">
+      <div class="h5p-test-header blind-readable uniform-hover" data-blind-target="h5p-test-intro" tabindex="0" role="button" aria-label="H5P-Testbereich vorlesen">
+        <p class="eyebrow">Testintegration</p>
+        <h2 id="h5pTestTitle">H5P-Testbereich</h2>
+        <p>Hier ist testweise das über Lumi erstellte H5P-Element direkt auf der Kursübersicht eingebettet.</p>
+      </div>
+      <div class="h5p-embed-frame-wrap">
+        <iframe
+          class="h5p-embed-frame"
+          src="https://markspringerprivat-cmd.github.io/Start/"
+          title="H5P-Testintegration"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
   </main>
-  <script src="script.js?v=40"></script>
+  <script src="script.js?v=41"></script>
 </body>
 </html>

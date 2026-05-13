@@ -405,6 +405,7 @@ function getSpeakText(target, element = null) {
     return topics[index]?.cardTitle || "Thema";
   }
   if (target === "module-link") return "Modul starten";
+  if (target === "h5p-test-intro") return element?.textContent?.trim() || "H5P-Testbereich";
   if (target === "left") return `${leftTitle.textContent}. ${leftText.textContent}`;
   const points = [...rightList.querySelectorAll("li")].map((li) => li.textContent).join(". ");
   return `${rightTitle.textContent}. ${points}`;
