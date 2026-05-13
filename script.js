@@ -399,24 +399,13 @@ function getSpeakText(target, element = null) {
   if (target === "overview-hero") return element?.textContent?.trim() || "Kursübersicht";
   if (target === "course-block") return element?.textContent?.trim() || element?.getAttribute("aria-label") || "Kursblock";
   if (target === "course-topic-link") return element?.textContent?.trim() || "Direktlink";
-  if (target === "embedded-course-presentation") return "Eingebettete Course Presentation. Die fertige Course Presentation ist hier direkt auf der Startseite eingebunden.";
-  if (target === "h5p-lite-start") return element?.textContent?.trim() || "Interaktive Elemente selbst erstellen";
-  if (target === "h5p-lite-link") return element?.textContent?.trim() || "Interaktive Testseite öffnen";
-  if (target === "h5p-lite-intro") return element?.textContent?.trim() || "Einführung";
-  if (target === "h5p-lite-panel") return element?.textContent?.trim() || "Editor";
   if (target === "banner") return bannerTitle.textContent.trim();
   if (target === "topic-card") {
     const index = Number(element?.dataset.index ?? activeIndex);
     return topics[index]?.cardTitle || "Thema";
   }
   if (target === "module-link") return "Modul starten";
-  if (target === "interactive-video-start") return element?.textContent?.trim() || "Interaktives Video selbst erstellen";
-  if (target === "interactive-video-link") return element?.textContent?.trim() || "Zur Testseite Interaktives Video";
-  if (target === "interactive-video-intro") return element?.textContent?.trim() || "Interaktives Video";
-  if (target === "interactive-video-panel") return element?.textContent?.trim() || "Editor für Interaktionen";
   if (target === "left") return `${leftTitle.textContent}. ${leftText.textContent}`;
-  if (element?.textContent?.trim()) return element.textContent.trim();
-  if (!rightList || !rightTitle) return "Vorlesbarer Bereich";
   const points = [...rightList.querySelectorAll("li")].map((li) => li.textContent).join(". ");
   return `${rightTitle.textContent}. ${points}`;
 }
