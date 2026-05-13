@@ -399,6 +399,7 @@ function getSpeakText(target, element = null) {
   if (target === "overview-hero") return element?.textContent?.trim() || "Kursübersicht";
   if (target === "course-block") return element?.textContent?.trim() || element?.getAttribute("aria-label") || "Kursblock";
   if (target === "course-topic-link") return element?.textContent?.trim() || "Direktlink";
+  if (target === "embedded-course-presentation") return "Eingebettete Course Presentation. Die fertige Course Presentation ist hier direkt auf der Startseite eingebunden.";
   if (target === "banner") return bannerTitle.textContent.trim();
   if (target === "topic-card") {
     const index = Number(element?.dataset.index ?? activeIndex);
