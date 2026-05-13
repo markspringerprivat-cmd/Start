@@ -1562,3 +1562,32 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   border-radius: 2px;
   background: #ffffff;
 }
+
+
+/* v49: stabilisierte direkte Course-Presentation-Einbettung */
+.embedded-course-presentation-player {
+  min-height: 0;
+  padding: 24px;
+  overflow: visible;
+}
+.embedded-cp-viewer .viewer-card {
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.embedded-cp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+.embedded-course-presentation-player .lite-content-block {
+  border: 1.3px solid rgba(17, 24, 39, 0.62);
+  padding: 28px 30px;
+  background: #ffffff;
+  box-shadow: 6px 12px 22px rgba(17,24,39,.065);
+}
+.embedded-course-presentation-player button {
+  pointer-events: auto;
+}

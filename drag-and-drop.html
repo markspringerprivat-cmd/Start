@@ -3,56 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drag and Drop – Editor</title>
-  <link rel="stylesheet" href="style.css?v=48" />
+  <title>Dekomposition – Gesprächsführung</title>
+  <link rel="stylesheet" href="style.css?v=49" />
 </head>
-<body id="top" data-page="h5p-lite" data-activity="drag-and-drop">
-  <main class="page-shell h5p-lite-shell">
-    <a class="back-link" href="index.html#top">← Zur Kursübersicht</a>
+<body id="top" data-page="dekomposition">
+  <main class="page-shell">
+    <a class="back-link dekomposition-back-link" href="index.html#top">← Zur Kursübersicht</a>
 
-    <section class="iv-hero blind-readable uniform-hover" data-blind-target="h5p-lite-intro" tabindex="0" role="button" aria-label="Einführung vorlesen">
-      <p class="eyebrow">Eigene H5P-ähnliche Testfunktion</p>
-      <h1>Drag and Drop</h1>
-      <p>Erstelle Zielbereiche und ziehbare Begriffe. Jede Zeile im Editor besteht aus Begriff und Ziel, getrennt durch einen senkrechten Strich.</p>
+    <p class="switcher-label">Bausteine der Dekomposition</p>
+    <section class="topic-switcher" aria-label="Themennavigation der Dekomposition">
+      <button class="arrow-button" id="prevButton" type="button" aria-label="Vorheriges Thema">
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div class="cards-window">
+        <div class="cards-track" id="cardsTrack"></div>
+      </div>
+
+      <button class="arrow-button" id="nextButton" type="button" aria-label="Nächstes Thema">
+        <span aria-hidden="true">›</span>
+      </button>
     </section>
 
     <div class="blind-mode-row">
-      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">Vorlesemodus: aus</button>
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
+        Vorlesemodus: aus
+      </button>
       <p class="blind-mode-hint" id="blindModeHint" hidden></p>
     </div>
 
     <div class="top-divider" aria-hidden="true"></div>
 
-    <section class="h5p-lite-layout" aria-label="Drag-and-Drop-Editor">
-      <div class="h5p-lite-preview-panel">
-        <article class="h5p-lite-question-preview" id="dndPreview"></article>
-        <div class="iv-feedback" id="dndResult" hidden></div>
-      </div>
-      <div class="iv-editor-stack">
-        <section class="iv-editor-panel blind-readable" data-blind-target="h5p-lite-panel" tabindex="0" role="button" aria-label="Editor vorlesen">
-          <h2>Zuordnung bearbeiten</h2>
-          <div class="iv-field"><label for="titleInput">Titel</label><input id="titleInput" type="text" /></div>
-          <div class="iv-field"><label for="instructionsInput">Arbeitsauftrag</label><textarea id="instructionsInput"></textarea></div>
-          <div class="iv-field"><label for="pairsInput">Begriff | Zielbereich</label><textarea id="pairsInput" rows="8"></textarea></div>
-          <p class="iv-marker-meta">Beispiel: Wartezeit | Gesprächsführung</p>
-        </section>
-        <section class="iv-list-panel h5p-lite-config-panel">
-          <h2>Konfiguration</h2>
-          <div class="iv-field">
-            <label for="configArea">Konfiguration kopieren oder einfügen</label>
-            <textarea id="configArea" spellcheck="false"></textarea>
-          </div>
-          <div class="iv-button-row">
-            <button class="iv-secondary-button" id="exportButton" type="button">JSON exportieren</button>
-            <button class="iv-primary-button" id="downloadHtmlButton" type="button">HTML-ZIP herunterladen</button>
-            <button class="iv-secondary-button" id="importButton" type="button">Importieren</button>
-            <button class="iv-danger-button" id="resetButton" type="button">Zurücksetzen</button>
-          </div>
-        </section>
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href="index.html#top">Kursübersicht</a>
+      <span aria-hidden="true">/</span>
+      <span id="breadcrumbBlock">Dekomposition</span>
+      <span aria-hidden="true">/</span>
+      <strong id="breadcrumbCurrent">Hauptseite</strong>
+    </nav>
+
+    <section class="banner blind-readable uniform-hover" id="banner" aria-labelledby="moduleTitle" data-blind-target="banner" tabindex="0" role="button" aria-label="Banner vorlesen">
+      <div class="banner-pattern" aria-hidden="true"></div>
+      <div class="banner-content">
+        <p class="eyebrow" id="moduleStep">Baustein 1 von 7</p>
+        <h1 id="moduleTitle">Hauptseite</h1>
+        <p class="banner-subtitle" id="moduleSubtitle">Orientierung im Kursblock Dekomposition</p>
       </div>
     </section>
+
+    <section class="content-grid" aria-label="Modulinhalte">
+      <article class="content-column blind-readable uniform-hover" data-blind-target="left" tabindex="0" role="button" aria-label="Linken Textblock vorlesen">
+        <p class="section-label" id="leftLabel">Einordnung</p>
+        <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
+        <p id="leftText">
+          Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben kannst du linear durch die einzelnen Bereiche navigieren.
+        </p>
+      </article>
+
+      <div class="vertical-divider" aria-hidden="true"></div>
+
+      <article class="content-column blind-readable uniform-hover" data-blind-target="right" tabindex="0" role="button" aria-label="Rechten Textblock vorlesen">
+        <p class="section-label" id="rightLabel">Lernziele</p>
+        <h2 id="rightTitle">Was lernst du in dieser Übersicht?</h2>
+        <ul class="learning-list" id="rightList">
+          <li>Du erhältst einen strukturierten Überblick über die einzelnen Module.</li>
+          <li>Du kannst gezielt zwischen Gesprächsumgebung, Gesprächseröffnung, Beiträgen, Ergebnissicherung und Abschluss wechseln.</li>
+        </ul>
+
+        <a class="module-link-card blind-readable" target="_top" aria-label="Modul starten" data-blind-target="module-link" tabindex="0" hidden>
+          <span>Modul starten</span>
+        </a>
+      </article>
+    </section>
   </main>
-  <script src="script.js?v=48"></script>
-  <script src="activity-editor.js?v=48"></script>
+
+  <script src="script.js?v=49"></script>
 </body>
 </html>

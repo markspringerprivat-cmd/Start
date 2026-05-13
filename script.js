@@ -400,6 +400,10 @@ function getSpeakText(target, element = null) {
   if (target === "course-block") return element?.textContent?.trim() || element?.getAttribute("aria-label") || "Kursblock";
   if (target === "course-topic-link") return element?.textContent?.trim() || "Direktlink";
   if (target === "embedded-course-presentation") return "Eingebettete Course Presentation. Die fertige Course Presentation ist hier direkt auf der Startseite eingebunden.";
+  if (target === "h5p-lite-start") return element?.textContent?.trim() || "Interaktive Elemente selbst erstellen";
+  if (target === "h5p-lite-link") return element?.textContent?.trim() || "Interaktive Testseite öffnen";
+  if (target === "h5p-lite-intro") return element?.textContent?.trim() || "Einführung";
+  if (target === "h5p-lite-panel") return element?.textContent?.trim() || "Editor";
   if (target === "banner") return bannerTitle.textContent.trim();
   if (target === "topic-card") {
     const index = Number(element?.dataset.index ?? activeIndex);
