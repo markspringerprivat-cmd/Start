@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Book – Editor</title>
+  <link rel="stylesheet" href="style.css?v=45" />
+</head>
+<body id="top" data-page="h5p-lite" data-activity="interactive-book">
+  <main class="page-shell h5p-lite-shell">
+    <a class="back-link" href="index.html#top">← Zur Kursübersicht</a>
+
+    <section class="iv-hero blind-readable uniform-hover" data-blind-target="h5p-lite-intro" tabindex="0" role="button" aria-label="Einführung vorlesen">
+      <p class="eyebrow">Eigene H5P-ähnliche Testfunktion</p>
+      <h1>Interactive Book</h1>
+      <p>Erstelle Buchseiten mit Kapiteln, Lerntexten und Arbeitsaufträgen. Die Vorschau zeigt eine einfache Buchnavigation.</p>
+    </section>
+
+    <div class="blind-mode-row">
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">Vorlesemodus: aus</button>
+      <p class="blind-mode-hint" id="blindModeHint" hidden></p>
+    </div>
+
+    <div class="top-divider" aria-hidden="true"></div>
+
+    <section class="h5p-lite-layout" aria-label="Interactive-Book-Editor">
+      <div class="h5p-lite-book-preview">
+        <nav class="h5p-lite-book-nav" id="bookNav" aria-label="Buchseiten"></nav>
+        <article class="h5p-lite-book-page" id="bookPreview"></article>
+      </div>
+      <div class="iv-editor-stack">
+        <section class="iv-editor-panel blind-readable" data-blind-target="h5p-lite-panel" tabindex="0" role="button" aria-label="Editor vorlesen">
+          <h2>Buchseite bearbeiten</h2>
+          <div class="iv-field"><label for="titleInput">Buchtitel</label><input id="titleInput" type="text" /></div>
+          <div class="iv-field"><label for="pageTitle">Seitentitel</label><input id="pageTitle" type="text" /></div>
+          <div class="iv-field"><label for="pageText">Lerntext</label><textarea id="pageText"></textarea></div>
+          <div class="iv-field"><label for="pageTask">Aufgabe oder Reflexionsfrage</label><textarea id="pageTask"></textarea></div>
+          <div class="iv-button-row"><button class="iv-primary-button" id="addPage" type="button">Seite hinzufügen</button><button class="iv-danger-button" id="deletePage" type="button">Seite löschen</button></div>
+        </section>
+        <section class="iv-list-panel h5p-lite-config-panel">
+          <h2>Konfiguration</h2>
+          <div class="iv-field">
+            <label for="configArea">Konfiguration kopieren oder einfügen</label>
+            <textarea id="configArea" spellcheck="false"></textarea>
+          </div>
+          <div class="iv-button-row">
+            <button class="iv-secondary-button" id="exportButton" type="button">Exportieren</button>
+            <button class="iv-secondary-button" id="importButton" type="button">Importieren</button>
+            <button class="iv-danger-button" id="resetButton" type="button">Zurücksetzen</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="script.js?v=45"></script>
+  <script src="activity-editor.js?v=45"></script>
+</body>
+</html>

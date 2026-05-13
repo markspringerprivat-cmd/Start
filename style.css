@@ -1282,3 +1282,195 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
     min-height: 300px;
   }
 }
+
+/* H5P-ähnliche Editor-Testseiten */
+.h5p-lite-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.h5p-lite-link-grid .interactive-video-start-link {
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.h5p-lite-shell { padding-top: 30px; }
+
+.h5p-lite-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.h5p-lite-preview-panel,
+.h5p-lite-book-preview,
+.h5p-lite-slide-preview,
+.h5p-lite-question-preview {
+  border: 1.3px solid rgba(17, 24, 39, 0.70);
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: var(--lift-shadow);
+}
+
+.h5p-lite-preview-panel,
+.h5p-lite-book-preview {
+  padding: 24px;
+}
+
+.h5p-lite-slide-preview,
+.h5p-lite-question-preview {
+  min-height: 430px;
+  padding: 38px;
+  background:
+    radial-gradient(circle at 18px 18px, rgba(17,24,39,0.026) 1px, transparent 1.8px),
+    linear-gradient(135deg, #ffffff 0%, #fbfdff 100%);
+  background-size: 36px 36px, auto;
+}
+
+.h5p-lite-slide-preview h2,
+.h5p-lite-question-preview h2,
+.h5p-lite-book-page h2 {
+  font-size: clamp(1.7rem, 2.6vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-bottom: 18px;
+}
+
+.h5p-lite-slide-preview p,
+.h5p-lite-question-preview p,
+.h5p-lite-book-page p,
+.h5p-lite-task p {
+  color: #242b36;
+  font-size: clamp(1rem, 1.08vw, 1.14rem);
+  line-height: 1.75;
+}
+
+.h5p-lite-slide-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  margin-top: 24px;
+  border: 1px solid rgba(17, 24, 39, 0.16);
+}
+
+.h5p-lite-list,
+.h5p-lite-book-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.h5p-lite-list-button {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid rgba(17, 24, 39, 0.24);
+  background: #ffffff;
+  color: var(--text);
+  font-weight: 740;
+  text-align: left;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.h5p-lite-list-button.is-active,
+.h5p-lite-list-button:hover,
+.h5p-lite-list-button:focus-visible {
+  border-color: rgba(47, 95, 143, 0.72);
+  background: var(--accent-soft);
+  outline: none;
+}
+
+.h5p-lite-book-preview {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 22px;
+  min-height: 520px;
+}
+
+.h5p-lite-book-nav {
+  align-self: start;
+  border-right: 2px solid var(--line);
+  padding-right: 16px;
+}
+
+.h5p-lite-book-page { padding: 12px 6px; }
+
+.h5p-lite-task {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid rgba(47, 95, 143, 0.28);
+  background: var(--accent-soft);
+}
+
+.h5p-lite-config-panel textarea { min-height: 130px; }
+.h5p-lite-answer-stack { display: grid; gap: 10px; margin-top: 18px; }
+
+.dtw-text { font-size: 1.15rem; }
+.dtw-blank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  min-height: 34px;
+  margin: 0 5px;
+  padding: 4px 10px;
+  border: 1.4px dashed rgba(47, 95, 143, 0.75);
+  background: rgba(232, 242, 251, 0.72);
+  vertical-align: middle;
+  font-weight: 760;
+}
+
+.dtw-blank.is-correct,
+.dnd-item.is-correct { background: rgba(220, 252, 231, 0.9); border-color: rgba(22, 101, 52, 0.72); }
+
+.dtw-word-bank,
+.dnd-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.dtw-chip,
+.dnd-item {
+  border: 1.2px solid rgba(17, 24, 39, 0.34);
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 760;
+  cursor: grab;
+}
+
+.dnd-target-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.dnd-target {
+  min-height: 150px;
+  padding: 14px;
+  border: 1.4px dashed rgba(47, 95, 143, 0.65);
+  background: rgba(232, 242, 251, 0.46);
+}
+
+.dnd-target strong {
+  display: block;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1080px) {
+  .h5p-lite-layout { grid-template-columns: 1fr; }
+  .h5p-lite-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .h5p-lite-book-preview { grid-template-columns: 1fr; }
+  .h5p-lite-book-nav { border-right: 0; border-bottom: 2px solid var(--line); padding-right: 0; padding-bottom: 16px; }
+  .h5p-lite-link-grid { grid-template-columns: 1fr; }
+}

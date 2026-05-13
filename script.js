@@ -410,6 +410,8 @@ function getSpeakText(target, element = null) {
   if (target === "interactive-video-intro") return element?.textContent?.trim() || "Interaktives Video";
   if (target === "interactive-video-panel") return element?.textContent?.trim() || "Editor für Interaktionen";
   if (target === "left") return `${leftTitle.textContent}. ${leftText.textContent}`;
+  if (element?.textContent?.trim()) return element.textContent.trim();
+  if (!rightList || !rightTitle) return "Vorlesbarer Bereich";
   const points = [...rightList.querySelectorAll("li")].map((li) => li.textContent).join(". ");
   return `${rightTitle.textContent}. ${points}`;
 }

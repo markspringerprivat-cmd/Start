@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Presentation – Editor</title>
+  <link rel="stylesheet" href="style.css?v=45" />
+</head>
+<body id="top" data-page="h5p-lite" data-activity="course-presentation">
+  <main class="page-shell h5p-lite-shell">
+    <a class="back-link" href="index.html#top">← Zur Kursübersicht</a>
+
+    <section class="iv-hero blind-readable uniform-hover" data-blind-target="h5p-lite-intro" tabindex="0" role="button" aria-label="Einführung vorlesen">
+      <p class="eyebrow">Eigene H5P-ähnliche Testfunktion</p>
+      <h1>Course Presentation</h1>
+      <p>Erstelle einfache Folien mit Titel, Text und optionalem Bild. Die Vorschau funktioniert wie eine kleine Präsentation mit Vor- und Zurück-Navigation.</p>
+    </section>
+
+    <div class="blind-mode-row">
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">Vorlesemodus: aus</button>
+      <p class="blind-mode-hint" id="blindModeHint" hidden></p>
+    </div>
+
+    <div class="top-divider" aria-hidden="true"></div>
+
+    <section class="h5p-lite-layout" aria-label="Course-Presentation-Editor">
+      <div class="h5p-lite-preview-panel">
+        <div class="h5p-lite-slide-preview" id="cpPreview"></div>
+        <div class="iv-controls">
+          <span class="iv-time-display" id="cpCounter">Folie 1 von 1</span>
+          <div class="iv-button-row">
+            <button class="iv-secondary-button" id="prevSlide" type="button">Zurück</button>
+            <button class="iv-secondary-button" id="nextSlide" type="button">Weiter</button>
+          </div>
+        </div>
+      </div>
+      <div class="iv-editor-stack">
+        <section class="iv-editor-panel blind-readable" data-blind-target="h5p-lite-panel" tabindex="0" role="button" aria-label="Editor vorlesen">
+          <h2>Folien bearbeiten</h2>
+          <div class="iv-field"><label for="titleInput">Präsentationstitel</label><input id="titleInput" type="text" /></div>
+          <div class="iv-field"><label for="slideTitle">Folientitel</label><input id="slideTitle" type="text" /></div>
+          <div class="iv-field"><label for="slideText">Folientext</label><textarea id="slideText"></textarea></div>
+          <div class="iv-field"><label for="slideMedia">Optionale Bild-URL</label><input id="slideMedia" type="url" placeholder="https://..." /></div>
+          <div class="iv-button-row"><button class="iv-primary-button" id="addSlide" type="button">Folie hinzufügen</button><button class="iv-danger-button" id="deleteSlide" type="button">Folie löschen</button></div>
+        </section>
+        <section class="iv-list-panel"><h2>Folien</h2><div class="h5p-lite-list" id="slideList"></div></section>
+        <section class="iv-list-panel h5p-lite-config-panel">
+          <h2>Konfiguration</h2>
+          <div class="iv-field">
+            <label for="configArea">Konfiguration kopieren oder einfügen</label>
+            <textarea id="configArea" spellcheck="false"></textarea>
+          </div>
+          <div class="iv-button-row">
+            <button class="iv-secondary-button" id="exportButton" type="button">Exportieren</button>
+            <button class="iv-secondary-button" id="importButton" type="button">Importieren</button>
+            <button class="iv-danger-button" id="resetButton" type="button">Zurücksetzen</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="script.js?v=45"></script>
+  <script src="activity-editor.js?v=45"></script>
+</body>
+</html>
