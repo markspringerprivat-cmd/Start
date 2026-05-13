@@ -1,0 +1,165 @@
+window.ACTIVITY_KIND="course-presentation";
+window.ACTIVITY_DATA={
+  "title": "Eigene Course Presentation",
+  "slides": [
+    {
+      "id": "7c6efa4f-4f22-451d-abbe-79dd0eac19b1",
+      "type": "text",
+      "title": "Folie 1",
+      "text": "Hier steht dein Inhalt.",
+      "media": "",
+      "question": "Welche Antwort passt?",
+      "description": "Wähle eine Antwort aus.",
+      "answers": [
+        "Antwort 1",
+        "Antwort 2",
+        "Antwort 3"
+      ],
+      "correctIndex": 0,
+      "dragText": "Eine professionelle Gesprächsführung braucht [Wartezeit] und [Rückmeldung].",
+      "pairs": [
+        {
+          "item": "Wartezeit",
+          "target": "Gesprächsführung"
+        },
+        {
+          "item": "Tafelbild",
+          "target": "Sicherung"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "332331ec-d23e-422a-942d-8a9753812e2a",
+          "time": 4,
+          "question": "Was ist hier wichtig?",
+          "description": "Wähle eine Antwort aus.",
+          "answers": [
+            "Genau beobachten",
+            "Überspringen"
+          ],
+          "correctIndex": 0,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "39afcbb8-aff8-481c-b22b-4ba59769a70d",
+      "type": "dragDrop",
+      "title": "Übungsfolie",
+      "text": "Hier steht dein Inhalt.",
+      "media": "",
+      "question": "Welche Antwort passt?",
+      "description": "Wähle eine Antwort aus.",
+      "answers": [
+        "Antwort 1",
+        "Antwort 2",
+        "Antwort 3"
+      ],
+      "correctIndex": 0,
+      "dragText": "Eine professionelle Gesprächsführung braucht [Wartezeit] und [Rückmeldung].",
+      "pairs": [
+        {
+          "item": "Wartezeit",
+          "target": "Gesprächsführung"
+        },
+        {
+          "item": "Tafelbild",
+          "target": "Sicherung"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "738d6d0b-77a5-4d63-83da-216bd6a578e7",
+          "time": 4,
+          "question": "Was ist hier wichtig?",
+          "description": "Wähle eine Antwort aus.",
+          "answers": [
+            "Genau beobachten",
+            "Überspringen"
+          ],
+          "correctIndex": 0,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "aea8e039-7fbe-44a1-a7c7-23c8422d1c75",
+      "type": "multipleChoice",
+      "title": "Folie 3",
+      "text": "Hier steht dein Inhalt.",
+      "media": "https://www.youtube.com/watch?v=tCDvOQI3pco",
+      "question": "Welche Antwort passt?",
+      "description": "Wähle eine Antwort aus.",
+      "answers": [
+        "Antwort 1",
+        "Antwort 2",
+        "Antwort 3"
+      ],
+      "correctIndex": 0,
+      "dragText": "Eine professionelle Gesprächsführung braucht [Wartezeit] und [Rückmeldung].",
+      "pairs": [
+        {
+          "item": "Wartezeit",
+          "target": "Gesprächsführung"
+        },
+        {
+          "item": "Tafelbild",
+          "target": "Sicherung"
+        }
+      ],
+      "interactions": [
+        {
+          "id": "4bdc1d96-f208-4a12-84b5-8cc5c22f6e45",
+          "time": 4,
+          "question": "Was ist hier wichtig?",
+          "description": "Wähle eine Antwort aus.",
+          "answers": [
+            "Genau beobachten",
+            "Überspringen"
+          ],
+          "correctIndex": 0,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "1a6b756f-7d90-4e1f-9312-b4a6fff4c31f",
+      "type": "text",
+      "title": "Folie 4",
+      "text": "Hier steht dein Inhalt.",
+      "media": "",
+      "question": "Welche Antwort passt?",
+      "description": "Wähle eine Antwort aus.",
+      "answers": [
+        "Antwort 1",
+        "Antwort 2",
+        "Antwort 3"
+      ],
+      "correctIndex": 0,
+      "dragText": "Eine professionelle Gesprächsführung braucht [Wartezeit] und [Rückmeldung].",
+      "pairs": [
+        {
+          "item": "Wartezeit",
+          "target": "Gesprächsführung"
+        },
+        {
+          "item": "Tafelbild",
+          "target": "Sicherung"
+        }
+      ],
+      "interactions": [
+        {
+          "time": 4,
+          "question": "Was ist hier wichtig?",
+          "description": "Wähle eine Antwort aus.",
+          "answers": [
+            "Genau beobachten",
+            "Überspringen"
+          ],
+          "correctIndex": 0,
+          "pause": true
+        }
+      ]
+    }
+  ]
+};
