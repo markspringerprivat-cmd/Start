@@ -549,6 +549,33 @@ if (hasVorlesemodusParam()) setBlindMode(true, { announce: false, updateUrl: tru
 else updateInternalLinksForVorlesemodus();
 
 
+function syncCourseBlockCardHeights() {
+  const cards = [...document.querySelectorAll(".course-block-card")];
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.style.minHeight = "";
+  });
+
+  const maxHeight = Math.max(...cards.map((card) => Math.ceil(card.getBoundingClientRect().height)));
+  cards.forEach((card) => {
+    card.style.minHeight = `${maxHeight}px`;
+  });
+}
+
+function setupCourseBlockEqualHeights() {
+  if (!document.querySelector(".course-block-card")) return;
+
+  const run = () => window.requestAnimationFrame(syncCourseBlockCardHeights);
+  run();
+  window.addEventListener("load", run);
+  window.addEventListener("resize", run);
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(run).catch(() => {});
+  }
+}
+
 function setupCourseFlyouts() {
   const wraps = [...document.querySelectorAll(".course-block-wrap")];
   if (!wraps.length) return;
@@ -598,4 +625,5 @@ function setupCourseFlyouts() {
   });
 }
 
+setupCourseBlockEqualHeights();
 setupCourseFlyouts();
