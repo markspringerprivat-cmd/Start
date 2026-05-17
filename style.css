@@ -229,7 +229,7 @@ p, h1, h2 { margin-top: 0; }
   top: 0;
   left: 0;
   right: 0;
-  height: 0.5cm;
+  height: 0.4cm;
   background: var(--theme-color);
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
   pointer-events: none;
@@ -486,7 +486,7 @@ p, h1, h2 { margin-top: 0; }
   top: 0;
   left: 0;
   right: 0;
-  height: 0.5cm;
+  height: 0.4cm;
   background: var(--theme-color);
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
   pointer-events: none;
@@ -507,9 +507,9 @@ p, h1, h2 { margin-top: 0; }
 .topic-card.is-active:hover,
 .topic-card.is-active:focus-visible { transform: translate(-50%, -50%) scale(1.016); }
 .topic-card.is-left:hover,
-.topic-card.is-left:focus-visible { transform: translate(calc(-50% - min(455px, 34cqw)), -50%) scale(1.016); }
+.topic-card.is-left:focus-visible { transform: translate(calc(-50% - min(500px, 38cqw)), -50%) scale(1.016); }
 .topic-card.is-right:hover,
-.topic-card.is-right:focus-visible { transform: translate(calc(-50% + min(455px, 34cqw)), -50%) scale(1.016); }
+.topic-card.is-right:focus-visible { transform: translate(calc(-50% + min(500px, 38cqw)), -50%) scale(1.016); }
 
 .topic-card:focus-visible,
 .arrow-button:focus-visible,
@@ -524,7 +524,7 @@ p, h1, h2 { margin-top: 0; }
 }
 
 .topic-card.is-side {
-  width: min(300px, 23cqw);
+  width: min(285px, 21cqw);
   height: 88px;
   font-size: clamp(0.9rem, 1.05vw, 1.18rem);
   z-index: 3;
@@ -532,14 +532,14 @@ p, h1, h2 { margin-top: 0; }
 }
 
 .topic-card.is-left {
-  transform: translate(calc(-50% - min(455px, 34cqw)), -50%);
+  transform: translate(calc(-50% - min(500px, 38cqw)), -50%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.82) 4%, black 10%, black 100%);
   mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.82) 4%, black 10%, black 100%);
   filter: blur(0.02px);
 }
 
 .topic-card.is-right {
-  transform: translate(calc(-50% + min(455px, 34cqw)), -50%);
+  transform: translate(calc(-50% + min(500px, 38cqw)), -50%);
   -webkit-mask-image: linear-gradient(90deg, black 0%, black 90%, rgba(0,0,0,.82) 96%, transparent 100%);
   mask-image: linear-gradient(90deg, black 0%, black 90%, rgba(0,0,0,.82) 96%, transparent 100%);
   filter: blur(0.02px);
@@ -596,7 +596,7 @@ body.is-embedded-frame .page-shell {
 
 body.is-embedded-frame .topic-switcher {
   grid-template-columns: clamp(96px, 9vw, 132px) minmax(0, 1fr) clamp(96px, 9vw, 132px);
-  gap: clamp(18px, 2.2vw, 34px);
+  gap: clamp(24px, 2.8vw, 44px);
 }
 
 body.is-embedded-frame .arrow-button {
@@ -695,7 +695,7 @@ body.is-embedded-frame .cards-window {
   overflow: hidden;
   box-shadow: var(--lift-shadow);
   background:
-    linear-gradient(to bottom, var(--theme-color) 0, var(--theme-color) 0.5cm, transparent 0.5cm),
+    linear-gradient(to bottom, var(--theme-color) 0, var(--theme-color) 0.4cm, transparent 0.4cm),
     radial-gradient(circle at 14% 28%, rgba(248,248,245,0.92), transparent 28%),
     radial-gradient(circle at 88% 22%, rgba(242,246,249,0.78), transparent 26%),
     linear-gradient(135deg, #ffffff 0%, #fdfdfb 48%, #ffffff 100%);
@@ -772,7 +772,7 @@ h1 {
   top: 0;
   left: 0;
   right: 0;
-  height: 0.5cm;
+  height: 0.4cm;
   background: var(--theme-color);
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
   pointer-events: none;
@@ -971,4 +971,50 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
 .course-topic-link:focus-visible {
   border-color: var(--theme-color-dark);
   background: linear-gradient(135deg, #ffffff 0%, var(--theme-color-soft) 100%);
+}
+
+/* Robuste Themen-Farbgebung für Modul- und Einbettungsansicht */
+body.theme-wahrnehmung,
+body[data-page="wahrnehmung"] {
+  --theme-color: #72b7a7;
+  --theme-color-dark: #2f7167;
+  --theme-color-soft: rgba(114, 183, 167, 0.13);
+}
+
+body.theme-dekomposition,
+body[data-page="dekomposition"] {
+  --theme-color: #6aaee8;
+  --theme-color-dark: #2e669b;
+  --theme-color-soft: rgba(106, 174, 232, 0.13);
+}
+
+body.theme-approximation,
+body[data-page="approximation"] {
+  --theme-color: #e7a06b;
+  --theme-color-dark: #9a5a26;
+  --theme-color-soft: rgba(231, 160, 107, 0.14);
+}
+
+.course-block-wrap .course-topic-link {
+  color: var(--theme-color-dark);
+  border-color: color-mix(in srgb, var(--theme-color) 42%, rgba(17, 24, 39, 0.42));
+  background:
+    radial-gradient(circle at 16px 16px, rgba(17,24,39,0.022) 1px, transparent 1.8px),
+    linear-gradient(135deg, var(--theme-color-soft), #ffffff);
+}
+
+.course-block-wrap .course-topic-link:hover,
+.course-block-wrap .course-topic-link:focus-visible {
+  background: var(--theme-color);
+  color: #ffffff;
+  border-color: var(--theme-color);
+}
+
+body[data-page="dekomposition"] .banner,
+body[data-page="dekomposition"] .content-column,
+body[data-page="dekomposition"] .topic-card,
+body.theme-dekomposition .banner,
+body.theme-dekomposition .content-column,
+body.theme-dekomposition .topic-card {
+  border-color: rgba(46, 102, 155, 0.72);
 }

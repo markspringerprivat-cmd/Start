@@ -174,6 +174,7 @@ const pageData = {
 };
 
 const pageType = document.body?.dataset.page || "dekomposition";
+if (document.body && pageType) document.body.classList.add(`theme-${pageType}`);
 const currentConfig = pageData[pageType] || pageData.dekomposition;
 const topics = currentConfig.topics;
 
