@@ -207,8 +207,8 @@ p, h1, h2 { margin-top: 0; }
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 22px;
+  justify-content: flex-start;
+  gap: 0;
   padding: 34px 32px;
   border: 1.3px solid rgba(17, 24, 39, 0.70);
   border-radius: 2px;
@@ -359,10 +359,11 @@ p, h1, h2 { margin-top: 0; }
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  margin-bottom: 28px;
 }
 
 .course-block-card h2 {
-  margin: 0;
+  margin: 0 0 22px;
   font-size: clamp(1.7rem, 2.2vw, 2.45rem);
   line-height: 1.06;
   letter-spacing: -0.045em;
@@ -383,6 +384,7 @@ p, h1, h2 { margin-top: 0; }
 
 .block-link-text {
   width: fit-content;
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -533,15 +535,15 @@ p, h1, h2 { margin-top: 0; }
 
 .topic-card.is-left {
   transform: translate(calc(-50% - min(500px, 38cqw)), -50%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.82) 4%, black 10%, black 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.82) 4%, black 10%, black 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 9%, rgba(0,0,0,.18) 14%, rgba(0,0,0,.55) 19%, black 26%, black 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 9%, rgba(0,0,0,.18) 14%, rgba(0,0,0,.55) 19%, black 26%, black 100%);
   filter: blur(0.02px);
 }
 
 .topic-card.is-right {
   transform: translate(calc(-50% + min(500px, 38cqw)), -50%);
-  -webkit-mask-image: linear-gradient(90deg, black 0%, black 90%, rgba(0,0,0,.82) 96%, transparent 100%);
-  mask-image: linear-gradient(90deg, black 0%, black 90%, rgba(0,0,0,.82) 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, black 0%, black 74%, rgba(0,0,0,.55) 81%, rgba(0,0,0,.18) 86%, transparent 91%, transparent 100%);
+  mask-image: linear-gradient(90deg, black 0%, black 74%, rgba(0,0,0,.55) 81%, rgba(0,0,0,.18) 86%, transparent 91%, transparent 100%);
   filter: blur(0.02px);
 }
 
@@ -591,7 +593,28 @@ p, h1, h2 { margin-top: 0; }
 .arrow-button:disabled { opacity: 0.36; cursor: not-allowed; color: var(--theme-color); }
 
 body.is-embedded-frame .page-shell {
-  width: min(1400px, calc(100vw - 96px));
+  width: min(1400px, calc(100vw - 4cm - 42px));
+}
+
+body.is-embedded-frame .overview-shell {
+  padding-top: 48px;
+}
+
+body.is-embedded-frame .course-block-grid {
+  grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr) 64px minmax(0, 1fr);
+  column-gap: 22px;
+}
+
+body.is-embedded-frame .course-block-card {
+  padding: 34px 32px;
+}
+
+body.is-embedded-frame .course-block-card h2 {
+  margin-bottom: 22px;
+}
+
+body.is-embedded-frame .course-block-card p {
+  line-height: 1.72;
 }
 
 body.is-embedded-frame .topic-switcher {
@@ -606,6 +629,60 @@ body.is-embedded-frame .arrow-button {
 
 body.is-embedded-frame .cards-window {
   z-index: 1;
+}
+
+
+@media (min-width: 1051px) and (max-width: 1340px) {
+  body.is-embedded-frame {
+    padding-left: clamp(26px, 3.2vw, 44px);
+    padding-right: clamp(26px, 3.2vw, 44px);
+  }
+
+  body.is-embedded-frame .page-shell {
+    width: min(1260px, calc(100vw - 64px));
+  }
+
+  body.is-embedded-frame .overview-hero {
+    padding: 52px 58px;
+  }
+
+  body.is-embedded-frame .overview-hero h1 {
+    font-size: clamp(4rem, 5vw, 4.85rem);
+  }
+
+  body.is-embedded-frame .overview-intro {
+    font-size: clamp(1.08rem, 1.25vw, 1.2rem);
+    line-height: 1.72;
+  }
+
+  body.is-embedded-frame .course-block-grid {
+    grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr) 58px minmax(0, 1fr);
+    column-gap: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  body.is-embedded-frame .course-block-wrap,
+  body.is-embedded-frame .course-block-card {
+    min-height: 364px;
+  }
+
+  body.is-embedded-frame .course-block-card {
+    padding: 34px 32px;
+  }
+
+  body.is-embedded-frame .block-number {
+    margin-bottom: 28px;
+  }
+
+  body.is-embedded-frame .course-block-card h2 {
+    margin-bottom: 22px;
+    font-size: clamp(1.9rem, 2.15vw, 2.35rem);
+  }
+
+  body.is-embedded-frame .course-block-card p {
+    font-size: clamp(1.02rem, 1.08vw, 1.1rem);
+  }
 }
 
 .blind-mode-row {
