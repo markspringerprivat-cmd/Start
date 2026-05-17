@@ -367,7 +367,7 @@ function updateContent(direction = "right") {
 
   buildItems.forEach((item, index) => {
     item.classList.remove("content-build-left", "content-build-right", "content-slide-left", "content-slide-right");
-    item.style.setProperty("--build-delay", `${index * 35}ms`);
+    item.style.setProperty("--build-delay", `${index * 24}ms`);
   });
 
   requestAnimationFrame(() => {
