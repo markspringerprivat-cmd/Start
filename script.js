@@ -2,6 +2,12 @@ window.addEventListener("load", () => {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 });
 
+try {
+  if (window.self !== window.top) document.body?.classList.add("is-embedded-frame");
+} catch (error) {
+  document.body?.classList.add("is-embedded-frame");
+}
+
 const pageData = {
   dekomposition: {
     switcherLabel: "Bausteine der Dekomposition",
