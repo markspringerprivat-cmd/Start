@@ -382,9 +382,9 @@ p, h1, h2 { margin-top: 0; }
   width: 100%;
   min-height: 166px;
   display: grid;
-  grid-template-columns: 74px minmax(0, 1fr) 74px;
+  grid-template-columns: 92px minmax(0, 1fr) 92px;
   align-items: center;
-  gap: 24px;
+  gap: 30px;
 }
 
 .cards-window {
@@ -500,11 +500,11 @@ p, h1, h2 { margin-top: 0; }
 .topic-card.is-far { opacity: 0; pointer-events: none; }
 
 .arrow-button {
-  width: 64px;
-  height: 64px;
+  width: 82px;
+  height: 82px;
   border: 0;
   background: transparent;
-  color: #101318;
+  color: #7fb8ee;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -512,9 +512,11 @@ p, h1, h2 { margin-top: 0; }
   transition: opacity 180ms ease, transform 180ms ease, color 180ms ease;
 }
 
-.arrow-button span { font-size: 4.8rem; line-height: 1; font-weight: 260; }
-.arrow-button:hover:not(:disabled) { transform: translateX(3px); color: var(--accent); }
-.arrow-button:first-child:hover:not(:disabled) { transform: translateX(-3px); }
+.arrow-button:first-child { justify-self: start; }
+.arrow-button:last-child { justify-self: end; }
+.arrow-button span { font-size: 5.35rem; line-height: 1; font-weight: 330; }
+.arrow-button:hover:not(:disabled) { transform: translateX(5px) scale(1.065); color: #5fa8ea; }
+.arrow-button:first-child:hover:not(:disabled) { transform: translateX(-5px) scale(1.065); }
 .arrow-button:disabled { opacity: 0.22; cursor: not-allowed; }
 
 .blind-mode-row {
@@ -824,8 +826,8 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   .overview-hero, .placeholder-card { padding: 34px 28px; }
   .course-block-card { min-height: 280px; }
   .topic-switcher { grid-template-columns: 46px minmax(0, 1fr) 46px; gap: 8px; }
-  .arrow-button { width: 46px; }
-  .arrow-button span { font-size: 3.4rem; }
+  .arrow-button { width: 56px; height: 56px; }
+  .arrow-button span { font-size: 3.8rem; }
   .topic-card.is-active { width: min(360px, 58vw); height: 112px; }
   .topic-card.is-side { width: min(180px, 28vw); height: 76px; }
   .topic-card.is-left { transform: translate(calc(-50% - 285px), -50%); }
