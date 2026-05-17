@@ -367,7 +367,7 @@ function updateContent(direction = "right") {
 
   buildItems.forEach((item, index) => {
     item.classList.remove("content-build-left", "content-build-right", "content-slide-left", "content-slide-right");
-    item.style.setProperty("--build-delay", `${index * 70}ms`);
+    item.style.setProperty("--build-delay", `${index * 55}ms`);
   });
 
   requestAnimationFrame(() => {
@@ -390,7 +390,7 @@ function setActiveIndex(newIndex) {
   window.setTimeout(() => {
     isAnimating = false;
     renderCards();
-  }, 720);
+  }, 860);
 }
 
 prevButton?.addEventListener("click", () => setActiveIndex(activeIndex - 1));
