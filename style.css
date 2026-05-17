@@ -509,9 +509,9 @@ p, h1, h2 { margin-top: 0; }
 .topic-card.is-active:hover,
 .topic-card.is-active:focus-visible { transform: translate(-50%, -50%) scale(1.016); }
 .topic-card.is-left:hover,
-.topic-card.is-left:focus-visible { transform: translate(calc(-50% - min(500px, 38cqw)), -50%) scale(1.016); }
+.topic-card.is-left:focus-visible { transform: translate(calc(-50% - min(485px, 36cqw)), -50%) scale(1.016); }
 .topic-card.is-right:hover,
-.topic-card.is-right:focus-visible { transform: translate(calc(-50% + min(500px, 38cqw)), -50%) scale(1.016); }
+.topic-card.is-right:focus-visible { transform: translate(calc(-50% + min(485px, 36cqw)), -50%) scale(1.016); }
 
 .topic-card:focus-visible,
 .arrow-button:focus-visible,
@@ -526,25 +526,48 @@ p, h1, h2 { margin-top: 0; }
 }
 
 .topic-card.is-side {
-  width: min(285px, 21cqw);
+  width: min(360px, 28cqw);
   height: 88px;
-  font-size: clamp(0.9rem, 1.05vw, 1.18rem);
+  font-size: clamp(0.9rem, 1.02vw, 1.1rem);
   z-index: 3;
   opacity: 0.88;
+  padding-inline: 58px;
+  white-space: nowrap;
 }
 
 .topic-card.is-left {
-  transform: translate(calc(-50% - min(500px, 38cqw)), -50%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 9%, rgba(0,0,0,.18) 14%, rgba(0,0,0,.55) 19%, black 26%, black 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, transparent 9%, rgba(0,0,0,.18) 14%, rgba(0,0,0,.55) 19%, black 26%, black 100%);
+  transform: translate(calc(-50% - min(485px, 36cqw)), -50%);
   filter: blur(0.02px);
 }
 
 .topic-card.is-right {
-  transform: translate(calc(-50% + min(500px, 38cqw)), -50%);
-  -webkit-mask-image: linear-gradient(90deg, black 0%, black 74%, rgba(0,0,0,.55) 81%, rgba(0,0,0,.18) 86%, transparent 91%, transparent 100%);
-  mask-image: linear-gradient(90deg, black 0%, black 74%, rgba(0,0,0,.55) 81%, rgba(0,0,0,.18) 86%, transparent 91%, transparent 100%);
+  transform: translate(calc(-50% + min(485px, 36cqw)), -50%);
   filter: blur(0.02px);
+}
+
+.topic-card.is-side::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 82px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.topic-card.is-left::after {
+  left: -2px;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.96) 24%, rgba(255,255,255,0.72) 54%, transparent 100%);
+}
+
+.topic-card.is-right::after {
+  right: -2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.72) 46%, rgba(255,255,255,0.96) 76%, #ffffff 100%);
+}
+
+.topic-card-label {
+  position: relative;
+  z-index: 3;
 }
 
 .topic-card.is-hidden-left {
@@ -629,6 +652,29 @@ body.is-embedded-frame .arrow-button {
 
 body.is-embedded-frame .cards-window {
   z-index: 1;
+}
+
+body.is-embedded-frame .topic-card.is-side {
+  width: min(380px, 30cqw);
+  padding-inline: 62px;
+}
+
+body.is-embedded-frame .topic-card.is-left {
+  transform: translate(calc(-50% - min(470px, 35cqw)), -50%);
+}
+
+body.is-embedded-frame .topic-card.is-right {
+  transform: translate(calc(-50% + min(470px, 35cqw)), -50%);
+}
+
+body.is-embedded-frame .topic-card.is-left:hover,
+body.is-embedded-frame .topic-card.is-left:focus-visible {
+  transform: translate(calc(-50% - min(470px, 35cqw)), -50%) scale(1.016);
+}
+
+body.is-embedded-frame .topic-card.is-right:hover,
+body.is-embedded-frame .topic-card.is-right:focus-visible {
+  transform: translate(calc(-50% + min(470px, 35cqw)), -50%) scale(1.016);
 }
 
 
@@ -1009,7 +1055,7 @@ button[aria-label*="vorlesen"]:not(.blind-mode-toggle) {
   .arrow-button { width: 62px; height: 62px; }
   .arrow-button span { font-size: 4.15rem; }
   .topic-card.is-active { width: min(360px, 56cqw); height: 112px; }
-  .topic-card.is-side { width: min(180px, 24cqw); height: 76px; }
+  .topic-card.is-side { width: min(230px, 30cqw); height: 76px; padding-inline: 38px; }
   .topic-card.is-left { transform: translate(calc(-50% - min(285px, 34cqw)), -50%); }
   .topic-card.is-left:hover, .topic-card.is-left:focus-visible { transform: translate(calc(-50% - min(285px, 34cqw)), -50%) scale(1.016); }
   .topic-card.is-right { transform: translate(calc(-50% + min(285px, 34cqw)), -50%); }

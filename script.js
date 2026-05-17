@@ -277,7 +277,10 @@ function createCards() {
     const card = document.createElement("button");
     card.type = "button";
     card.className = "topic-card blind-readable";
-    card.textContent = topic.cardTitle;
+    const cardLabel = document.createElement("span");
+    cardLabel.className = "topic-card-label";
+    cardLabel.textContent = topic.cardTitle;
+    card.appendChild(cardLabel);
     card.dataset.index = index;
     card.dataset.blindTarget = "topic-card";
     card.setAttribute("aria-label", `Zu ${topic.cardTitle} wechseln`);
