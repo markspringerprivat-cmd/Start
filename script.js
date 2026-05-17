@@ -358,13 +358,20 @@ function updateContent(direction = "right") {
     moduleLink.removeAttribute("href");
   }
 
-  const animationClass = direction === "left" ? "content-slide-left" : "content-slide-right";
-  banner.classList.remove("content-slide-left", "content-slide-right");
-  contentGrid.classList.remove("content-slide-left", "content-slide-right");
+  const animationClass = direction === "left" ? "content-build-left" : "content-build-right";
+  const buildItems = [
+    banner,
+    ...document.querySelectorAll(".content-column"),
+    ...(!moduleLink.hidden ? [moduleLink] : [])
+  ].filter(Boolean);
+
+  buildItems.forEach((item, index) => {
+    item.classList.remove("content-build-left", "content-build-right", "content-slide-left", "content-slide-right");
+    item.style.setProperty("--build-delay", `${index * 70}ms`);
+  });
 
   requestAnimationFrame(() => {
-    banner.classList.add(animationClass);
-    contentGrid.classList.add(animationClass);
+    buildItems.forEach((item) => item.classList.add(animationClass));
   });
 
   syncTopicParam();
