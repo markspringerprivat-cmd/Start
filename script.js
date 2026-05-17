@@ -358,20 +358,13 @@ function updateContent(direction = "right") {
     moduleLink.removeAttribute("href");
   }
 
-  const animationClass = direction === "left" ? "content-build-left" : "content-build-right";
-  const buildItems = [
-    banner,
-    ...document.querySelectorAll(".content-column"),
-    ...(!moduleLink.hidden ? [moduleLink] : [])
-  ].filter(Boolean);
-
-  buildItems.forEach((item, index) => {
-    item.classList.remove("content-build-left", "content-build-right", "content-slide-left", "content-slide-right");
-    item.style.setProperty("--build-delay", `${index * 24}ms`);
-  });
+  const animationClass = direction === "left" ? "content-slide-left" : "content-slide-right";
+  banner.classList.remove("content-slide-left", "content-slide-right");
+  contentGrid.classList.remove("content-slide-left", "content-slide-right");
 
   requestAnimationFrame(() => {
-    buildItems.forEach((item) => item.classList.add(animationClass));
+    banner.classList.add(animationClass);
+    contentGrid.classList.add(animationClass);
   });
 
   syncTopicParam();
@@ -390,7 +383,7 @@ function setActiveIndex(newIndex) {
   window.setTimeout(() => {
     isAnimating = false;
     renderCards();
-  }, 620);
+  }, 720);
 }
 
 prevButton?.addEventListener("click", () => setActiveIndex(activeIndex - 1));
