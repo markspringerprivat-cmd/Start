@@ -1447,3 +1447,99 @@ button:hover,
   line-height: 1.04;
   white-space: normal;
 }
+
+
+/* v74: Pfeile transparent, ohne Kachel/Schatten; nur der Pfeil skaliert */
+.prev-button,
+.next-button,
+.carousel-button,
+.module-nav-button,
+.arrow-button,
+button[aria-label*="vorher"],
+button[aria-label*="Vorher"],
+button[aria-label*="zurück"],
+button[aria-label*="Zurück"],
+button[aria-label*="weiter"],
+button[aria-label*="Weiter"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline-offset: 4px;
+}
+
+.prev-button::before,
+.prev-button::after,
+.next-button::before,
+.next-button::after,
+.carousel-button::before,
+.carousel-button::after,
+.module-nav-button::before,
+.module-nav-button::after,
+.arrow-button::before,
+.arrow-button::after {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.prev-button:hover,
+.prev-button:focus-visible,
+.next-button:hover,
+.next-button:focus-visible,
+.carousel-button:hover,
+.carousel-button:focus-visible,
+.module-nav-button:hover,
+.module-nav-button:focus-visible,
+.arrow-button:hover,
+.arrow-button:focus-visible,
+button[aria-label*="vorher"]:hover,
+button[aria-label*="vorher"]:focus-visible,
+button[aria-label*="Vorher"]:hover,
+button[aria-label*="Vorher"]:focus-visible,
+button[aria-label*="zurück"]:hover,
+button[aria-label*="zurück"]:focus-visible,
+button[aria-label*="Zurück"]:hover,
+button[aria-label*="Zurück"]:focus-visible,
+button[aria-label*="weiter"]:hover,
+button[aria-label*="weiter"]:focus-visible,
+button[aria-label*="Weiter"]:hover,
+button[aria-label*="Weiter"]:focus-visible {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transform: scale(1.18);
+}
+
+/* v74: Inhaltskacheln bleiben beim Bausteinwechsel gleich hoch */
+.content-grid {
+  align-items: stretch;
+}
+
+.content-card,
+.info-card,
+.learning-card,
+.module-content-card,
+.detail-card,
+.content-grid > * {
+  min-height: 430px;
+}
+
+.content-card,
+.info-card,
+.learning-card,
+.module-content-card,
+.detail-card {
+  height: 100%;
+}
+
+/* Mobile: keine künstlich zu hohen Kacheln auf kleinen Displays */
+@media (max-width: 760px) {
+  .content-card,
+  .info-card,
+  .learning-card,
+  .module-content-card,
+  .detail-card,
+  .content-grid > * {
+    min-height: 0;
+  }
+}
