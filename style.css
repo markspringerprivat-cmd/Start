@@ -1439,3 +1439,11 @@ button:hover,
   transform: translate(1px, -1px) scale(1.03);
   opacity: 0.72;
 }
+
+
+/* v73: Einheitliche Überschriftengröße in allen Baustein-Bannern */
+.banner-content #moduleTitle {
+  font-size: clamp(1.58rem, 3.45vw, 3.55rem) !important;
+  line-height: 1.04;
+  white-space: normal;
+}

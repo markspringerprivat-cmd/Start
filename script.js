@@ -368,11 +368,7 @@ function renderCards() {
 }
 
 function setBannerTitleSize(title) {
-  const length = title.length;
-  let size = "clamp(2.05rem, 4.55vw, 4.5rem)";
-  if (length > 38) size = "clamp(1.42rem, 3.05vw, 3.18rem)";
-  else if (length > 30) size = "clamp(1.58rem, 3.45vw, 3.55rem)";
-  else if (length > 23) size = "clamp(1.78rem, 3.85vw, 3.95rem)";
+  const size = "clamp(1.58rem, 3.45vw, 3.55rem)";
   document.documentElement.style.setProperty("--banner-title-size", size);
 }
 
