@@ -1,6 +1,60 @@
-window.addEventListener("load", () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-});
+// Scroll-Fix für Einbettungen in Moodle/iFrames:
+// - Beim Laden einer internen Seite beginnt der eingebettete Inhalt wieder oben.
+// - Beim Wechsel eines Themas innerhalb derselben Seite wird ebenfalls nach oben gescrollt.
+// - Falls der äußere Moodle-Scrollbalken steuerbar ist, wird zusätzlich versucht, den iFrame selbst in den sichtbaren Bereich zu holen.
+(function setupEmbeddedScrollReset() {
+  try {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  } catch (error) {
+    // Browser ohne scrollRestoration-Unterstützung ignorieren.
+  }
+
+  function scrollEmbeddedPageToTop(options = {}) {
+    const smooth = options.smooth === true;
+    const behavior = smooth ? "smooth" : "auto";
+
+    document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, left: 0, behavior });
+
+    requestAnimationFrame(() => {
+      document.documentElement.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+      window.scrollTo({ top: 0, left: 0, behavior });
+    });
+
+    if (options.includeFrameElement === true) {
+      try {
+        window.frameElement?.scrollIntoView({ block: "start", inline: "nearest", behavior });
+      } catch (error) {
+        // Bei Cross-Origin-Einbettungen kann Moodle den Zugriff blockieren.
+      }
+
+      try {
+        window.parent?.postMessage({ type: "kurswebseite:scroll-to-top" }, "*");
+      } catch (error) {
+        // Optionales Signal für Container, die postMessage auswerten.
+      }
+    }
+  }
+
+  function scheduleScrollReset(options = {}) {
+    scrollEmbeddedPageToTop(options);
+    window.setTimeout(() => scrollEmbeddedPageToTop(options), 0);
+    window.setTimeout(() => scrollEmbeddedPageToTop(options), 120);
+  }
+
+  window.kurswebseiteScrollToTop = scrollEmbeddedPageToTop;
+  window.kurswebseiteScheduleScrollReset = scheduleScrollReset;
+
+  window.addEventListener("DOMContentLoaded", () => scheduleScrollReset({ includeFrameElement: true }));
+  window.addEventListener("load", () => scheduleScrollReset({ includeFrameElement: true }));
+  window.addEventListener("pageshow", () => scheduleScrollReset({ includeFrameElement: true }));
+  window.addEventListener("hashchange", () => scheduleScrollReset({ includeFrameElement: true }));
+  window.addEventListener("popstate", () => scheduleScrollReset({ includeFrameElement: true }));
+})();
 
 try {
   if (window.self !== window.top) document.body?.classList.add("is-embedded-frame");
@@ -389,6 +443,7 @@ function setActiveIndex(newIndex) {
   activeIndex = newIndex;
   renderCards();
   updateContent(direction);
+  window.kurswebseiteScheduleScrollReset?.({ smooth: true, includeFrameElement: true });
 
   window.setTimeout(() => {
     isAnimating = false;
