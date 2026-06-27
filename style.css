@@ -3430,3 +3430,216 @@ body:has(.moodle-replica-bar)::after {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* v89: Moodle-iframe und direkte GitHub-Ansicht vereinheitlichen */
+
+/* Frühere Embedded-Sonderregeln neutralisieren */
+body.is-embedded-frame {
+  padding-left: clamp(38px, 5vw, 2cm) !important;
+  padding-right: clamp(38px, 5vw, 2cm) !important;
+}
+
+body.is-embedded-frame::before,
+body.is-embedded-frame::after {
+  display: block !important;
+}
+
+body.is-embedded-frame .page-shell,
+body.is-embedded-frame .overview-shell {
+  width: min(1600px, calc(100vw - 3.6cm)) !important;
+  max-width: min(1600px, calc(100vw - 3.6cm)) !important;
+  padding-top: 24px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Index-Raster bleibt auch im Moodle-iframe identisch zum Direktaufruf */
+body.is-embedded-frame .overview-roadmap,
+.overview-roadmap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+  padding: 0 !important;
+}
+
+body.is-embedded-frame .overview-row.has-media,
+body.is-embedded-frame .overview-row.has-media.is-right,
+.overview-row.has-media,
+.overview-row.has-media.is-right {
+  min-height: 0 !important;
+  gap: 0 !important;
+  align-items: stretch !important;
+}
+
+body.is-embedded-frame .overview-row.has-media,
+.overview-row.has-media {
+  grid-template-columns: minmax(0, 56%) minmax(300px, 44%) !important;
+}
+
+body.is-embedded-frame .overview-row.has-media.is-right,
+.overview-row.has-media.is-right {
+  grid-template-columns: minmax(300px, 44%) minmax(0, 56%) !important;
+}
+
+body.is-embedded-frame .overview-stage-layout,
+body.is-embedded-frame .overview-stage-media,
+.overview-stage-layout,
+.overview-stage-media {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+body.is-embedded-frame .overview-stage-card,
+body.is-embedded-frame .overview-row.has-media .overview-stage-card,
+.overview-stage-card,
+.overview-row.has-media .overview-stage-card {
+  min-height: 0 !important;
+  height: 100% !important;
+  background: #ffffff !important;
+}
+
+/* Bildkacheln nicht verzerren und nicht anders skalieren */
+body.is-embedded-frame .overview-stage-media,
+.overview-stage-media {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+}
+
+body.is-embedded-frame .overview-stage-media img,
+.overview-stage-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #ffffff !important;
+}
+
+/* Seitliche Bildabstände auch eingebettet beibehalten */
+body.is-embedded-frame .overview-media-right,
+.overview-media-right {
+  margin-left: 16px !important;
+}
+
+body.is-embedded-frame .overview-media-left,
+.overview-media-left {
+  margin-right: 16px !important;
+}
+
+/* Buttons überall schlicht weiß mit feiner schwarzer Umrandung */
+body.is-embedded-frame .overview-stage-button-row,
+.overview-stage-button-row {
+  margin-top: auto !important;
+  width: 100% !important;
+  padding-top: 12px !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(17,24,39,0.12) !important;
+}
+
+body.is-embedded-frame .stage-inline-button,
+.stage-inline-button {
+  min-height: 38px !important;
+  padding: 7px 8px !important;
+  border: 1px solid rgba(17,24,39,0.38) !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #28313c !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transform: none !important;
+}
+
+body.is-embedded-frame .stage-inline-button:hover,
+body.is-embedded-frame .stage-inline-button:focus-visible,
+.stage-inline-button:hover,
+.stage-inline-button:focus-visible {
+  background: #f7fafc !important;
+  border-color: rgba(17,24,39,0.62) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  outline: none !important;
+}
+
+/* Dekomposition: gleiche Optik wie Wahrnehmung, nur zwei Reihen behalten */
+body.is-embedded-frame .overview-stage-button-row--dekomposition,
+.overview-stage-button-row--dekomposition {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+body.is-embedded-frame .overview-stage-button-row--dekomposition .stage-inline-button,
+.overview-stage-button-row--dekomposition .stage-inline-button {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 1px !important;
+}
+
+body.is-embedded-frame .overview-stage-button-row--dekomposition .button-kicker,
+.overview-stage-button-row--dekomposition .button-kicker {
+  display: block !important;
+  margin: 0 !important;
+  color: #28313c !important;
+  font-size: 0.68rem !important;
+  line-height: 1.05 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+body.is-embedded-frame .overview-stage-button-row--dekomposition .stage-inline-button span:last-child,
+.overview-stage-button-row--dekomposition .stage-inline-button span:last-child {
+  display: block !important;
+  margin: 0 !important;
+  color: #28313c !important;
+  font-size: 0.82rem !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+}
+
+/* Nur bei wirklich kleiner Breite umbrechen, nicht bloß wegen Moodle-Einbettung */
+@media (max-width: 1080px) {
+  body.is-embedded-frame .overview-row.has-media,
+  body.is-embedded-frame .overview-row.has-media.is-right,
+  .overview-row.has-media,
+  .overview-row.has-media.is-right {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  body.is-embedded-frame .overview-media-right,
+  body.is-embedded-frame .overview-media-left,
+  .overview-media-right,
+  .overview-media-left {
+    margin: 0 !important;
+  }
+
+  body.is-embedded-frame .overview-stage-media,
+  .overview-stage-media {
+    aspect-ratio: 4 / 3 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.is-embedded-frame,
+  body {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+  }
+
+  body.is-embedded-frame .page-shell,
+  body.is-embedded-frame .overview-shell,
+  .page-shell,
+  .overview-shell {
+    width: min(100%, 100vw - 18px) !important;
+    max-width: min(100%, 100vw - 18px) !important;
+  }
+
+  body.is-embedded-frame .overview-stage-button-row--dekomposition,
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: 1fr !important;
+  }
+}
