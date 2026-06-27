@@ -2898,3 +2898,167 @@ button[aria-label*="Weiter"]:focus-visible {
 .overview-row:focus-within .overview-stage-card {
   transform: none;
 }
+
+
+/* v84: Moodle-Leiste nach Originalstruktur aus Moodle-HTML */
+body:has(.moodle-replica-bar) {
+  padding-top: 0;
+}
+
+body:has(.moodle-replica-bar)::before,
+body:has(.moodle-replica-bar)::after {
+  display: none;
+}
+
+.moodle-replica-bar.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 3050;
+  width: 100vw;
+  height: 56px;
+  min-height: 56px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  background: #39a3d2;
+  border: 0;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.34);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.25) inset,
+    0 2px 4px rgba(17,24,39,0.22);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.moodle-replica-container.container-fluid {
+  width: 100%;
+  max-width: none;
+  min-height: 56px;
+  display: flex;
+  align-items: stretch;
+  padding: 0 0 0 12px;
+}
+
+.moodle-replica-logo.navbar-brand {
+  height: 56px;
+  min-height: 56px;
+  display: flex !important;
+  align-items: center;
+  padding: 0;
+  margin: 0 26px 0 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.moodle-replica-logo img.logo {
+  display: block;
+  height: 45px;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
+.moodle-replica-primary-navigation {
+  display: flex;
+  align-items: stretch;
+  height: 56px;
+}
+
+.moodle-replica-primary-navigation .moremenu,
+.moodle-replica-primary-navigation .navigation {
+  display: flex;
+  align-items: stretch;
+  height: 56px;
+}
+
+.moodle-replica-nav.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.moodle-replica-nav .nav-item {
+  display: flex;
+  align-items: stretch;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+}
+
+.moodle-replica-nav .nav-link {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 12px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 56px;
+  text-decoration: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.moodle-replica-nav .nav-link:hover,
+.moodle-replica-nav .nav-link:focus-visible {
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  text-decoration: none;
+  outline: none;
+}
+
+.moodle-replica-nav .nav-link.active,
+.moodle-replica-nav .nav-link[aria-current="true"] {
+  color: #1f2933;
+  background: #ffffff;
+  border-left-color: rgba(17,24,39,0.22);
+  border-right-color: rgba(17,24,39,0.22);
+  box-shadow:
+    0 -3px 0 rgba(17,24,39,0.14) inset,
+    0 1px 0 rgba(255,255,255,0.9) inset;
+}
+
+@media (max-width: 760px) {
+  .moodle-replica-bar.navbar {
+    height: auto;
+    min-height: 54px;
+  }
+
+  .moodle-replica-container.container-fluid {
+    min-height: 54px;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  }
+
+  .moodle-replica-logo.navbar-brand {
+    height: 54px;
+    min-height: 54px;
+    margin-right: 16px;
+  }
+
+  .moodle-replica-logo img.logo {
+    height: 40px;
+  }
+
+  .moodle-replica-primary-navigation,
+  .moodle-replica-primary-navigation .moremenu,
+  .moodle-replica-nav.navbar-nav,
+  .moodle-replica-nav .nav-item,
+  .moodle-replica-nav .nav-link {
+    height: 42px;
+    min-height: 42px;
+    line-height: 42px;
+  }
+
+  .moodle-replica-nav .nav-link {
+    padding: 0 9px;
+    font-size: 14px;
+  }
+}

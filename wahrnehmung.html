@@ -4,19 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wahrnehmung – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=83" />
+  <link rel="stylesheet" href="style.css?v=84" />
 </head>
 <body id="top" data-page="wahrnehmung" class="theme-wahrnehmung">
-  <header class="moodle-replica-bar" aria-label="Moodle-Navigationsleiste">
-    <a class="moodle-replica-logo" href="https://moodle.uni-siegen.de/my/" target="_top" aria-label="Moodle Dashboard">
-      <img src="assets/moodle-logo.png" alt="Moodle" />
-    </a>
-    <nav class="moodle-replica-nav" aria-label="Moodle Navigation">
-      <a href="https://moodle.uni-siegen.de/my/" target="_top">Dashboard</a>
-      <a href="https://moodle.uni-siegen.de/my/courses.php" target="_top">Meine Kurse</a>
-      <a class="is-active" href="https://moodle.uni-siegen.de/course/index.php" target="_top">Alle Kurse</a>
-    </nav>
-  </header>
+  <nav class="navbar fixed-top navbar-light bg-primary navbar-expand moodle-replica-bar" aria-label="Site-Navigation">
+    <div class="container-fluid moodle-replica-container">
+      <a href="https://moodle.uni-siegen.de/my/" class="navbar-brand moodle-replica-logo align-items-center m-0 me-4 p-0 aabtn d-none d-md-flex" target="_top" aria-label="Moodle Dashboard">
+        <img src="https://moodle.uni-siegen.de/pluginfile.php/1/theme_boost_union/logocompact/1/1781070392/Moodle-logo.svg" class="logo me-1" alt="moodle">
+      </a>
+      <div class="primary-navigation moodle-replica-primary-navigation">
+        <nav class="moremenu navigation" aria-label="Moodle Hauptnavigation">
+          <ul role="menubar" class="nav more-nav navbar-nav moodle-replica-nav">
+            <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link" href="https://moodle.uni-siegen.de/my/" target="_top" data-disableactive="true">Dashboard</a>
+            </li>
+            <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link active" href="https://moodle.uni-siegen.de/my/courses.php" target="_top" aria-current="true" data-disableactive="true">Meine Kurse</a>
+            </li>
+            <li data-key="allcourses" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link" href="https://moodle.uni-siegen.de/course/index.php" target="_top" data-disableactive="true">Alle Kurse</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </nav>
+
 <main class="page-shell">
     <a class="back-link dekomposition-back-link" href="index.html#top">← Zur Kursübersicht</a>
 
@@ -87,6 +100,6 @@
     </section>
   </main>
 
-  <script src="script.js?v=83"></script>
+  <script src="script.js?v=84"></script>
 </body>
 </html>
