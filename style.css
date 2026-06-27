@@ -2579,3 +2579,291 @@ button[aria-label*="Weiter"]:focus-visible {
     min-height: 40px;
   }
 }
+
+
+/* v81: Moodle-Leiste über volle Breite mit Bildlogo */
+.moodle-replica-bar {
+  position: sticky;
+  top: 0;
+  z-index: 3000;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 16px 0 10px;
+  background: #3fa0d1;
+  border-top: 1px solid rgba(255,255,255,0.28);
+  border-bottom: 1px solid rgba(34, 46, 60, 0.34);
+  box-shadow: 0 2px 0 rgba(255,255,255,0.18) inset, 0 3px 7px rgba(17,24,39,0.18);
+}
+
+.moodle-replica-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 100%;
+  padding-right: 8px;
+  text-decoration: none;
+}
+
+.moodle-replica-logo img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+
+.moodle-replica-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  height: 100%;
+}
+
+.moodle-replica-nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.moodle-replica-nav a:hover,
+.moodle-replica-nav a:focus-visible {
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+.moodle-replica-nav a.is-active {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  color: #262b31;
+  border-left-color: rgba(17,24,39,0.25);
+  border-right-color: rgba(17,24,39,0.25);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
+}
+
+@media (max-width: 760px) {
+  .moodle-replica-bar {
+    height: auto;
+    min-height: 52px;
+    flex-wrap: wrap;
+    padding: 6px 10px;
+    gap: 8px 12px;
+  }
+
+  .moodle-replica-logo img {
+    height: 38px;
+  }
+
+  .moodle-replica-nav {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .moodle-replica-nav a {
+    min-height: 34px;
+    padding: 6px 10px;
+  }
+}
+
+
+/* v82: Indexseite kompakter, weiße Kacheln, Buttons innerhalb der Kachel */
+.overview-shell {
+  width: min(1600px, calc(100vw - 3.6cm));
+}
+
+.overview-roadmap {
+  gap: 22px;
+}
+
+.overview-row.has-media,
+.overview-row.has-media.is-right {
+  grid-template-columns: minmax(0, 56%) minmax(300px, 44%);
+  align-items: stretch;
+  min-height: 0;
+  gap: 0;
+}
+
+.overview-row.has-media.is-right {
+  grid-template-columns: minmax(300px, 44%) minmax(0, 56%);
+}
+
+.overview-stage-layout,
+.overview-stage-media {
+  min-height: 0;
+  height: auto;
+}
+
+.overview-stage-card,
+.overview-row.has-media .overview-stage-card {
+  min-height: 0;
+  height: 100%;
+  padding: 26px 26px 18px;
+  background: #ffffff;
+  border: 1.3px solid rgba(17,24,39,0.72);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.overview-stage-card::before {
+  height: 0.32cm;
+}
+
+.overview-stage-card h2 {
+  margin: 6px 0 0;
+  font-size: clamp(1.9rem, 2vw, 2.45rem);
+}
+
+.overview-stage-copy {
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.overview-stage-copy p {
+  margin: 0;
+  max-width: none;
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.overview-stage-button-row {
+  margin-top: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  padding-top: 12px;
+  background: #ffffff;
+}
+
+.stage-inline-button {
+  min-height: 36px;
+  padding: 7px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(17,24,39,0.38);
+  border-radius: 0;
+  background: #ffffff;
+  color: #28313c;
+  text-decoration: none;
+  font-size: clamp(0.72rem, 0.72vw, 0.84rem);
+  line-height: 1.14;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: none;
+}
+
+.stage-inline-button:hover,
+.stage-inline-button:focus-visible {
+  transform: none;
+  background: #f7fafc;
+  border-color: rgba(17,24,39,0.62);
+  box-shadow: none;
+  outline: none;
+}
+
+.overview-stage-media {
+  margin: 0;
+  border: 1.3px solid rgba(17,24,39,0.72);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background: #ffffff;
+  aspect-ratio: 1 / 1;
+}
+
+.overview-media-right {
+  margin-left: 16px;
+}
+
+.overview-media-left {
+  margin-right: 16px;
+}
+
+.overview-stage-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+/* Kacheln weiß lassen, nur Farbleiste oben je Thema */
+.theme-wahrnehmung.overview-stage-card,
+.theme-dekomposition.overview-stage-card,
+.theme-approximation.overview-stage-card,
+.theme-praxiselement.overview-stage-card,
+.overview-row.is-full .overview-stage-card {
+  background: #ffffff;
+}
+
+.overview-row.is-full {
+  margin-top: 6px;
+}
+
+.overview-row.is-full .overview-stage-card {
+  min-height: 160px;
+  padding-bottom: 24px;
+}
+
+.overview-stage-copy-wide {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 1500px) {
+  .overview-stage-button-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
+  .overview-row.has-media,
+  .overview-row.has-media.is-right {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .overview-media-right,
+  .overview-media-left {
+    margin: 0;
+  }
+
+  .overview-stage-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .overview-stage-button-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-stage-card {
+    padding: 22px 18px 16px;
+  }
+
+  .overview-stage-button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-inline-button {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
