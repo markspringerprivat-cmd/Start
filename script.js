@@ -688,3 +688,38 @@ function setupCourseFlyouts() {
 
 setupCourseBlockEqualHeights();
 setupCourseFlyouts();
+
+
+/* v90: Ganze Modulkachel klickbar machen, ohne die internen Buttons zu stören */
+(function () {
+  function openModuleFromCard(card) {
+    var href = card.getAttribute('data-module-href');
+    if (!href) return;
+    if (window.top && window.top !== window) {
+      window.top.location.href = href;
+    } else {
+      window.location.href = href;
+    }
+  }
+
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest && event.target.closest('.overview-stage-card-clickable[data-module-href]');
+    if (!card) return;
+
+    if (event.target.closest('a, button, input, textarea, select')) {
+      return;
+    }
+
+    openModuleFromCard(card);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    var card = event.target.closest && event.target.closest('.overview-stage-card-clickable[data-module-href]');
+    if (!card) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openModuleFromCard(card);
+    }
+  });
+})();
