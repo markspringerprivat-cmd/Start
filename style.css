@@ -3246,3 +3246,187 @@ body:has(.moodle-replica-bar)::after {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* v87 / Start V15: Dekomposition-Buttons wieder wie Wahrnehmung; Modultexte horizontal zentriert */
+.overview-stage-card {
+  align-items: stretch;
+}
+
+.overview-stage-card .block-number,
+.overview-stage-card h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.overview-stage-copy {
+  width: min(100%, 72ch);
+  margin-left: auto;
+  margin-right: auto;
+  justify-self: center;
+  align-self: center;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.overview-stage-copy p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.overview-stage-button-row {
+  width: 100%;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* harte Rücksetzung der früheren Dekompositions-Sonderbuttons */
+.overview-stage-button-row--dekomposition,
+.theme-dekomposition .overview-stage-button-row {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.theme-dekomposition .stage-inline-button,
+.overview-stage-button-row--dekomposition .stage-inline-button {
+  min-height: 38px;
+  padding: 7px 8px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  border: 1px solid rgba(17,24,39,0.38);
+  background: #ffffff;
+  color: #28313c;
+  box-shadow: none;
+}
+
+.theme-dekomposition .stage-inline-button:hover,
+.theme-dekomposition .stage-inline-button:focus-visible,
+.overview-stage-button-row--dekomposition .stage-inline-button:hover,
+.overview-stage-button-row--dekomposition .stage-inline-button:focus-visible {
+  transform: none;
+  background: #f7fafc;
+  border-color: rgba(17,24,39,0.62);
+  box-shadow: none;
+}
+
+.theme-dekomposition .button-kicker,
+.overview-stage-button-row--dekomposition .button-kicker,
+.theme-dekomposition .stage-inline-button span {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-transform: none;
+}
+
+@media (max-width: 1500px) {
+  .overview-stage-button-row,
+  .theme-dekomposition .overview-stage-button-row,
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
+  .overview-stage-copy {
+    align-self: start;
+  }
+
+  .overview-stage-button-row,
+  .theme-dekomposition .overview-stage-button-row,
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-stage-button-row,
+  .theme-dekomposition .overview-stage-button-row,
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* v88: Dekomposition-Buttons optisch 1:1 an Wahrnehmung angleichen, nur 2-zeiliges Label beibehalten */
+.overview-stage-button-row--dekomposition {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button,
+.theme-dekomposition .overview-stage-button-row--dekomposition .stage-inline-button,
+.theme-dekomposition .stage-inline-button {
+  min-height: 38px !important;
+  padding: 7px 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1px !important;
+  text-align: center !important;
+  border: 1px solid rgba(17,24,39,0.38) !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #28313c !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button:hover,
+.overview-stage-button-row--dekomposition .stage-inline-button:focus-visible,
+.theme-dekomposition .overview-stage-button-row--dekomposition .stage-inline-button:hover,
+.theme-dekomposition .overview-stage-button-row--dekomposition .stage-inline-button:focus-visible,
+.theme-dekomposition .stage-inline-button:hover,
+.theme-dekomposition .stage-inline-button:focus-visible {
+  transform: none !important;
+  background: #f7fafc !important;
+  border-color: rgba(17,24,39,0.62) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.overview-stage-button-row--dekomposition .button-kicker,
+.theme-dekomposition .overview-stage-button-row--dekomposition .button-kicker,
+.theme-dekomposition .button-kicker {
+  display: block !important;
+  margin: 0 !important;
+  color: #28313c !important;
+  font-size: 0.68rem !important;
+  line-height: 1.05 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button span:last-child,
+.theme-dekomposition .overview-stage-button-row--dekomposition .stage-inline-button span:last-child,
+.theme-dekomposition .stage-inline-button span:last-child {
+  display: block !important;
+  margin: 0 !important;
+  color: #28313c !important;
+  font-size: 0.82rem !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 1080px) {
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: 1fr;
+  }
+}
