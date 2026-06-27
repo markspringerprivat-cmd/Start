@@ -2195,3 +2195,387 @@ button[aria-label*="Weiter"]:focus-visible {
     padding-left: 14px;
   }
 }
+
+
+/* v79: Moodle-Leiste für ausgelagerte Modulseiten */
+.moodle-replica-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 18px 0 14px;
+  background: #36a2cf;
+  border-top: 3px solid rgba(17, 24, 39, 0.55);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.42);
+  box-shadow: 0 2px 3px rgba(17, 24, 39, 0.18);
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.moodle-replica-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 60px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.moodle-replica-word {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.moodle-replica-hat {
+  position: absolute;
+  left: 1px;
+  top: 17px;
+  width: 35px;
+  height: 17px;
+  background: #0b4970;
+  clip-path: polygon(0 34%, 100% 0, 76% 31%, 31% 62%);
+  transform: rotate(-8deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.moodle-replica-hat::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 3px;
+  height: 20px;
+  background: #0b4970;
+  transform: rotate(6deg);
+  border-radius: 1px;
+}
+
+.moodle-replica-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  min-width: 0;
+}
+
+.moodle-replica-nav a,
+.moodle-replica-help {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0;
+}
+
+.moodle-replica-nav a:hover,
+.moodle-replica-nav a:focus-visible,
+.moodle-replica-help:hover,
+.moodle-replica-help:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: none;
+}
+
+.moodle-replica-help span {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 17px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .moodle-replica-bar {
+    height: auto;
+    min-height: 58px;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 8px 12px;
+  }
+
+  .moodle-replica-logo {
+    height: 44px;
+  }
+
+  .moodle-replica-word {
+    font-size: 38px;
+  }
+
+  .moodle-replica-hat {
+    top: 10px;
+    width: 28px;
+    height: 14px;
+  }
+
+  .moodle-replica-nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .moodle-replica-nav a,
+  .moodle-replica-help {
+    height: auto;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+}
+
+
+/* v80: Layout nach Skizze mit klaren Weißräumen und festen Buttonleisten */
+.overview-shell {
+  width: min(1700px, calc(100vw - 3.2cm));
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+
+.overview-hero {
+  padding: 34px 38px 32px;
+  background: linear-gradient(180deg, #dff1fb 0%, #eef7fd 100%);
+  border: 1.4px solid rgba(17,24,39,0.62);
+  box-shadow: none;
+}
+
+.overview-hero::before {
+  background: #68b7e9;
+}
+
+.overview-hero h1 {
+  margin-bottom: 22px;
+}
+
+.overview-intro-grid {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.overview-intro {
+  max-width: none;
+}
+
+.overview-blind-mode-row {
+  justify-content: flex-end;
+  margin: 12px 0 18px;
+}
+
+.overview-divider {
+  display: none;
+}
+
+.overview-roadmap {
+  gap: 22px;
+  padding: 0;
+}
+
+.overview-row.has-media,
+.overview-row.has-media.is-right {
+  grid-template-columns: minmax(0, 64%) minmax(280px, 36%);
+  min-height: 372px;
+  gap: 0;
+  align-items: stretch;
+}
+
+.overview-row.has-media.is-right {
+  grid-template-columns: minmax(280px, 36%) minmax(0, 64%);
+}
+
+.overview-stage-layout,
+.overview-stage-media {
+  min-height: 372px;
+  height: 100%;
+}
+
+.overview-stage-card {
+  min-height: 372px;
+  padding: 28px 28px 20px;
+  border: 1.35px solid rgba(17,24,39,0.72);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.overview-row.has-media .overview-stage-card {
+  min-height: 372px;
+}
+
+.overview-stage-card::before {
+  height: 0.34cm;
+}
+
+.theme-wahrnehmung.overview-stage-card,
+.theme-dekomposition.overview-stage-card,
+.theme-approximation.overview-stage-card,
+.theme-praxiselement.overview-stage-card {
+  background: #fff9f3;
+}
+
+.overview-stage-card h2 {
+  font-size: clamp(2rem, 2.2vw, 2.55rem);
+  margin: 6px 0 0;
+}
+
+.overview-stage-copy {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.overview-stage-copy p {
+  max-width: none;
+  font-size: 1rem;
+  line-height: 1.64;
+}
+
+.overview-stage-button-row {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid rgba(17,24,39,0.14);
+}
+
+.stage-inline-button {
+  min-height: 42px;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 1.15px solid rgba(117, 58, 113, 0.52);
+  border-radius: 0;
+  background: #f7c4d5;
+  box-shadow: none;
+  font-size: clamp(0.76rem, 0.75vw, 0.88rem);
+  font-weight: 700;
+  color: #29303a;
+}
+
+.stage-inline-button:hover,
+.stage-inline-button:focus-visible {
+  transform: translateY(-1px);
+  background: #f3b2c8;
+  border-color: rgba(117, 58, 113, 0.78);
+  box-shadow: none;
+}
+
+.overview-stage-media {
+  overflow: hidden;
+  border: 1.35px solid rgba(17,24,39,0.72);
+  border-radius: 0;
+  box-shadow: none;
+  background: #f2ecff;
+}
+
+.overview-media-right {
+  margin-left: 18px;
+}
+
+.overview-media-left {
+  margin-right: 18px;
+}
+
+.overview-stage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.overview-row.is-full {
+  margin-top: 8px;
+}
+
+.overview-row.is-full .overview-stage-card {
+  min-height: 168px;
+  background: #fff9f3;
+}
+
+.overview-stage-copy-wide {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 1450px) {
+  .overview-row.has-media,
+  .overview-row.has-media.is-right {
+    grid-template-columns: minmax(0, 60%) minmax(260px, 40%);
+  }
+
+  .overview-stage-button-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
+  .overview-row.has-media,
+  .overview-row.has-media.is-right {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 14px;
+  }
+
+  .overview-stage-layout,
+  .overview-stage-media,
+  .overview-stage-card,
+  .overview-row.has-media .overview-stage-card {
+    min-height: 0;
+    height: auto;
+  }
+
+  .overview-media-right,
+  .overview-media-left {
+    margin: 0;
+  }
+
+  .overview-stage-button-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-shell {
+    width: min(100%, 100vw - 18px);
+    padding-top: 10px;
+  }
+
+  .overview-hero {
+    padding: 26px 18px 24px;
+  }
+
+  .overview-stage-card {
+    padding: 24px 18px 18px;
+  }
+
+  .overview-stage-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .overview-stage-button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-inline-button {
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 40px;
+  }
+}
