@@ -3137,3 +3137,112 @@ body:has(.moodle-replica-bar)::after {
     height: calc(40px + 2mm);
   }
 }
+
+
+/* v86: Text vertikal ruhiger zentriert, Blocksatz; moderne Dekompositionsbuttons */
+.overview-stage-card {
+  justify-content: space-between;
+}
+
+.overview-stage-card .block-number,
+.overview-stage-card h2,
+.overview-stage-card .overview-stage-copy {
+  max-width: 100%;
+}
+
+.overview-stage-card h2 {
+  text-align: left;
+}
+
+.overview-stage-copy {
+  flex: 1 1 auto;
+  align-content: center;
+  display: grid;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.overview-stage-copy p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.overview-stage-button-row {
+  flex: 0 0 auto;
+}
+
+/* Allgemeine Buttons etwas ruhiger und gleichmäßiger */
+.stage-inline-button {
+  min-height: 38px;
+  letter-spacing: 0.005em;
+}
+
+/* Dekomposition: moderne, lesbare Baustein-Kacheln statt gequetschter Langtitel */
+.overview-stage-button-row--dekomposition {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button {
+  min-height: 50px;
+  padding: 7px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  text-align: left;
+  border-color: rgba(46, 102, 155, 0.34);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button:hover,
+.overview-stage-button-row--dekomposition .stage-inline-button:focus-visible {
+  background:
+    linear-gradient(180deg, #ffffff 0%, rgba(106, 174, 232, 0.16) 100%);
+  border-color: rgba(46, 102, 155, 0.65);
+}
+
+.button-kicker {
+  display: block;
+  color: #5f6876;
+  font-size: 0.68rem;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.overview-stage-button-row--dekomposition .stage-inline-button span:last-child {
+  display: block;
+  color: #172033;
+  font-size: clamp(0.8rem, 0.82vw, 0.94rem);
+  line-height: 1.12;
+  font-weight: 780;
+}
+
+@media (max-width: 1500px) {
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
+  .overview-stage-copy {
+    align-content: start;
+  }
+
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-stage-button-row--dekomposition {
+    grid-template-columns: 1fr;
+  }
+}
