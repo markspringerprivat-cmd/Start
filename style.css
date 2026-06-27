@@ -3062,3 +3062,78 @@ body:has(.moodle-replica-bar)::after {
     font-size: 14px;
   }
 }
+
+
+/* v85: Moodle-Leiste 3 mm größer; aktiver Tab bleibt blau, weiß nur bei Hover */
+:root {
+  --moodle-replica-height: calc(56px + 3mm);
+}
+
+.moodle-replica-bar.navbar {
+  height: var(--moodle-replica-height);
+  min-height: var(--moodle-replica-height);
+}
+
+.moodle-replica-container.container-fluid {
+  min-height: var(--moodle-replica-height);
+}
+
+.moodle-replica-logo.navbar-brand {
+  height: var(--moodle-replica-height);
+  min-height: var(--moodle-replica-height);
+}
+
+.moodle-replica-logo img.logo {
+  height: calc(45px + 3mm);
+}
+
+.moodle-replica-primary-navigation,
+.moodle-replica-primary-navigation .moremenu,
+.moodle-replica-primary-navigation .navigation,
+.moodle-replica-nav.navbar-nav,
+.moodle-replica-nav .nav-item {
+  height: var(--moodle-replica-height);
+}
+
+.moodle-replica-nav .nav-link {
+  height: var(--moodle-replica-height);
+  line-height: var(--moodle-replica-height);
+  padding: 0 14px;
+}
+
+/* Aktiver Reiter nicht dauerhaft weiß */
+.moodle-replica-nav .nav-link.active,
+.moodle-replica-nav .nav-link[aria-current="true"] {
+  color: #ffffff;
+  background: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  box-shadow: none;
+}
+
+/* Weißer Tab nur beim Darüberfahren/Fokus */
+.moodle-replica-nav .nav-link:hover,
+.moodle-replica-nav .nav-link:focus-visible,
+.moodle-replica-nav .nav-link.active:hover,
+.moodle-replica-nav .nav-link.active:focus-visible,
+.moodle-replica-nav .nav-link[aria-current="true"]:hover,
+.moodle-replica-nav .nav-link[aria-current="true"]:focus-visible {
+  color: #1f2933;
+  background: #ffffff;
+  border-left-color: rgba(17,24,39,0.22);
+  border-right-color: rgba(17,24,39,0.22);
+  box-shadow:
+    0 -3px 0 rgba(17,24,39,0.14) inset,
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .moodle-replica-bar.navbar {
+    min-height: calc(54px + 3mm);
+  }
+
+  .moodle-replica-logo img.logo {
+    height: calc(40px + 2mm);
+  }
+}
