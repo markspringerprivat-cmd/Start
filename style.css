@@ -1543,3 +1543,117 @@ button[aria-label*="Weiter"]:focus-visible {
     min-height: 0;
   }
 }
+
+/* v75: vierte Kachel auf der Indexseite und längere Einführungstexte */
+.theme-praxiselement {
+  --theme-color: #a78bfa;
+  --theme-color-dark: #6d4cc2;
+  --theme-color-soft: rgba(167, 139, 250, 0.14);
+}
+
+.course-block-wrap:has(.theme-praxiselement) {
+  --theme-color: #a78bfa;
+  --theme-color-dark: #6d4cc2;
+  --theme-color-soft: rgba(167, 139, 250, 0.14);
+}
+
+.overview-shell {
+  width: min(1680px, calc(100vw - 4cm - 42px));
+}
+
+.overview-intro + .overview-intro {
+  margin-top: 18px;
+}
+
+.overview-shell .course-block-grid {
+  grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr) 42px minmax(0, 1fr) 42px minmax(0, 1fr);
+  column-gap: 18px;
+  padding-bottom: 360px;
+}
+
+.overview-shell .course-block-wrap,
+.overview-shell .course-block-card {
+  min-height: 650px;
+  height: auto;
+}
+
+.overview-shell .course-block-card {
+  overflow: visible;
+  padding: 32px 28px 92px;
+}
+
+.overview-shell .course-block-card p {
+  font-size: clamp(0.94rem, 0.94vw, 1.04rem);
+  line-height: 1.64;
+}
+
+.overview-shell .course-block-card p + p {
+  margin-top: 16px;
+}
+
+.overview-shell .course-flow-arrow {
+  font-size: clamp(1.75rem, 1.8vw, 2.25rem);
+}
+
+.course-block-wrap-static::after {
+  display: none;
+}
+
+.course-block-card[role="group"] {
+  cursor: default;
+}
+
+@supports not (color: color-mix(in srgb, #000 50%, #fff)) {
+  .theme-praxiselement.course-block-card:hover,
+  .theme-praxiselement.course-block-card:focus-visible {
+    border-color: rgba(167, 139, 250, 0.52);
+    box-shadow: 0 18px 34px rgba(167, 139, 250, 0.18), 0 8px 18px rgba(17, 24, 39, 0.055);
+  }
+}
+
+@media (max-width: 1450px) {
+  .overview-shell .course-block-grid,
+  body.is-embedded-frame .overview-shell .course-block-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 26px;
+    row-gap: 30px;
+    padding-bottom: 220px;
+  }
+
+  .overview-shell .course-flow-arrow,
+  body.is-embedded-frame .overview-shell .course-flow-arrow {
+    display: none;
+  }
+
+  .overview-shell .course-block-wrap,
+  .overview-shell .course-block-card {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .overview-shell {
+    width: min(100%, 900px);
+  }
+
+  .overview-shell .course-block-grid,
+  body.is-embedded-frame .overview-shell .course-block-grid {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    padding-bottom: 220px;
+  }
+
+  .overview-shell .course-flow-arrow,
+  body.is-embedded-frame .overview-shell .course-flow-arrow {
+    display: none;
+  }
+
+  .overview-shell .course-block-wrap {
+    margin-bottom: 92px;
+  }
+
+  .overview-shell .course-block-wrap,
+  .overview-shell .course-block-card {
+    min-height: 0;
+  }
+}

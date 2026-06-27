@@ -638,7 +638,7 @@ function setupCourseBlockEqualHeights() {
 }
 
 function setupCourseFlyouts() {
-  const wraps = [...document.querySelectorAll(".course-block-wrap")];
+  const wraps = [...document.querySelectorAll(".course-block-wrap")].filter((wrap) => wrap.querySelector(".course-block-flyout"));
   if (!wraps.length) return;
 
   wraps.forEach((wrap) => {
