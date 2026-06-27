@@ -2867,3 +2867,34 @@ button[aria-label*="Weiter"]:focus-visible {
     text-align: left;
   }
 }
+
+
+/* v83: echte Korrektur — keine verschachtelten Links mehr; Buttons bleiben innerhalb der Kachel */
+.overview-stage-card {
+  text-decoration: none;
+  cursor: default;
+}
+
+.overview-stage-card .overview-stage-button-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 14px;
+  background: #ffffff;
+  border-top: 1px solid rgba(17,24,39,0.12);
+}
+
+.overview-stage-card .stage-inline-button {
+  position: relative;
+  z-index: 3;
+  background: #ffffff;
+}
+
+.overview-stage-card:hover,
+.overview-stage-card:focus-visible,
+.overview-row:hover .overview-stage-card,
+.overview-row:focus-within .overview-stage-card {
+  transform: none;
+}
