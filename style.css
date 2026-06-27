@@ -3751,3 +3751,22 @@ body.is-embedded-frame .overview-row.is-full,
     row-gap: 14px !important;
   }
 }
+
+
+/* V19: Index-Bilder randlos darstellen */
+body.is-embedded-frame .overview-stage-media,
+.overview-stage-media {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+}
+
+body.is-embedded-frame .overview-stage-media img,
+.overview-stage-media img {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: #ffffff !important;
+}
