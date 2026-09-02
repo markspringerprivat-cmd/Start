@@ -20,3 +20,8 @@ Version 22:
 - Schatten unter der Leiste verstärkt.
 - Navigationsbeschriftung etwas vergrößert.
 - Tabs bleiben blau; Weiß erscheint nur bei Hover/Fokus.
+
+
+Version 23:
+- Abstand zwischen den Modul-/Bild-Blöcken auf der Startseite um zusätzlich 1,5 cm erhöht.
+- Cache-Busting auf v=23 aktualisiert.

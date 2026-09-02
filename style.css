@@ -4009,3 +4009,17 @@ body.is-embedded-frame .overview-stage-media img {
     font-size: 15px !important;
   }
 }
+
+
+/* v23: Startseite — Abstand zwischen den Modul-/Bild-Blöcken um 1,5 cm erhöht */
+.overview-roadmap,
+body.is-embedded-frame .overview-roadmap {
+  gap: calc(22px + 1.5cm) !important;
+}
+
+@media (max-width: 1080px) {
+  .overview-roadmap,
+  body.is-embedded-frame .overview-roadmap {
+    gap: calc(18px + 1.5cm) !important;
+  }
+}
