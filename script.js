@@ -64,7 +64,7 @@ try {
 
 const pageData = {
   dekomposition: {
-    switcherLabel: "Bausteine der Dekomposition",
+    switcherLabel: "Bausteine der Gesprächsführung",
     breadcrumbBlock: "Dekomposition",
     startStepLabel: "Hauptseite",
     topics: [
@@ -76,116 +76,116 @@ const pageData = {
         leftTitle: "Was ist eine Dekomposition?",
         leftText: "Dekomposition bedeutet, einen komplexen Prozess in überschaubare einzelne Bestandteile zu zerlegen. Bezogen auf Unterrichtsgespräche heißt das: Gesprächsführung wird nicht nur als Ganzes betrachtet, sondern in klar benennbare Bausteine aufgeteilt. Dadurch wird sichtbar, welche Schritte vor, während und nach einem Gespräch wichtig sind und an welchen Stellen professionelles Handeln bewusst gestaltet werden kann.",
         rightLabel: "Lernziele",
-        rightTitle: "Was findest du hier?",
+        rightTitle: "Was finden Sie hier?",
         rightPoints: [
           "Gesprächsumgebung",
           "Gesprächseröffnung",
           "Gesprächsbeiträge",
-          "Schülerbeiträge",
+          "Beiträge von Lernenden",
           "Ergebnissicherung",
           "Gesprächsabschluss"
         ],
         moduleUrl: null
       },
       {
-        cardTitle: "Gesprächsumgebung",
-        bannerTitle: "Vorbereitung der Gesprächsumgebung",
+        cardTitle: "Gespräche vorbereiten",
+        bannerTitle: "Gespräche vorbereiten",
         subtitle: "Bedingungen schaffen, damit Gespräche konzentriert und lernförderlich stattfinden können.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Vorbereitung der Gesprächsumgebung?",
+        leftTitle: "Was bedeutet Gespräche vorbereiten?",
         leftText: "Die Vorbereitung der Gesprächsumgebung beschreibt alle Bedingungen, die vor einem Gespräch geschaffen werden, damit Beteiligte konzentriert, sicher und respektvoll miteinander sprechen können. Dazu gehören ein passender Raum, eine klare Sitzordnung, gut sichtbare Materialien, eine störungsarme Atmosphäre und transparente Erwartungen an das Gespräch. Auch scheinbar kleine Details wie Blickkontakt, Abstand, Beleuchtung oder die Verfügbarkeit von Arbeitsmaterialien beeinflussen, ob ein Gespräch ruhig, offen und zielgerichtet verlaufen kann.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du beschreibst, welche äußeren Bedingungen Unterrichtsgespräche unterstützen oder erschweren.",
-          "Du planst Raum, Material, Sitzordnung und Gesprächsrahmen bewusster.",
-          "Du erkennst, wie Erwartungen, Rollen und Atmosphäre die Beteiligung beeinflussen.",
-          "Du entwickelst Kriterien für eine lernförderliche Gesprächsumgebung."
+          "Sie beschreiben, welche äußeren Bedingungen Unterrichtsgespräche unterstützen oder erschweren.",
+          "Sie planen Raum, Material, Sitzordnung und Gesprächsrahmen bewusster.",
+          "Sie erkennen, wie Erwartungen, Rollen und Atmosphäre die Beteiligung beeinflussen.",
+          "Sie entwickeln Kriterien für eine lernförderliche Gesprächsumgebung."
         ],
-        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1492494"
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1506161"
       },
       {
-        cardTitle: "Gesprächseröffnung",
-        bannerTitle: "Gesprächseröffnung",
+        cardTitle: "Gespräche eröffnen",
+        bannerTitle: "Gespräche eröffnen",
         subtitle: "Einen Gesprächsanlass klären und die Beteiligten in einen gemeinsamen Denkprozess führen.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Gesprächseröffnung?",
+        leftTitle: "Was bedeutet Gespräche eröffnen?",
         leftText: "Die Gesprächseröffnung legt fest, wie ein Unterrichtsgespräch beginnt und welche Orientierung die Beteiligten zu Beginn erhalten. Eine klare Eröffnung macht deutlich, worum es geht, warum das Gespräch relevant ist und welche Form der Beteiligung erwartet wird. Sie kann Interesse wecken, Vorwissen aktivieren, eine Fragestellung aufwerfen oder einen gemeinsamen Fokus herstellen. Eine unklare Eröffnung führt dagegen häufig dazu, dass Lernende nicht wissen, worauf sie achten sollen oder welche Art von Beitrag erwartet wird.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du formulierst Gesprächsanlässe klar und verständlich.",
-          "Du aktivierst Vorwissen, ohne die Gesprächsrichtung zu stark vorzugeben.",
-          "Du erkennst, wie Eröffnungsfragen den weiteren Gesprächsverlauf beeinflussen.",
-          "Du entwickelst passende Einstiege für unterschiedliche Gesprächssituationen."
+          "Sie formulieren Gesprächsanlässe klar und verständlich.",
+          "Sie aktivieren Vorwissen, ohne die Gesprächsrichtung zu stark vorzugeben.",
+          "Sie erkennen, wie Eröffnungsfragen den weiteren Gesprächsverlauf beeinflussen.",
+          "Sie entwickeln passende Einstiege für unterschiedliche Gesprächssituationen."
         ],
         moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695"
       },
       {
-        cardTitle: "Gesprächsbeiträge",
-        bannerTitle: "Anregung von Gesprächsbeiträgen",
+        cardTitle: "Beiträge anregen",
+        bannerTitle: "Beiträge anregen",
         subtitle: "Beiträge ermöglichen, vertiefen und zu einem gemeinsamen Gesprächsprozess verbinden.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Anregung von Gesprächsbeiträgen?",
+        leftTitle: "Was bedeutet Beiträge anregen?",
         leftText: "Die Anregung von Gesprächsbeiträgen umfasst alle Impulse, durch die Lernende zum Denken, Sprechen und Weiterführen eines Gesprächs eingeladen werden. Dazu zählen offene Fragen, Denkaufträge, kurze Schreibphasen, Partneraustausch, gezieltes Nachfragen oder das Aufgreifen vorhandener Ideen. Entscheidend ist, dass Beiträge nicht nur abgefragt werden. Gute Impulse ermöglichen unterschiedliche Zugänge, schaffen Denkzeit und eröffnen Raum für Begründungen, Perspektiven und fachliche Weiterentwicklung.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du unterscheidest geschlossene Abfragen von gesprächsanregenden Impulsen.",
-          "Du nutzt Fragen, Denkzeit und Nachfragen zur Aktivierung von Lernenden.",
-          "Du förderst unterschiedliche Redeanteile und Beteiligungsformen.",
-          "Du verbindest einzelne Beiträge zu einem nachvollziehbaren Gesprächsverlauf."
+          "Sie unterscheiden geschlossene Abfragen von gesprächsanregenden Impulsen.",
+          "Sie nutzen Fragen, Denkzeit und Nachfragen zur Aktivierung von Lernenden.",
+          "Sie fördern unterschiedliche Redeanteile und Beteiligungsformen.",
+          "Sie verbinden einzelne Beiträge zu einem nachvollziehbaren Gesprächsverlauf."
         ],
         moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696"
       },
       {
-        cardTitle: "Schülerbeiträge",
-        bannerTitle: "Umgang mit Schülerbeiträgen",
+        cardTitle: "Beiträge von Lernenden",
+        bannerTitle: "Umgang mit Beiträgen von Lernenden",
         subtitle: "Äußerungen aufnehmen, würdigen, klären und für den weiteren Lernprozess nutzen.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Umgang mit Schülerbeiträgen?",
-        leftText: "Der Umgang mit Schülerbeiträgen beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Schüler*innenbeiträge können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
+        leftTitle: "Was bedeutet der Umgang mit Beiträgen von Lernenden?",
+        leftText: "Der Umgang mit Beiträgen von Lernenden beschreibt, wie Äußerungen aufgenommen, eingeordnet und für das weitere Gespräch genutzt werden. Beiträge von Lernenden können fachlich richtig, teilweise richtig, unklar, überraschend oder fehlerhaft sein. Entscheidend ist, dass sie nicht vorschnell bewertet oder übergangen werden, sondern als Ausgangspunkt für weiteres Denken dienen. Ein professioneller Umgang macht sichtbar, was an einem Beitrag bereits tragfähig ist und wo Präzisierung oder Weiterarbeit nötig wird.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du nimmst Beiträge aufmerksam auf und reagierst fachlich sowie wertschätzend.",
-          "Du nutzt Paraphrasieren, Nachfragen und Strukturieren zur Klärung von Beiträgen.",
-          "Du bindest auch unfertige oder fehlerhafte Beiträge konstruktiv ein.",
-          "Du entwickelst Gesprächsreaktionen, die Denken sichtbar machen und weiterführen."
+          "Sie nehmen Beiträge aufmerksam auf und reagierst fachlich sowie wertschätzend.",
+          "Sie nutzen Paraphrasieren, Nachfragen und Strukturieren zur Klärung von Beiträgen.",
+          "Sie binden auch unfertige oder fehlerhafte Beiträge konstruktiv ein.",
+          "Sie entwickeln Gesprächsreaktionen, die Denken sichtbar machen und weiterführen."
         ],
         moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699"
       },
       {
-        cardTitle: "Ergebnissicherung",
-        bannerTitle: "Sicherung der (Zwischen)Ergebnisse",
+        cardTitle: "Ergebnisse sichern",
+        bannerTitle: "Ergebnisse sichern",
         subtitle: "Zwischenstände und Ergebnisse sichtbar machen, bündeln und für die Weiterarbeit sichern.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Sicherung der (Zwischen)Ergebnisse?",
+        leftTitle: "Was bedeutet Ergebnisse sichern?",
         leftText: "Die Sicherung von Zwischen- und Endergebnissen macht sichtbar, was im Verlauf eines Gesprächs erarbeitet wurde. Ohne Sicherung können wichtige Gedanken verloren gehen oder unverbunden nebeneinanderstehen. Zwischenergebnisse helfen, Orientierung zu behalten, den aktuellen Stand zu prüfen und neue Gesprächsschritte darauf aufzubauen. Dabei kann Sicherung mündlich, schriftlich, visuell oder digital erfolgen, etwa durch Stichpunkte, Tafelbilder, Cluster, kurze Zusammenfassungen oder gemeinsame Formulierungen.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du bündelst Gesprächsergebnisse verständlich und zielgerichtet.",
-          "Du unterscheidest Wesentliches von Nebensächlichem.",
-          "Du nutzt Zwischensicherungen als Orientierung während des Gesprächs.",
-          "Du hältst Ergebnisse so fest, dass sie für Anschlussaufgaben nutzbar bleiben."
+          "Sie bündeln Gesprächsergebnisse verständlich und zielgerichtet.",
+          "Sie unterscheiden Wesentliches von Nebensächlichem.",
+          "Sie nutzen Zwischensicherungen als Orientierung während des Gesprächs.",
+          "Sie halten Ergebnisse so fest, dass sie für Anschlussaufgaben nutzbar bleiben."
         ],
         moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697"
       },
       {
-        cardTitle: "Gesprächsabschluss",
-        bannerTitle: "Beenden eines Gesprächs",
+        cardTitle: "Gespräche abschließen",
+        bannerTitle: "Gespräche abschließen",
         subtitle: "Gespräche abrunden, Ergebnisse klären und nächste Schritte transparent machen.",
         leftLabel: "Einordnung",
-        leftTitle: "Was bedeutet Beenden eines Gesprächs?",
+        leftTitle: "Was bedeutet Gespräche abschließen?",
         leftText: "Das Beenden eines Gesprächs ist mehr als ein formaler Schlusspunkt. Ein guter Abschluss fasst zentrale Ergebnisse zusammen, klärt offene Fragen und schafft einen Übergang zur weiteren Arbeit. Dadurch erhalten die Beteiligten das Gefühl, dass das Gespräch zu einem nachvollziehbaren Ergebnis geführt hat. Ein fehlender oder zu abrupter Abschluss kann dagegen dazu führen, dass Ergebnisse unklar bleiben oder die Bedeutung des Gesprächs nicht deutlich wird.",
         rightLabel: "Lernziele",
-        rightTitle: "Was lernst du in diesem Modul?",
+        rightTitle: "Was lernen Sie in diesem Modul?",
         rightPoints: [
-          "Du schließt Gespräche bewusst und nachvollziehbar ab.",
-          "Du fasst zentrale Ergebnisse knapp und verständlich zusammen.",
-          "Du klärst offene Fragen, Anschlussaufgaben und nächste Schritte.",
-          "Du gestaltest Abschlüsse passend zur jeweiligen Gesprächssituation."
+          "Sie schließen Gespräche bewusst und nachvollziehbar ab.",
+          "Sie fassen zentrale Ergebnisse knapp und verständlich zusammen.",
+          "Sie klären offene Fragen, Anschlussaufgaben und nächste Schritte.",
+          "Sie gestalten Abschlüsse passend zur jeweiligen Gesprächssituation."
         ],
         moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494698"
       }
@@ -545,7 +545,7 @@ function setBlindMode(enabled, options = {}) {
   if (enabled) {
     if (announce) {
       speakRawText(
-        "Vorlesemodus aktiviert. Drücke einmal auf ein Feld, um es vorlesen zu lassen. Drücke dasselbe Feld erneut, um das Vorlesen zu stoppen. Mit einem Doppelklick öffnest du das ausgewählte Feld.",
+        "Vorlesemodus aktiviert. Drücke einmal auf ein Feld, um es vorlesen zu lassen. Drücke dasselbe Feld erneut, um das Vorlesen zu stoppen. Mit einem Doppelklick öffnen Sie das ausgewählte Feld.",
         "readmode-hint"
       );
     }

@@ -25,3 +25,12 @@ Version 22:
 Version 23:
 - Abstand zwischen den Modul-/Bild-Blöcken auf der Startseite um zusätzlich 1,5 cm erhöht.
 - Cache-Busting auf v=23 aktualisiert.
+
+
+Version 24:
+- Startseite: Wahrnehmung hat nur noch einen externen Modulbutton zum Interactive Book.
+- Startseite: neue Fachbegriffe, Untertitel, Texte und Autor*innenliste ohne Christina/Christine ergänzt.
+- Dekomposition: Vorbereitungsmodul-Link in script.js auf id=1506161 korrigiert.
+- Dekomposition: Buttons ohne Baustein-Beschriftung, 2 Reihen à 3 Einträge.
+- Anrede/Genderung in index.html, Modul-HTML-Dateien und script.js auf Sie/neutral angepasst.
+- Cache-Busting auf v=24 erhöht.
