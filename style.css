@@ -4274,3 +4274,23 @@ body.theme-praxiselement {
     width: 100% !important;
   }
 }
+
+
+/* v27 fixes: image paths + centered body copy on start page cards */
+.overview-stage-copy, .overview-stage-copy-wide { text-align: center !important; }
+.overview-stage-copy p, .overview-stage-copy-wide p {
+  max-width: 78% !important;
+  margin: 0 auto 1.1rem auto !important;
+  text-align: center !important;
+  text-align-last: center !important;
+  hyphens: none !important;
+}
+.overview-stage-copy p:last-child, .overview-stage-copy-wide p:last-child { margin-bottom: 0 !important; }
+.overview-stage-subtitle {
+  width: 100% !important;
+  max-width: 88% !important;
+  margin: 0 auto 1.15rem auto !important;
+  text-align: center !important;
+}
+.theme-praxiselement h2, .theme-wahrnehmung h2, .theme-dekomposition h2, .theme-approximation h2 { margin: 0 0 0.7rem 0 !important; }
+.theme-praxiselement .overview-stage-subtitle, .theme-wahrnehmung .overview-stage-subtitle, .theme-dekomposition .overview-stage-subtitle, .theme-approximation .overview-stage-subtitle { margin-bottom: 1.15rem !important; }

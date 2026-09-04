@@ -51,3 +51,10 @@ Version 26:
 - Praxiselement-Navigationsseite mit Moodle-Links id=1521784–1521786 versehen.
 - Dekomposition-Link Vorbereitung/Gesprächsumgebung auf id=1506161 korrigiert.
 - Cache-Busting auf v=26 erhöht.
+
+
+Version 27:
+- Bildpfade auf der Startseite repariert (die drei PNGs werden wieder korrekt geladen).
+- Cache-Busting auf v=27 erhöht.
+- Absatztexte in allen Modul-Karten der Startseite explizit zentriert.
+- Untertitel und Textabstände vereinheitlicht/robust überschrieben.
