@@ -209,21 +209,134 @@ const pageData = {
     }))
   },
   approximation: {
-    switcherLabel: "Bausteine der Approximation",
+    switcherLabel: "Themen der Approximation",
     breadcrumbBlock: "Approximation",
-    startStepLabel: "Baustein 1 von 6",
-    topics: Array.from({ length: 6 }, (_, i) => ({
-      cardTitle: `Thema ${i + 1}`,
-      bannerTitle: `Titel ${i + 1}`,
-      subtitle: `Untertitel ${i + 1}`,
-      leftLabel: "Einordnung",
-      leftTitle: `Titel ${i + 1}`,
-      leftText: `Text ${i + 1}`,
-      rightLabel: "Lernziele",
-      rightTitle: `Titel ${i + 1}`,
-      rightPoints: [`Text ${i + 1}`, `Text ${i + 1}`, `Text ${i + 1}`],
-      moduleUrl: null
-    }))
+    startStepLabel: "Hauptseite",
+    topics: [
+      {
+        cardTitle: "Hauptseite",
+        bannerTitle: "Approximation",
+        subtitle: "Unterrichtsgespräche im Safe Space ausprobieren und Feedback erhalten",
+        leftLabel: "Überblick",
+        leftTitle: "Worum geht es in diesem Modul?",
+        leftText: "Dieses Modul dient als Navigationsseite für die drei Themen der Approximation. Hier werden offene Klassengespräche zunächst in einer geschützten Umgebung vorbereitet, erprobt und ausgewertet. Die einzelnen Themen können über die Kacheln oben angesteuert werden.",
+        rightLabel: "Navigation",
+        rightTitle: "Was finden Sie hier?",
+        rightPoints: [
+          "Thema 1",
+          "Thema 2",
+          "Thema 3"
+        ],
+        moduleUrl: null
+      },
+      {
+        cardTitle: "Thema 1",
+        bannerTitle: "Thema 1",
+        subtitle: "Platzhalter für das erste Thema der Approximation.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 1",
+        leftText: "Platzhaltertext für Thema 1. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521781"
+      },
+      {
+        cardTitle: "Thema 2",
+        bannerTitle: "Thema 2",
+        subtitle: "Platzhalter für das zweite Thema der Approximation.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 2",
+        leftText: "Platzhaltertext für Thema 2. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521782"
+      },
+      {
+        cardTitle: "Thema 3",
+        bannerTitle: "Thema 3",
+        subtitle: "Platzhalter für das dritte Thema der Approximation.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 3",
+        leftText: "Platzhaltertext für Thema 3. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521783"
+      }
+    ]
+  },
+  praxiselement: {
+    switcherLabel: "Themen des Praxiselements",
+    breadcrumbBlock: "Praxiselement",
+    startStepLabel: "Hauptseite",
+    topics: [
+      {
+        cardTitle: "Hauptseite",
+        bannerTitle: "Praxiselement",
+        subtitle: "Meine Unterrichtsgespräche unter realen Bedingungen optimieren",
+        leftLabel: "Überblick",
+        leftTitle: "Worum geht es in diesem Modul?",
+        leftText: "Diese Seite dient als Navigationsseite für die drei Themen des Praxiselements. Im Mittelpunkt steht die Erprobung von Unterrichtsgesprächen unter realen Bedingungen sowie die gemeinsame Reflexion und Weiterentwicklung der Gesprächsführung.",
+        rightLabel: "Navigation",
+        rightTitle: "Was finden Sie hier?",
+        rightPoints: [
+          "Thema 1",
+          "Thema 2",
+          "Thema 3"
+        ],
+        moduleUrl: null
+      },
+      {
+        cardTitle: "Thema 1",
+        bannerTitle: "Thema 1",
+        subtitle: "Platzhalter für das erste Thema des Praxiselements.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 1",
+        leftText: "Platzhaltertext für Thema 1. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521784"
+      },
+      {
+        cardTitle: "Thema 2",
+        bannerTitle: "Thema 2",
+        subtitle: "Platzhalter für das zweite Thema des Praxiselements.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 2",
+        leftText: "Platzhaltertext für Thema 2. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521785"
+      },
+      {
+        cardTitle: "Thema 3",
+        bannerTitle: "Thema 3",
+        subtitle: "Platzhalter für das dritte Thema des Praxiselements.",
+        leftLabel: "Überblick",
+        leftTitle: "Thema 3",
+        leftText: "Platzhaltertext für Thema 3. Der eigentliche Inhalt liegt im verlinkten Interactive Book.",
+        rightLabel: "Modulzugang",
+        rightTitle: "Zum Interactive Book",
+        rightPoints: [
+          "Öffnen Sie das verlinkte Modul, um mit diesem Thema weiterzuarbeiten."
+        ],
+        moduleUrl: "https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521786"
+      }
+    ]
   }
 };
 
@@ -395,7 +508,7 @@ function updateContent(direction = "right") {
   } else {
     moduleStep.textContent = activeIndex === 0
       ? currentConfig.startStepLabel
-      : `Baustein ${activeIndex + 1} von ${topics.length}`;
+      : `Thema ${activeIndex} von ${topics.length - 1}`;
   }
   breadcrumbCurrent.textContent = topic.cardTitle;
   leftLabel.textContent = topic.leftLabel;

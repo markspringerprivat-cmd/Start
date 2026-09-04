@@ -34,3 +34,20 @@ Version 24:
 - Dekomposition: Buttons ohne Baustein-Beschriftung, 2 Reihen à 3 Einträge.
 - Anrede/Genderung in index.html, Modul-HTML-Dateien und script.js auf Sie/neutral angepasst.
 - Cache-Busting auf v=24 erhöht.
+
+
+Version 25:
+- Untertitel in allen Modulblöcken zentriert und optisch auffälliger gestaltet.
+- Einheitliche Abstände zwischen Überschrift, Unterüberschrift und Fließtext in allen Blöcken hergestellt.
+- Cache-Busting auf v=25 erhöht.
+
+
+Version 26:
+- Startseite: alle Karten zeigen nur noch einen Button „Zum Modul“ statt einzelner Themenbuttons.
+- Wahrnehmung führt direkt zum Interactive Book id=1521777.
+- Dekomposition, Approximation und Praxiselement führen zu eigenen Navigationsseiten.
+- Neue Datei praxiselement.html mit Hauptseite und drei Themen erstellt.
+- Approximation-Navigationsseite auf Hauptseite + Thema 1–3 reduziert und mit Moodle-Links id=1521781–1521783 versehen.
+- Praxiselement-Navigationsseite mit Moodle-Links id=1521784–1521786 versehen.
+- Dekomposition-Link Vorbereitung/Gesprächsumgebung auf id=1506161 korrigiert.
+- Cache-Busting auf v=26 erhöht.
