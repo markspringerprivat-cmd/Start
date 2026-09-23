@@ -60,3 +60,13 @@ Version 28:
 - Fünf aktive Schritte, sechste Kachel Platzhalter.
 - Ergebnisse sichern + Gespräche abschließen zusammengeführt und mit Ergebnissicherungs-Link id=1494697 verknüpft.
 - Alter Gesprächsabschluss-Link entfällt.
+
+
+Version 29:
+- Dekompositions-Einführung auf gleiche Breite wie 3er-Kachelreihe gebracht.
+- Einführungskachel flacher gemacht und Textfarbe explizit auf schwarz gesetzt.
+- Vorschautext mit weichem Fade/Blur-Eindruck zum Weiterlesen-Button hin.
+- Weiterlesen-Button dezenter gestaltet.
+- Hinweisbalken auf gleiche Breite gezogen.
+- Kacheln leicht vergrößert.
+- Hover-Zustand färbt den oberen Balken grün.
