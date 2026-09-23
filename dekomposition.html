@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dekomposition – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=27" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dekomposition – Gesprächsführung</title>
+<link rel="stylesheet" href="style.css?v=28" />
 </head>
-<body id="top" data-page="dekomposition" class="theme-dekomposition">
-  <nav class="navbar fixed-top navbar-light bg-primary navbar-expand moodle-replica-bar" aria-label="Site-Navigation">
+<body id="top" class="theme-dekomposition deko-prototype-page">
+<nav class="navbar fixed-top navbar-light bg-primary navbar-expand moodle-replica-bar" aria-label="Site-Navigation">
     <div class="container-fluid moodle-replica-container">
       <a href="https://moodle.uni-siegen.de/my/" class="navbar-brand moodle-replica-logo align-items-center m-0 me-4 p-0 aabtn d-none d-md-flex" target="_top" aria-label="Moodle Dashboard">
         <img src="https://moodle.uni-siegen.de/pluginfile.php/1/theme_boost_union/logocompact/1/1781070392/Moodle-logo.svg" class="logo me-1" alt="moodle">
@@ -26,80 +26,20 @@
             </li>
           </ul>
         </nav>
-      </div>
-    </div>
-  </nav>
-
-<main class="page-shell">
-    <a class="back-link dekomposition-back-link" href="index.html#top">← Zur Kursübersicht</a>
-
-    <p class="switcher-label">Bausteine der Dekomposition</p>
-    <section class="topic-switcher" aria-label="Themennavigation der Dekomposition">
-      <button class="arrow-button" id="prevButton" type="button" aria-label="Vorheriges Thema">
-        <span aria-hidden="true">‹</span>
-      </button>
-
-      <div class="cards-window">
-        <div class="cards-track" id="cardsTrack"></div>
-      </div>
-
-      <button class="arrow-button" id="nextButton" type="button" aria-label="Nächstes Thema">
-        <span aria-hidden="true">›</span>
-      </button>
-    </section>
-
-    <div class="blind-mode-row">
-      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
-        Vorlesemodus: aus
-      </button>
-      <p class="blind-mode-hint" id="blindModeHint" hidden></p>
-    </div>
-
-    <div class="top-divider" aria-hidden="true"></div>
-
-    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
-      <a href="index.html#top">Kursübersicht</a>
-      <span aria-hidden="true">/</span>
-      <span id="breadcrumbBlock">Dekomposition</span>
-      <span aria-hidden="true">/</span>
-      <strong id="breadcrumbCurrent">Hauptseite</strong>
-    </nav>
-
-    <section class="banner blind-readable uniform-hover" id="banner" aria-labelledby="moduleTitle" data-blind-target="banner" tabindex="0" role="button" aria-label="Banner vorlesen">
-      <div class="banner-pattern" aria-hidden="true"></div>
-      <div class="banner-content">
-        <p class="eyebrow" id="moduleStep">Baustein 1 von 7</p>
-        <h1 id="moduleTitle">Hauptseite</h1>
-        <p class="banner-subtitle" id="moduleSubtitle">Orientierung im Kursblock Dekomposition</p>
-      </div>
-    </section>
-
-    <section class="content-grid" aria-label="Modulinhalte">
-      <article class="content-column blind-readable uniform-hover" data-blind-target="left" tabindex="0" role="button" aria-label="Linken Textblock vorlesen">
-        <p class="section-label" id="leftLabel">Einordnung</p>
-        <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
-        <p id="leftText">
-          Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben können Sie linear durch die einzelnen Bereiche navigieren.
-        </p>
-      </article>
-
-      <div class="vertical-divider" aria-hidden="true"></div>
-
-      <article class="content-column blind-readable uniform-hover" data-blind-target="right" tabindex="0" role="button" aria-label="Rechten Textblock vorlesen">
-        <p class="section-label" id="rightLabel">Lernziele</p>
-        <h2 id="rightTitle">Was lernen Sie in dieser Übersicht?</h2>
-        <ul class="learning-list" id="rightList">
-          <li>Sie erhalten einen strukturierten Überblick über die einzelnen Module.</li>
-          <li>Sie können gezielt zwischen Gesprächsumgebung, Gesprächseröffnung, Beiträgen, Ergebnissicherung und Abschluss wechseln.</li>
-        </ul>
-
-        <a class="module-link-card blind-readable" target="_top" aria-label="Modul starten" data-blind-target="module-link" tabindex="0" hidden>
-          <span>Modul starten</span>
-        </a>
-      </article>
-    </section>
-  </main>
-
-  <script src="script.js?v=27"></script>
+<main class="page-shell deko-prototype-shell">
+<a class="back-link dekomposition-back-link" href="index.html#top">← Zur Kursübersicht</a>
+<section class="deko-intro-card" aria-labelledby="dekoIntroTitle">
+<p class="eyebrow">Teil 2 · Dekomposition</p>
+<h1 id="dekoIntroTitle">Unterrichtsgespräche professionell gestalten</h1>
+<div class="deko-intro-preview"><p>Gemeinhin denkt man beim Stichwort Unterrichtsgespräch an eine Lehrkraft, die Lernenden innerhalb der gesamten Klasse – im Plenum oder frontal – Fragen stellt oder Gesprächsimpulse setzt, deren Antworten entgegennimmt und kurz bewertet („Genau“, „Das geht in die richtige Richtung“ o. Ä.) und dann weitere Lernende aufruft, bis diese Unterrichtsphase schließlich beendet wird. Die meisten Gespräche im Klassenraum laufen immer noch in einem solchen wiederkehrenden Dreischritt von Frage–Antwort–Evaluation ab (sog. <strong>IRE-Sequenz, Initiation–Reply–Evaluation</strong>).</p></div>
+<div class="deko-intro-more" id="dekoIntroMore" hidden><p>Daran ist nichts grundsätzlich falsch; oftmals wird dieses Vorgehen aber von Lehrkräften wie auch Lernenden als <strong>wenig herausfordernd oder gewinnbringend</strong> erlebt, insbesondere wenn es darauf hinausläuft, dass lediglich einfache Fakten abgefragt werden oder Lernende den Eindruck gewinnen, sie müssten nur eine bestimmte Antwort produzieren, die die Lehrkraft hören will (sog. <strong>Osterhasenpädagogik</strong>).</p><p>Die Art von Gespräch, die wir in dieser Lerneinheit im Sinn haben, unterscheidet sich davon, indem sie darauf abzielt, <strong>höhere Denkfähigkeiten anzuregen, gemeinsam ein Problem zu untersuchen und unter Berücksichtigung der Beiträge anderer nach Interpretationen, Lösungen oder Erklärungen zu suchen</strong>. Für derartige, qualitativ hochstehende Gespräche gibt es verschiedene Begriffe: Manche nennen sie „dialogisch“, „diskursförderlich“ oder „produktiv“, im englischsprachigen Bereich spricht man z. B. von „accountable talk“ (vgl. Resnick et al. 2018). Im Hintergrund steht die Idee, dass die „kognitive Aktivierung“ der Lernenden ein unabdingbares Prozessmerkmal – eine Basisdimension – guten Unterrichts darstellt.</p><p>Um zu verstehen, welche Möglichkeiten Lehrkräfte haben, ein professionelles Unterrichtsgespräch in diesem Verständnis zu inszenieren, ist es notwendig, dass Sie in <em>einem ersten Schritt</em> einen Überblick über die verschiedenen Bestandteile – Komponenten – von Unterrichtsgesprächen erwerben. In einem zweiten Schritt geht es anschließend darum, Wissen darüber zu erwerben, wie Lehrkräfte innerhalb dieser Komponenten dafür Sorge tragen können, dass diese möglichst anregend gestaltet werden; es geht um <em>Do’s und Don’ts, durchaus im Sinne von wissenschaftlich begründeten Handlungsempfehlungen</em> für Ihre eigenen Gespräche in den folgenden Modulen. Das Modul endet mit einem Quiz und einer zusammenfassenden Übersicht zu Qualitätskriterien guter Unterrichtsgespräche.</p></div>
+<button class="deko-read-more" id="dekoReadMore" type="button" aria-expanded="false" aria-controls="dekoIntroMore">Weiterlesen</button>
+</section>
+<aside class="deko-nav-hint">Wählen Sie einen Schritt aus, um das zugehörige Modul in Moodle zu öffnen.</aside>
+<section class="deko-step-grid" aria-label="Schritte der Dekomposition"><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1506161" target="_top"><span class="deko-step-label">Schritt 1</span><span class="deko-step-title">Gespräche vorbereiten</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695" target="_top"><span class="deko-step-label">Schritt 2</span><span class="deko-step-title">Gespräche eröffnen</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696" target="_top"><span class="deko-step-label">Schritt 3</span><span class="deko-step-title">Beiträge anregen</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699" target="_top"><span class="deko-step-label">Schritt 4</span><span class="deko-step-title">Beiträge von Lernenden</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697" target="_top"><span class="deko-step-label">Schritt 5</span><span class="deko-step-title">Ergebnisse sichern & Gespräche abschließen</span></a><div class="deko-step-card is-placeholder" aria-disabled="true"><span class="deko-step-label">Schritt 6</span><span class="deko-step-title">Platzhalter</span></div></section>
+</main>
+<script>
+(function(){const b=document.getElementById('dekoReadMore');const m=document.getElementById('dekoIntroMore');if(!b||!m)return;b.addEventListener('click',function(){const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));m.hidden=o;b.textContent=o?'Weiterlesen':'Weniger anzeigen';});})();
+</script>
 </body>
 </html>

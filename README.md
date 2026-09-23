@@ -53,8 +53,10 @@ Version 26:
 - Cache-Busting auf v=26 erhöht.
 
 
-Version 27:
-- Bildpfade auf der Startseite repariert (die drei PNGs werden wieder korrekt geladen).
-- Cache-Busting auf v=27 erhöht.
-- Absatztexte in allen Modul-Karten der Startseite explizit zentriert.
-- Untertitel und Textabstände vereinheitlicht/robust überschrieben.
+Version 28:
+- Startseite: Block 1–4 durch Teil 1–4 ersetzt.
+- V27-Bildpfad- und Zentrierungsfixes übernommen.
+- Dekomposition vollständig neu aufgebaut: Klappentext + Hinweis + 6 Kacheln in 2x3.
+- Fünf aktive Schritte, sechste Kachel Platzhalter.
+- Ergebnisse sichern + Gespräche abschließen zusammengeführt und mit Ergebnissicherungs-Link id=1494697 verknüpft.
+- Alter Gesprächsabschluss-Link entfällt.
