@@ -625,6 +625,25 @@ body.start-page-moodle-fit{
   }
 }
 </style>
+
+<style id="v60-embedded-gap-fix">
+/* V60: alte v23-Embed-Abstandsregel gezielt überschreiben */
+.start-page-moodle-fit .overview-roadmap--moodle-fit,
+body.is-embedded-frame.start-page-moodle-fit .overview-roadmap--moodle-fit,
+body.is-embedded-frame .overview-roadmap.overview-roadmap--moodle-fit{
+  gap:0.5cm !important;
+  row-gap:0.5cm !important;
+}
+@media (max-width:1080px){
+  .start-page-moodle-fit .overview-roadmap--moodle-fit,
+  body.is-embedded-frame.start-page-moodle-fit .overview-roadmap--moodle-fit,
+  body.is-embedded-frame .overview-roadmap.overview-roadmap--moodle-fit{
+    gap:0.5cm !important;
+    row-gap:0.5cm !important;
+  }
+}
+</style>
+
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">

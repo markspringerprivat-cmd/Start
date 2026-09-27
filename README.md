@@ -1,10 +1,7 @@
-Start_V58_wider_cards_tighter_gap
+Start_V60_embedded_gap_fix
 
-Änderungen gegenüber V57:
-- komplette V57 als Basis beibehalten
-- Hauptkacheln inkl. Einleitung ca. 1 cm je Seite breiter (ca. 574 -> 650 CSS-px)
-- blauer Außenrand bleibt sichtbar (ca. 48 px je Seite im 746-px-Panel)
-- Abstand zwischen den vier Hauptkacheln ungefähr halbiert (ca. 15 -> 8 px)
-- Kartenrahmen und Schatten etwas ruhiger für weicheren Übergang
-- Dekompositions-Unterkacheln und deren Animation unverändert
-- sämtliche HTML-, CSS-, JS- und Asset-Dateien enthalten
+Änderung:
+- alte eingebettete Moodle-Abstandsregel aus v23 wird gezielt überschrieben
+- Hauptkachel-Abstand ist nun auch in Moodle exakt 0,5 cm
+- direkte GitHub-Ansicht und Moodle-Einbettung verwenden damit denselben Abstand
+- alle V59-Änderungen bleiben erhalten
