@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dekomposition – Gesprächsführung</title>
-<link rel="stylesheet" href="style.css?v=33" />
+<link rel="stylesheet" href="style.css?v=35" />
 </head>
 <body id="top" class="theme-dekomposition deko-prototype-page">
 <nav class="navbar fixed-top navbar-light bg-primary navbar-expand moodle-replica-bar" aria-label="Site-Navigation">
@@ -39,10 +39,22 @@
 <button class="deko-read-more" id="dekoReadMore" type="button" aria-expanded="false" aria-controls="dekoIntroMore">Weiterlesen</button>
 </section>
 <aside class="deko-nav-hint">Wählen Sie einen Schritt aus, um das zugehörige Modul in Moodle zu öffnen.</aside>
-<section class="deko-step-grid" aria-label="Schritte der Dekomposition"><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1506161" target="_top"><span class="deko-step-label">Schritt 1</span><span class="deko-step-title">Gespräche vorbereiten</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695" target="_top"><span class="deko-step-label">Schritt 2</span><span class="deko-step-title">Gespräche eröffnen</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696" target="_top"><span class="deko-step-label">Schritt 3</span><span class="deko-step-title">Beiträge anregen</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699" target="_top"><span class="deko-step-label">Schritt 4</span><span class="deko-step-title">Beiträge von Lernenden</span></a><a class="deko-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697" target="_top"><span class="deko-step-label">Schritt 5</span><span class="deko-step-title">Ergebnisse sichern & Gespräche abschließen</span></a><div class="deko-step-card is-placeholder" aria-disabled="true"><span class="deko-step-label">Schritt 6</span><span class="deko-step-title">Platzhalter</span></div></section>
+<section class="deko-step-grid" aria-label="Schritte der Dekomposition"><a class="deko-step-card deko-step-card--1" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1506161" target="_top"><span class="deko-step-label">Schritt 1</span><span class="deko-step-title">Gespräche vorbereiten</span></a><a class="deko-step-card deko-step-card--2" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695" target="_top"><span class="deko-step-label">Schritt 2</span><span class="deko-step-title">Gespräche eröffnen</span></a><a class="deko-step-card deko-step-card--3" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696" target="_top"><span class="deko-step-label">Schritt 3</span><span class="deko-step-title">Beiträge anregen</span></a><a class="deko-step-card deko-step-card--4" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699" target="_top"><span class="deko-step-label">Schritt 4</span><span class="deko-step-title">Beiträge von Lernenden</span></a><a class="deko-step-card deko-step-card--5" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697" target="_top"><span class="deko-step-label">Schritt 5</span><span class="deko-step-title">Ergebnisse sichern & Gespräche abschließen</span></a><div class="deko-step-card deko-step-card--6 is-placeholder" aria-disabled="true"><span class="deko-step-label">Schritt 6</span><span class="deko-step-title">Platzhalter</span></div></section>
 </main>
 <script>
-(function(){const b=document.getElementById('dekoReadMore');const m=document.getElementById('dekoIntroMore');if(!b||!m)return;b.addEventListener('click',function(){const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));m.hidden=o;b.textContent=o?'Weiterlesen':'Weniger anzeigen';});})();
+(function(){
+  const b=document.getElementById('dekoReadMore');
+  const m=document.getElementById('dekoIntroMore');
+  const card=document.querySelector('.deko-intro-card');
+  if(!b||!m||!card)return;
+  b.addEventListener('click',function(){
+    const open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));
+    m.hidden=open;
+    card.classList.toggle('is-expanded', !open);
+    b.textContent=open?'Weiterlesen':'Weniger anzeigen';
+  });
+})();
 </script>
 </body>
 </html>

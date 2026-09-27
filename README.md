@@ -1,11 +1,8 @@
-Start_V34_spacing_hover_fix
+Start_V35_deko_expand_gradient
 
-Änderungen gegenüber V33:
-- deutlich kleinere Abstände zwischen Unterüberschrift und Fließtext
-- Absätze nur noch mit einem kleinen, gleichmäßigen Abstand
-- Fließtext und Unterüberschrift etwas größer für bessere Lesbarkeit
-- Textbereiche etwas breiter genutzt
-- weißer Freiraum um den „Zum Modul“-Button entfernt
-- Kartenfuß übernimmt nun beim Hover die gleiche Hintergrundfärbung wie die restliche Kachel
-- Button selbst bleibt klar weiß/leicht transparent abgegrenzt
-- keine Texte geändert
+Änderungen:
+- Dekomposition: Beim Aufklappen bleibt der erste Textblock nicht mehr verblasst / blurry.
+- Verlauf-Overlay der Vorschau wird im ausgeklappten Zustand entfernt.
+- Farbkodierung für die 6 Dekompositions-Kacheln ergänzt: grün -> türkis -> blau -> gelb -> orange -> rot.
+- Hover-/Fokus-Farben der Kacheln passend zur jeweiligen Kachelfarbe ergänzt.
+- Keine Textinhalte geändert.

@@ -4854,3 +4854,66 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
     font-size: 0.78rem !important;
   }
 }
+
+/* v35: Dekomposition – Expanded Intro klar lesbar + Ampel-Farbkodierung */
+.deko-intro-card.is-expanded .deko-intro-preview{
+  max-height:none!important;
+  overflow:visible!important;
+}
+.deko-intro-card.is-expanded .deko-intro-preview::after{
+  display:none!important;
+}
+.deko-intro-card.is-expanded .deko-intro-preview p{
+  opacity:1!important;
+  filter:none!important;
+}
+.deko-intro-card.is-expanded .deko-intro-more{
+  margin-top:.1rem!important;
+}
+.deko-intro-card.is-expanded .deko-intro-more p{
+  opacity:1!important;
+  filter:none!important;
+}
+
+.deko-step-card{
+  --step-accent:#6aaee8;
+  --step-accent-soft: rgba(106,174,232,.12);
+  --step-shadow: rgba(17,24,39,.11);
+  border-top-color:var(--step-accent)!important;
+  background:linear-gradient(180deg,#ffffff 0%, var(--step-accent-soft) 100%)!important;
+}
+.deko-step-card:hover,
+.deko-step-card:focus-visible{
+  border-color: color-mix(in srgb, var(--step-accent) 50%, rgba(17,24,39,.35)) !important;
+  border-top-color:var(--step-accent)!important;
+  background:linear-gradient(180deg,#ffffff 0%, color-mix(in srgb, var(--step-accent) 18%, #ffffff) 100%)!important;
+  box-shadow:0 14px 28px color-mix(in srgb, var(--step-accent) 24%, rgba(17,24,39,.08))!important;
+}
+.deko-step-card:hover .deko-step-label,
+.deko-step-card:focus-visible .deko-step-label{
+  color:color-mix(in srgb, var(--step-accent) 62%, #334155)!important;
+}
+.deko-step-card:hover .deko-step-title,
+.deko-step-card:focus-visible .deko-step-title{
+  color:#0f172a!important;
+}
+.deko-step-card--1{ --step-accent:#62b44e; --step-accent-soft:rgba(98,180,78,.12); }
+.deko-step-card--2{ --step-accent:#4caf8b; --step-accent-soft:rgba(76,175,139,.12); }
+.deko-step-card--3{ --step-accent:#58a7d8; --step-accent-soft:rgba(88,167,216,.13); }
+.deko-step-card--4{ --step-accent:#d9b84f; --step-accent-soft:rgba(217,184,79,.14); }
+.deko-step-card--5{ --step-accent:#e38a49; --step-accent-soft:rgba(227,138,73,.14); }
+.deko-step-card--6{ --step-accent:#d96565; --step-accent-soft:rgba(217,101,101,.12); }
+.deko-step-card.is-placeholder{
+  opacity:.72!important;
+  background:linear-gradient(180deg,#ffffff 0%, var(--step-accent-soft) 100%)!important;
+}
+.deko-step-card.is-placeholder .deko-step-label,
+.deko-step-card.is-placeholder .deko-step-title{
+  color:#6b7280!important;
+}
+.deko-step-card.is-placeholder:hover{
+  transform:none!important;
+  box-shadow:0 8px 18px rgba(17,24,39,.055)!important;
+  border-top-color:var(--step-accent)!important;
+  background:linear-gradient(180deg,#ffffff 0%, var(--step-accent-soft) 100%)!important;
+}
