@@ -1,7 +1,7 @@
-Start_V56_natural_height
+Start_V57_white_outside_panel
 
 Änderungen:
-- html/body nicht mehr min-height:100%
-- Startseiten-Wrapper wächst nur noch mit tatsächlichem Inhalt
-- verhindert, dass ein 2600px-H5P-Iframe die GitHub-Seite künstlich auf 2600px aufspannt
-- keine Text-/Linkänderungen
+- Hintergrund außerhalb des abgerundeten blauen Kurs-Panels auf Weiß gesetzt
+- hellblauer Kursrahmen selbst bleibt unverändert
+- Dekompositions-Aufklappen wächst weiterhin innerhalb des blauen Panels mit
+- keine Texte oder Links geändert

@@ -5709,3 +5709,15 @@ body.start-page-moodle-fit {
 .start-page-moodle-fit .overview-shell--moodle-fit {
   min-height: 0 !important;
 }
+
+/* v57: außerhalb des blauen Kurs-Panels wieder weiß */
+html,
+body,
+body.start-page-moodle-fit {
+  background: #ffffff !important;
+}
+
+/* Der eigentliche Kursrahmen bleibt hellblau */
+.start-page-moodle-fit .overview-shell--moodle-fit {
+  background: #f3f7fb !important;
+}
