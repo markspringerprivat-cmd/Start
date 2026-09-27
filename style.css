@@ -5690,3 +5690,22 @@ body.start-page-moodle-fit::after {
     padding-right: 16px !important;
   }
 }
+
+/* V56: natürliche Seitenhöhe im H5P-Iframe – kein Aufspannen auf die Iframe-Höhe */
+html,
+body,
+body.start-page-moodle-fit {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.start-page-moodle-fit .overview-shell--moodle-fit,
+.start-page-moodle-fit .overview-roadmap--moodle-fit,
+.start-page-moodle-fit .overview-tile,
+.start-page-moodle-fit .overview-stage-card--moodle-fit {
+  height: auto !important;
+}
+
+.start-page-moodle-fit .overview-shell--moodle-fit {
+  min-height: 0 !important;
+}

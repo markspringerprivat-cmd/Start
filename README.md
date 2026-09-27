@@ -1,8 +1,7 @@
-Start_V55_no_primary_reveal
+Start_V56_natural_height
 
 Änderungen:
-- alte Scroll-Reveal-/IntersectionObserver-Animation für die vier Hauptkacheln vollständig entfernt
-- alle Hauptkacheln sind beim Laden sofort sichtbar
-- Einleitungskachel ebenfalls sofort sichtbar
-- Dekompositions-Unterkacheln und deren Animation bleiben unverändert
-- keine Texte oder Links geändert
+- html/body nicht mehr min-height:100%
+- Startseiten-Wrapper wächst nur noch mit tatsächlichem Inhalt
+- verhindert, dass ein 2600px-H5P-Iframe die GitHub-Seite künstlich auf 2600px aufspannt
+- keine Text-/Linkänderungen
