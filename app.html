@@ -508,6 +508,81 @@ body.start-page-moodle-fit{
 }
 </style>
 
+
+<style id="v58-wider-cards-tighter-transition">
+/* V58: Hauptkacheln ca. 1 cm je Seite breiter + halber Abstand + ruhigere Übergänge */
+.start-page-moodle-fit .overview-shell--moodle-fit{
+  width:100% !important;
+  max-width:746px !important;
+  box-sizing:border-box !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:48px !important;
+  padding-right:48px !important;
+}
+
+/* Bisher ca. 574 px, jetzt ca. 650 px = rund 1 cm mehr pro Seite */
+.start-page-moodle-fit .overview-hero--moodle-fit,
+.start-page-moodle-fit .overview-roadmap--moodle-fit,
+.start-page-moodle-fit .overview-blind-mode-row--moodle-fit{
+  width:100% !important;
+  max-width:650px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* Hauptkacheln deutlich enger zusammen – ca. halber bisheriger Abstand */
+.start-page-moodle-fit .overview-roadmap--moodle-fit{
+  gap:8px !important;
+  row-gap:8px !important;
+}
+
+.start-page-moodle-fit .overview-tile{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Übergang zwischen den Kacheln ruhiger und weniger "abgehackt" */
+.start-page-moodle-fit .overview-stage-card--moodle-fit{
+  border-color:#d6e4f0 !important;
+  border-radius:15px !important;
+  box-shadow:0 6px 16px rgba(79,111,148,.075) !important;
+}
+.start-page-moodle-fit .overview-stage-card--moodle-fit:hover,
+.start-page-moodle-fit .overview-stage-card--moodle-fit:focus-visible{
+  box-shadow:0 9px 20px rgba(79,111,148,.11) !important;
+}
+
+/* der schmale Zwischenraum liest sich als Teil des blauen Panels */
+.start-page-moodle-fit .overview-roadmap--moodle-fit{
+  background:transparent !important;
+}
+
+@media (max-width:780px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    max-width:calc(100vw - 16px) !important;
+    padding-left:clamp(24px,6vw,48px) !important;
+    padding-right:clamp(24px,6vw,48px) !important;
+  }
+  .start-page-moodle-fit .overview-hero--moodle-fit,
+  .start-page-moodle-fit .overview-roadmap--moodle-fit,
+  .start-page-moodle-fit .overview-blind-mode-row--moodle-fit{
+    max-width:650px !important;
+  }
+}
+
+@media (max-width:560px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+  .start-page-moodle-fit .overview-roadmap--moodle-fit{
+    gap:7px !important;
+    row-gap:7px !important;
+  }
+}
+</style>
+
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">
