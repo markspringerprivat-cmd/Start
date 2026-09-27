@@ -1,9 +1,8 @@
-Start_V32_Moodle_fit_banners
+Start_V33_Dekomposition_fix
 
-Änderungen:
-- neue Banner für Wahrnehmung, Dekomposition, Approximation und Praxiselement eingesetzt
-- Banner auf ein flacheres Panorama-Format zugeschnitten, damit in Moodle mehr Motiv sichtbar ist
-- Praxiselement-Kachel ebenfalls mit echtem Banner versehen
-- Bannerhöhe in den Startseiten-Kacheln reduziert
-- sanfte Scroll-Reveal-Animation für die Kacheln ergänzt
-- keine Texte in den Kacheln geändert
+Fixes:
+- Dekomposition-Link auf der Startseite auf absolute GitHub-URL umgestellt.
+- Gleiches für Approximation und Praxiselement, damit die Navigation aus Moodle/H5P zuverlässig aufgelöst wird.
+- Fehlende schließende HTML-Tags im nachgebauten Moodle-Header der Unterseiten ergänzt.
+- Dekompositions-Rücklink auf absolute GitHub-Startseite gesetzt.
+- Inhalte/Texte der Module nicht verändert.
