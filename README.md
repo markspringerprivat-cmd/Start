@@ -1,12 +1,9 @@
-Start_V42_deko_fullcard_flip
+Start_V43_flip_swap_banner_up
 
 Änderungen:
-- komplette Dekompositions-Karte dreht sich nun als Ganzes um 180°
-- Bannerbild ist auch auf der Rückseite sichtbar
-- Rückseite enthält den vollständigen Einleitungstext der Dekompositionsseite
-- "Weiterlesen" / "Weniger anzeigen" klappt den vollständigen Text auf und zu
-- Kartenhöhe passt sich beim Aufklappen dynamisch an
-- 6 Schritt-Kacheln übernehmen wieder die Farbcodierung Grün -> Gelbgrün -> Gelb -> Amber -> Orange -> Rot
-- Schritt-Kacheln bleiben weiß; Farbe nur im oberen Balken und dezentem Hover
-- Schriftart und Schriftgewichte der kleinen Kacheln an die übrigen Überschriften angeglichen
-- übrige Texte und Links unverändert
+- Flip-Animation technisch umgebaut: kein spiegelverkehrter Text mehr.
+- Ganze Karte dreht bis 90°, Inhalt wird dort gewechselt, neue Seite dreht wieder sauber auf 0°.
+- Vorder- und Rückseite behalten jeweils vollständigen Kartenaufbau inkl. Banner.
+- Bannerbilder deutlich weiter nach oben verschoben, damit zentrale Motive besser sichtbar sind.
+- Weiterlesen-Funktion und Schritt-Kacheln bleiben erhalten.
+- Keine Text- oder Linkänderungen außerhalb dieser Funktion.

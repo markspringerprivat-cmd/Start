@@ -5492,3 +5492,106 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* v43: robuster Vollkarten-Flip per Inhaltswechsel + Banner weiter nach oben */
+.start-page-moodle-fit .deko-start-block {
+  perspective: none !important;
+}
+
+.start-page-moodle-fit .deko-flip-card {
+  position: relative !important;
+  transform-style: flat !important;
+  perspective: none !important;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: 0 !important;
+  transform-origin: center center !important;
+  transition: transform 320ms cubic-bezier(.55,.08,.35,1), box-shadow .18s ease !important;
+}
+
+.start-page-moodle-fit .deko-flip-card.is-flipped {
+  transform: none !important;
+}
+
+.start-page-moodle-fit .deko-flip-inner {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  transform: none !important;
+  transform-style: flat !important;
+  transition: none !important;
+}
+
+.start-page-moodle-fit .deko-face {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  transform: none !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
+.start-page-moodle-fit .deko-face--front {
+  display: flex !important;
+}
+
+.start-page-moodle-fit .deko-face--back {
+  display: none !important;
+  transform: none !important;
+}
+
+.start-page-moodle-fit .deko-flip-card.show-back .deko-face--front {
+  display: none !important;
+}
+
+.start-page-moodle-fit .deko-flip-card.show-back .deko-face--back {
+  display: flex !important;
+}
+
+/* Phase 1: aktuelle Karte auf 90° drehen */
+.start-page-moodle-fit .deko-flip-card.flip-out-forward {
+  transform: perspective(1200px) rotateY(90deg) scale(.985) !important;
+}
+.start-page-moodle-fit .deko-flip-card.flip-out-backward {
+  transform: perspective(1200px) rotateY(-90deg) scale(.985) !important;
+}
+
+/* Phase 2: neue Kartenfläche unsichtbar auf der anderen Kante positionieren */
+.start-page-moodle-fit .deko-flip-card.flip-in-from-back {
+  transition: none !important;
+  transform: perspective(1200px) rotateY(-90deg) scale(.985) !important;
+}
+.start-page-moodle-fit .deko-flip-card.flip-in-from-front {
+  transition: none !important;
+  transform: perspective(1200px) rotateY(90deg) scale(.985) !important;
+}
+
+/* Banner deutlich weiter nach oben schieben */
+.start-page-moodle-fit .overview-card-visual img {
+  object-fit: cover !important;
+  object-position: center 76% !important;
+}
+.start-page-moodle-fit .stage-theme-wahrnehmung .overview-card-visual img {
+  object-position: center 82% !important;
+}
+.start-page-moodle-fit .stage-theme-dekomposition .overview-card-visual img {
+  object-position: center 78% !important;
+}
+.start-page-moodle-fit .stage-theme-approximation .overview-card-visual img {
+  object-position: center 80% !important;
+}
+.start-page-moodle-fit .stage-theme-praxiselement .overview-card-visual img {
+  object-position: center 78% !important;
+}
+.start-page-moodle-fit .deko-face--back .deko-back-banner img {
+  object-position: center 78% !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-page-moodle-fit .deko-flip-card {
+    transition: none !important;
+  }
+}
