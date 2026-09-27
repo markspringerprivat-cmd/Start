@@ -4365,3 +4365,387 @@ body.theme-praxiselement {
   }
   .deko-intro-preview{ max-height:210px!important; }
 }
+
+/* =========================================================
+   H5P / Moodle iframe responsiveness fix (v30)
+   ---------------------------------------------------------
+   Avoid viewport-based shell widths inside nested iframes.
+   All top-level shells now size against their own containing
+   block so they cannot overflow a narrower H5P presentation.
+   ========================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding-left: clamp(12px, 3vw, 2cm);
+  padding-right: clamp(12px, 3vw, 2cm);
+}
+
+.page-shell {
+  width: 100% !important;
+  max-width: 1400px !important;
+  min-width: 0 !important;
+}
+
+/* Keep all major layout wrappers shrinkable inside an iframe. */
+.page-shell,
+.overview-roadmap,
+.overview-row,
+.overview-stage-layout,
+.overview-stage-card,
+.overview-stage-copy,
+.overview-stage-copy-wide,
+.overview-intro-grid,
+.course-block-grid,
+.content-grid,
+.topic-switcher,
+.deko-prototype-shell,
+.deko-intro-card,
+.deko-nav-hint,
+.deko-step-grid {
+  min-width: 0 !important;
+  max-width: 100%;
+}
+
+/* Page-specific shells previously used 100vw. 100% is safer in
+   a Moodle -> H5P -> iframe nesting because it follows the actual
+   containing width instead of a viewport-sized calculation. */
+.deko-prototype-shell {
+  width: 100% !important;
+  max-width: 1480px !important;
+}
+
+/* Text and media must be allowed to shrink instead of widening a grid. */
+.overview-stage-card > *,
+.course-block-card > *,
+.content-grid > *,
+.topic-switcher > *,
+.deko-step-grid > * {
+  min-width: 0;
+}
+
+img,
+video,
+svg,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+/* Extra safety for narrow H5P presentation areas. */
+@media (max-width: 900px) {
+  body {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .page-shell,
+  .deko-prototype-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .overview-hero,
+  .placeholder-card {
+    padding-left: clamp(20px, 5vw, 36px);
+    padding-right: clamp(20px, 5vw, 36px);
+  }
+
+  .overview-hero h1,
+  .placeholder-card h1 {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* v91: Startseite speziell für die schmale Moodle/H5P-Studentenansicht (ca. 650–670 px) */
+body.start-page-moodle-fit {
+  padding-left: 8px;
+  padding-right: 8px;
+  overflow-x: hidden;
+}
+
+body.start-page-moodle-fit::before,
+body.start-page-moodle-fit::after {
+  display: none;
+}
+
+.start-page-moodle-fit .overview-shell--moodle-fit {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 8px 0 34px;
+}
+
+.start-page-moodle-fit .overview-hero--moodle-fit {
+  padding: 22px 24px 20px;
+  border: 1px solid rgba(17, 24, 39, 0.58);
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.055);
+}
+
+.start-page-moodle-fit .overview-hero--moodle-fit::before {
+  height: 8px;
+  background: #68b7e9;
+}
+
+.start-page-moodle-fit .overview-hero--moodle-fit .eyebrow {
+  margin-bottom: 7px;
+  font-size: 0.67rem;
+  letter-spacing: 0.14em;
+}
+
+.start-page-moodle-fit .overview-hero--moodle-fit h1 {
+  margin: 0 0 18px;
+  max-width: 590px;
+  font-size: clamp(2rem, 6vw, 2.55rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.start-page-moodle-fit .overview-intro-grid--moodle-fit {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 11px;
+}
+
+.start-page-moodle-fit .overview-hero--moodle-fit .overview-intro {
+  margin: 0;
+  max-width: none;
+  color: #343b46;
+  font-size: 0.79rem;
+  line-height: 1.55;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.start-page-moodle-fit .overview-authors {
+  margin: 15px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17, 24, 39, 0.12);
+  color: #4b5563;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.start-page-moodle-fit .overview-blind-mode-row--moodle-fit {
+  margin: 8px 0 11px;
+  justify-content: flex-end;
+}
+
+.start-page-moodle-fit .blind-mode-toggle {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 0.68rem;
+}
+
+.start-page-moodle-fit .overview-roadmap--moodle-fit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  align-items: stretch;
+}
+
+.start-page-moodle-fit .overview-tile {
+  min-width: 0;
+  display: flex;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.5);
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: 0 9px 24px rgba(17, 24, 39, 0.055);
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit::before {
+  height: 7px;
+  z-index: 3;
+}
+
+.start-page-moodle-fit .overview-card-visual {
+  position: relative;
+  width: 100%;
+  height: 112px;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+  background: #f8fafc;
+}
+
+.start-page-moodle-fit .overview-card-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  transform: scale(1.02);
+}
+
+.start-page-moodle-fit .overview-card-visual--praxiselement {
+  background:
+    radial-gradient(circle at 18% 30%, rgba(120, 102, 170, 0.24) 0 8px, transparent 9px),
+    radial-gradient(circle at 75% 68%, rgba(106, 174, 232, 0.22) 0 11px, transparent 12px),
+    linear-gradient(135deg, rgba(120, 102, 170, 0.08) 0 25%, transparent 25% 50%, rgba(106, 174, 232, 0.08) 50% 75%, transparent 75%),
+    #fbfbfd;
+  background-size: auto, auto, 28px 28px, auto;
+}
+
+.start-page-moodle-fit .overview-card-content {
+  padding: 15px 15px 10px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit .block-number {
+  display: block;
+  width: 100%;
+  margin: 0 0 4px;
+  color: var(--theme-color-dark);
+  font-size: 0.61rem;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit h2 {
+  width: 100%;
+  margin: 0;
+  color: #182033;
+  font-size: 1.28rem;
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  text-align: left;
+}
+
+.start-page-moodle-fit .overview-stage-subtitle {
+  margin: 7px 0 11px;
+  min-height: 2.9em;
+  color: #536070;
+  font-size: 0.7rem;
+  line-height: 1.38;
+  font-weight: 700;
+  text-align: left;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit .overview-stage-copy,
+.start-page-moodle-fit .overview-stage-card--moodle-fit .overview-stage-copy-wide {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-content: start;
+  align-self: stretch;
+  text-align: justify;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit .overview-stage-copy p {
+  margin: 0;
+  max-width: none;
+  color: #39414d;
+  font-size: 0.695rem;
+  line-height: 1.48;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit .overview-stage-button-row {
+  width: auto;
+  margin: auto 15px 14px;
+  padding: 10px 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(17, 24, 39, 0.1);
+  background: transparent;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit .stage-inline-button {
+  width: 100%;
+  min-height: 34px;
+  padding: 7px 9px;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgba(17, 24, 39, 0.32);
+  background: #ffffff;
+  color: #28313c;
+  font-size: 0.7rem;
+  line-height: 1.15;
+  font-weight: 750;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit:hover,
+.start-page-moodle-fit .overview-stage-card--moodle-fit:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(17, 24, 39, 0.68);
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.075);
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit:hover .stage-inline-button,
+.start-page-moodle-fit .overview-stage-card--moodle-fit:focus-visible .stage-inline-button,
+.start-page-moodle-fit .overview-stage-card--moodle-fit .stage-inline-button:hover,
+.start-page-moodle-fit .overview-stage-card--moodle-fit .stage-inline-button:focus-visible {
+  background: var(--theme-color-soft);
+  border-color: var(--theme-color-dark);
+}
+
+@media (max-width: 560px) {
+  body.start-page-moodle-fit {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .start-page-moodle-fit .overview-shell--moodle-fit {
+    padding-top: 6px;
+  }
+
+  .start-page-moodle-fit .overview-hero--moodle-fit {
+    padding: 20px 17px 18px;
+  }
+
+  .start-page-moodle-fit .overview-hero--moodle-fit h1 {
+    font-size: 1.9rem;
+  }
+
+  .start-page-moodle-fit .overview-roadmap--moodle-fit {
+    grid-template-columns: 1fr;
+  }
+
+  .start-page-moodle-fit .overview-card-visual {
+    height: 138px;
+  }
+
+  .start-page-moodle-fit .overview-stage-subtitle {
+    min-height: 0;
+  }
+
+  .start-page-moodle-fit .overview-stage-card--moodle-fit .overview-stage-copy p {
+    font-size: 0.74rem;
+  }
+}

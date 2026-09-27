@@ -70,3 +70,10 @@ Version 29:
 - Hinweisbalken auf gleiche Breite gezogen.
 - Kacheln leicht vergrößert.
 - Hover-Zustand färbt den oberen Balken grün.
+
+## v30 – H5P/Moodle responsive fix
+- Top-level layout shells no longer depend on `100vw` for their effective width.
+- Major grids/cards may shrink to the containing iframe width (`min-width: 0`).
+- Media is constrained to the available width.
+- Narrow iframe padding is reduced to avoid unnecessary horizontal clipping.
+- CSS/JS query version raised to `v=30` to reduce stale-cache problems.
