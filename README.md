@@ -1,12 +1,10 @@
-Start_V39_h5p_typography_banners_COMPLETE
+Start_V41_deko_flip_expand
 
-Korrigiertes vollständiges Paket.
-Enthält jetzt ausdrücklich:
-- alle HTML-Dateien der V39
-- style.css
-- script.js
-- vollständigen assets-Ordner
-- alle vier neuen Bannerbilder (Wahrnehmung, Dekomposition, Approximation, Praxiselement)
-- ältere v20-Bilder und moodle-logo, soweit noch referenziert
-
-Inhalt/Texte/Links wurden gegenüber V39 nicht geändert.
+Änderungen:
+- Dekomposition-Kachel auf der Startseite mit Weiter-Button versehen
+- Klick auf Weiter löst eine 180°-Flip-Animation aus
+- Rückseite zeigt Titel "Unterrichtsgespräche professionell gestalten" und Einleitungstext
+- Unterhalb der Kachel klappt ein Bereich mit 6 kleineren Schritt-Kacheln auf
+- Schritt-Kacheln blenden nacheinander weich ein
+- Zurück-Button schließt den Bereich wieder
+- Keine Änderungen an den übrigen Texten und Links der Startseite

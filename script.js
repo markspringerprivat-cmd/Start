@@ -870,3 +870,58 @@ setupCourseFlyouts();
 
   tiles.forEach((tile) => observer.observe(tile));
 })();
+
+
+// v41: Dekomposition-Flip-Kachel auf der Startseite
+(function(){
+  const tile = document.getElementById('dekoStartTile');
+  const flipCard = tile ? tile.querySelector('.deko-flip-card') : null;
+  const moreBtn = document.getElementById('dekoStartMoreButton');
+  const backBtn = document.getElementById('dekoStartBackButton');
+  const steps = document.getElementById('dekoStartSteps');
+
+  if (!tile || !flipCard || !moreBtn || !backBtn || !steps) return;
+
+  function openDekoStart() {
+    flipCard.classList.add('is-flipped');
+    steps.hidden = false;
+    requestAnimationFrame(() => {
+      steps.classList.add('is-open');
+    });
+  }
+
+  function closeDekoStart() {
+    flipCard.classList.remove('is-flipped');
+    steps.classList.remove('is-open');
+    const afterClose = () => {
+      if (!steps.classList.contains('is-open')) {
+        steps.hidden = true;
+      }
+      steps.removeEventListener('transitionend', afterClose);
+    };
+    steps.addEventListener('transitionend', afterClose);
+  }
+
+  moreBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    openDekoStart();
+  });
+
+  backBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeDekoStart();
+  });
+
+  flipCard.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (flipCard.classList.contains('is-flipped')) {
+        closeDekoStart();
+      } else {
+        openDekoStart();
+      }
+    }
+  });
+})();

@@ -5013,3 +5013,279 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
   border-top-color: var(--step-accent) !important;
   box-shadow: 0 8px 20px rgba(17,24,39,.055) !important;
 }
+
+/* v40: etwas kompaktere Abstände + Bannerbilder vertikal besser zentriert */
+.start-page-moodle-fit .overview-roadmap--moodle-fit {
+  gap: 8px !important;
+}
+
+.start-page-moodle-fit .overview-tile {
+  margin: 0 !important;
+}
+
+.start-page-moodle-fit .overview-stage-card--moodle-fit {
+  margin: 0 !important;
+}
+
+/* Bannerbilder: leicht nach oben verschieben, damit zentrale Motive besser sichtbar sind */
+.start-page-moodle-fit .overview-card-visual {
+  height: 94px !important;
+}
+
+.start-page-moodle-fit .overview-card-visual img {
+  object-fit: cover !important;
+  object-position: center 42% !important;
+}
+
+.start-page-moodle-fit .stage-theme-wahrnehmung .overview-card-visual img {
+  object-position: center 39% !important;
+}
+
+.start-page-moodle-fit .stage-theme-dekomposition .overview-card-visual img {
+  object-position: center 42% !important;
+}
+
+.start-page-moodle-fit .stage-theme-approximation .overview-card-visual img {
+  object-position: center 41% !important;
+}
+
+.start-page-moodle-fit .stage-theme-praxiselement .overview-card-visual img {
+  object-position: center 40% !important;
+}
+
+@media (max-width: 560px) {
+  .start-page-moodle-fit .overview-roadmap--moodle-fit {
+    gap: 10px !important;
+  }
+
+  .start-page-moodle-fit .overview-card-visual {
+    height: 102px !important;
+  }
+
+  .start-page-moodle-fit .overview-card-visual img {
+    object-position: center 41% !important;
+  }
+}
+
+/* v41: Startseite – Dekomposition als Flip-Kachel mit aufklappbaren Schritten */
+.start-page-moodle-fit .overview-tile--deko-expand {
+  display: block !important;
+}
+
+.start-page-moodle-fit .deko-start-block {
+  width: 100%;
+}
+
+.start-page-moodle-fit .deko-flip-card {
+  perspective: 1400px;
+  cursor: default;
+}
+
+.start-page-moodle-fit .deko-flip-inner {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  transform-style: preserve-3d;
+  transition: transform 780ms cubic-bezier(.22,.9,.18,1);
+}
+
+.start-page-moodle-fit .deko-flip-card.is-flipped .deko-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.start-page-moodle-fit .deko-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.start-page-moodle-fit .deko-face--front {
+  z-index: 2;
+}
+
+.start-page-moodle-fit .deko-face--back {
+  transform: rotateY(180deg);
+  padding: 20px 22px 18px;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.start-page-moodle-fit .deko-face-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.start-page-moodle-fit .deko-face--back .block-number {
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-align: center !important;
+}
+
+.start-page-moodle-fit .deko-face--back h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem !important;
+  line-height: 1.1 !important;
+  color: #1d3553;
+}
+
+.start-page-moodle-fit .deko-back-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.start-page-moodle-fit .deko-back-copy p {
+  margin: 0;
+  max-width: 100%;
+  font-size: 0.81rem;
+  line-height: 1.5;
+  color: #394b61;
+  text-align: center;
+}
+
+.start-page-moodle-fit .deko-back-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.start-page-moodle-fit .deko-back-button {
+  width: 100%;
+}
+
+.start-page-moodle-fit .deko-back-button--primary {
+  background: #eef6ff !important;
+}
+
+.start-page-moodle-fit .deko-start-more-button {
+  width: 100%;
+}
+
+.start-page-moodle-fit .deko-start-steps {
+  margin-top: -1px;
+  border: 1px solid #cfe0ef;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: linear-gradient(180deg, #f8fbff 0%, #f3f8fd 100%);
+  box-shadow: 0 16px 34px rgba(117,149,186,.10);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 620ms ease, opacity 360ms ease, transform 420ms ease, padding 420ms ease;
+  padding: 0 18px;
+}
+
+.start-page-moodle-fit .deko-start-steps.is-open {
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 14px 18px 18px;
+}
+
+.start-page-moodle-fit .deko-start-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.start-page-moodle-fit .deko-start-step-card {
+  position: relative;
+  min-height: 108px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #223753;
+  background: #ffffff;
+  border: 1px solid #d7e4f0;
+  border-top: 5px solid #7bb7ea;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(117,149,186,.10);
+  opacity: 0;
+  transform: scale(.94) translateY(12px);
+  transition: opacity 360ms ease, transform 460ms cubic-bezier(.16,1,.3,1), box-shadow .18s ease, border-color .18s ease;
+}
+
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(1) { transition-delay: 0ms; }
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(2) { transition-delay: 70ms; }
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(3) { transition-delay: 140ms; }
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(4) { transition-delay: 210ms; }
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(5) { transition-delay: 280ms; }
+.start-page-moodle-fit .deko-start-steps.is-open .deko-start-step-card:nth-child(6) { transition-delay: 350ms; }
+
+.start-page-moodle-fit .deko-start-step-card:hover,
+.start-page-moodle-fit .deko-start-step-card:focus-visible {
+  transform: translateY(-2px) scale(1);
+  border-color: #bdd4e6;
+  box-shadow: 0 12px 24px rgba(117,149,186,.16);
+}
+
+.start-page-moodle-fit .deko-start-step-card.is-placeholder {
+  color: #8391a0;
+  background: #fbfdff;
+}
+
+.start-page-moodle-fit .deko-start-step-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6383a4;
+}
+
+.start-page-moodle-fit .deko-start-step-title {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.18;
+  font-weight: 800;
+  color: #223753;
+}
+
+@media (max-width: 860px) {
+  .start-page-moodle-fit .deko-flip-inner {
+    min-height: 510px;
+  }
+}
+
+@media (max-width: 560px) {
+  .start-page-moodle-fit .deko-flip-inner {
+    min-height: 560px;
+  }
+
+  .start-page-moodle-fit .deko-face--back {
+    padding: 18px 16px 16px;
+  }
+
+  .start-page-moodle-fit .deko-back-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .start-page-moodle-fit .deko-start-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .start-page-moodle-fit .deko-start-step-card {
+    min-height: 96px;
+  }
+}
