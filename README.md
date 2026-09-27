@@ -1,8 +1,12 @@
-Start_V39_h5p_typography_banners
+Start_V39_h5p_typography_banners_COMPLETE
 
-Änderungen:
-- Typografie stärker an H5P/Moodle angenähert (Schriftfamilie, Größen, Gewichte)
-- Kachel-Inhalte auf der Startseite klar zentriert
-- Bannerbilder in den Startseiten-Kacheln explizit sichtbar gehalten
-- Dekompositions-Kacheln ebenfalls typografisch vereinheitlicht
-- keine Texte und keine Links geändert
+Korrigiertes vollständiges Paket.
+Enthält jetzt ausdrücklich:
+- alle HTML-Dateien der V39
+- style.css
+- script.js
+- vollständigen assets-Ordner
+- alle vier neuen Bannerbilder (Wahrnehmung, Dekomposition, Approximation, Praxiselement)
+- ältere v20-Bilder und moodle-logo, soweit noch referenziert
+
+Inhalt/Texte/Links wurden gegenüber V39 nicht geändert.
