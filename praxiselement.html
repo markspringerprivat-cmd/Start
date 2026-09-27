@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praxiselement – Gesprächsführung</title>
+  <link rel="stylesheet" href="style.css?v=33" />
+
+<style id="h5p-inspired-overrides">
+:root{
+  --ib-bg:#f4f7fb;
+  --ib-surface:#ffffff;
+  --ib-surface-soft:#f7fbff;
+  --ib-border:#d9e6f2;
+  --ib-border-strong:#c6d8ea;
+  --ib-accent:#7bb7ea;
+  --ib-accent-dark:#5e9fd7;
+  --ib-text:#20324a;
+  --ib-text-soft:#50657f;
+  --ib-shadow:0 10px 24px rgba(117,149,186,.12);
+  --ib-radius:14px;
+}
+html,body{background:var(--ib-bg)!important;color:var(--ib-text)!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;}
+body{margin:0;}
+a{color:#2d6ea6;}
+.page-shell{max-width:1180px;margin:0 auto;padding:26px 18px 42px;}
+.back-link{display:inline-flex;align-items:center;gap:.35rem;margin:0 0 18px;color:#325f90;text-decoration:none;font-weight:700;font-size:.95rem;padding:8px 12px;border-radius:999px;background:rgba(123,183,234,.12);}
+.back-link:hover{background:rgba(123,183,234,.22);}
+.eyebrow,.switcher-label,.section-label,.block-number,.deko-step-label{letter-spacing:.09em;text-transform:uppercase;color:#6080a2!important;font-weight:800!important;font-size:.8rem!important;}
+h1,h2,.deko-step-title,.overview-stage-card h2,.content-column h2,.banner-content h1{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;color:#21344d!important;}
+
+.start-page-moodle-fit .overview-hero,
+.start-page-moodle-fit .overview-stage-card,
+.deko-intro-card,.deko-nav-hint,.deko-step-card,
+.banner,.content-column,.topic-switcher{
+  background:var(--ib-surface)!important;
+  border:1px solid var(--ib-border)!important;
+  border-radius:var(--ib-radius)!important;
+  box-shadow:var(--ib-shadow)!important;
+}
+.start-page-moodle-fit .overview-hero{padding:24px 24px 20px!important;border-top:5px solid var(--ib-accent)!important;}
+.start-page-moodle-fit .overview-hero h1{font-size:clamp(2rem,4vw,3rem)!important;line-height:1.08!important;margin:.2rem 0 1rem!important;}
+.start-page-moodle-fit .overview-intro-grid--moodle-fit{gap:14px!important;}
+.start-page-moodle-fit .overview-intro{font-size:1rem!important;line-height:1.65!important;color:var(--ib-text-soft)!important;}
+.start-page-moodle-fit .overview-authors{margin-top:.9rem!important;padding-top:.9rem!important;border-top:1px solid #e3edf6!important;color:#5f7186!important;}
+.start-page-moodle-fit .overview-blind-mode-row--moodle-fit{margin:10px 0 16px!important;}
+.start-page-moodle-fit .blind-mode-toggle{border-radius:999px!important;border:1px solid var(--ib-border-strong)!important;background:#fff!important;color:#315b84!important;box-shadow:0 4px 10px rgba(117,149,186,.08)!important;}
+.start-page-moodle-fit .overview-roadmap--moodle-fit{gap:18px!important;}
+.start-page-moodle-fit .overview-stage-card--moodle-fit{overflow:hidden!important;padding:0!important;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease!important;}
+.start-page-moodle-fit .overview-stage-card--moodle-fit:hover{transform:translateY(-2px)!important;box-shadow:0 16px 30px rgba(117,149,186,.16)!important;border-color:#bcd2e7!important;}
+.start-page-moodle-fit .overview-card-visual{border-bottom:1px solid #e4edf6!important;background:#fff!important;}
+.start-page-moodle-fit .overview-card-content{padding:16px 18px 12px!important;}
+.start-page-moodle-fit .overview-stage-card h2{font-size:1.78rem!important;line-height:1.15!important;margin:.3rem 0 .45rem!important;font-weight:800!important;}
+.start-page-moodle-fit .overview-stage-subtitle{font-size:1rem!important;line-height:1.45!important;margin:0 0 .75rem!important;color:#466789!important;font-weight:700!important;}
+.start-page-moodle-fit .overview-stage-copy{font-size:.98rem!important;line-height:1.6!important;color:#5a6f87!important;}
+.start-page-moodle-fit .overview-stage-copy p{margin:.4rem 0!important;}
+.start-page-moodle-fit .overview-stage-button-row{padding:14px 18px 18px!important;background:linear-gradient(180deg, rgba(243,248,253,.35), rgba(243,248,253,.92))!important;border-top:1px solid #e5edf6!important;}
+.start-page-moodle-fit .stage-inline-button{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px!important;border:1px solid #bfd3e6!important;background:#fff!important;color:#264b73!important;font-weight:700!important;text-decoration:none!important;box-shadow:0 3px 8px rgba(117,149,186,.08)!important;}
+.start-page-moodle-fit .stage-inline-button:hover{background:#f2f8fe!important;border-color:#a8c6df!important;}
+
+.deko-prototype-page .deko-prototype-shell{padding-top:22px!important;}
+.deko-intro-card{padding:26px 26px 18px!important;border-top:5px solid var(--ib-accent)!important;}
+.deko-intro-card h1{font-size:clamp(2.2rem,4.2vw,3.6rem)!important;line-height:1.06!important;margin:.35rem 0 1rem!important;font-weight:800!important;}
+.deko-intro-preview p,.deko-intro-more p{font-size:1.02rem!important;line-height:1.72!important;color:#50657f!important;margin:.55rem 0!important;}
+.deko-read-more{margin-top:1rem!important;min-height:44px;padding:0 18px;border-radius:10px!important;border:1px solid #bfd3e6!important;background:#fff!important;color:#264b73!important;font-weight:700!important;box-shadow:0 3px 8px rgba(117,149,186,.08)!important;}
+.deko-nav-hint{padding:14px 18px!important;margin:16px 0 18px!important;color:#53708c!important;background:linear-gradient(180deg,#f9fcff,#f4f8fc)!important;border-left:4px solid var(--ib-accent)!important;box-shadow:none!important;}
+.deko-step-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;}
+.deko-step-card{min-height:180px!important;padding:24px 20px 22px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;text-align:center!important;text-decoration:none!important;position:relative!important;overflow:hidden!important;background:#fff!important;border-top:5px solid var(--step-accent, var(--ib-accent))!important;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease!important;}
+.deko-step-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(244,249,255,.72), rgba(255,255,255,0));opacity:.8;pointer-events:none;}
+.deko-step-card:hover,.deko-step-card:focus-visible{transform:translateY(-2px)!important;box-shadow:0 16px 30px rgba(117,149,186,.16)!important;border-color:#bcd2e7!important;}
+.deko-step-title{position:relative;font-size:2rem!important;line-height:1.12!important;font-weight:800!important;color:#21344d!important;letter-spacing:normal!important;}
+.deko-step-label{position:relative;margin-bottom:.75rem!important;}
+.deko-step-card--1{--step-accent:#67b34a;}
+.deko-step-card--2{--step-accent:#8ebe46;}
+.deko-step-card--3{--step-accent:#c3c53f;}
+.deko-step-card--4{--step-accent:#e0b03c;}
+.deko-step-card--5{--step-accent:#e68f40;}
+.deko-step-card--6{--step-accent:#db6d67;}
+.deko-step-card.is-placeholder{opacity:.72!important;}
+
+.theme-approximation .topic-switcher,.theme-praxiselement .topic-switcher,.theme-wahrnehmung .topic-switcher{padding:10px 12px!important;}
+.theme-approximation .arrow-button,.theme-praxiselement .arrow-button,.theme-wahrnehmung .arrow-button{width:42px;height:42px;border-radius:10px!important;border:1px solid var(--ib-border-strong)!important;background:#fff!important;color:#2c5782!important;box-shadow:0 3px 8px rgba(117,149,186,.08)!important;}
+.theme-approximation .breadcrumb,.theme-praxiselement .breadcrumb,.theme-wahrnehmung .breadcrumb{display:flex!important;gap:.45rem;align-items:center;color:#65819f!important;margin:14px 0 12px!important;font-size:.95rem!important;}
+.theme-approximation .banner,.theme-praxiselement .banner,.theme-wahrnehmung .banner{padding:22px 24px!important;overflow:hidden!important;position:relative!important;border-top:5px solid var(--ib-accent)!important;}
+.theme-approximation .banner-content h1,.theme-praxiselement .banner-content h1,.theme-wahrnehmung .banner-content h1{font-size:clamp(1.9rem,4vw,2.9rem)!important;line-height:1.1!important;margin:.3rem 0 .4rem!important;}
+.theme-approximation .banner-subtitle,.theme-praxiselement .banner-subtitle,.theme-wahrnehmung .banner-subtitle{font-size:1rem!important;line-height:1.5!important;color:#50708e!important;margin:0!important;}
+.theme-approximation .content-grid,.theme-praxiselement .content-grid,.theme-wahrnehmung .content-grid{display:grid!important;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr)!important;gap:18px!important;align-items:stretch!important;margin-top:18px!important;}
+.theme-approximation .vertical-divider,.theme-praxiselement .vertical-divider,.theme-wahrnehmung .vertical-divider{background:#dce7f2!important;border-radius:999px!important;}
+.theme-approximation .content-column,.theme-praxiselement .content-column,.theme-wahrnehmung .content-column{padding:22px 24px!important;}
+.theme-approximation .content-column p,.theme-praxiselement .content-column p,.theme-wahrnehmung .content-column p,
+.theme-approximation .content-column li,.theme-praxiselement .content-column li,.theme-wahrnehmung .content-column li{font-size:1rem!important;line-height:1.65!important;color:#546b83!important;}
+.theme-approximation .module-link-card,.theme-praxiselement .module-link-card,.theme-wahrnehmung .module-link-card{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px!important;border:1px solid #bfd3e6!important;background:#fff!important;color:#264b73!important;font-weight:700!important;text-decoration:none!important;box-shadow:0 3px 8px rgba(117,149,186,.08)!important;}
+@media (max-width: 900px){
+  .deko-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .theme-approximation .content-grid,.theme-praxiselement .content-grid,.theme-wahrnehmung .content-grid{grid-template-columns:1fr!important;}
+  .theme-approximation .vertical-divider,.theme-praxiselement .vertical-divider,.theme-wahrnehmung .vertical-divider{display:none!important;}
+}
+@media (max-width: 640px){
+  .page-shell{padding:18px 12px 34px!important;}
+  .start-page-moodle-fit .overview-stage-card h2,.deko-step-title{font-size:1.55rem!important;}
+  .deko-step-grid{grid-template-columns:1fr!important;}
+}
+</style>
+
+
+<style id="h5p-typography-banner-fix">
+/* V39: nähere H5P-Typografie + zentrierte Kacheln + Bannerbilder sichtbar */
+html,body,
+.page-shell,
+.start-page-moodle-fit,
+.deko-prototype-page,
+.theme-approximation,
+.theme-praxiselement,
+.theme-wahrnehmung{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+h1,h2,h3,
+.overview-stage-card h2,
+.deko-step-title,
+.banner-content h1,
+.content-column h2,
+.deko-intro-card h1{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+/* Startseite: Bannerbilder sicher sichtbar */
+.start-page-moodle-fit .overview-card-visual{
+  display:block !important;
+  width:100% !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  background:#ffffff !important;
+  border-bottom:1px solid #e4edf6 !important;
+}
+.start-page-moodle-fit .overview-card-visual img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:cover !important;
+}
+.start-page-moodle-fit .overview-card-visual--praxiselement img{
+  display:block !important;
+}
+
+/* Startseite: Kachel-Inhalte zentriert */
+.start-page-moodle-fit .overview-card-content,
+.start-page-moodle-fit .overview-stage-copy,
+.start-page-moodle-fit .overview-stage-button-row{
+  text-align:center !important;
+}
+.start-page-moodle-fit .overview-card-content{
+  padding:18px 20px 12px !important;
+}
+.start-page-moodle-fit .overview-stage-card h2{
+  font-size:2rem !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+  margin:.2rem 0 .45rem !important;
+  text-align:center !important;
+}
+.start-page-moodle-fit .overview-stage-subtitle{
+  font-size:1.02rem !important;
+  line-height:1.4 !important;
+  font-weight:600 !important;
+  color:#446786 !important;
+  text-align:center !important;
+  margin:0 0 .8rem !important;
+}
+.start-page-moodle-fit .overview-stage-copy{
+  font-size:.98rem !important;
+  line-height:1.6 !important;
+  color:#5a6f87 !important;
+}
+.start-page-moodle-fit .overview-stage-copy p{
+  margin:.38rem 0 !important;
+}
+.start-page-moodle-fit .overview-stage-button-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+}
+.start-page-moodle-fit .stage-inline-button{
+  min-width:160px !important;
+  justify-content:center !important;
+}
+
+/* H5P-nähere Typografie Intro */
+.start-page-moodle-fit .eyebrow,
+.deko-prototype-page .section-label,
+.deko-prototype-page .deko-step-label{
+  font-size:.78rem !important;
+  font-weight:700 !important;
+  letter-spacing:.06em !important;
+  color:#6b83a0 !important;
+}
+.start-page-moodle-fit .overview-hero h1,
+.deko-intro-card h1{
+  font-size:3rem !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+}
+.start-page-moodle-fit .overview-intro,
+.deko-intro-preview p,
+.deko-intro-more p{
+  font-size:1rem !important;
+  line-height:1.65 !important;
+}
+.start-page-moodle-fit .overview-authors{
+  font-size:.95rem !important;
+  line-height:1.55 !important;
+}
+
+/* Dekomposition-Kacheln: zentriert + H5P-ähnlich */
+.deko-step-card{
+  border-radius:14px !important;
+  background:#fff !important;
+}
+.deko-step-title{
+  font-size:1.95rem !important;
+  line-height:1.1 !important;
+  font-weight:700 !important;
+  text-align:center !important;
+}
+.deko-step-label{
+  text-align:center !important;
+}
+
+/* Unterseiten feiner angleichen */
+.theme-approximation .banner-content h1,
+.theme-praxiselement .banner-content h1,
+.theme-wahrnehmung .banner-content h1{
+  font-size:2.65rem !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+}
+.theme-approximation .banner-subtitle,
+.theme-praxiselement .banner-subtitle,
+.theme-wahrnehmung .banner-subtitle,
+.theme-approximation .content-column p,
+.theme-praxiselement .content-column p,
+.theme-wahrnehmung .content-column p,
+.theme-approximation .content-column li,
+.theme-praxiselement .content-column li,
+.theme-wahrnehmung .content-column li{
+  font-size:1rem !important;
+  line-height:1.65 !important;
+}
+
+@media (max-width: 640px){
+  .start-page-moodle-fit .overview-hero h1,
+  .deko-intro-card h1,
+  .theme-approximation .banner-content h1,
+  .theme-praxiselement .banner-content h1,
+  .theme-wahrnehmung .banner-content h1{
+    font-size:2.2rem !important;
+  }
+  .start-page-moodle-fit .overview-stage-card h2,
+  .deko-step-title{
+    font-size:1.6rem !important;
+  }
+}
+</style>
+
+</head>
+<body id="top" data-page="praxiselement" class="theme-praxiselement">
+  <nav class="navbar fixed-top navbar-light bg-primary navbar-expand moodle-replica-bar" aria-label="Site-Navigation">
+    <div class="container-fluid moodle-replica-container">
+      <a href="https://moodle.uni-siegen.de/my/" class="navbar-brand moodle-replica-logo align-items-center m-0 me-4 p-0 aabtn d-none d-md-flex" target="_top" aria-label="Moodle Dashboard">
+        <img src="https://moodle.uni-siegen.de/pluginfile.php/1/theme_boost_union/logocompact/1/1781070392/Moodle-logo.svg" class="logo me-1" alt="moodle">
+      </a>
+      <div class="primary-navigation moodle-replica-primary-navigation">
+        <nav class="moremenu navigation" aria-label="Moodle Hauptnavigation">
+          <ul role="menubar" class="nav more-nav navbar-nav moodle-replica-nav">
+            <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link" href="https://moodle.uni-siegen.de/my/" target="_top" data-disableactive="true">Dashboard</a>
+            </li>
+            <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link active" href="https://moodle.uni-siegen.de/my/courses.php" target="_top" aria-current="true" data-disableactive="true">Meine Kurse</a>
+            </li>
+            <li data-key="allcourses" class="nav-item" role="none" data-forceintomoremenu="false">
+              <a role="menuitem" class="nav-link" href="https://moodle.uni-siegen.de/course/index.php" target="_top" data-disableactive="true">Alle Kurse</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </nav>
+
+<main class="page-shell">
+    <a class="back-link dekomposition-back-link" href="https://markspringerprivat-cmd.github.io/Start/#top">← Zur Kursübersicht</a>
+
+    <p class="switcher-label">Bausteine der Approximation</p>
+    <section class="topic-switcher" aria-label="Themennavigation des Praxiselements">
+      <button class="arrow-button" id="prevButton" type="button" aria-label="Vorheriges Thema">
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div class="cards-window">
+        <div class="cards-track" id="cardsTrack"></div>
+      </div>
+
+      <button class="arrow-button" id="nextButton" type="button" aria-label="Nächstes Thema">
+        <span aria-hidden="true">›</span>
+      </button>
+    </section>
+
+    <div class="blind-mode-row">
+      <button class="blind-mode-toggle" id="blindModeToggle" type="button" aria-pressed="false">
+        Vorlesemodus: aus
+      </button>
+      <p class="blind-mode-hint" id="blindModeHint" hidden></p>
+    </div>
+
+    <div class="top-divider" aria-hidden="true"></div>
+
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href="https://markspringerprivat-cmd.github.io/Start/#top">Kursübersicht</a>
+      <span aria-hidden="true">/</span>
+      <span id="breadcrumbBlock">Approximation</span>
+      <span aria-hidden="true">/</span>
+      <strong id="breadcrumbCurrent">Hauptseite</strong>
+    </nav>
+
+    <section class="banner blind-readable uniform-hover" id="banner" aria-labelledby="moduleTitle" data-blind-target="banner" tabindex="0" role="button" aria-label="Banner vorlesen">
+      <div class="banner-pattern" aria-hidden="true"></div>
+      <div class="banner-content">
+        <p class="eyebrow" id="moduleStep">Baustein 1 von 7</p>
+        <h1 id="moduleTitle">Hauptseite</h1>
+        <p class="banner-subtitle" id="moduleSubtitle">Orientierung im Kursblock Dekomposition</p>
+      </div>
+    </section>
+
+    <section class="content-grid" aria-label="Modulinhalte">
+      <article class="content-column blind-readable uniform-hover" data-blind-target="left" tabindex="0" role="button" aria-label="Linken Textblock vorlesen">
+        <p class="section-label" id="leftLabel">Einordnung</p>
+        <h2 id="leftTitle">Willkommen auf der Hauptseite</h2>
+        <p id="leftText">
+          Diese Seite dient als Startpunkt für die Themen zur Gesprächsführung. Über die Kacheln oben können Sie linear durch die einzelnen Bereiche navigieren.
+        </p>
+      </article>
+
+      <div class="vertical-divider" aria-hidden="true"></div>
+
+      <article class="content-column blind-readable uniform-hover" data-blind-target="right" tabindex="0" role="button" aria-label="Rechten Textblock vorlesen">
+        <p class="section-label" id="rightLabel">Lernziele</p>
+        <h2 id="rightTitle">Was lernen Sie in dieser Übersicht?</h2>
+        <ul class="learning-list" id="rightList">
+          <li>Sie erhalten einen strukturierten Überblick über die einzelnen Module.</li>
+          <li>Sie können gezielt zwischen Gesprächsumgebung, Gesprächseröffnung, Beiträgen, Ergebnissicherung und Abschluss wechseln.</li>
+        </ul>
+
+        <a class="module-link-card blind-readable" target="_top" aria-label="Modul starten" data-blind-target="module-link" tabindex="0" hidden>
+          <span>Modul starten</span>
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js?v=30"></script>
+</body>
+</html>
