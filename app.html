@@ -385,21 +385,147 @@ body.start-page-moodle-fit{
   }
 }
 </style>
+
+<style id="v53-intro-title-readmore">
+/* V53: zentrierte zweizeilige Hauptüberschrift + einklappbare Kurseinführung */
+.start-page-moodle-fit .overview-hero--moodle-fit .eyebrow{
+  text-align:center !important;
+}
+.start-page-moodle-fit .overview-hero--moodle-fit #courseTitle{
+  width:100% !important;
+  max-width:100% !important;
+  margin:.25rem auto 1rem !important;
+  font-size:2.05rem !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+  letter-spacing:-.025em !important;
+  text-align:center !important;
+}
+.start-page-moodle-fit .overview-hero--moodle-fit #courseTitle .course-title-line{
+  display:block !important;
+  white-space:nowrap !important;
+}
+.start-page-moodle-fit .overview-intro-grid--moodle-fit{
+  display:block !important;
+}
+.start-page-moodle-fit .overview-intro-more{
+  margin-top:.8rem !important;
+}
+.start-page-moodle-fit .overview-intro-more[hidden]{
+  display:none !important;
+}
+.start-page-moodle-fit .overview-intro-readmore{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-width:150px !important;
+  min-height:38px !important;
+  margin:14px auto 0 !important;
+  padding:8px 18px !important;
+  border:1px solid #bfd3e6 !important;
+  border-radius:10px !important;
+  background:#fff !important;
+  color:#264b73 !important;
+  font:inherit !important;
+  font-size:.82rem !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  box-shadow:0 3px 8px rgba(117,149,186,.08) !important;
+}
+.start-page-moodle-fit .overview-intro-readmore:hover,
+.start-page-moodle-fit .overview-intro-readmore:focus-visible{
+  background:#f2f8fe !important;
+  border-color:#a8c6df !important;
+}
+.start-page-moodle-fit .overview-intro-more .overview-authors{
+  margin-top:.9rem !important;
+}
+.start-page-moodle-fit .deko-back-actions--single{
+  display:flex !important;
+  justify-content:center !important;
+  grid-template-columns:none !important;
+}
+.start-page-moodle-fit .deko-back-actions--single .deko-back-button{
+  width:100% !important;
+  max-width:none !important;
+}
+@media (max-width:560px){
+  .start-page-moodle-fit .overview-hero--moodle-fit #courseTitle{
+    font-size:1.72rem !important;
+  }
+  .start-page-moodle-fit .overview-hero--moodle-fit #courseTitle .course-title-line{
+    white-space:normal !important;
+  }
+}
+</style>
+
+<style id="v54-wide-blue-panel">
+/* V54: Außenpanel fast auf maximal sichtbare Breite ziehen, Kartenbreite beibehalten */
+.start-page-moodle-fit .overview-shell--moodle-fit{
+  width:100% !important;
+  max-width:746px !important;
+  box-sizing:border-box !important;
+  margin:0 auto !important;
+  padding-top:10px !important;
+  padding-bottom:20px !important;
+  padding-left:86px !important;
+  padding-right:86px !important;
+  background:#f3f7fb !important;
+  border:1px solid #d7e5f2 !important;
+  border-radius:20px !important;
+  box-shadow:0 12px 30px rgba(85,120,160,.10) !important;
+  overflow:hidden !important;
+}
+
+/* Weiße Inhaltskarten behalten ungefähr ihre bisherige Breite */
+.start-page-moodle-fit .overview-hero--moodle-fit,
+.start-page-moodle-fit .overview-roadmap--moodle-fit,
+.start-page-moodle-fit .overview-blind-mode-row--moodle-fit{
+  width:100% !important;
+  max-width:574px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+@media (max-width:780px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    max-width:calc(100vw - 16px) !important;
+    padding-left:clamp(28px,8vw,70px) !important;
+    padding-right:clamp(28px,8vw,70px) !important;
+  }
+  .start-page-moodle-fit .overview-hero--moodle-fit,
+  .start-page-moodle-fit .overview-roadmap--moodle-fit,
+  .start-page-moodle-fit .overview-blind-mode-row--moodle-fit{
+    max-width:574px !important;
+  }
+}
+
+@media (max-width:560px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+}
+</style>
+
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">
     <section class="overview-hero overview-hero--moodle-fit blind-readable uniform-hover" aria-labelledby="courseTitle" data-blind-target="overview-hero" tabindex="0" role="button" aria-label="Kurseinführung vorlesen">
       <p class="eyebrow">Kursübersicht</p>
-      <h1 id="courseTitle">Professionelle Gesprächsführung im Unterricht</h1>
+      <h1 id="courseTitle"><span class="course-title-line">Professionelle</span><span class="course-title-line">Gesprächsführung im Unterricht</span></h1>
       <div class="overview-intro-grid overview-intro-grid--moodle-fit">
         <p class="overview-intro">
           Klassen- oder Unterrichtsgespräche sind eine zentrale, in vielen Unterrichtssituationen in allen Fächern häufig eingesetzte Methode – oder, wie wir sagen, eine Kernpraktik des Handelns von Lehrkräften –, die, wie Sie sicherlich aus eigener Erfahrung bereits wissen, erhebliche Anforderungen an die Aufmerksamkeit und Präsenz der Lehrkraft, aber auch an deren Gesprächsverhalten stellt. Vieles kann schiefgehen: Gesprächsangebote können schlicht ins Leere laufen; statt eines echten Austauschs kann es zu kleinschrittigen, unproduktiven Frage-Antwort-Sequenzen kommen; die Diskussion kann ohne Ergebnis im Nirgendwo verlaufen usw. usf. Derartige Fallen oder Stolpersteine beim Führen solcher Gespräche lassen sich reduzieren, wenn man sie im Detail, auch an Beispielen, analysiert, sein eigenes Gesprächsverhalten in den Blick nimmt sowie erkundet, welche „Stellschrauben“ einer Lehrkraft zur Verfügung stehen, um Gespräche möglichst gewinnbringend für alle zu gestalten.
         </p>
-        <p class="overview-intro">
-          In diesem Kurs erfahren Sie, was es im Detail heißt, ein gelingendes Unterrichtsgespräch zu führen, und entwickeln beim Durchlaufen des Moduls in einer Kombination aus Beobachten, Analysieren und Ausprobieren Ihre Gesprächsführungskompetenz weiter. Wir erklären Ihnen unter Rückgriff auf aktuelle Forschungsbefunde, was gute Unterrichtsgespräche auszeichnet, welche Aspekte für deren Gelingen entscheidend sind, und erarbeiten mit Ihnen gemeinsam Hinweise für die Verbesserung Ihres Gesprächsverhaltens. Schließlich und besonders bedeutsam sollen Sie Ihre eigenen Fähigkeiten im Kursverlauf auch systematisch trainieren und so lernen, Gespräche zu initiieren und zu moderieren und konkrete Handlungsoptionen für guten und wirkungsvollen Unterricht zu erkennen, zu entwickeln und zu festigen.
-        </p>
+        <div class="overview-intro-more" id="courseIntroMore" hidden>
+          <p class="overview-intro">
+            In diesem Kurs erfahren Sie, was es im Detail heißt, ein gelingendes Unterrichtsgespräch zu führen, und entwickeln beim Durchlaufen des Moduls in einer Kombination aus Beobachten, Analysieren und Ausprobieren Ihre Gesprächsführungskompetenz weiter. Wir erklären Ihnen unter Rückgriff auf aktuelle Forschungsbefunde, was gute Unterrichtsgespräche auszeichnet, welche Aspekte für deren Gelingen entscheidend sind, und erarbeiten mit Ihnen gemeinsam Hinweise für die Verbesserung Ihres Gesprächsverhaltens. Schließlich und besonders bedeutsam sollen Sie Ihre eigenen Fähigkeiten im Kursverlauf auch systematisch trainieren und so lernen, Gespräche zu initiieren und zu moderieren und konkrete Handlungsoptionen für guten und wirkungsvollen Unterricht zu erkennen, zu entwickeln und zu festigen.
+          </p>
+          <p class="overview-authors"><strong>Autorinnen und Autoren:</strong> Alida Bremer, Britta Eisgeth-Köhler, Lisa Theresa Hausmann, Lukas Klein, Dr. Tina Kreische, Yüksel Sahin, Christoph Schütz, Mark Springer und Prof. Dr. Matthias Trautmann</p>
+        </div>
+        <button class="overview-intro-readmore" id="courseIntroReadMore" type="button" aria-expanded="false" aria-controls="courseIntroMore">Weiterlesen</button>
       </div>
-      <p class="overview-authors"><strong>Autorinnen und Autoren:</strong> Alida Bremer, Britta Eisgeth-Köhler, Lisa Theresa Hausmann, Lukas Klein, Dr. Tina Kreische, Yüksel Sahin, Christoph Schütz, Mark Springer und Prof. Dr. Matthias Trautmann</p>
     </section>
 
     <div class="blind-mode-row overview-blind-mode-row overview-blind-mode-row--moodle-fit">
@@ -467,9 +593,8 @@ body.start-page-moodle-fit{
                 </div>
                 <button class="deko-inline-readmore" id="dekoBackReadMoreV47" type="button" aria-expanded="false" aria-controls="dekoBackMoreV47">Weiterlesen</button>
               </div>
-              <nav class="deko-back-actions" aria-label="Aktionen Dekomposition">
+              <nav class="deko-back-actions deko-back-actions--single" aria-label="Aktionen Dekomposition">
                 <button class="stage-inline-button deko-back-button" id="dekoStartBackButtonV47" type="button">Zurück</button>
-                <a class="stage-inline-button deko-back-button deko-back-button--primary" href="https://markspringerprivat-cmd.github.io/Start/dekomposition.html#top" target="_top">Zur Modulseite</a>
               </nav>
             </div>
           </div>
@@ -656,5 +781,22 @@ body.start-page-moodle-fit{
   });
 })();
 </script>
+
+<script id="v53-intro-readmore-script">
+(function(){
+  const btn=document.getElementById('courseIntroReadMore');
+  const more=document.getElementById('courseIntroMore');
+  if(!btn||!more) return;
+  btn.addEventListener('click',function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    const open=btn.getAttribute('aria-expanded')==='true';
+    more.hidden=open;
+    btn.setAttribute('aria-expanded',String(!open));
+    btn.textContent=open?'Weiterlesen':'Weniger anzeigen';
+  });
+})();
+</script>
+
 </body>
 </html>

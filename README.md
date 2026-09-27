@@ -1,7 +1,8 @@
-Start_V52_blue_margin_actual
+Start_V55_no_primary_reveal
 
-Fix:
-- V51 wurde von einer späteren Inline-Regel in app.html überschrieben.
-- Der hellblaue Außencontainer hat jetzt tatsächlich 38 px Seitenabstand links/rechts.
-- Auf kleineren Ansichten wird der Abstand responsiv reduziert.
-- Sonst keine Änderungen.
+Änderungen:
+- alte Scroll-Reveal-/IntersectionObserver-Animation für die vier Hauptkacheln vollständig entfernt
+- alle Hauptkacheln sind beim Laden sofort sichtbar
+- Einleitungskachel ebenfalls sofort sichtbar
+- Dekompositions-Unterkacheln und deren Animation bleiben unverändert
+- keine Texte oder Links geändert

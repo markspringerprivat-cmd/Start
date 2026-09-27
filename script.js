@@ -837,43 +837,6 @@ setupCourseFlyouts();
   });
 })();
 
-/* v32: Scroll-Reveal für die Startseiten-Kacheln */
-(function () {
-  const tiles = Array.from(document.querySelectorAll('.start-page-moodle-fit .overview-roadmap--moodle-fit .overview-tile'));
-  if (!tiles.length) return;
-
-  document.body.classList.add('has-scroll-reveal');
-
-  const revealTile = (tile, index) => {
-    if (!tile || tile.classList.contains('is-visible')) return;
-    window.setTimeout(() => {
-      tile.classList.add('is-visible');
-    }, Math.min(index * 90, 270));
-  };
-
-  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    tiles.forEach((tile, index) => revealTile(tile, index));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const index = tiles.indexOf(entry.target);
-      revealTile(entry.target, index < 0 ? 0 : index);
-      observer.unobserve(entry.target);
-    });
-  }, {
-    threshold: 0.14,
-    rootMargin: '0px 0px -8% 0px'
-  });
-
-  tiles.forEach((tile) => observer.observe(tile));
-})();
-
-
-
-
 // v46: Kartenflip auf separatem Bewegungs-Wrapper, damit Hover-Transforms nicht kollidieren.
 (function(){
   const tile = document.getElementById('dekoStartTile');
