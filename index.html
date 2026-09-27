@@ -265,7 +265,7 @@ h1,h2,h3,
 </style>
 
 
-<style id="deko-v47-isolated-style">
+<style id="deko-v48-parallel-style">
 /* V47 – isolierter Flip: keine externe Flip-Regel kann diese Bewegungsfläche übernehmen. */
 .start-page-moodle-fit #dekoFlipMotionV47{
   width:100% !important;
@@ -286,6 +286,63 @@ h1,h2,h3,
 /* Hover darf nur Schatten/Border ändern, niemals den Bewegungs-Wrapper. */
 .start-page-moodle-fit #dekoFlipMotionV47:hover{
   transform:none;
+}
+</style>
+
+
+<style id="v49-final-moodle-panel-tuning">
+/* V49 – final visible shell/panel tuning */
+body.start-page-moodle-fit{
+  background:#ffffff !important;
+  padding:8px !important;
+}
+
+.start-page-moodle-fit .overview-shell--moodle-fit{
+  width:100% !important;
+  max-width:650px !important;
+  box-sizing:border-box !important;
+  margin:0 auto !important;
+  padding:10px 9px 20px !important;
+  background:#f3f7fb !important;
+  border:1px solid #d7e5f2 !important;
+  border-radius:20px !important;
+  box-shadow:0 12px 30px rgba(85,120,160,.10) !important;
+  overflow:hidden !important;
+}
+
+/* ca. 0,8 mm weniger als die bisher sichtbaren 18 px */
+.start-page-moodle-fit .overview-roadmap--moodle-fit{
+  gap:15px !important;
+}
+
+.start-page-moodle-fit .overview-card-visual{
+  height:94px !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+.start-page-moodle-fit .overview-card-visual img,
+.start-page-moodle-fit .deko-shared-banner img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:none !important;
+}
+
+/* Karten sauber innerhalb des Außenpanels */
+.start-page-moodle-fit .overview-hero--moodle-fit,
+.start-page-moodle-fit .overview-stage-card--moodle-fit,
+.start-page-moodle-fit .deko-start-steps{
+  box-sizing:border-box !important;
+}
+
+@media (max-width:560px){
+  body.start-page-moodle-fit{padding:5px !important;}
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding:8px 7px 16px !important;
+    border-radius:16px !important;
+  }
+  .start-page-moodle-fit .overview-roadmap--moodle-fit{gap:13px !important;}
 }
 </style>
 
@@ -317,7 +374,7 @@ h1,h2,h3,
       <article class="overview-tile stage-theme-wahrnehmung">
         <div class="overview-stage-card overview-stage-card--moodle-fit theme-wahrnehmung blind-readable overview-stage-card-clickable" data-module-href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521777" data-blind-target="course-block" aria-label="Modul Wahrnehmung öffnen" tabindex="0" role="link">
           <figure class="overview-card-visual" aria-hidden="true">
-            <img src="assets/wahrnehmung-visual-randlos-v45.png?v=45" alt="" loading="lazy" />
+            <img src="assets/wahrnehmung-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
           </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 1</span>
@@ -339,7 +396,7 @@ h1,h2,h3,
           <div class="deko-flip-motion" id="dekoFlipMotionV47">
           <div class="overview-stage-card overview-stage-card--moodle-fit theme-dekomposition blind-readable deko-flip-card" data-blind-target="course-block" aria-label="Dekomposition erweitern" tabindex="0">
             <figure class="overview-card-visual deko-shared-banner" aria-hidden="true">
-              <img src="assets/dekomposition-visual-randlos-v45.png?v=45" alt="" loading="lazy" />
+              <img src="assets/dekomposition-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
             </figure>
 
             <div class="deko-card-state deko-card-state--front" id="dekoCardFrontV47">
@@ -413,7 +470,7 @@ h1,h2,h3,
       <article class="overview-tile stage-theme-approximation">
         <div class="overview-stage-card overview-stage-card--moodle-fit theme-approximation blind-readable overview-stage-card-clickable" data-module-href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521781" data-blind-target="course-block" aria-label="Modul Approximation öffnen" tabindex="0" role="link">
           <figure class="overview-card-visual" aria-hidden="true">
-            <img src="assets/approximation-visual-randlos-v45.png?v=45" alt="" loading="lazy" />
+            <img src="assets/approximation-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
           </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 3</span>
@@ -433,7 +490,7 @@ h1,h2,h3,
       <article class="overview-tile stage-theme-praxiselement">
         <div class="overview-stage-card overview-stage-card--moodle-fit theme-praxiselement blind-readable overview-stage-card-clickable" data-module-href="https://markspringerprivat-cmd.github.io/Start/praxiselement.html#top" data-blind-target="course-block" aria-label="Modul Praxiselement öffnen" tabindex="0" role="link">
           <figure class="overview-card-visual overview-card-visual--praxiselement" aria-hidden="true">
-            <img src="assets/praxiselement-visual-randlos-v45.png?v=45" alt="" loading="lazy" />
+            <img src="assets/praxiselement-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
           </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 4</span>
@@ -453,7 +510,7 @@ h1,h2,h3,
   </main>
   <script src="script.js?v=47"></script>
 
-<script id="deko-v47-isolated-script">
+<script id="deko-v48-parallel-script">
 (function(){
   const motion=document.getElementById('dekoFlipMotionV47');
   const front=document.getElementById('dekoCardFrontV47');
@@ -493,7 +550,11 @@ h1,h2,h3,
     if(busy||showBack===onBack) return;
     busy=true;
 
-    if(!showBack){
+    if(showBack){
+      /* Die Schritt-Kacheln starten gleichzeitig mit der Drehung. */
+      steps.hidden=false;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>steps.classList.add('is-open')));
+    } else {
       steps.classList.remove('is-open');
       await new Promise(r=>setTimeout(r,120));
     }
@@ -511,10 +572,7 @@ h1,h2,h3,
     await tween(-88,0,330,easeOut);
     motion.style.removeProperty('transform');
 
-    if(showBack){
-      steps.hidden=false;
-      requestAnimationFrame(()=>requestAnimationFrame(()=>steps.classList.add('is-open')));
-    } else {
+    if(!showBack){
       steps.hidden=true;
     }
     busy=false;

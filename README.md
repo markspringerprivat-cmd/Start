@@ -1,8 +1,8 @@
-Start_V47_flip_inline_isolated
+Start_V49_panel_banner_up
 
-- Dekompositions-Flip vollständig von altem script.js/CSS entkoppelt.
-- Alle Flip-IDs sind neu (V47), daher können alte Handler nicht mehr binden.
-- Flip-CSS und Flip-JavaScript liegen direkt in index.html.
-- Bewegung wird per requestAnimationFrame berechnet und als Inline-!important-Transform gesetzt.
-- Die gesamte Karte inklusive Banner dreht bis 88°, Inhalt wechselt an der Kante, dann dreht die neue Seite von -88° auf 0°.
-- Banner bleibt dasselbe DOM-Element und wird beim Inhaltswechsel nicht verschoben.
+Änderungen gegenüber V48:
+- alle vier Bannerbilder physisch 34 px nach oben verschoben (nicht mehr nur CSS-object-position)
+- Abstand zwischen den Hauptkacheln von sichtbar ca. 18 px auf 15 px reduziert (~0,8 mm)
+- hellblauer Hintergrund als bewusstes, abgerundetes Außenpanel gestaltet
+- Außenpanel mit feinem Rahmen und weichem Schatten; Moodle-Hintergrund bleibt weiß
+- Flip-Funktion aus der funktionierenden V48 unverändert gelassen

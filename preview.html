@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kursübersicht – Gesprächsführung</title>
-  <link rel="stylesheet" href="style.css?v=45" />
+  <link rel="stylesheet" href="style.css?v=47" />
 
 <style id="h5p-inspired-overrides">
 :root{
@@ -264,6 +264,88 @@ h1,h2,h3,
 }
 </style>
 
+
+<style id="deko-v48-parallel-style">
+/* V47 – isolierter Flip: keine externe Flip-Regel kann diese Bewegungsfläche übernehmen. */
+.start-page-moodle-fit #dekoFlipMotionV47{
+  width:100% !important;
+  transform:none !important;
+  transform-origin:center center !important;
+  transform-style:preserve-3d !important;
+  will-change:transform !important;
+}
+.start-page-moodle-fit #dekoFlipMotionV47 .deko-flip-card{
+  width:100% !important;
+}
+.start-page-moodle-fit #dekoCardFrontV47[hidden],
+.start-page-moodle-fit #dekoCardBackV47[hidden],
+.start-page-moodle-fit #dekoBackMoreV47[hidden],
+.start-page-moodle-fit #dekoStartStepsV47[hidden]{
+  display:none !important;
+}
+/* Hover darf nur Schatten/Border ändern, niemals den Bewegungs-Wrapper. */
+.start-page-moodle-fit #dekoFlipMotionV47:hover{
+  transform:none;
+}
+</style>
+
+
+<style id="v49-final-moodle-panel-tuning">
+/* V49 – final visible shell/panel tuning */
+body.start-page-moodle-fit{
+  background:#ffffff !important;
+  padding:8px !important;
+}
+
+.start-page-moodle-fit .overview-shell--moodle-fit{
+  width:100% !important;
+  max-width:650px !important;
+  box-sizing:border-box !important;
+  margin:0 auto !important;
+  padding:10px 9px 20px !important;
+  background:#f3f7fb !important;
+  border:1px solid #d7e5f2 !important;
+  border-radius:20px !important;
+  box-shadow:0 12px 30px rgba(85,120,160,.10) !important;
+  overflow:hidden !important;
+}
+
+/* ca. 0,8 mm weniger als die bisher sichtbaren 18 px */
+.start-page-moodle-fit .overview-roadmap--moodle-fit{
+  gap:15px !important;
+}
+
+.start-page-moodle-fit .overview-card-visual{
+  height:94px !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+.start-page-moodle-fit .overview-card-visual img,
+.start-page-moodle-fit .deko-shared-banner img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:none !important;
+}
+
+/* Karten sauber innerhalb des Außenpanels */
+.start-page-moodle-fit .overview-hero--moodle-fit,
+.start-page-moodle-fit .overview-stage-card--moodle-fit,
+.start-page-moodle-fit .deko-start-steps{
+  box-sizing:border-box !important;
+}
+
+@media (max-width:560px){
+  body.start-page-moodle-fit{padding:5px !important;}
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding:8px 7px 16px !important;
+    border-radius:16px !important;
+  }
+  .start-page-moodle-fit .overview-roadmap--moodle-fit{gap:13px !important;}
+}
+</style>
+
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">
@@ -292,7 +374,7 @@ h1,h2,h3,
       <article class="overview-tile stage-theme-wahrnehmung">
         <div class="overview-stage-card overview-stage-card--moodle-fit theme-wahrnehmung blind-readable overview-stage-card-clickable" data-module-href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521777" data-blind-target="course-block" aria-label="Modul Wahrnehmung öffnen" tabindex="0" role="link">
           <figure class="overview-card-visual" aria-hidden="true">
-            <img src="assets/wahrnehmung-visual-randlos-v20.png?v=31" alt="" loading="lazy" />
+            <img src="assets/wahrnehmung-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
           </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 1</span>
@@ -309,30 +391,86 @@ h1,h2,h3,
         </div>
       </article>
 
-      <article class="overview-tile stage-theme-dekomposition">
-        <div class="overview-stage-card overview-stage-card--moodle-fit theme-dekomposition blind-readable overview-stage-card-clickable" data-module-href="dekomposition.html#top" data-blind-target="course-block" aria-label="Modul Dekomposition öffnen" tabindex="0" role="link">
-          <figure class="overview-card-visual" aria-hidden="true">
-            <img src="assets/dekomposition-visual-randlos-v20.png?v=31" alt="" loading="lazy" />
-          </figure>
-          <div class="overview-card-content">
-            <span class="block-number">Teil 2</span>
-            <h2>Dekomposition</h2>
-            <p class="overview-stage-subtitle">Unterrichtsgespräche im Safe Space ausprobieren und Feedback erhalten</p>
-            <div class="overview-stage-copy">
-              <p>In Modul 2 lernen Sie, Komponenten zu identifizieren, die für das Gelingen oder Misslingen eines Unterrichtsgesprächs eine wichtige Rolle spielen. Übersichten und Begleittexte tragen dazu bei, sich die Kernpraktik schrittweise zu erschließen und auf diese Weise zu erkennen, worauf es im Detail ankommt bzw. wo typische Do’s und Don’ts aufseiten der Lehrkräfte liegen.</p>
-              <p>Zielsetzung dieses Teils ist es, ein klares Bewusstsein für Bausteine und „Moves“ der Gesprächsführung zu vermitteln und strukturiert wissenschaftliches Wissen um typische Probleme und Handlungsoptionen aufzubauen. Diese Elemente sollen Sie in den nächsten Modulen dann selbst ausprobieren.</p>
+      <article class="overview-tile stage-theme-dekomposition overview-tile--deko-expand" id="dekoStartTileV47">
+        <div class="deko-start-block">
+          <div class="deko-flip-motion" id="dekoFlipMotionV47">
+          <div class="overview-stage-card overview-stage-card--moodle-fit theme-dekomposition blind-readable deko-flip-card" data-blind-target="course-block" aria-label="Dekomposition erweitern" tabindex="0">
+            <figure class="overview-card-visual deko-shared-banner" aria-hidden="true">
+              <img src="assets/dekomposition-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
+            </figure>
+
+            <div class="deko-card-state deko-card-state--front" id="dekoCardFrontV47">
+              <div class="overview-card-content">
+                <span class="block-number">Teil 2</span>
+                <h2>Dekomposition</h2>
+                <p class="overview-stage-subtitle">Unterrichtsgespräche im Safe Space ausprobieren und Feedback erhalten</p>
+                <div class="overview-stage-copy">
+                  <p>In Modul 2 lernen Sie, Komponenten zu identifizieren, die für das Gelingen oder Misslingen eines Unterrichtsgesprächs eine wichtige Rolle spielen. Übersichten und Begleittexte tragen dazu bei, sich die Kernpraktik schrittweise zu erschließen und auf diese Weise zu erkennen, worauf es im Detail ankommt bzw. wo typische Do’s und Don’ts aufseiten der Lehrkräfte liegen.</p>
+                  <p>Zielsetzung dieses Teils ist es, ein klares Bewusstsein für Bausteine und „Moves“ der Gesprächsführung zu vermitteln und strukturiert wissenschaftliches Wissen um typische Probleme und Handlungsoptionen aufzubauen. Diese Elemente sollen Sie in den nächsten Modulen dann selbst ausprobieren.</p>
+                </div>
+              </div>
+              <nav class="overview-stage-button-row overview-stage-button-row--single" aria-label="Dekomposition öffnen">
+                <button class="stage-inline-button blind-readable deko-start-more-button" id="dekoStartMoreButtonV47" type="button">Weiter</button>
+              </nav>
+            </div>
+
+            <div class="deko-card-state deko-card-state--back" id="dekoCardBackV47" hidden>
+              <div class="deko-face-back-content">
+                <span class="block-number">Teil 2 · Dekomposition</span>
+                <h2>Unterrichtsgespräche professionell gestalten</h2>
+                <div class="deko-back-copy deko-back-copy--preview" id="dekoBackPreviewV47">
+                  <p>Gemeinhin denkt man beim Stichwort Unterrichtsgespräch an eine Lehrkraft, die Lernenden innerhalb der gesamten Klasse – im Plenum oder frontal – Fragen stellt oder Gesprächsimpulse setzt, deren Antworten entgegennimmt und kurz bewertet („Genau“, „Das geht in die richtige Richtung“ o. Ä.) und dann weitere Lernende aufruft, bis diese Unterrichtsphase schließlich beendet wird. Die meisten Gespräche im Klassenraum laufen immer noch in einem solchen wiederkehrenden Dreischritt von Frage–Antwort–Evaluation ab (sog. <strong>IRE-Sequenz, Initiation–Reply–Evaluation</strong>).</p>
+                </div>
+                <div class="deko-back-copy deko-back-copy--more" id="dekoBackMoreV47" hidden>
+                  <p>Daran ist nichts grundsätzlich falsch; oftmals wird dieses Vorgehen aber von Lehrkräften wie auch Lernenden als <strong>wenig herausfordernd oder gewinnbringend</strong> erlebt, insbesondere wenn es darauf hinausläuft, dass lediglich einfache Fakten abgefragt werden oder Lernende den Eindruck gewinnen, sie müssten nur eine bestimmte Antwort produzieren, die die Lehrkraft hören will (sog. <strong>Osterhasenpädagogik</strong>).</p>
+                  <p>Die Art von Gespräch, die wir in dieser Lerneinheit im Sinn haben, unterscheidet sich davon, indem sie darauf abzielt, <strong>höhere Denkfähigkeiten anzuregen, gemeinsam ein Problem zu untersuchen und unter Berücksichtigung der Beiträge anderer nach Interpretationen, Lösungen oder Erklärungen zu suchen</strong>. Für derartige, qualitativ hochstehende Gespräche gibt es verschiedene Begriffe: Manche nennen sie „dialogisch“, „diskursförderlich“ oder „produktiv“, im englischsprachigen Bereich spricht man z. B. von „accountable talk“ (vgl. Resnick et al. 2018). Im Hintergrund steht die Idee, dass die „kognitive Aktivierung“ der Lernenden ein unabdingbares Prozessmerkmal – eine Basisdimension – guten Unterrichts darstellt.</p>
+                  <p>Um zu verstehen, welche Möglichkeiten Lehrkräfte haben, ein professionelles Unterrichtsgespräch in diesem Verständnis zu inszenieren, ist es notwendig, dass Sie in <em>einem ersten Schritt</em> einen Überblick über die verschiedenen Bestandteile – Komponenten – von Unterrichtsgesprächen erwerben. In einem zweiten Schritt geht es anschließend darum, Wissen darüber zu erwerben, wie Lehrkräfte innerhalb dieser Komponenten dafür Sorge tragen können, dass diese möglichst anregend gestaltet werden; es geht um <em>Do’s und Don’ts, durchaus im Sinne von wissenschaftlich begründeten Handlungsempfehlungen</em> für Ihre eigenen Gespräche in den folgenden Modulen. Das Modul endet mit einem Quiz und einer zusammenfassenden Übersicht zu Qualitätskriterien guter Unterrichtsgespräche.</p>
+                </div>
+                <button class="deko-inline-readmore" id="dekoBackReadMoreV47" type="button" aria-expanded="false" aria-controls="dekoBackMoreV47">Weiterlesen</button>
+              </div>
+              <nav class="deko-back-actions" aria-label="Aktionen Dekomposition">
+                <button class="stage-inline-button deko-back-button" id="dekoStartBackButtonV47" type="button">Zurück</button>
+                <a class="stage-inline-button deko-back-button deko-back-button--primary" href="https://markspringerprivat-cmd.github.io/Start/dekomposition.html#top" target="_top">Zur Modulseite</a>
+              </nav>
             </div>
           </div>
-          <nav class="overview-stage-button-row overview-stage-button-row--single" aria-label="Direktlink Dekomposition">
-            <a class="stage-inline-button blind-readable" data-blind-target="course-topic-link" href="dekomposition.html#top" target="_top">Zum Modul</a>
-          </nav>
+          </div>
+
+          <section class="deko-start-steps" id="dekoStartStepsV47" aria-label="Schritte der Dekomposition" hidden>
+            <div class="deko-start-steps-grid">
+              <a class="deko-start-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1506161" target="_top">
+                <span class="deko-start-step-label">Schritt 1</span>
+                <span class="deko-start-step-title">Gespräche vorbereiten</span>
+              </a>
+              <a class="deko-start-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494695" target="_top">
+                <span class="deko-start-step-label">Schritt 2</span>
+                <span class="deko-start-step-title">Gespräche eröffnen</span>
+              </a>
+              <a class="deko-start-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494696" target="_top">
+                <span class="deko-start-step-label">Schritt 3</span>
+                <span class="deko-start-step-title">Beiträge anregen</span>
+              </a>
+              <a class="deko-start-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494699" target="_top">
+                <span class="deko-start-step-label">Schritt 4</span>
+                <span class="deko-start-step-title">Beiträge von Lernenden</span>
+              </a>
+              <a class="deko-start-step-card" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1494697" target="_top">
+                <span class="deko-start-step-label">Schritt 5</span>
+                <span class="deko-start-step-title">Ergebnisse sichern &amp; Gespräche abschließen</span>
+              </a>
+              <div class="deko-start-step-card is-placeholder" aria-disabled="true">
+                <span class="deko-start-step-label">Schritt 6</span>
+                <span class="deko-start-step-title">Platzhalter</span>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
 
       <article class="overview-tile stage-theme-approximation">
-        <div class="overview-stage-card overview-stage-card--moodle-fit theme-approximation blind-readable overview-stage-card-clickable" data-module-href="approximation.html#top" data-blind-target="course-block" aria-label="Modul Approximation öffnen" tabindex="0" role="link">
+        <div class="overview-stage-card overview-stage-card--moodle-fit theme-approximation blind-readable overview-stage-card-clickable" data-module-href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521781" data-blind-target="course-block" aria-label="Modul Approximation öffnen" tabindex="0" role="link">
           <figure class="overview-card-visual" aria-hidden="true">
-            <img src="assets/approximation-visual-randlos-v20.png?v=31" alt="" loading="lazy" />
+            <img src="assets/approximation-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
           </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 3</span>
@@ -344,14 +482,16 @@ h1,h2,h3,
             </div>
           </div>
           <nav class="overview-stage-button-row overview-stage-button-row--single" aria-label="Direktlink Approximation">
-            <a class="stage-inline-button blind-readable" data-blind-target="course-topic-link" href="approximation.html#top" target="_top">Zum Modul</a>
+            <a class="stage-inline-button blind-readable" data-blind-target="course-topic-link" href="https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521781" target="_top">Zum Modul</a>
           </nav>
         </div>
       </article>
 
       <article class="overview-tile stage-theme-praxiselement">
-        <div class="overview-stage-card overview-stage-card--moodle-fit theme-praxiselement blind-readable overview-stage-card-clickable" data-module-href="praxiselement.html#top" data-blind-target="course-block" aria-label="Modul Praxiselement öffnen" tabindex="0" role="link">
-          <div class="overview-card-visual overview-card-visual--praxiselement" aria-hidden="true"></div>
+        <div class="overview-stage-card overview-stage-card--moodle-fit theme-praxiselement blind-readable overview-stage-card-clickable" data-module-href="https://markspringerprivat-cmd.github.io/Start/praxiselement.html#top" data-blind-target="course-block" aria-label="Modul Praxiselement öffnen" tabindex="0" role="link">
+          <figure class="overview-card-visual overview-card-visual--praxiselement" aria-hidden="true">
+            <img src="assets/praxiselement-visual-randlos-v49.png?v=49" alt="" loading="lazy" />
+          </figure>
           <div class="overview-card-content">
             <span class="block-number">Teil 4</span>
             <h2>Praxiselement</h2>
@@ -362,11 +502,103 @@ h1,h2,h3,
             </div>
           </div>
           <nav class="overview-stage-button-row overview-stage-button-row--single" aria-label="Direktlink Praxiselement">
-            <a class="stage-inline-button blind-readable" data-blind-target="course-topic-link" href="praxiselement.html#top" target="_top">Zum Modul</a>
+            <a class="stage-inline-button blind-readable" data-blind-target="course-topic-link" href="https://markspringerprivat-cmd.github.io/Start/praxiselement.html#top" target="_top">Zum Modul</a>
           </nav>
         </div>
       </article>
     </section>
   </main>
+  <script src="script.js?v=47"></script>
+
+<script id="deko-v48-parallel-script">
+(function(){
+  const motion=document.getElementById('dekoFlipMotionV47');
+  const front=document.getElementById('dekoCardFrontV47');
+  const back=document.getElementById('dekoCardBackV47');
+  const next=document.getElementById('dekoStartMoreButtonV47');
+  const prev=document.getElementById('dekoStartBackButtonV47');
+  const steps=document.getElementById('dekoStartStepsV47');
+  const read=document.getElementById('dekoBackReadMoreV47');
+  const more=document.getElementById('dekoBackMoreV47');
+  if(!motion||!front||!back||!next||!prev||!steps) return;
+
+  let onBack=false;
+  let busy=false;
+
+  const easeInOut=t => t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2;
+  const easeOut=t => 1-Math.pow(1-t,4);
+
+  function forceTransform(deg){
+    motion.style.setProperty('transform',`perspective(1250px) rotateY(${deg}deg)`,'important');
+  }
+
+  function tween(from,to,duration,ease){
+    return new Promise(resolve=>{
+      const start=performance.now();
+      function frame(now){
+        const p=Math.min(1,(now-start)/duration);
+        const v=from+(to-from)*ease(p);
+        forceTransform(v);
+        if(p<1) requestAnimationFrame(frame);
+        else resolve();
+      }
+      requestAnimationFrame(frame);
+    });
+  }
+
+  async function flip(showBack){
+    if(busy||showBack===onBack) return;
+    busy=true;
+
+    if(showBack){
+      /* Die Schritt-Kacheln starten gleichzeitig mit der Drehung. */
+      steps.hidden=false;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>steps.classList.add('is-open')));
+    } else {
+      steps.classList.remove('is-open');
+      await new Promise(r=>setTimeout(r,120));
+    }
+
+    /* Ganze Karte bis fast zur Seitenkante drehen. */
+    await tween(0,88,300,easeInOut);
+
+    /* In der praktisch unsichtbaren Kantenstellung den Karteninhalt tauschen. */
+    onBack=showBack;
+    front.hidden=showBack;
+    back.hidden=!showBack;
+    forceTransform(-88);
+
+    /* Neue Kartenfläche von der anderen Seite wieder aufdrehen. */
+    await tween(-88,0,330,easeOut);
+    motion.style.removeProperty('transform');
+
+    if(!showBack){
+      steps.hidden=true;
+    }
+    busy=false;
+  }
+
+  next.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();flip(true);});
+  prev.addEventListener('click',e=>{
+    e.preventDefault();e.stopPropagation();
+    if(more&&!more.hidden){
+      more.hidden=true;
+      if(read){read.setAttribute('aria-expanded','false');read.textContent='Weiterlesen';}
+    }
+    flip(false);
+  });
+
+  if(read&&more){
+    read.addEventListener('click',e=>{
+      e.preventDefault();e.stopPropagation();
+      const open=read.getAttribute('aria-expanded')==='true';
+      more.hidden=open;
+      read.setAttribute('aria-expanded',String(!open));
+      read.textContent=open?'Weiterlesen':'Weniger anzeigen';
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
