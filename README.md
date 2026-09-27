@@ -1,8 +1,11 @@
-Start_V33_Dekomposition_fix
+Start_V34_spacing_hover_fix
 
-Fixes:
-- Dekomposition-Link auf der Startseite auf absolute GitHub-URL umgestellt.
-- Gleiches für Approximation und Praxiselement, damit die Navigation aus Moodle/H5P zuverlässig aufgelöst wird.
-- Fehlende schließende HTML-Tags im nachgebauten Moodle-Header der Unterseiten ergänzt.
-- Dekompositions-Rücklink auf absolute GitHub-Startseite gesetzt.
-- Inhalte/Texte der Module nicht verändert.
+Änderungen gegenüber V33:
+- deutlich kleinere Abstände zwischen Unterüberschrift und Fließtext
+- Absätze nur noch mit einem kleinen, gleichmäßigen Abstand
+- Fließtext und Unterüberschrift etwas größer für bessere Lesbarkeit
+- Textbereiche etwas breiter genutzt
+- weißer Freiraum um den „Zum Modul“-Button entfernt
+- Kartenfuß übernimmt nun beim Hover die gleiche Hintergrundfärbung wie die restliche Kachel
+- Button selbst bleibt klar weiß/leicht transparent abgegrenzt
+- keine Texte geändert
