@@ -1,8 +1,10 @@
-Start_V35_deko_expand_gradient
+Start_V36_deko_modern
 
-Änderungen:
-- Dekomposition: Beim Aufklappen bleibt der erste Textblock nicht mehr verblasst / blurry.
-- Verlauf-Overlay der Vorschau wird im ausgeklappten Zustand entfernt.
-- Farbkodierung für die 6 Dekompositions-Kacheln ergänzt: grün -> türkis -> blau -> gelb -> orange -> rot.
-- Hover-/Fokus-Farben der Kacheln passend zur jeweiligen Kachelfarbe ergänzt.
-- Keine Textinhalte geändert.
+Änderungen an der Dekompositionsseite:
+- Karten bleiben vollständig weiß; nur die obere Farbleiste trägt die Farbcodierung.
+- Farbleiter logisch neu aufgebaut: Grün -> Gelbgrün -> Gelb -> Amber -> Orange -> Rot.
+- Blauton aus der Schwierigkeitsskala entfernt.
+- Hover bleibt weiß und arbeitet nur mit passendem Farbrand/Schatten und leichtem Anheben.
+- Einheitliche Schriftfamilie und Schriftwirkung zwischen Hauptüberschrift und Kachelüberschriften.
+- Rahmen, Rundungen, Abstände und Schatten moderner gestaltet.
+- Textinhalte unverändert.

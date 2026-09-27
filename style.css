@@ -4917,3 +4917,99 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
   border-top-color:var(--step-accent)!important;
   background:linear-gradient(180deg,#ffffff 0%, var(--step-accent-soft) 100%)!important;
 }
+
+/* v36: Dekomposition – modernisierte, konsistente Karten */
+.deko-intro-card h1,
+.deko-step-title,
+.deko-step-label,
+.deko-read-more,
+.deko-nav-hint {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.deko-intro-card h1 {
+  font-weight: 750 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.deko-step-grid {
+  gap: 20px !important;
+}
+
+.deko-step-card {
+  --step-accent: #67ad4d;
+  --step-shadow-color: rgba(17,24,39,.08);
+  min-height: 176px !important;
+  padding: 28px 22px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(17,24,39,.20) !important;
+  border-top: 8px solid var(--step-accent) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 8px 20px rgba(17,24,39,.055) !important;
+  transition:
+    transform 210ms cubic-bezier(.16,1,.3,1),
+    box-shadow 210ms cubic-bezier(.16,1,.3,1),
+    border-color 210ms ease !important;
+}
+
+.deko-step-card:hover,
+.deko-step-card:focus-visible {
+  background: #ffffff !important;
+  transform: translateY(-4px) !important;
+  border-color: color-mix(in srgb, var(--step-accent) 48%, rgba(17,24,39,.18)) !important;
+  border-top-color: var(--step-accent) !important;
+  box-shadow:
+    0 14px 30px color-mix(in srgb, var(--step-accent) 15%, rgba(17,24,39,.08)),
+    0 3px 8px rgba(17,24,39,.045) !important;
+  outline: none !important;
+}
+
+.deko-step-label {
+  margin-bottom: 10px !important;
+  color: #687386 !important;
+  font-size: .76rem !important;
+  line-height: 1.2 !important;
+  font-weight: 750 !important;
+  letter-spacing: .105em !important;
+}
+
+.deko-step-title {
+  color: #111827 !important;
+  font-size: clamp(1.18rem,1.28vw,1.44rem) !important;
+  line-height: 1.18 !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.deko-step-card:hover .deko-step-label,
+.deko-step-card:focus-visible .deko-step-label {
+  color: color-mix(in srgb, var(--step-accent) 65%, #475569) !important;
+}
+
+.deko-step-card:hover .deko-step-title,
+.deko-step-card:focus-visible .deko-step-title {
+  color: #111827 !important;
+}
+
+/* Saubere Schwierigkeitsskala: Grün -> Gelbgrün -> Gelb -> Amber -> Orange -> Rot */
+.deko-step-card--1 { --step-accent: #63ad4f; }
+.deko-step-card--2 { --step-accent: #94b84a; }
+.deko-step-card--3 { --step-accent: #c9b943; }
+.deko-step-card--4 { --step-accent: #dda441; }
+.deko-step-card--5 { --step-accent: #df7d43; }
+.deko-step-card--6 { --step-accent: #d45f5f; }
+
+.deko-step-card.is-placeholder {
+  opacity: .72 !important;
+  background: #ffffff !important;
+  border-top-color: var(--step-accent) !important;
+}
+
+.deko-step-card.is-placeholder:hover,
+.deko-step-card.is-placeholder:focus-visible {
+  background: #ffffff !important;
+  transform: none !important;
+  border-color: rgba(17,24,39,.20) !important;
+  border-top-color: var(--step-accent) !important;
+  box-shadow: 0 8px 20px rgba(17,24,39,.055) !important;
+}
