@@ -874,10 +874,11 @@ setupCourseFlyouts();
 
 
 
-// v45: stabiler Kartenflip als Zusammenklappen -> Inhaltswechsel -> Aufklappen.
+// v46: Kartenflip auf separatem Bewegungs-Wrapper, damit Hover-Transforms nicht kollidieren.
 (function(){
   const tile = document.getElementById('dekoStartTile');
   const card = tile ? tile.querySelector('.deko-flip-card') : null;
+  const motion = document.getElementById('dekoFlipMotion');
   const front = document.getElementById('dekoCardFront');
   const back = document.getElementById('dekoCardBack');
   const moreBtn = document.getElementById('dekoStartMoreButton');
@@ -886,12 +887,22 @@ setupCourseFlyouts();
   const readMoreBtn = document.getElementById('dekoBackReadMore');
   const moreText = document.getElementById('dekoBackMore');
 
-  if (!card || !front || !back || !moreBtn || !backBtn || !steps) return;
+  if (!card || !motion || !front || !back || !moreBtn || !backBtn || !steps) return;
 
   let showingBack = false;
   let animating = false;
 
-  const wait = (ms) => new Promise(resolve => window.setTimeout(resolve, ms));
+  function animateMotion(keyframes, options){
+    if (typeof motion.animate === 'function') {
+      const animation = motion.animate(keyframes, options);
+      return animation.finished.catch(() => undefined);
+    }
+    return new Promise(resolve => {
+      motion.style.transition = `transform ${options.duration || 260}ms ${options.easing || 'ease'}`;
+      motion.style.transform = keyframes[keyframes.length - 1].transform;
+      window.setTimeout(resolve, options.duration || 260);
+    });
+  }
 
   async function flipTo(toBack){
     if (animating || showingBack === toBack) return;
@@ -899,22 +910,38 @@ setupCourseFlyouts();
 
     if (!toBack) {
       steps.classList.remove('is-open');
-      await wait(140);
+      await new Promise(resolve => window.setTimeout(resolve, 120));
     }
 
-    // Ganze Karte klappt auf ihre schmale Kante zusammen.
-    card.classList.add('is-squashed');
-    await wait(280);
+    // 1. Ganze Kartenbox klappt bis auf eine schmale Kante zusammen.
+    await animateMotion([
+      { transform: 'perspective(1200px) scaleX(1)' },
+      { transform: 'perspective(1200px) scaleX(0.035)' }
+    ], {
+      duration: 270,
+      easing: 'cubic-bezier(.55,.08,.35,1)',
+      fill: 'forwards'
+    });
 
-    // Inhalt exakt an der schmalen Kante tauschen. Der Banner bleibt dasselbe DOM-Element.
+    // 2. An der Kante wird nur der Inhalt gewechselt. Banner bleibt dasselbe DOM-Element.
     showingBack = toBack;
     front.hidden = toBack;
     back.hidden = !toBack;
 
-    // Browser einen Frame geben und dann die ganze Karte wieder aufklappen.
-    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-    card.classList.remove('is-squashed');
-    await wait(300);
+    // 3. Neue Kartenfläche klappt wieder vollständig auf.
+    await animateMotion([
+      { transform: 'perspective(1200px) scaleX(0.035)' },
+      { transform: 'perspective(1200px) scaleX(1)' }
+    ], {
+      duration: 290,
+      easing: 'cubic-bezier(.2,.8,.2,1)',
+      fill: 'forwards'
+    });
+
+    // Endzustand sauber zurücksetzen, damit keine Animation den Hover beeinflusst.
+    motion.getAnimations().forEach(a => a.cancel());
+    motion.style.transform = 'none';
+    motion.style.transition = '';
 
     if (toBack) {
       steps.hidden = false;
@@ -955,11 +982,4 @@ setupCourseFlyouts();
       readMoreBtn.textContent = isOpen ? 'Weiterlesen' : 'Weniger anzeigen';
     });
   }
-
-  card.addEventListener('keydown', (event) => {
-    if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {
-      event.preventDefault();
-      flipTo(!showingBack);
-    }
-  });
 })();

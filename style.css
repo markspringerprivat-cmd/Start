@@ -5675,3 +5675,15 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
     transition: none !important;
   }
 }
+
+/* v46: Flip-Bewegung auf eigenem Wrapper – unabhängig vom Karten-Hover */
+.start-page-moodle-fit #dekoFlipMotion {
+  width: 100% !important;
+  transform-origin: center center !important;
+  will-change: transform !important;
+}
+
+/* Die Karte selbst darf weiterhin ihren Hover-Effekt haben; der Flip liegt eine Ebene darüber. */
+.start-page-moodle-fit #dekoFlipMotion .deko-flip-card {
+  width: 100% !important;
+}

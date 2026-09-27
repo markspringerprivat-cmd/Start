@@ -1,8 +1,12 @@
-Start_V45_flip_banner_crop
+Start_V46_flip_wrapper_fix
 
-Änderungen:
-- Flip-Effekt komplett neu aufgebaut: ganze Karte klappt horizontal zusammen, Inhalt wird an der Kante gewechselt, danach klappt die Karte wieder auf.
-- Kein Spiegeltext und keine Abhängigkeit mehr von rotateY/backface-visibility.
-- Banner der Dekompositionskarte ist ein einziges gemeinsames Element und kann beim Flip nicht mehr springen.
-- Alle vier Bannerbilder physisch auf 2172×340 zugeschnitten; der Ausschnitt ist nach oben versetzt und nicht mehr von object-position-Prozentwerten abhängig.
-- Startseite lädt style.css/script.js mit v=45, damit Browser/Moodle nicht die alte Version aus dem Cache nimmt.
+Ursache des bisherigen Flip-Problems:
+- Eine später geladene Hover-CSS-Regel setzte auf der Dekompositionskarte transform: translateY(-2px) !important.
+- Dadurch wurde der Flip-Transform derselben Karte während des Maus-Hovers überschrieben.
+
+Fix:
+- Die Flip-Bewegung läuft nun auf einem eigenen äußeren Wrapper (#dekoFlipMotion).
+- Hover-Transform der Karte und Flip-Transform liegen damit auf zwei verschiedenen DOM-Ebenen und können sich nicht mehr überschreiben.
+- Animation wird zusätzlich über die Web Animations API ausgeführt.
+- Inhalt wird an der schmalsten Stelle gewechselt; der Banner bleibt dasselbe DOM-Element.
+- style.css und script.js auf v46 gesetzt.
