@@ -872,31 +872,57 @@ setupCourseFlyouts();
 })();
 
 
-// v41: Dekomposition-Flip-Kachel auf der Startseite
+// v42: vollständiger Karten-Flip + Weiterlesen + dynamische Kartenhöhe
 (function(){
   const tile = document.getElementById('dekoStartTile');
   const flipCard = tile ? tile.querySelector('.deko-flip-card') : null;
+  const front = tile ? tile.querySelector('.deko-face--front') : null;
+  const back = tile ? tile.querySelector('.deko-face--back') : null;
   const moreBtn = document.getElementById('dekoStartMoreButton');
   const backBtn = document.getElementById('dekoStartBackButton');
   const steps = document.getElementById('dekoStartSteps');
+  const readMoreBtn = document.getElementById('dekoBackReadMore');
+  const moreText = document.getElementById('dekoBackMore');
 
-  if (!tile || !flipCard || !moreBtn || !backBtn || !steps) return;
+  if (!tile || !flipCard || !front || !back || !moreBtn || !backBtn || !steps) return;
+
+  function setCardHeight(face, animate = true) {
+    if (!face) return;
+    if (!animate) {
+      const oldTransition = flipCard.style.transition;
+      flipCard.style.transition = 'none';
+      flipCard.style.height = Math.ceil(face.scrollHeight) + 'px';
+      void flipCard.offsetHeight;
+      flipCard.style.transition = oldTransition;
+      return;
+    }
+    flipCard.style.height = Math.ceil(face.scrollHeight) + 'px';
+  }
 
   function openDekoStart() {
+    setCardHeight(front, false);
+    void flipCard.offsetWidth;
     flipCard.classList.add('is-flipped');
+    requestAnimationFrame(() => setCardHeight(back, true));
     steps.hidden = false;
-    requestAnimationFrame(() => {
-      steps.classList.add('is-open');
-    });
+    requestAnimationFrame(() => steps.classList.add('is-open'));
   }
 
   function closeDekoStart() {
+    if (moreText && !moreText.hidden) {
+      moreText.hidden = true;
+      if (readMoreBtn) {
+        readMoreBtn.setAttribute('aria-expanded','false');
+        readMoreBtn.textContent = 'Weiterlesen';
+      }
+    }
+    setCardHeight(back, false);
+    void flipCard.offsetWidth;
     flipCard.classList.remove('is-flipped');
+    requestAnimationFrame(() => setCardHeight(front, true));
     steps.classList.remove('is-open');
     const afterClose = () => {
-      if (!steps.classList.contains('is-open')) {
-        steps.hidden = true;
-      }
+      if (!steps.classList.contains('is-open')) steps.hidden = true;
       steps.removeEventListener('transitionend', afterClose);
     };
     steps.addEventListener('transitionend', afterClose);
@@ -914,14 +940,30 @@ setupCourseFlyouts();
     closeDekoStart();
   });
 
-  flipCard.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+  if (readMoreBtn && moreText) {
+    readMoreBtn.addEventListener('click', (event) => {
       event.preventDefault();
-      if (flipCard.classList.contains('is-flipped')) {
-        closeDekoStart();
-      } else {
-        openDekoStart();
-      }
+      event.stopPropagation();
+      const isOpen = readMoreBtn.getAttribute('aria-expanded') === 'true';
+      moreText.hidden = isOpen;
+      readMoreBtn.setAttribute('aria-expanded', String(!isOpen));
+      readMoreBtn.textContent = isOpen ? 'Weiterlesen' : 'Weniger anzeigen';
+      requestAnimationFrame(() => setCardHeight(back, true));
+    });
+  }
+
+  flipCard.addEventListener('keydown', (event) => {
+    if ((event.key === 'Enter' || event.key === ' ') && event.target === flipCard) {
+      event.preventDefault();
+      if (flipCard.classList.contains('is-flipped')) closeDekoStart();
+      else openDekoStart();
     }
   });
+
+  window.addEventListener('resize', () => {
+    setCardHeight(flipCard.classList.contains('is-flipped') ? back : front, false);
+  });
+
+  if (document.readyState === 'complete') setCardHeight(front, false);
+  else window.addEventListener('load', () => setCardHeight(front, false), {once:true});
 })();

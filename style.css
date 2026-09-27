@@ -5289,3 +5289,206 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
     min-height: 96px;
   }
 }
+
+/* v42: vollständiger Karten-Flip, Banner auf Rückseite, Weiterlesen, Farbcodierung */
+.start-page-moodle-fit .deko-start-block {
+  perspective: 1500px;
+}
+
+.start-page-moodle-fit .deko-flip-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 780ms cubic-bezier(.22,.9,.18,1), height 420ms ease, box-shadow .18s ease;
+  height: auto;
+  min-height: 0 !important;
+  overflow: visible !important;
+  border-radius: 14px !important;
+}
+
+.start-page-moodle-fit .deko-flip-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.start-page-moodle-fit .deko-flip-inner {
+  position: relative;
+  width: 100%;
+  min-height: 0 !important;
+  height: 100%;
+  transform: none !important;
+  transform-style: preserve-3d;
+  transition: none !important;
+}
+
+.start-page-moodle-fit .deko-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #fff;
+}
+
+.start-page-moodle-fit .deko-face--front {
+  position: relative;
+  z-index: 2;
+}
+
+.start-page-moodle-fit .deko-face--back {
+  transform: rotateY(180deg);
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+}
+
+.start-page-moodle-fit .deko-face--back .deko-back-banner {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 94px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.start-page-moodle-fit .deko-face--back .deko-back-banner img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 42% !important;
+}
+
+.start-page-moodle-fit .deko-face-back-content {
+  padding: 16px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.start-page-moodle-fit .deko-face--back h2 {
+  margin: 0 0 2px !important;
+  text-align: center;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+  font-size: 1.55rem !important;
+  line-height: 1.12 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  color: #21344d !important;
+}
+
+.start-page-moodle-fit .deko-back-copy {
+  display: grid;
+  gap: 9px;
+}
+
+.start-page-moodle-fit .deko-back-copy p {
+  margin: 0 !important;
+  max-width: 100%;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+  font-size: 0.79rem !important;
+  line-height: 1.48 !important;
+  font-weight: 400 !important;
+  color: #485f78 !important;
+  text-align: center !important;
+}
+
+.start-page-moodle-fit .deko-back-copy--preview {
+  position: relative;
+}
+
+.start-page-moodle-fit .deko-back-copy--more[hidden] {
+  display: none !important;
+}
+
+.start-page-moodle-fit .deko-inline-readmore {
+  align-self: center;
+  min-width: 136px;
+  margin: 4px auto 0;
+  min-height: 34px;
+  padding: 6px 14px;
+  border: 1px solid #bfd3e6;
+  border-radius: 9px;
+  background: #fff;
+  color: #294e73;
+  font: inherit;
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(117,149,186,.08);
+}
+
+.start-page-moodle-fit .deko-inline-readmore:hover,
+.start-page-moodle-fit .deko-inline-readmore:focus-visible {
+  background: #eef6ff;
+  border-color: #a9c8e3;
+  outline: none;
+}
+
+.start-page-moodle-fit .deko-back-actions {
+  margin-top: auto;
+  padding: 12px 18px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  border-top: 1px solid #e0eaf3;
+  background: rgba(248,251,255,.92);
+}
+
+/* Schritt-Kacheln: weiß, nur oberer Farbbalken – Grün bis Rot */
+.start-page-moodle-fit .deko-start-step-card {
+  --step-accent:#7bb7ea;
+  background: #ffffff !important;
+  border: 1px solid #d7e4f0 !important;
+  border-top: 5px solid var(--step-accent) !important;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+}
+
+.start-page-moodle-fit .deko-start-step-card:nth-child(1){ --step-accent:#67b34a; }
+.start-page-moodle-fit .deko-start-step-card:nth-child(2){ --step-accent:#91bd47; }
+.start-page-moodle-fit .deko-start-step-card:nth-child(3){ --step-accent:#c9c74a; }
+.start-page-moodle-fit .deko-start-step-card:nth-child(4){ --step-accent:#dfae43; }
+.start-page-moodle-fit .deko-start-step-card:nth-child(5){ --step-accent:#e58a42; }
+.start-page-moodle-fit .deko-start-step-card:nth-child(6){ --step-accent:#d96865; }
+
+.start-page-moodle-fit .deko-start-step-card:hover,
+.start-page-moodle-fit .deko-start-step-card:focus-visible {
+  border-color: color-mix(in srgb, var(--step-accent) 55%, #d7e4f0) !important;
+  border-top-color: var(--step-accent) !important;
+  background: #fff !important;
+  box-shadow: 0 13px 26px color-mix(in srgb, var(--step-accent) 18%, rgba(117,149,186,.12)) !important;
+}
+
+.start-page-moodle-fit .deko-start-step-label,
+.start-page-moodle-fit .deko-start-step-title {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+}
+
+.start-page-moodle-fit .deko-start-step-label {
+  color: color-mix(in srgb, var(--step-accent) 55%, #5d7187) !important;
+  font-size: .7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .08em !important;
+}
+
+.start-page-moodle-fit .deko-start-step-title {
+  color: #21344d !important;
+  font-size: 1.02rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width:560px){
+  .start-page-moodle-fit .deko-face-back-content {
+    padding: 14px 15px 12px;
+  }
+  .start-page-moodle-fit .deko-face--back h2 {
+    font-size: 1.35rem !important;
+  }
+  .start-page-moodle-fit .deko-back-actions {
+    grid-template-columns: 1fr;
+  }
+}

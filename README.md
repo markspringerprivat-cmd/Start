@@ -1,10 +1,12 @@
-Start_V41_deko_flip_expand
+Start_V42_deko_fullcard_flip
 
 Änderungen:
-- Dekomposition-Kachel auf der Startseite mit Weiter-Button versehen
-- Klick auf Weiter löst eine 180°-Flip-Animation aus
-- Rückseite zeigt Titel "Unterrichtsgespräche professionell gestalten" und Einleitungstext
-- Unterhalb der Kachel klappt ein Bereich mit 6 kleineren Schritt-Kacheln auf
-- Schritt-Kacheln blenden nacheinander weich ein
-- Zurück-Button schließt den Bereich wieder
-- Keine Änderungen an den übrigen Texten und Links der Startseite
+- komplette Dekompositions-Karte dreht sich nun als Ganzes um 180°
+- Bannerbild ist auch auf der Rückseite sichtbar
+- Rückseite enthält den vollständigen Einleitungstext der Dekompositionsseite
+- "Weiterlesen" / "Weniger anzeigen" klappt den vollständigen Text auf und zu
+- Kartenhöhe passt sich beim Aufklappen dynamisch an
+- 6 Schritt-Kacheln übernehmen wieder die Farbcodierung Grün -> Gelbgrün -> Gelb -> Amber -> Orange -> Rot
+- Schritt-Kacheln bleiben weiß; Farbe nur im oberen Balken und dezentem Hover
+- Schriftart und Schriftgewichte der kleinen Kacheln an die übrigen Überschriften angeglichen
+- übrige Texte und Links unverändert
