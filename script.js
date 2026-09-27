@@ -873,7 +873,7 @@ setupCourseFlyouts();
 
 
 
-// v43: robuster Vollkarten-Flip mit Inhaltswechsel bei 90° (kein Spiegeltext)
+// v44: robuster Kartenflip mit Web Animations API + Inhaltswechsel bei 90°
 (function(){
   const tile = document.getElementById('dekoStartTile');
   const flipCard = tile ? tile.querySelector('.deko-flip-card') : null;
@@ -887,14 +887,26 @@ setupCourseFlyouts();
 
   let showingBack = false;
   let animating = false;
-  const flipDuration = 320;
 
-  function swapFace(toBack) {
+  async function halfFlip(fromDeg, toDeg, duration = 260) {
+    const animation = flipCard.animate(
+      [
+        { transform: `perspective(1200px) rotateY(${fromDeg}deg) scale(1)` },
+        { transform: `perspective(1200px) rotateY(${toDeg}deg) scale(.985)` }
+      ],
+      {
+        duration,
+        easing: 'cubic-bezier(.55,.08,.35,1)',
+        fill: 'forwards'
+      }
+    );
+    try { await animation.finished; } catch (_) {}
+    animation.cancel();
+  }
+
+  async function swapFace(toBack) {
     if (animating || showingBack === toBack) return;
     animating = true;
-
-    const outClass = toBack ? 'flip-out-forward' : 'flip-out-backward';
-    const inClass = toBack ? 'flip-in-from-back' : 'flip-in-from-front';
 
     if (!toBack) {
       steps.classList.remove('is-open');
@@ -903,29 +915,25 @@ setupCourseFlyouts();
       }, 430);
     }
 
-    flipCard.classList.add(outClass);
+    // Erste Hälfte: aktuelle Seite bis 90° wegdrehen.
+    await halfFlip(0, toBack ? 90 : -90, 250);
 
-    window.setTimeout(() => {
-      showingBack = toBack;
-      flipCard.classList.toggle('show-back', toBack);
-      flipCard.classList.remove(outClass);
+    // Exakt an der Kante den Inhalt austauschen – dadurch niemals Spiegeltext.
+    showingBack = toBack;
+    flipCard.classList.toggle('show-back', toBack);
 
-      // Neue Seite an der gegenüberliegenden 90°-Kante einsetzen.
-      flipCard.classList.add(inClass);
-      void flipCard.offsetWidth;
+    // Zweite Hälfte: neue Seite von der gegenüberliegenden Kante einblenden.
+    await halfFlip(toBack ? -90 : 90, 0, 280);
 
+    flipCard.style.transform = '';
+    animating = false;
+
+    if (toBack) {
+      steps.hidden = false;
       requestAnimationFrame(() => {
-        flipCard.classList.remove(inClass);
-
-        window.setTimeout(() => {
-          animating = false;
-          if (toBack) {
-            steps.hidden = false;
-            requestAnimationFrame(() => steps.classList.add('is-open'));
-          }
-        }, flipDuration + 20);
+        requestAnimationFrame(() => steps.classList.add('is-open'));
       });
-    }, flipDuration);
+    }
   }
 
   moreBtn.addEventListener('click', (event) => {

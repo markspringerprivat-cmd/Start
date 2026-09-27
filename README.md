@@ -1,9 +1,8 @@
-Start_V43_flip_swap_banner_up
+Start_V44_flip_cachefix
 
 Änderungen:
-- Flip-Animation technisch umgebaut: kein spiegelverkehrter Text mehr.
-- Ganze Karte dreht bis 90°, Inhalt wird dort gewechselt, neue Seite dreht wieder sauber auf 0°.
-- Vorder- und Rückseite behalten jeweils vollständigen Kartenaufbau inkl. Banner.
-- Bannerbilder deutlich weiter nach oben verschoben, damit zentrale Motive besser sichtbar sind.
-- Weiterlesen-Funktion und Schritt-Kacheln bleiben erhalten.
-- Keine Text- oder Linkänderungen außerhalb dieser Funktion.
+- Cache-Buster für style.css und script.js auf v44 erhöht, damit Moodle/Browser sicher die neue Version lädt.
+- Flip-Animation auf Web Animations API umgestellt.
+- Inhalt wird exakt bei 90° ausgetauscht: kein spiegelverkehrter Text.
+- Bannerbilder nochmals deutlich weiter nach oben verschoben.
+- Sonstige Texte und Links unverändert.

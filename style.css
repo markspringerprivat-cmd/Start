@@ -5595,3 +5595,30 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
     transition: none !important;
   }
 }
+
+/* v44: Banner nochmals deutlich weiter nach oben – zentrale Motive im sichtbaren Streifen */
+.start-page-moodle-fit .overview-card-visual img {
+  object-position: center 94% !important;
+}
+.start-page-moodle-fit .stage-theme-wahrnehmung .overview-card-visual img {
+  object-position: center 100% !important;
+}
+.start-page-moodle-fit .stage-theme-dekomposition .overview-card-visual img,
+.start-page-moodle-fit .deko-face--back .deko-back-banner img {
+  object-position: center 96% !important;
+}
+.start-page-moodle-fit .stage-theme-approximation .overview-card-visual img {
+  object-position: center 96% !important;
+}
+.start-page-moodle-fit .stage-theme-praxiselement .overview-card-visual img {
+  object-position: center 95% !important;
+}
+
+/* Externe Übergangsklassen der alten Version neutralisieren; Animation läuft jetzt direkt per JS. */
+.start-page-moodle-fit .deko-flip-card.flip-out-forward,
+.start-page-moodle-fit .deko-flip-card.flip-out-backward,
+.start-page-moodle-fit .deko-flip-card.flip-in-from-back,
+.start-page-moodle-fit .deko-flip-card.flip-in-from-front {
+  transform: none !important;
+  transition: none !important;
+}
