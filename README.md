@@ -1,10 +1,8 @@
-Start_V36_deko_modern
+Start_V37_linkfix
 
-Änderungen an der Dekompositionsseite:
-- Karten bleiben vollständig weiß; nur die obere Farbleiste trägt die Farbcodierung.
-- Farbleiter logisch neu aufgebaut: Grün -> Gelbgrün -> Gelb -> Amber -> Orange -> Rot.
-- Blauton aus der Schwierigkeitsskala entfernt.
-- Hover bleibt weiß und arbeitet nur mit passendem Farbrand/Schatten und leichtem Anheben.
-- Einheitliche Schriftfamilie und Schriftwirkung zwischen Hauptüberschrift und Kachelüberschriften.
-- Rahmen, Rundungen, Abstände und Schatten moderner gestaltet.
-- Textinhalte unverändert.
+Änderungen:
+- Dekomposition: "Zur Kursübersicht" führt jetzt direkt zum Moodle-Kurs:
+  https://moodle.uni-siegen.de/course/view.php?id=39459
+- Startseite: Approximation / "Zum Modul" führt jetzt direkt zu:
+  https://moodle.uni-siegen.de/mod/hvp/view.php?id=1521781
+- Keine Texte oder sonstigen Inhalte geändert.
