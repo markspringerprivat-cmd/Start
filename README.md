@@ -1,79 +1,9 @@
-# Kurswebseite
+Start_V32_Moodle_fit_banners
 
-Dieses Paket enthält nur die ursprüngliche Kurswebseite ohne H5P-Nachahmungen und ohne eingebettete H5P-Testelemente.
-
-Startdatei: `index.html`
-
-Enthalten sind die Kursübersicht und die Seiten Wahrnehmung, Dekomposition und Approximation mit Vorlesemodus.
-
-
-Version 21:
-- Cache-Busting auf CSS/JS/Bilder gesetzt.
-- Intro-Kachel weiß mit farbiger oberer Kante.
-- Einheitlicher Abstand zwischen Überschrift und Text in allen Modul-/Praxis-Kacheln.
-- Dekomposition-Buttons ohne Baustein-Beschriftung, im Stil der Thema-Buttons, 3x2 angeordnet.
-- Bildrahmen in der Indexseite vollständig entfernt.
-
-
-Version 22:
-- Moodle-Leiste auf den Modulseiten ca. 2 mm kleiner skaliert.
-- Schatten unter der Leiste verstärkt.
-- Navigationsbeschriftung etwas vergrößert.
-- Tabs bleiben blau; Weiß erscheint nur bei Hover/Fokus.
-
-
-Version 23:
-- Abstand zwischen den Modul-/Bild-Blöcken auf der Startseite um zusätzlich 1,5 cm erhöht.
-- Cache-Busting auf v=23 aktualisiert.
-
-
-Version 24:
-- Startseite: Wahrnehmung hat nur noch einen externen Modulbutton zum Interactive Book.
-- Startseite: neue Fachbegriffe, Untertitel, Texte und Autor*innenliste ohne Christina/Christine ergänzt.
-- Dekomposition: Vorbereitungsmodul-Link in script.js auf id=1506161 korrigiert.
-- Dekomposition: Buttons ohne Baustein-Beschriftung, 2 Reihen à 3 Einträge.
-- Anrede/Genderung in index.html, Modul-HTML-Dateien und script.js auf Sie/neutral angepasst.
-- Cache-Busting auf v=24 erhöht.
-
-
-Version 25:
-- Untertitel in allen Modulblöcken zentriert und optisch auffälliger gestaltet.
-- Einheitliche Abstände zwischen Überschrift, Unterüberschrift und Fließtext in allen Blöcken hergestellt.
-- Cache-Busting auf v=25 erhöht.
-
-
-Version 26:
-- Startseite: alle Karten zeigen nur noch einen Button „Zum Modul“ statt einzelner Themenbuttons.
-- Wahrnehmung führt direkt zum Interactive Book id=1521777.
-- Dekomposition, Approximation und Praxiselement führen zu eigenen Navigationsseiten.
-- Neue Datei praxiselement.html mit Hauptseite und drei Themen erstellt.
-- Approximation-Navigationsseite auf Hauptseite + Thema 1–3 reduziert und mit Moodle-Links id=1521781–1521783 versehen.
-- Praxiselement-Navigationsseite mit Moodle-Links id=1521784–1521786 versehen.
-- Dekomposition-Link Vorbereitung/Gesprächsumgebung auf id=1506161 korrigiert.
-- Cache-Busting auf v=26 erhöht.
-
-
-Version 28:
-- Startseite: Block 1–4 durch Teil 1–4 ersetzt.
-- V27-Bildpfad- und Zentrierungsfixes übernommen.
-- Dekomposition vollständig neu aufgebaut: Klappentext + Hinweis + 6 Kacheln in 2x3.
-- Fünf aktive Schritte, sechste Kachel Platzhalter.
-- Ergebnisse sichern + Gespräche abschließen zusammengeführt und mit Ergebnissicherungs-Link id=1494697 verknüpft.
-- Alter Gesprächsabschluss-Link entfällt.
-
-
-Version 29:
-- Dekompositions-Einführung auf gleiche Breite wie 3er-Kachelreihe gebracht.
-- Einführungskachel flacher gemacht und Textfarbe explizit auf schwarz gesetzt.
-- Vorschautext mit weichem Fade/Blur-Eindruck zum Weiterlesen-Button hin.
-- Weiterlesen-Button dezenter gestaltet.
-- Hinweisbalken auf gleiche Breite gezogen.
-- Kacheln leicht vergrößert.
-- Hover-Zustand färbt den oberen Balken grün.
-
-## v30 – H5P/Moodle responsive fix
-- Top-level layout shells no longer depend on `100vw` for their effective width.
-- Major grids/cards may shrink to the containing iframe width (`min-width: 0`).
-- Media is constrained to the available width.
-- Narrow iframe padding is reduced to avoid unnecessary horizontal clipping.
-- CSS/JS query version raised to `v=30` to reduce stale-cache problems.
+Änderungen:
+- neue Banner für Wahrnehmung, Dekomposition, Approximation und Praxiselement eingesetzt
+- Banner auf ein flacheres Panorama-Format zugeschnitten, damit in Moodle mehr Motiv sichtbar ist
+- Praxiselement-Kachel ebenfalls mit echtem Banner versehen
+- Bannerhöhe in den Startseiten-Kacheln reduziert
+- sanfte Scroll-Reveal-Animation für die Kacheln ergänzt
+- keine Texte in den Kacheln geändert
