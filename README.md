@@ -1,6 +1,7 @@
-Start_V51_blue_margin_1cm
+Start_V52_blue_margin_actual
 
-Änderung:
-- hellblauer Außenbereich links und rechts der Karten auf ca. 1 cm / 38 px verbreitert
-- responsive Reduktion auf kleineren Ansichten
-- übrige Inhalte/Links/Animationen unverändert
+Fix:
+- V51 wurde von einer späteren Inline-Regel in app.html überschrieben.
+- Der hellblaue Außencontainer hat jetzt tatsächlich 38 px Seitenabstand links/rechts.
+- Auf kleineren Ansichten wird der Abstand responsiv reduziert.
+- Sonst keine Änderungen.

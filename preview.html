@@ -346,6 +346,36 @@ body.start-page-moodle-fit{
 }
 </style>
 
+
+<style id="v52-blue-panel-actual-fix">
+/* V52: tatsächlicher 1-cm-Rand – überschreibt die spätere V49-Inline-Regel */
+body.start-page-moodle-fit{
+  background:#ffffff !important;
+}
+.start-page-moodle-fit .overview-shell--moodle-fit{
+  width:100% !important;
+  max-width:650px !important;
+  box-sizing:border-box !important;
+  margin:0 auto !important;
+  padding:10px 38px 20px !important;
+  background:#f3f7fb !important;
+  border:1px solid #d7e5f2 !important;
+  border-radius:20px !important;
+  box-shadow:0 12px 30px rgba(85,120,160,.10) !important;
+  overflow:hidden !important;
+}
+@media (max-width:720px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding-left:30px !important;
+    padding-right:30px !important;
+  }
+}
+@media (max-width:560px){
+  .start-page-moodle-fit .overview-shell--moodle-fit{
+    padding:8px 22px 16px !important;
+  }
+}
+</style>
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">
