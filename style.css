@@ -5622,3 +5622,56 @@ body.has-scroll-reveal .start-page-moodle-fit .overview-tile.is-visible {
   transform: none !important;
   transition: none !important;
 }
+
+/* v45: finaler, robuster Flip + physisch zugeschnittene Banner */
+.start-page-moodle-fit .overview-card-visual {
+  height: 94px !important;
+  overflow: hidden !important;
+}
+.start-page-moodle-fit .overview-card-visual img,
+.start-page-moodle-fit .deko-shared-banner img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+.start-page-moodle-fit .deko-flip-card {
+  transform: scaleX(1) !important;
+  transform-origin: center center !important;
+  transition: transform 280ms cubic-bezier(.55,.08,.35,1), box-shadow .18s ease !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  overflow: hidden !important;
+}
+.start-page-moodle-fit .deko-flip-card.is-squashed {
+  transform: scaleX(.025) !important;
+}
+
+.start-page-moodle-fit .deko-card-state {
+  width: 100% !important;
+  position: relative !important;
+}
+.start-page-moodle-fit .deko-card-state[hidden] {
+  display: none !important;
+}
+.start-page-moodle-fit .deko-card-state--front {
+  display: flex;
+  flex-direction: column;
+}
+.start-page-moodle-fit .deko-card-state--back {
+  background: linear-gradient(180deg,#fff 0%,#f8fbff 100%);
+}
+.start-page-moodle-fit .deko-card-state--back .deko-face-back-content {
+  padding: 16px 20px 12px !important;
+}
+.start-page-moodle-fit .deko-card-state--back .deko-back-actions {
+  padding: 12px 18px 16px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-page-moodle-fit .deko-flip-card {
+    transition: none !important;
+  }
+}

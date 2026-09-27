@@ -873,79 +873,68 @@ setupCourseFlyouts();
 
 
 
-// v44: robuster Kartenflip mit Web Animations API + Inhaltswechsel bei 90°
+
+// v45: stabiler Kartenflip als Zusammenklappen -> Inhaltswechsel -> Aufklappen.
 (function(){
   const tile = document.getElementById('dekoStartTile');
-  const flipCard = tile ? tile.querySelector('.deko-flip-card') : null;
+  const card = tile ? tile.querySelector('.deko-flip-card') : null;
+  const front = document.getElementById('dekoCardFront');
+  const back = document.getElementById('dekoCardBack');
   const moreBtn = document.getElementById('dekoStartMoreButton');
   const backBtn = document.getElementById('dekoStartBackButton');
   const steps = document.getElementById('dekoStartSteps');
   const readMoreBtn = document.getElementById('dekoBackReadMore');
   const moreText = document.getElementById('dekoBackMore');
 
-  if (!tile || !flipCard || !moreBtn || !backBtn || !steps) return;
+  if (!card || !front || !back || !moreBtn || !backBtn || !steps) return;
 
   let showingBack = false;
   let animating = false;
 
-  async function halfFlip(fromDeg, toDeg, duration = 260) {
-    const animation = flipCard.animate(
-      [
-        { transform: `perspective(1200px) rotateY(${fromDeg}deg) scale(1)` },
-        { transform: `perspective(1200px) rotateY(${toDeg}deg) scale(.985)` }
-      ],
-      {
-        duration,
-        easing: 'cubic-bezier(.55,.08,.35,1)',
-        fill: 'forwards'
-      }
-    );
-    try { await animation.finished; } catch (_) {}
-    animation.cancel();
-  }
+  const wait = (ms) => new Promise(resolve => window.setTimeout(resolve, ms));
 
-  async function swapFace(toBack) {
+  async function flipTo(toBack){
     if (animating || showingBack === toBack) return;
     animating = true;
 
     if (!toBack) {
       steps.classList.remove('is-open');
-      window.setTimeout(() => {
-        if (!steps.classList.contains('is-open')) steps.hidden = true;
-      }, 430);
+      await wait(140);
     }
 
-    // Erste Hälfte: aktuelle Seite bis 90° wegdrehen.
-    await halfFlip(0, toBack ? 90 : -90, 250);
+    // Ganze Karte klappt auf ihre schmale Kante zusammen.
+    card.classList.add('is-squashed');
+    await wait(280);
 
-    // Exakt an der Kante den Inhalt austauschen – dadurch niemals Spiegeltext.
+    // Inhalt exakt an der schmalen Kante tauschen. Der Banner bleibt dasselbe DOM-Element.
     showingBack = toBack;
-    flipCard.classList.toggle('show-back', toBack);
+    front.hidden = toBack;
+    back.hidden = !toBack;
 
-    // Zweite Hälfte: neue Seite von der gegenüberliegenden Kante einblenden.
-    await halfFlip(toBack ? -90 : 90, 0, 280);
-
-    flipCard.style.transform = '';
-    animating = false;
+    // Browser einen Frame geben und dann die ganze Karte wieder aufklappen.
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    card.classList.remove('is-squashed');
+    await wait(300);
 
     if (toBack) {
       steps.hidden = false;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => steps.classList.add('is-open'));
-      });
+      requestAnimationFrame(() => requestAnimationFrame(() => steps.classList.add('is-open')));
+    } else {
+      steps.hidden = true;
     }
+
+    animating = false;
   }
 
   moreBtn.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    swapFace(true);
+    flipTo(true);
   });
 
   backBtn.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-
     if (moreText && !moreText.hidden) {
       moreText.hidden = true;
       if (readMoreBtn) {
@@ -953,7 +942,7 @@ setupCourseFlyouts();
         readMoreBtn.textContent = 'Weiterlesen';
       }
     }
-    swapFace(false);
+    flipTo(false);
   });
 
   if (readMoreBtn && moreText) {
@@ -967,10 +956,10 @@ setupCourseFlyouts();
     });
   }
 
-  flipCard.addEventListener('keydown', (event) => {
-    if ((event.key === 'Enter' || event.key === ' ') && event.target === flipCard) {
+  card.addEventListener('keydown', (event) => {
+    if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {
       event.preventDefault();
-      swapFace(!showingBack);
+      flipTo(!showingBack);
     }
   });
 })();
