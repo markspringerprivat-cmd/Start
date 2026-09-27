@@ -644,6 +644,23 @@ body.is-embedded-frame .overview-roadmap.overview-roadmap--moodle-fit{
 }
 </style>
 
+
+<style id="v61-root-background-final-fix">
+/* V61: Restfläche des iframe außerhalb des Kurs-Panels immer weiß.
+   Muss NACH allen älteren Inline-Styles stehen, weil dort html/body noch hellblau gesetzt wurden. */
+html,
+body,
+body.start-page-moodle-fit {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Nur das eigentliche abgerundete Kurs-Panel bleibt hellblau. */
+.start-page-moodle-fit .overview-shell--moodle-fit {
+  background: #f3f7fb !important;
+}
+</style>
+
 </head>
 <body id="top" class="start-page-moodle-fit">
   <main class="page-shell overview-shell overview-shell--moodle-fit">
