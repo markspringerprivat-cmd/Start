@@ -281,7 +281,7 @@ const pageData = {
       {
         cardTitle: "Hauptseite",
         bannerTitle: "Praxiselement",
-        subtitle: "Meine Unterrichtsgespräche unter realen Bedingungen optimieren",
+        subtitle: "Mein Unterrichtsgespräch unter realen Bedingungen optimieren",
         leftLabel: "Überblick",
         leftTitle: "Worum geht es in diesem Modul?",
         leftText: "Diese Seite dient als Navigationsseite für die drei Themen des Praxiselements. Im Mittelpunkt steht die Erprobung von Unterrichtsgesprächen unter realen Bedingungen sowie die gemeinsame Reflexion und Weiterentwicklung der Gesprächsführung.",
